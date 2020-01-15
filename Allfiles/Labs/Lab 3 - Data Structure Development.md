@@ -56,8 +56,8 @@ Task 1: Base Enum: Customer Tier
 
     c.  Gold
 
->   It's important to do them in this order so that None is the default, which
->   is value 0.
+   It's important to do them in this order so that None is the default, which
+   is value 0.
 
 Task 2: EDT: Airport Code
 -------------------------
@@ -104,7 +104,7 @@ Task 4: Table: Tier Range
 
         i.  Extended Data Type: DDTFlyingMiles
 
-        ii.  Label: *From* m*iles*
+        ii.  Label: *From miles*
 
     c.  ToMiles
 
@@ -135,7 +135,7 @@ Task 5: Table: Airport Code
 
         i.  Extended Data Type: RefRecId (of type Int64)
 
-        ii.  Label: *City* co*de*
+        ii.  Label: *City code*
 
     b.  AirportCode
 
@@ -145,7 +145,7 @@ Task 5: Table: Airport Code
 
     a.  DDTAirportCode
 
-        i.  Label: *Airport* c*ode*
+        i.  Label: *Airport code*
 
         ii.  Field: AirportCode
 
@@ -226,7 +226,7 @@ Task 6: Table: Customer Fly Details
 
         i.  EDT: RefRecId
 
-        ii.  Label: *To* c*ity*
+        ii.  Label: *To city*
 
         iii.  Mandatory: Yes
 
@@ -330,11 +330,11 @@ Task 1: Table Extension: CustTable
 Check Output
 ============
 
->   Save all, then right click on your solution and select Build solution. This
->   takes a minute or two. Verify that there are no errors. (There will be
->   warnings, due to best practices.)
+   Save all, then right click on your solution and select Build solution. This
+   takes a minute or two. Verify that there are no errors. (There will be
+   warnings, due to best practices.)
 
->   Your solution should look similar to this:
+   Your solution should look similar to this:
 
 ![Solution DynamicsDevSolution
 DynamicsDevProject
