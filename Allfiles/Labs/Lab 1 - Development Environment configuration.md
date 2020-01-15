@@ -56,7 +56,7 @@ If you have an LCS project:
     Development instance is already hosted under the Environment tab. It may
     also be found in the menu icon under Cloud-hosted environments
 
-    ![Lifecycle Services blades](images/Lab1Ex1Step5.png)
+    ![Lifecycle Services blades](Images/Lab1Ex1Step5.png)
 
 6.  Select the Start button and wait for the environment to start
 
