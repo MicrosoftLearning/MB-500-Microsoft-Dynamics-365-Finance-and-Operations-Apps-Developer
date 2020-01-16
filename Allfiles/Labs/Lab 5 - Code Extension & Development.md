@@ -108,8 +108,7 @@ Task 1: Table DDTCustFlyDetails \> validateField Method
 7.  Paste the method signature in the new class DDTCustFlyDetailsEventHandler
     within the class’s brackets
 
-<code><pre>
-   */// <summary\>* 
+<code><pre>   */// <summary\>* 
    *///*
    */// </summary\>*
    */// <param name="sender"\></param\>*
@@ -120,7 +119,7 @@ Task 1: Table DDTCustFlyDetails \> validateField Method
    }
 </pre></code>
 
-1.  Paste the following piece of code within the method
+8.Paste the following piece of code within the method
 
 <code><pre>
  ValidateFieldEventArgs event = e as ValidateFieldEventArgs ; 
@@ -211,7 +210,7 @@ Task 4: Table CustTable \> new Method
    }
 </pre></code>
 
-1.  Add new method getTotalMiles() in the class
+6.Add new method getTotalMiles() in the class
 
 <code><pre>
 public static DDTFlyingMiles getTotalMiles(CustAccount \_cust) 
@@ -282,13 +281,13 @@ override initValue method with the following piece of code:
 
 1.  Open table DDTCustFlyDetails from Solution Explorer
 
-2.  Change the following properties of field FlyCount
+2.  Change the following properties of field FlyCount:
 
-    1.  Allow Edit: No
+    a.  Allow Edit: No
 
-    2.  Allow Edit On Create: No
+    b.  Allow Edit On Create: No
 
-Exercise 3: Develop new Class
+Exercise 3: Develop a new Class
 =============================
 
 Task 1: Create a Runnable class DDTUpdateTier
