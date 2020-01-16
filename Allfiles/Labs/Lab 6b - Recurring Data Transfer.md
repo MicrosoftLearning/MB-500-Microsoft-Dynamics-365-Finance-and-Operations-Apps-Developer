@@ -170,7 +170,7 @@ Task 2: Configure Recurring Integration Scheduler
 
    d.  Tenant: Enter your tenant
 
-![Edit Azure AD applications](Images/Lab6aEx2Task2Step3.png)
+![Edit Azure AD applications](Images/Lab6bEx2Task2Step3.png)
 
 4.In the Parameters form, add **User Credentials**
 
