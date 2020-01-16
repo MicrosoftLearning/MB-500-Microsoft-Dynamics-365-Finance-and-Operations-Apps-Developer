@@ -220,7 +220,7 @@ Task 6: Invoke Plug-in from class MLACustFlyDetailsEventHandler
 
 
 <pre><code>
- /* custFlyDetails.MLALoyaltyPoints = custFlyDetails.FlyingMiles \* (DDTTierRange::find(CustTable::find(custFlyDetails.CustAccount).DDTCustomerTier).MLALoyaltyPercent/100); */
+ /* custFlyDetails.MLALoyaltyPoints = custFlyDetails.FlyingMiles * (DDTTierRange::find(CustTable::find(custFlyDetails.CustAccount).DDTCustomerTier).MLALoyaltyPercent/100); */
 </code></pre>
 
 
