@@ -74,21 +74,19 @@ If you have an LCS project:
 
     ![Login \> Log on to environment](Images/Lab1Ex1Step8.png)
 
-    to launch Dynamics 365 for Finance and Operations browser-based user
-    interface
+ to launch Dynamics 365 for Finance and Operations browser-based user interface
 
-9.  After the environment is up, if you scroll down, you will find the VM
-    details as follows
+9.After the environment is up, if you scroll down, you will find the VM details as follows
 
 ![VM Name](Images/Lab1Ex1Step9.png)
 
-10.  Select the rounded icon next to the password
+10.Select the rounded icon next to the password
 
-    ![Looks like a wifi or an eye](Images/Lab1Ex1Step10.png)
+   ![Looks like a wifi or an eye](Images/Lab1Ex1Step10.png)
 
-    and view the password; click the copy icon to copy it
+   and view the password; click the copy icon to copy it
 
-2.  Select the VM Name link and launch the Remote Desktop session. It will ask
+11.Select the VM Name link and launch the Remote Desktop session. It will ask
     for credentials. Please provide the credentials from the last step.
 
 If you have a virtual machine:
@@ -111,19 +109,17 @@ Dynamics 365 for Finance and Operations programming.
 3.  Open menu **Dynamics 365 \> Options** in Visual Studio and expand **Text
     Editor**
 
-    Select **All Languages** node:
+   Select **All Languages** node:
 
-    a.  Select the Word wrap check box
+   a.  Select the Word wrap check box
 
-    b.  Select the Line numbers check box
+   b.  Select the Line numbers check box
 
-        ![Options \> Text editor \> All Languages](Images/Lab1Ex2Step3.png)
+   ![Options \> Text editor \> All Languages](Images/Lab1Ex2Step3.png)
 
-4.  In the menu **Dynamics 365 \> Options**, expand the **Dynamics 365** node
+4.In the menu **Dynamics 365 \> Options**, expand the **Dynamics 365** node
 
-![](Images/Lab1Ex2Step4.png)
-
->   Options \> Dynamics 365 \> Best practices
+![Best practices](Images/Lab1Ex2Step4.png)
 
 Select Best Practices node and make sure the following are checked: (All are
 under Model Acceptance Test Library – Application Suite and begin with
@@ -143,20 +139,20 @@ f.  MaintabilityRules
 
 g.  StaticCodeValidationRules
 
-5.  In the menu **Dynamics 365 \> Options**, expand the **Dynamics 365** node
+5.In the menu **Dynamics 365 \> Options**, expand the **Dynamics 365** node
 
-    Click Projects node
+   Click Projects node
 
-    a.  Verify that the **Organize projects by element type** check box is
+   a.  Verify that the **Organize projects by element type** check box is
         selected
 
-    b.  Verify that **Synchronize database on build for newly created project**
+   b.  Verify that **Synchronize database on build for newly created project**
         check box is selected
 
 ![Dynamics 365; Projects. Both boxes should be selected.](Images/Lab1Ex2Step5.png)
 
 
-6.  Select **OK** to save selections
+6.Select **OK** to save selections
 
 Exercise 3: Create new Model and Project
 ========================================
@@ -183,35 +179,35 @@ Exercise 3: Create new Model and Project
 
 4.  Click **Next** and choose these under **Select referenced packages**
 
-    a.  Application Foundation
+   a.  Application Foundation
 
-    b.  Application Platform (default selected)
+   b.  Application Platform (default selected)
 
-    c.  Application Suite
+   c.  Application Suite
 
-    d.  ContactPerson
+   d.  ContactPerson
 
-    e.  Directory
+   e.  Directory
 
-        ![Update model parameters \> Select referenced packages: ApplicationFoundation ApplicationPlatform ApplicationSuite](Images/Lab1Ex3Step4.png)
+   ![Update model parameters \> Select referenced packages: ApplicationFoundation ApplicationPlatform ApplicationSuite](Images/Lab1Ex3Step4.png)
 
-5.  Click **Next** and in the **Summary** screen, check the given options, and
+5.Click **Next** and in the **Summary** screen, check the given options, and
     select **Finish**
 
-    ![Summary screen: Make sure that "Create new project" and "Make this my default model for new projects" are selected](Images/Lab1Ex3Step5.png)
+   ![Summary screen: Make sure that "Create new project" and "Make this my default model for new projects" are selected](Images/Lab1Ex3Step5.png)
 
-6.  **New Project** pop-up will appear with **Dynamics 365 \> Unified
+6.**New Project** pop-up will appear with **Dynamics 365 \> Unified
     Operations** as the default template selected
 
-7.  Provide Project & Solution name as follows and select **OK** button
+7.Provide Project & Solution name as follows and select **OK** button
 
-    ![New Project \> Installed \> Templates \> Dynamics 365. Name: DynamicsDevProject Solution name: DynamicsDevSolution](Images/Lab1Ex3Step7.png)
+   ![New Project \> Installed \> Templates \> Dynamics 365. Name: DynamicsDevProject Solution name: DynamicsDevSolution](Images/Lab1Ex3Step7.png)
 
-8.  Your new project should appear in the Solution Explorer
+8.Your new project should appear in the Solution Explorer
 
-    ![Solution Explorer \> DynamcisDevProject](Images/Lab1Ex3Step8.png)
+   ![Solution Explorer \> DynamcisDevProject](Images/Lab1Ex3Step8.png)
 
-9.  Right click the project, select **Properties**, and set the value of
+9.Right click the project, select **Properties**, and set the value of
     *Company* to USMF. Select **Apply** and **OK**
 
 Check Output
