@@ -182,7 +182,7 @@ Task 2: Configure Recurring Integration Scheduler
     **Validate** button. In the white text box **OK** should appear, or that the
     authentication was successful. Warnings about privileges are not an issue.
 
-![For "Validate instance settings," select service authentication and choose the AAD Client app from the drop down. Then select the Validate button.](Images/Lab6Bex2Task2Step5.png)
+![For "Validate instance settings," select service authentication and choose the AAD Client app from the drop down. Then select the Validate button.](Images/Lab6bex2Task2Step5.png)
 
 
 Exercise 3: Configure Dynamics 365 Finance and Operations Apps for recurring integrations
