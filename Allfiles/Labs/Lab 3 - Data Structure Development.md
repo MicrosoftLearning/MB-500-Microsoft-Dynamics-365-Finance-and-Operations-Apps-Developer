@@ -96,21 +96,21 @@ Task 4: Table: Tier Range
 
 6.  Add the following fields in the table
 
-    a.  CustTier
+	a.  CustTier
 
-        i.  Enum Type: DDTCustomerTier
+		i.  Enum Type: DDTCustomerTier
 
-    b.  FromMiles
+	b.  FromMiles
 
-        i.  Extended Data Type: DDTFlyingMiles
+		i.  Extended Data Type: DDTFlyingMiles
 
-        ii.  Label: *From miles*
+		ii.  Label: From miles
 
-    c.  ToMiles
+	c.  ToMiles
 
-        i.  Extended Data Type: DDTFlyingMiles
+		i.  Extended Data Type: DDTFlyingMiles
 
-        ii.  Label: *To miles*
+		ii.  Label: To miles
 
 7.  Add new index CustTierIdx
 
@@ -135,7 +135,7 @@ Task 5: Table: Airport Code
 
         i.  Extended Data Type: RefRecId (of type Int64)
 
-        ii.  Label: *City code*
+        ii.  Label: City code
 
     b.  AirportCode
 
@@ -145,7 +145,7 @@ Task 5: Table: Airport Code
 
     a.  DDTAirportCode
 
-        i.  Label: *Airport code*
+        i.  Label: Airport code
 
         ii.  Field: AirportCode
 
@@ -197,8 +197,9 @@ Task 6: Table: Customer Fly Details
 
     a.  CustAccount
 
-        i.  EDT: CustAccount (Hint: You can select View \> Application Explorer,
-            and navigate to AOT \> Data Types \> Extended Data Types \>
+        i.  EDT: CustAccount 
+(Hint: You can select View > Application Explorer,
+            and navigate to AOT > Data Types > Extended Data Types >
             CustAccount, then drag CustAccount to the Fields node of our new
             table in the designer pane)
 
@@ -210,7 +211,7 @@ Task 6: Table: Customer Fly Details
 
         i.  EDT: TransDate
 
-        ii.  Label: *Flying Date*
+        ii.  Label: Flying Date
 
         iii.  Mandatory: Yes
 
@@ -218,7 +219,7 @@ Task 6: Table: Customer Fly Details
 
         i.  EDT: RefRecId
 
-        ii.  Label: *From city*
+        ii.  Label: From city
 
         iii.  Mandatory: Yes
 
@@ -226,7 +227,7 @@ Task 6: Table: Customer Fly Details
 
         i.  EDT: RefRecId
 
-        ii.  Label: *To city*
+        ii.  Label: To city
 
         iii.  Mandatory: Yes
 
