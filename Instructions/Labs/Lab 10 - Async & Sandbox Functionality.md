@@ -1,8 +1,8 @@
-#MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
+MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
-##Lab 10 - Async & Sandbox Functionality**
+Lab 10 - Async & Sandbox Functionality**
 
-###Lab Environment
+Lab Environment
 ===============
 
 In order to run this lab, you will need:
@@ -15,7 +15,7 @@ In order to run this lab, you will need:
 
     -   Lab 5 – Code Extension & Development completed
 
-###Lab Overview
+Lab Overview
 ============
 
 -   Dependency: Lab 5 – Code Extension & Development should be completed
@@ -25,7 +25,7 @@ In order to run this lab, you will need:
 
 **Estimated time to complete this lab: 30+ minutes**
 
-###Scenario
+Scenario
 ========
 
 In Lab 5 – Code Extension & Development, we created a class DDTUpdateTier to
@@ -35,10 +35,10 @@ process to an asynchronous process by invoking the runAsync() method of formRun.
 It will enable us to execute the process in the background without freezing the
 browser.
 
-###Exercise: Open Dynamics 365 for Finance and Operations
+Exercise: Open Dynamics 365 for Finance and Operations
 ======================================================
 
-####Task 1: Update DDTUpdateTier class
+Task 1: Update DDTUpdateTier class
 ----------------------------------
 
 1.  In Visual Studio, in the project DynamicsDevProject, find the class
@@ -71,7 +71,7 @@ browser.
 </code></pre>
 
 
-####Task 2: Form Extension: CustTable
+Task 2: Form Extension: CustTable
 ---------------------------------
 
 1.  Close the solution and open MyLabAirlines in the Solution Explorer
@@ -93,7 +93,7 @@ browser.
 
     1.  *Text*: Customer Tier Update (Async)
 
-####Task 3: Event Handler for clicked event of the form button
+Task 3: Event Handler for clicked event of the form button
 ----------------------------------------------------------
 
 1.  Open MyLabAirlines in Solution Explorer
@@ -127,7 +127,7 @@ public static void MLACustTierUpdateAsync_OnClicked(FormControl sender, FormCont
 </code></pre>
 
 
-###Check Output
+Check Output
 ============
 
 **Build Solution**. Once you click the newly created button **Customer Tier
