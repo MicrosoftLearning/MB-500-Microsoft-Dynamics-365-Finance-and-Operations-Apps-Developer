@@ -1,6 +1,6 @@
-MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
+**MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
-Lab 10 - Async & Sandbox Functionality**
+**Lab 10 - Async & Sandbox Functionality**
 
 Lab Environment
 ===============
