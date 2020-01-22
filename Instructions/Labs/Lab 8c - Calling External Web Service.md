@@ -136,4 +136,4 @@ Check Output
 ============
 
 Execute the Runnable class DDTGetGoldRate from Visual Studio. An info() message
-should pop up with the rate for gold that is coming from the Web Service
+should pop up with the rate for gold that is coming from the Web Service.
