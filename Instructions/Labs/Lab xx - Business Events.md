@@ -110,10 +110,7 @@ Task 2: Add a Contract class for the Business Event
 4.  Create a new class MLAFlightDetailsPostedBusinessEventContract with the
     following signature
 
-<pre><code>/// <summary>
-/// The data contract for a <c>FlyingDetailsPostedBusinessEvent</c>.
-/// </summary>
-[DataContract]
+<pre><code>[DataContract]
 public final class MLAFlightDetailsPostedBusinessEventContract extends BusinessEventsContract
 {
 }
