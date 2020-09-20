@@ -124,7 +124,7 @@ Dynamics 365 for Finance and Operations programming.
 
 4.  In the menu **Dynamics 365 \> Options**, expand the **Dynamics 365** node
 
-![Best practices](Images/Lab1Ex2Step3.png)
+![Best practices](Images/Lab1Ex2Step4.png)
 
 
 Select Best Practices node and make sure the following are checked: (All are
