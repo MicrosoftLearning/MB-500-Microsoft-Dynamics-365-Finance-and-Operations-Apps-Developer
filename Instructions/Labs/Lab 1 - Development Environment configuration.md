@@ -8,12 +8,8 @@ Change Record
 | Version | Date        | Change                                                                                                                                                                                                                                                                      |
 |---------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1.0     | 10 Jan 2020 | Initial release                                                                                                                                                                                                                                                             |
-| 1.01    | 11 Jun 2020 | Changed link in Lab Environment to be more direct 
-Removed unclear text from Scenario 
-Added clarifying instructions                                                                                                                                                    |
-| 1.02    | 22 Jan 2021 | Technical specs: Removed references to LCS; assuming no access 
-Branding: Changed name Dynamics 365 for Finance and Operations to Dynamics 365 Finance and Operations 
-Accessibility: Removed images when possible, as they don’t translate well in the markdown used by ALHs |
+| 1.01    | 11 Jun 2020 | Changed link in Lab Environment to be more direct; Removed unclear text from Scenario; Added clarifying instructions                                                                                                                                                    |
+| 1.02    | 22 Jan 2021 | Technical specs: Removed references to LCS, assuming no access; Branding: Changed name Dynamics 365 for Finance and Operations to Dynamics 365 Finance and Operations; Accessibility: Removed images when possible, as they don’t translate well in the markdown used by ALHs |
 
 
 
