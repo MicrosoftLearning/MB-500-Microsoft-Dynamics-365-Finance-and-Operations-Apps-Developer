@@ -122,59 +122,36 @@ Task 1: Table DDTCustFlyDetails \> validateField Method
 7.  Paste the method signature in the new class DDTCustFlyDetailsEventHandler
     within the class’s brackets
 
-| */// \<summary\>* |
-|-------------------|
+<code><pre>   */// <summary\>* 
+   *///*
+   */// </summary\>*
+   */// <param name="sender"\></param\>*
+   */// <param name="e"\></param\>*
+   [DataEventHandler(tableStr(DDTCustFlyDetails),DataEventType::ValidatedField)]
+   public static void DDTCustFlyDetails_onValidatedField(Common sender, DataEventArgs e)
+   {
+   }
+</pre></code>
 
+8.  Paste the following piece of code within the method
 
->   *///*
+<code><pre>
+ ValidateFieldEventArgs event = e as ValidateFieldEventArgs ; 
+   DDTCustFlyDetails custFlyDetails = sender as DDTCustFlyDetails;
+   boolean result = event.parmValidateResult();
+ if(result)
+  {
+   switch(event.parmFieldId())
+   {
+    case fieldNum(DDTCustFlyDetails, FlyFrom):
+    case fieldNum(DDTCustFlyDetails, FlyTo):
+    result = result && (custFlyDetails.FlyFrom != custFlyDetails.FlyTo);
+    break;
+   }
+  }
+  event.parmValidateResult(result);
+</pre></code>
 
->   */// \</summary\>*
-
->   */// \<param name="sender"\>\</param\>*
-
->   */// \<param name="e"\>\</param\>*
-
->   [DataEventHandler(tableStr(DDTCustFlyDetails),
->   DataEventType::ValidatedField)]
-
->   public static void DDTCustFlyDetails_onValidatedField(Common sender,
->   DataEventArgs e)
-
->   {
-
->   }
-
-1.  Paste the following piece of code within the method
-
-| ValidateFieldEventArgs event = e as ValidateFieldEventArgs ; |
-|--------------------------------------------------------------|
-
-
->   DDTCustFlyDetails custFlyDetails = sender as DDTCustFlyDetails;
-
->   boolean result = event.parmValidateResult();
-
-if(result)
-
-{
-
-switch(event.parmFieldId())
-
-{
-
-case fieldNum(DDTCustFlyDetails, FlyFrom):
-
-case fieldNum(DDTCustFlyDetails, FlyTo):
-
-result = result && (custFlyDetails.FlyFrom != custFlyDetails.FlyTo);
-
-break;
-
-}
-
-}
-
-event.parmValidateResult(result);
 
 Task 2: Table DDTTierRange \> find Method
 -----------------------------------------
@@ -186,39 +163,24 @@ Task 2: Table DDTTierRange \> find Method
 
 3.  Right click the Methods node and add a find() method as follows
 
-| static DDTTierRange find(DDTCustomerTier \_custTier, |
-|------------------------------------------------------|
+<code><pre>
+ static DDTTierRange find(DDTCustomerTier \_custTier,  boolean \_forUpdate = false)
+   {
+    DDTTierRange tierRange;
+    if (_custTier)
+    {
+     if (_forUpdate)
+     {
+      tierRange.selectForUpdate(_forUpdate);
+     }
+     select firstonly tierRange
+     index hint CustTierIdx
+     where tierRange.CustTier == \_custTier;
+    }
+    return tierRange;
+   }
+</pre></code>
 
-
->   boolean \_forUpdate = false)
-
->   {
-
->   DDTTierRange tierRange;
-
->   if (_custTier)
-
->   {
-
->   if (_forUpdate)
-
->   {
-
->   tierRange.selectForUpdate(_forUpdate);
-
->   }
-
->   select firstonly tierRange
-
->   index hint CustTierIdx
-
->   where tierRange.CustTier == \_custTier;
-
->   }
-
->   return tierRange;
-
->   }
 
 Task 3: Table DDTTierRange \> new Method
 ----------------------------------------
@@ -228,33 +190,22 @@ Task 3: Table DDTTierRange \> new Method
 
 2.  Right click the method and add a new method getTier() as follows
 
-| public static DDTCustomerTier getTier(int \_miles) |
-|----------------------------------------------------|
+<code><pre>
+public static DDTCustomerTier getTier(int \_miles) 
+{
+   DDTTierRange tierRange;
+   DDTCustomerTier ret;
+   while select tierRange
+   {
+      if(tierRange.FromMiles \<= \_miles && tierRange.ToMiles \>= \_miles)
+      {
+         ret = tierRange.CustTier;
+      }
+   }
+   return ret;
+}
+</pre></code>
 
-
->   {
-
->   DDTTierRange tierRange;
-
->   DDTCustomerTier ret;
-
->   while select tierRange
-
->   {
-
->   if(tierRange.FromMiles \<= \_miles && tierRange.ToMiles \>= \_miles)
-
->   {
-
->   ret = tierRange.CustTier;
-
->   }
-
->   }
-
->   return ret;
-
->   }
 
 Task 4: Table CustTable \> new Method
 -------------------------------------
@@ -269,20 +220,26 @@ Task 4: Table CustTable \> new Method
 
 5.  This should be the signature of the class to ensure it is a class extension:
 
-| [ExtensionOf(tableStr(CustTable))] |
-|------------------------------------|
+<code><pre>
+[ExtensionOf(tableStr(CustTable))] 
+   final class DDTCustTableTable_Extension
+   {
+   }
+</pre></code>
 
+6.  Add new method getTotalMiles() in the class
 
->   final class DDTCustTableTable_Extension
+<code><pre>
+public static DDTFlyingMiles getTotalMiles(CustAccount \_cust) 
+{
+ DDTCustFlyDetails custFlyDetails; 
+ select sum(FlyingMiles)
+  from custFlyDetails
+  where custFlyDetails.custAccount == \_cust; 
+ return custFlyDetails.FlyingMiles; 
+} 
+</pre></code>
 
->   {
-
->   }
-
-1.  Add new method getTotalMiles() in the class
-
-| public static DDTFlyingMiles getTotalMiles(CustAccount \_cust) { DDTCustFlyDetails custFlyDetails; select sum(FlyingMiles) from custFlyDetails where custFlyDetails.custAccount == \_cust; return custFlyDetails.FlyingMiles; } |
-|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 
 Task 5: Table DDTAirport \> new Method
@@ -295,21 +252,15 @@ Task 5: Table DDTAirport \> new Method
 3.  Right click the Methods node and add a new method getAirportCode() as
     follows
 
-| public static DDTAirportCode getAirportCode(RefRecId \_AirportRecID) |
-|----------------------------------------------------------------------|
-
-
->   {
-
->   DDTAirport airport;
-
->   select firstOnly AirportCode from airport
-
->   where airport.RecId == \_AirportRecID;
-
->   return airport.AirportCode;
-
->   }
+<code><pre>
+public static DDTAirportCode getAirportCode(RefRecId _AirportRecID)
+    {
+        DDTAirport  airport;
+        select firstOnly AirportCode from airport
+            where airport.RecId == _AirportRecID;
+        return airport.AirportCode;
+    }
+</pre></code>
 
 Exercise 2: Develop Form Methods
 ================================
@@ -323,8 +274,7 @@ Task 1: Form DDTTierRange \> Data Source \> validateWrite method
 2.  In the form **DDTTierRange,** open data source DDTTierRange and override
     validateWrite method with the following piece of code
 
-| Replace ret = super(); with ret = super() && (DDTTierRange.ToMiles \> DDTTierRange.FromMiles); |
-|------------------------------------------------------------------------------------------------|
+Replace <pre>ret = super();</pre> with <pre>ret = super() && (DDTTierRange.ToMiles \> DDTTierRange.FromMiles); </pre>
 
 
 Task 2: Form DDTCustFlyDetails \> Data Source \> initValue method
@@ -336,8 +286,15 @@ Task 2: Form DDTCustFlyDetails \> Data Source \> initValue method
 In the form **DDTCustFlyDetails,** open data source DDTCustFlyDetails and
 override initValue method with the following piece of code
 
-| DDTCustFlyDetails custFlyDetailsMax; super(); select FlyCount from custFlyDetailsMax order by CustAccount, FlyCount desc where custFlyDetailsMax.CustAccount == DDTCustFlyDetails.CustAccount; DDTCustFlyDetails.FlyCount = custFlyDetailsMax.FlyCount + 1; |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+<code><pre>
+       DDTCustFlyDetails   custFlyDetailsMax;
+       super();
+       select FlyCount
+          from custFlyDetailsMax 
+          order by CustAccount, FlyCount desc
+          where custFlyDetailsMax.CustAccount == DDTCustFlyDetails.CustAccount;
+       DDTCustFlyDetails.FlyCount = custFlyDetailsMax.FlyCount + 1;
+</pre></code>
 
 
 1.  Open table DDTCustFlyDetails from Solution Explorer
@@ -364,25 +321,42 @@ Task 1: Create a Runnable class DDTUpdateTier
 
 5.  A blank main() method will automatically be created
 
-| public static void main(Args \_args) |
-|--------------------------------------|
+<code><pre>
+public static void main(Args \_args)
+   {
+   }
+</pre></code>
 
 
->   {
-
->   }
-
-1.  Create a new static method update() as a new method to develop the business
+6.  Create a new static method update() as a new method to develop the business
     logic for updating customer tier as follows
 
-| public static int update() { CustTable custTable; ttsbegin; while select forupdate custTable { custTable.DDTCustomerTier = DDTTierRange::getTier(CustTable::getTotalMiles(custTable.AccountNum)); custTable.update(); } ttscommit; return custTable.rowCount(); } |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+<code><pre>
+public static int update()
+    {
+        CustTable           custTable;
+        ttsbegin;
+        while select forupdate custTable
+        {
+            custTable.DDTCustomerTier =     DDTTierRange::getTier(CustTable::getTotalMiles(custTable.AccountNum));
+            custTable.update();
+        }
+        ttscommit;
+        return custTable.rowCount();
+    }
+</pre></code>
 
 
-2.  Now this method needs to be called from main() using the following code
+7.  Now this method needs to be called from main() using the following code
 
-| public static void main(Args \_args) { int updateCount; updateCount = DDTUpdateTier::update(); info(strFmt("Number of records updated is %1", updateCount)); } |
-|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+<code><pre>
+    public static void main(Args _args)
+    {  
+        int updateCount;
+        updateCount = DDTUpdateTier::update();
+        info(strFmt("Number of records updated is %1", updateCount));
+    }
+</pre></code>
 
 
 Task 2: Execute class DDTUpdateTier from CustTable form
@@ -561,55 +535,35 @@ Task 2: Create a table: MLAAirportMilesChart
 9.  Override the validateWrite() method of the table and write the following
     code
 
-| public boolean validateWrite() |
-|--------------------------------|
+<pre><code>
+public boolean validateWrite()
+    {
+        boolean ret;
+        ret = super();
+        MLAAirportMilesChart    milesChart;
+        select firstonly milesChart
+            where milesChart.FromAirport == this.ToAirport &&
+            milesChart.ToAirport == this.FromAirport;
+        ret = ret && !milesChart && !(this.FromAirport == this.ToAirport);
+        return ret;
+    }
+</code></pre>
 
+10.Add a new method getMiles() in the table
 
->   {
-
->   boolean ret;
-
->   ret = super();
-
->   MLAAirportMilesChart milesChart;
-
->   select firstonly milesChart
-
->   where milesChart.FromAirport == this.ToAirport &&
-
->   milesChart.ToAirport == this.FromAirport;
-
->   ret = ret && !milesChart && !(this.FromAirport == this.ToAirport);
-
->   return ret;
-
->   }
-
-1.  Add a new method getMiles() in the table
-
-| public static DDTFlyingMiles getMiles(DDTAirportCode \_fromAirport, DDTAirportCode \_toAirport) |
-|-------------------------------------------------------------------------------------------------|
-
-
->   {
-
->   MLAAirportMilesChart airportMilesChart;
-
->   select firstonly FlyingMiles
-
->   from airportMilesChart
-
->   where (airportMilesChart.FromAirport == \_fromAirport &&
-
->   airportMilesChart.ToAirport == \_toAirport) \|\|
-
->   (airportMilesChart.FromAirport == \_toAirport &&
-
->   airportMilesChart.ToAirport == \_fromAirport);
-
->   return airportMilesChart.FlyingMiles;
-
->   }
+<pre><code>
+public static DDTFlyingMiles getMiles(DDTAirportCode _fromAirport, DDTAirportCode _toAirport)
+    {
+        MLAAirportMilesChart    airportMilesChart;
+        select firstonly FlyingMiles
+            from airportMilesChart
+            where (airportMilesChart.FromAirport == _fromAirport &&
+                  airportMilesChart.ToAirport == _toAirport) ||
+                  (airportMilesChart.FromAirport == _toAirport &&
+                  airportMilesChart.ToAirport == _fromAirport);
+        return airportMilesChart.FlyingMiles;
+    }
+</code></pre>
 
 Task 3: Create a form: MLAAirportMilesChart
 -------------------------------------------
@@ -797,57 +751,39 @@ Task 12: Chain of Command: Datasource of DDTTierRange form
 4.  Create a new class MLATierRangeFormDataSource_Extension with the following
     signature
 
-| [ExtensionOf(formdatasourcestr(DDTTierRange, DDTTierRange))] |
-|--------------------------------------------------------------|
+<code><pre>
+[ExtensionOf(formdatasourcestr(DDTTierRange, DDTTierRange))]
+final class MLATierRangeFormDataSource_Extension
+{
+}
+</pre></code>
 
 
->   final class MLATierRangeFormDataSource_Extension
-
->   {
-
->   }
-
-1.  Add new validation within that class by creating a chain of command for the
+5.Add new validation within that class by creating a chain of command for the
     validateWrite() method of the datasource, which is already overridden in the
     base class. Following is the code:
 
-| public boolean validateWrite() |
-|--------------------------------|
+<code><pre>
+public boolean validateWrite()
+    {
+        boolean ret;
+        ret = next validateWrite();
+        FormDataSource  formDS = this;
+        DDTTierRange    tierRangeBase = formDS.cursor();
+        DDTTierRange    tierRange;
+           if(tierRangeBase)
+           {
+            select RecId from tierRange
+            where (tierRange.FromMiles > tierRangeBase.FromMiles &&
+                  tierRange.FromMiles > tierRangeBase.ToMiles) ||
+                  (tierRange.ToMiles < tierRangeBase.FromMiles &&
+                  tierRange.ToMiles < tierRangeBase.ToMiles);
+            ret = ret && tierRange.RecId;
+        }        
+        return ret;
+    }
+</pre></code>
 
-
->   {
-
->   boolean ret;
-
->   ret = next validateWrite();
-
->   FormDataSource formDS = this;
-
->   DDTTierRange tierRangeBase = formDS.cursor();
-
->   DDTTierRange tierRange;
-
-if(tierRangeBase)
-
-{
-
->   select RecId from tierRange
-
->   where (tierRange.FromMiles \> tierRangeBase.FromMiles &&
-
->   tierRange.FromMiles \> tierRangeBase.ToMiles) \|\|
-
->   (tierRange.ToMiles \< tierRangeBase.FromMiles &&
-
->   tierRange.ToMiles \< tierRangeBase.ToMiles);
-
->   ret = ret && tierRange.RecId;
-
->   }
-
->   return ret;
-
->   }
 
 Task 13: Table DDTCustFlyDetails \> modifiedField Method
 --------------------------------------------------------
@@ -867,14 +803,38 @@ Task 13: Table DDTCustFlyDetails \> modifiedField Method
 
 7.  Paste the method signature in the new class MLACustFlyDetailsEventHandler
 
-| */// \<summary\> /// /// \</summary\> /// \<param name="sender"\>\</param\> /// \<param name="e"\>\</param\>* [DataEventHandler(tableStr(DDTCustFlyDetails), DataEventType::ModifiedField)] public static void DDTCustFlyDetails_onModifiedField(Common sender, DataEventArgs e) { } |
-|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+<code><pre>
+ /// <summary\>
+ ///
+ /// </summary\>
+ /// <param name="sender"\></param\>
+ /// <param name="e"\></param\>
+ [DataEventHandler(tableStr(DDTCustFlyDetails), DataEventType::ModifiedField)]
+ public static void DDTCustFlyDetails_onModifiedField(Common sender, DataEventArgs e)
+ {
+ }
+</pre></code>
 
 
-8.  Paste the following piece of code within the method:
+8.Paste the following piece of code within the method:
 
-| ModifyFieldEventArgs event = e as DataEventArgs; DDTCustFlyDetails custFlyDetails = sender as DDTCustFlyDetails; FieldId fieldId = event.parmFieldId(); switch(fieldId) { case fieldNum(DDTCustFlyDetails, FlyFrom): case fieldNum(DDTCustFlyDetails, FlyTo): if(custFlyDetails.FlyFrom && custFlyDetails.FlyTo) { custFlyDetails.FlyingMiles = MLAAirportMilesChart::getMiles(DDTAirport::getAirportCode(custFlyDetails.FlyFrom), DDTAirport::getAirportCode(custFlyDetails.FlyTo)); custFlyDetails.MLALoyaltyPoints = custFlyDetails.FlyingMiles \* (DDTTierRange::find(CustTable::find(custFlyDetails.CustAccount).DDTCustomerTier).MLALoyaltyPercent /100); } break; } |
-|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+<pre><code>
+ModifyFieldEventArgs    event = e as DataEventArgs;
+        DDTCustFlyDetails       custFlyDetails = sender as DDTCustFlyDetails;
+        FieldId                 fieldId = event.parmFieldId();
+        switch(fieldId)
+        {
+            case fieldNum(DDTCustFlyDetails, FlyFrom):
+            case fieldNum(DDTCustFlyDetails, FlyTo):
+                if(custFlyDetails.FlyFrom && custFlyDetails.FlyTo)
+                {
+                    custFlyDetails.FlyingMiles = MLAAirportMilesChart::getMiles(DDTAirport::getAirportCode(custFlyDetails.FlyFrom), DDTAirport::getAirportCode(custFlyDetails.FlyTo));
+                    custFlyDetails.MLALoyaltyPoints = custFlyDetails.FlyingMiles * (DDTTierRange::find(CustTable::find(custFlyDetails.CustAccount).DDTCustomerTier).MLALoyaltyPercent /100);
+                }
+                break;
+        }
+
+</code></pre>
 
 
 Check Output
