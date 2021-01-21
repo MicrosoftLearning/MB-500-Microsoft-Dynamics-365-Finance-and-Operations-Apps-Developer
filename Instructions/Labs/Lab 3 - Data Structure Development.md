@@ -97,8 +97,8 @@ Task 1: Base Enum: Customer Tier
 
     3.  Gold
 
->   It’s important to do them in this order so that None is the default, which
->   is value 0.
+   It’s important to do them in this order so that None is the default, which
+   is value 0.
 
 Task 2: EDT: Airport Code
 -------------------------
@@ -371,6 +371,6 @@ Task 1: Table Extension: CustTable
 Check Output
 ============
 
->   Save all, then right click on your solution and select Build solution. This
->   takes a minute or two. Verify that there are no errors. (There will be
->   warnings, due to best practices.)
+   Save all, then right click on your solution and select Build solution. This
+   takes a minute or two. Verify that there are no errors. (There will be
+   warnings, due to best practices.)
