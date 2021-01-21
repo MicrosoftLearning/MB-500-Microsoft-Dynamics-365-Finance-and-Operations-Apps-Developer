@@ -58,13 +58,32 @@ Task 1: Update DDTUpdateTier class
 1.  In Visual Studio, in the project DynamicsDevProject, find the class
     DDTUpdateTier
 
-2.  Add the highlighted code in the update() method – don’t forget the first
-    one!
+2.  Add this code to the update() method
+	1.  Line 1: add int _async=0
+	2.  after the commit: Add the if/else
 
 3.  Build the project
 
-| public static int update(int \_async=0) { CustTable custTable; ttsbegin; while select forupdate custTable { custTable.DDTCustomerTier = DDTTierRange::getTier(CustTable::getTotalMiles(custTable.AccountNum)); custTable.update(); } ttscommit; if(_async) info("It was an asynchronous process"); else info("It was a synchronous process"); return custTable.rowCount(); } |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+<pre><code>public static int update(int _async=0)
+    {
+        CustTable           custTable;
+        ttsbegin;
+        while select forupdate custTable
+        {
+            custTable.DDTCustomerTier = DDTTierRange::getTier(CustTable::getTotalMiles(custTable.AccountNum));
+            custTable.update();
+        }
+        ttscommit;
+       
+        if(_async)
+            info("It was an asynchronous process");
+        else
+            info("It was a synchronous process");
+       
+        return custTable.rowCount();
+    }
+</code></pre>
+
 
 
 Task 2: Form Extension: CustTable
@@ -109,15 +128,21 @@ Task 3: Event Handler for clicked event of the form button
 
 7.  Paste the method signature within the new class MLACustTableFormEventHandler
 
-| */// \<summary\> /// /// \</summary\> /// \<param name="sender"\>\</param\> /// \<param name="e"\>\</param\>* [FormControlEventHandler(formControlStr(CustTable, MLACustTierUpdateAsync), FormControlEventType::Clicked)] public static void MLACustTierUpdateAsync_OnClicked(FormControl sender, FormControlEventArgs e) { } |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+<pre><code>[FormControlEventHandler(formControlStr(CustTable, MLACustTierUpdateAsync), FormControlEventType::Clicked)]
+public static void MLACustTierUpdateAsync_OnClicked(FormControl sender, FormControlEventArgs e)
+{
+} 
+</code></pre>
+
 
 
 8.  Add the following two lines within those brackets to execute the
     asynchronous code
 
-| FormRun formRun = sender.formRun() as FormRun; formRun.runAsync(classNum(DDTUpdateTier),"update",[1], System.Threading.CancellationToken::None); |
-|--------------------------------------------------------------------------------------------------------------------------------------------------|
+<pre><code>FormRun formRun = sender.formRun() as FormRun;
+        formRun.runAsync(classNum(DDTUpdateTier),"update",[1], System.Threading.CancellationToken::None);
+</code></pre>
+
 
 
 Check Output
