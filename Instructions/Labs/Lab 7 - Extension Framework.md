@@ -1,6 +1,20 @@
+---
+lab:
+    title: 'Exercise 01: Extension framework'
+    module: 'Module 07: Frameworks'
+---
+
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
 **Lab 7 - Extension Framework**
+
+Change Record
+=============
+
+| Version | Date        | Change                                                           |
+|---------|-------------|------------------------------------------------------------------|
+| 1.0     | 10 Jan 2020 | Initial release                                                  |
+| 1.01    | 22 Jan 2021 | Remove table of contents; update branding; remove LCS references |
 
 Lab Environment
 ---------------
@@ -76,9 +90,9 @@ Task 2: Table Extension: CustParameters
 
 6.  Add a new Field group: MLALoyaltyCalc
 
-   	a.  Label: *Loyalty Calculation Parameter*
+    1.  Label: *Loyalty Calculation Parameter*
 
-   	b.  Add field: MLALoyaltyCalcParameter
+    2.  Add field: MLALoyaltyCalcParameter
 
 Task 3: Form Extension: CustParameters
 --------------------------------------
@@ -117,40 +131,21 @@ Task 4: Create an abstract class MLALoyaltyCalcPlugIn
 
 4.  Create a new class MLALoyaltyCalcPlugIn with the following signature:
 
-<pre><code>
-[Microsoft.Dynamics.AX.Platform.Extensibility.ExportInterfaceAttribute()]
-abstract class MLALoyaltyCalcPlugIn
-{
-}
-</code></pre>
+| [Microsoft.Dynamics.AX.Platform.Extensibility.ExportInterfaceAttribute()] |
+|---------------------------------------------------------------------------|
 
 
-5.Add the following two methods in the class:
+>   abstract class MLALoyaltyCalcPlugIn
 
-<pre><code>
-public static MLALoyaltyCalcPlugIn getLoyaltyCalcParm(DDTCustFlyDetails _custFlyDetails)
-{
-    CustParameters custParameters = CustParameters::find();
-    SysPluginMetadataCollection metadata = new SysPluginMetadataCollection();         
-  
-    metadata.SetManagedValue("LoyaltyCalcEngine", custParameters.MLALoyaltyCalcParameter);                 
-    MLALoyaltyCalcPlugIn calc =  SysPluginFactory::Instance("Dynamics.AX.Application", classStr(MLALoyaltyCalcPlugIn), metadata);
-        
-    if (!calc)
-    {
-        warning("No calculation engine found");
-    }
-    return calc;
-}
-</code></pre>
+>   {
 
-<pre><code>
-public abstract int calcLoyaltyPoints(DDTCustFlyDetails _custFlyDetails)
-{     
-}
-</code></pre>
+>   }
 
+1.  Add the following two methods in the class
 
+| public static MLALoyaltyCalcPlugIn getLoyaltyCalcParm(DDTCustFlyDetails \_custFlyDetails) { CustParameters custParameters = CustParameters::find(); SysPluginMetadataCollection metadata = new SysPluginMetadataCollection(); metadata.SetManagedValue("LoyaltyCalcEngine", custParameters.MLALoyaltyCalcParameter); MLALoyaltyCalcPlugIn calc = SysPluginFactory::Instance("Dynamics.AX.Application", classStr(MLALoyaltyCalcPlugIn), metadata); if (!calc) { warning("No calculation engine found"); } return calc; } |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| public abstract int calcLoyaltyPoints(DDTCustFlyDetails \_custFlyDetails) { }                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 
 Task 5: Create Plug-in Clients
 ------------------------------
@@ -164,49 +159,44 @@ Task 5: Create Plug-in Clients
 4.  Create a new class MLALoyaltyCalcPlugIn_Miles with the following signature;
     this extends the abstract class MLALoyaltyCalcPlugIn
 
-<pre><code>
-using System.ComponentModel.Composition;
- 
-[ExportMetadataAttribute("LoyaltyCalcEngine", "Miles")]
-[ExportAttribute("Dynamics.AX.Application.MLALoyaltyCalcPlugIn")]
+| using System.ComponentModel.Composition; |
+|------------------------------------------|
 
-class MLALoyaltyCalcPlugIn_Miles extends MLALoyaltyCalcPlugIn
-{
-}
-</code></pre>
 
-5.Business logic of the Loyalty Calculation should be written extending the
+>   [ExportMetadataAttribute("LoyaltyCalcEngine", "Miles")]
+
+>   [ExportAttribute("Dynamics.AX.Application.MLALoyaltyCalcPlugIn")]
+
+>   class MLALoyaltyCalcPlugIn_Miles extends MLALoyaltyCalcPlugIn
+
+>   {
+
+>   }
+
+1.  Business logic of the Loyalty Calculation should be written extending the
     method calcLoyaltyPoints() in this class, as follows:
 
-<pre><code>
-public int calcLoyaltyPoints(DDTCustFlyDetails _custFlyDetails)
-    {
-        int ret;
-        ret = _custFlyDetails.FlyingMiles * (DDTTierRange::find(CustTable::find(_custFlyDetails.CustAccount).DDTCustomerTier).MLALoyaltyPercent/100);
-        return ret;
-    }
-</code></pre>
+| public int calcLoyaltyPoints(DDTCustFlyDetails \_custFlyDetails) |
+|------------------------------------------------------------------|
 
-6.Similarly, create another Plug-in client considering number of trips as base
+
+>   {
+
+>   int ret;
+
+>   ret = \_custFlyDetails.FlyingMiles \*
+>   (DDTTierRange::find(CustTable::find(_custFlyDetails.CustAccount).DDTCustomerTier).MLALoyaltyPercent/100);
+
+>   return ret;
+
+>   }
+
+1.  Similarly, create another Plug-in client considering number of trips as base
     for calculating loyalty points. Create a new class
     MLALoyaltyCalcPlugIn_Trips and add the following code:
 
-<pre><code>
-using System.ComponentModel.Composition;
- 
-[ExportMetadataAttribute("LoyaltyCalcEngine", "Trips")]
-[ExportAttribute("Dynamics.AX.Application.MLALoyaltyCalcPlugIn")]
-
-class MLALoyaltyCalcPlugIn_Trips extends MLALoyaltyCalcPlugIn
-{
-    public int calcLoyaltyPoints(DDTCustFlyDetails _custFlyDetails)
-    {
-        int ret;
-        ret = DDTTierRange::find(CustTable::find(_custFlyDetails.CustAccount).DDTCustomerTier).MLALoyaltyPercent;
-        return ret;
-    }
-}
-</code></pre>
+| using System.ComponentModel.Composition; [ExportMetadataAttribute("LoyaltyCalcEngine", "Trips")] [ExportAttribute("Dynamics.AX.Application.MLALoyaltyCalcPlugIn")] class MLALoyaltyCalcPlugIn_Trips extends MLALoyaltyCalcPlugIn { public int calcLoyaltyPoints(DDTCustFlyDetails \_custFlyDetails) { int ret; ret = DDTTierRange::find(CustTable::find(_custFlyDetails.CustAccount).DDTCustomerTier).MLALoyaltyPercent; return ret; } } |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 
 Task 6: Invoke Plug-in from class MLACustFlyDetailsEventHandler
@@ -218,18 +208,14 @@ Task 6: Invoke Plug-in from class MLACustFlyDetailsEventHandler
     points calculation in an earlier lab. You need to comment out the old code
     by wrapping it with /\* and \*/ as follows:
 
-
-<pre><code>
- /* custFlyDetails.MLALoyaltyPoints = custFlyDetails.FlyingMiles * (DDTTierRange::find(CustTable::find(custFlyDetails.CustAccount).DDTCustomerTier).MLALoyaltyPercent/100); */
-</code></pre>
+| */\* custFlyDetails.MLALoyaltyPoints = custFlyDetails.FlyingMiles \* (DDTTierRange::find(CustTable::find(custFlyDetails.CustAccount).DDTCustomerTier).MLALoyaltyPercent/100); \*/* |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 
-3.Add new code to invoke the Plug-In framework, as follows:
+3.  Add new code to invoke the Plug-In framework, as follows:
 
-<pre><code>
-MLALoyaltyCalcPlugIn calc = MLALoyaltyCalcPlugIn::getLoyaltyCalcParm(custFlyDetails);
-if(calc) custFlyDetails.MLALoyaltyPoints = calc.calcLoyaltyPoints(custFlyDetails);
-</code></pre>
+| MLALoyaltyCalcPlugIn calc = MLALoyaltyCalcPlugIn::getLoyaltyCalcParm(custFlyDetails); if(calc) custFlyDetails.MLALoyaltyPoints = calc.calcLoyaltyPoints(custFlyDetails); |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 
 Check Output
@@ -244,11 +230,11 @@ Check Output
 
 4.  Navigate to **Accounts Receivable \> Customers \> All Customers**
 
-    a.  Open US-001
+    1.  Open US-001
 
-    b.  In the Flying Details fast tab enter a new record
+    2.  In the Flying Details fast tab enter a new record
 
-    c.  You will find the Loyalty points calculation is based on the Flying
+    3.  You will find the Loyalty points calculation is based on the Flying
         Miles value
 
 5.  Go back to the **General tab \> Loyalty Calculation Parameters amount** and

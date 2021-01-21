@@ -1,6 +1,20 @@
+---
+lab:
+    title: 'Exercise 01: Async and sandbox functionality'
+    module: 'Module 10: Security and performance'
+---
+
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
 **Lab 10 - Async & Sandbox Functionality**
+
+Change Record
+=============
+
+| Version | Date        | Change                                                           |
+|---------|-------------|------------------------------------------------------------------|
+| 1.0     | 10 Jan 2020 | Initial release                                                  |
+| 1.01    | 22 Jan 2021 | Remove table of contents; update branding; remove LCS references |
 
 Lab Environment
 ===============
@@ -35,8 +49,8 @@ process to an asynchronous process by invoking the runAsync() method of formRun.
 It will enable us to execute the process in the background without freezing the
 browser.
 
-Exercise: Open Dynamics 365 for Finance and Operations
-======================================================
+Exercise: Open Dynamics 365 Finance and Operations apps
+=======================================================
 
 Task 1: Update DDTUpdateTier class
 ----------------------------------
@@ -44,31 +58,13 @@ Task 1: Update DDTUpdateTier class
 1.  In Visual Studio, in the project DynamicsDevProject, find the class
     DDTUpdateTier
 
-2.  Add this code to the update() method
-	1.  Line 1: add int _async=0
-	2.  after the commit: Add the if/else
+2.  Add the highlighted code in the update() method – don’t forget the first
+    one!
 
 3.  Build the project
 
-<pre><code>public static int update(int _async=0)
-    {
-        CustTable           custTable;
-        ttsbegin;
-        while select forupdate custTable
-        {
-            custTable.DDTCustomerTier = DDTTierRange::getTier(CustTable::getTotalMiles(custTable.AccountNum));
-            custTable.update();
-        }
-        ttscommit;
-       
-        if(_async)
-            info("It was an asynchronous process");
-        else
-            info("It was a synchronous process");
-       
-        return custTable.rowCount();
-    }
-</code></pre>
+| public static int update(int \_async=0) { CustTable custTable; ttsbegin; while select forupdate custTable { custTable.DDTCustomerTier = DDTTierRange::getTier(CustTable::getTotalMiles(custTable.AccountNum)); custTable.update(); } ttscommit; if(_async) info("It was an asynchronous process"); else info("It was a synchronous process"); return custTable.rowCount(); } |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 
 Task 2: Form Extension: CustTable
@@ -107,24 +103,21 @@ Task 3: Event Handler for clicked event of the form button
 5.  Find CustTable.MyLabAirlines in the MyLabAirlines project under Form
     Extensions and open in the designer
 
-6.  Navigate to **Design | Pattern \> ActionPaneHeader \> aptabGeneral \>
+6.  Navigate to **Design \| Pattern \> ActionPaneHeader \> aptabGeneral \>
     DDTCustTierButtonGroup \> MLACustTierUpdateAsync \> Events**; right-click
     **onClicked** and Copy event handler method
 
 7.  Paste the method signature within the new class MLACustTableFormEventHandler
 
-<pre><code>[FormControlEventHandler(formControlStr(CustTable, MLACustTierUpdateAsync), FormControlEventType::Clicked)]
-public static void MLACustTierUpdateAsync_OnClicked(FormControl sender, FormControlEventArgs e)
-{
-} 
-</code></pre>
+| */// \<summary\> /// /// \</summary\> /// \<param name="sender"\>\</param\> /// \<param name="e"\>\</param\>* [FormControlEventHandler(formControlStr(CustTable, MLACustTierUpdateAsync), FormControlEventType::Clicked)] public static void MLACustTierUpdateAsync_OnClicked(FormControl sender, FormControlEventArgs e) { } |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-8.Add the following two lines within those brackets to execute the
+
+8.  Add the following two lines within those brackets to execute the
     asynchronous code
 
-<pre><code>FormRun formRun = sender.formRun() as FormRun;
-        formRun.runAsync(classNum(DDTUpdateTier),"update",[1], System.Threading.CancellationToken::None);
-</code></pre>
+| FormRun formRun = sender.formRun() as FormRun; formRun.runAsync(classNum(DDTUpdateTier),"update",[1], System.Threading.CancellationToken::None); |
+|--------------------------------------------------------------------------------------------------------------------------------------------------|
 
 
 Check Output

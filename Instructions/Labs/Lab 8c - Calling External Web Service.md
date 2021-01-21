@@ -1,6 +1,20 @@
+---
+lab:
+    title: 'Exercise 03: Calling external web services'
+    module: 'Module 08: Integration'
+---
+
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
-**Lab 8c - Calling External Web Service**
+**Lab 8c - Calling External Web Services**
+
+Change Record
+=============
+
+| Version | Date        | Change                                                           |
+|---------|-------------|------------------------------------------------------------------|
+| 1.0     | 10 Jan 2020 | Initial release                                                  |
+| 1.01    | 22 Jan 2021 | Remove table of contents; update branding; remove LCS references |
 
 Lab Environment
 ===============
@@ -21,7 +35,8 @@ Lab Overview
 -   Dependency: Lab 1 – Development Environment Configuration should be
     completed
 
--   Calling an external Web Service from Dynamics 365 for Finance and Operations
+-   Calling an external Web Service from Dynamics 365 Finance and Operations
+    apps
 
 **Estimated time to complete this lab: 30+ minutes**
 
@@ -29,14 +44,15 @@ Scenario
 ========
 
 -   In this lab we are trying to access an external Web Service from Dynamics
-    365 for Finance and Operations.
+    365 Finance and Operations apps.
 
 -   To achieve that we will be creating a wrapper class using C\# that will read
     the Web Service through Service Reference. The dll of this wrapper class
     will be added as a reference to the Dynamics 365 Finance and Operations
-    project. A runnable class will be created in Dynamics 365 for Finance and
-    Operations to call the referenced dll and throw an info() message. For this
-    exercise, we will use a third-party web service which is freely available.
+    project. A runnable class will be created in Dynamics 365 Finance and
+    Operations apps to call the referenced dll and throw an info() message. For
+    this exercise, we will use a third-party web service which is freely
+    available.
 
 Exercise: Calling an External Web Service 
 ==========================================
@@ -67,31 +83,11 @@ Task 1: Creating the C\# Wrapper class
 
 10. Its code should be:
 
-<pre><code>using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GoldRateProvider.GoldServiceRef;
-using System.ServiceModel;
+| using System; using System.Collections.Generic; using System.Linq; using System.Text; using System.Threading.Tasks; using GoldRateProvider.GoldServiceRef; using System.ServiceModel; namespace GoldRateProvider { public class GoldData { public static ArrayOfString getRate() { var binding = new System.ServiceModel.BasicHttpBinding(); var endpointAddress = new EndpointAddress("http://www.freewebservicesx.com/GetGoldPrice.asmx"); GetGoldPriceSoapClient client = new GetGoldPriceSoapClient(binding, endpointAddress); return client.GetCurrentGoldPrice("domaindynamicstravel\@gmail.com", "pass\@word"); } } } |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-namespace GoldRateProvider
-{
-    public class GoldData
-    {
-        public static ArrayOfString getRate()
-        {
-            var binding = new System.ServiceModel.BasicHttpBinding();
-            var endpointAddress = new EndpointAddress("http://www.freewebservicesx.com/GetGoldPrice.asmx");
-            GetGoldPriceSoapClient client = new GetGoldPriceSoapClient(binding, endpointAddress);
 
-            return client.GetCurrentGoldPrice("domaindynamicstravel@gmail.com", "pass@word");
-        }
-    }
-}
-</code></pre>
-
-11.**Build** the Project GoldDataProvider
+11. **Build** the Project GoldDataProvider
 
 Task 2: Creating the D365 for Fin & Ops class
 ---------------------------------------------
@@ -119,18 +115,17 @@ Task 2: Creating the D365 for Fin & Ops class
 
 8.  Within the main method, add the following code:
 
-<pre><code>System.String[] goldRate = GoldRateProvider.GoldData::getRate().ToArray();
-info(goldRate.GetValue(0));
-</code></pre>
+| System.String[] goldRate = GoldRateProvider.GoldData::getRate().ToArray(); info(goldRate.GetValue(0)); |
+|--------------------------------------------------------------------------------------------------------|
 
 
-9. Right click the project name in Solution Explorer and select **Set as
+9.  Right click the project name in Solution Explorer and select **Set as
     Startup Object**
 
-10.Right click the class name in Solution Explorer and select **Set as Startup
+10. Right click the class name in Solution Explorer and select **Set as Startup
     Object**
 
-11.**Build** the solution and click on **Start**
+11. **Build** the solution and click on **Start**
 
 Check Output
 ============

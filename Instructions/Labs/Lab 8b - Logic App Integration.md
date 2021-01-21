@@ -1,6 +1,20 @@
+---
+lab:
+    title: 'Exercise 02: Logic App integration'
+    module: 'Module 08: Integration'
+---
+
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
 **Lab 8b - Logic App Integration**
+
+Change Record
+=============
+
+| Version | Date        | Change                                                           |
+|---------|-------------|------------------------------------------------------------------|
+| 1.0     | 10 Jan 2020 | Initial release                                                  |
+| 1.01    | 22 Jan 2021 | Remove table of contents; update branding; remove LCS references |
 
 Lab Environment
 ===============
@@ -26,7 +40,7 @@ Lab Overview
 
 -   Using Azure resources to create Service Bus and Logic App
 
--   Integration with Dynamics 365 for Finance and Operations using Logic App
+-   Integration with Dynamics 365 Finance and Operations apps using Logic App
 
 **Estimated time to complete this lab: 40+ minutes**
 
@@ -61,9 +75,7 @@ Task 1: Sign up for Azure with a Pass Code
     Dynamics 365 trial organization and then navigate to
     [www.microsoftazurepass.com](http://www.microsoftazurepass.com)
 
-2.  Login with your LCS credentials and select **Confirm Microsoft Account**
-
-    ![Microsoft Azure The following Microsoft Account will be used for Azure Pass: ](Images/Lab8bEx1Task1Step2.png)
+2.  Login with your credentials and select **Confirm Microsoft Account**
 
 3.  Enter the Promo code supplied to you
 
@@ -76,8 +88,6 @@ Task 1: Create a new Service Bus
 1.  Go to your Azure Portal, select **New**, select **Service Bus** and press
     Enter. If you have the new portal, under Azure services, select **More
     services**, and do a find for **Service bus**, which you will select.
-
-    ![Service bus](Images/Lab8bEx2Task1Step1.png)
 
 2.  Select **Service Bus**, select Add if needed, enter service bus name
     ‘**SBXXXX**’, select Basic pricing tier, select **new/existing resource
@@ -97,104 +107,151 @@ Task 2: Create a C\# class to populate message in Service Bus
 3.  Under your project right select **References** node and select **Manage
     NuGet Packages**
 
-![Manage NuGet Packages](Images/Lab8bEx2Task2Step3.png)
-
-
-4.Select **Browse** and add these two NuGet Packages in your reference:
+4.  Select **Browse** and add these two NuGet Packages in your reference:
     Newtonsoft.Json and select version v11.0.1 and WindowsAzure.ServiceBus
     v4.1.7. It’s important to use these versions.
 
-![Newtonsoft.json](Images/Lab8bEx2Task2Step4.png)
-
-5.To create a Data Contract for the Customer Entity, add a new C\# class
+5.  To create a Data Contract for the Customer Entity, add a new C\# class
     JsonBody.cs
 
-6.Add the following code in the class
+6.  Add the following code in the class
 
-<pre><code>using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Runtime.Serialization;
-using Newtonsoft.Json;
+| using System; |
+|---------------|
 
-namespace PopulateCustomer
-{
-    [DataContract]
-    public class JsonBody
-    {
-        [DataMember]
-        public string AddressCountryRegionId { get; set; }
-        [DataMember]
-        public string CustomerAccount { get; set; }
-        [DataMember]
-        public string CustomerGroupId { get; set; }
-        [DataMember]
-        public string Name { get; set; }
-        [DataMember]
-        public string SalesCurrencyCode { get; set; }
-        [DataMember]
-        public string dataAreaId { get; set; }
-    }
-}
 
-</code></pre>
+>   using System.Collections.Generic;
 
-7.Add or locate a C\# class named Program that will create the json
-    message and send the message to the service bus
+>   using System.Linq;
 
-8.Add the following code in the new runnable class. The connection string will
+>   using System.Text;
+
+>   using System.Threading.Tasks;
+
+>   using System.Runtime.Serialization;
+
+>   using Newtonsoft.Json;
+
+>   namespace PopulateCustomer
+
+>   {
+
+>   [DataContract]
+
+>   public class JsonBody
+
+>   {
+
+>   [DataMember]
+
+>   public string AddressCountryRegionId { get; set; }
+
+>   [DataMember]
+
+>   public string CustomerAccount { get; set; }
+
+>   [DataMember]
+
+>   public string CustomerGroupId { get; set; }
+
+>   [DataMember]
+
+>   public string Name { get; set; }
+
+>   [DataMember]
+
+>   public string SalesCurrencyCode { get; set; }
+
+>   [DataMember]
+
+>   public string dataAreaId { get; set; }
+
+>   }
+
+>   }
+
+1.  Add or locate a C\# class named Program that will create the json message
+    and send the message to the service bus
+
+2.  Add the following code in the new runnable class. The connection string will
     be derived shortly.
 
-<pre><code>using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.ServiceBus.Messaging;
-using Newtonsoft.Json;
-using System.Runtime.Serialization.Json;
-using System.IO;
+| using System; |
+|---------------|
 
-namespace PopulateCustomer
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            PopulateCustomer.JsonBody customer = new JsonBody();
-            customer.CustomerAccount = "Testxxxx";
-            customer.CustomerGroupId = "10";
-            customer.AddressCountryRegionId = "USA";
-            customer.SalesCurrencyCode = "USD";
-            customer.dataAreaId = "USMF";
-            customer.Name = "Test xxxx";
-            string output = JsonConvert.SerializeObject(customer);
-            var connectionString = <Add the connection string of your Service Bus>;
-            var queueName = "customer";
-            var client = QueueClient.CreateFromConnectionString(connectionString, queueName);
-            var payloadStream = new MemoryStream(Encoding.UTF8.GetBytes(output));
-            var message = new BrokeredMessage(payloadStream, true);
-            client.Send(message);
-        }
-    }
+
+>   using System.Collections.Generic;
+
+>   using System.Linq;
+
+>   using System.Text;
+
+>   using System.Threading.Tasks;
+
+>   using Microsoft.ServiceBus.Messaging;
+
+>   using Newtonsoft.Json;
+
+>   using System.Runtime.Serialization.Json;
+
+>   using System.IO;
+
+>   namespace PopulateCustomer
+
+>   {
+
+>   class Program
+
+>   {
+
+>   static void Main(string[] args)
+
+>   {
+
+>   PopulateCustomer.JsonBody customer = new JsonBody();
+
+>   customer.CustomerAccount = "Testxxxx";
+
+>   customer.CustomerGroupId = "10";
+
+>   customer.AddressCountryRegionId = "USA";
+
+>   customer.SalesCurrencyCode = "USD";
+
+>   customer.dataAreaId = "USMF";
+
+>   customer.Name = "Test xxxx";
+
+>   string output = JsonConvert.SerializeObject(customer);
+
+>   var connectionString = \<Add the connection string of your Service Bus\>;
+
+>   var queueName = "customer";
+
+>   var client = QueueClient.CreateFromConnectionString(connectionString,
+>   queueName);
+
+>   var payloadStream = new MemoryStream(Encoding.UTF8.GetBytes(output));
+
+>   var message = new BrokeredMessage(payloadStream, true);
+
+>   client.Send(message);
+
+>   }
+
+>   }
+
 }
-</code></pre>
 
-9.In the Azure portal, select **Service Bus \> Settings \> Shared access
+1.  In the Azure portal, select **Service Bus \> Settings \> Shared access
     policies**
 
-![Shared access policies](Images/Lab8bEx2Task2Step9.png) 
-
-10.Under Policy, select **RootManageSharedAccessKey**. You will find the
+2.  Under Policy, select **RootManageSharedAccessKey**. You will find the
     Primary Connection String. Copy it and paste it in the code within quotes
 
-![Policy: RootManageSharedAccessKey](Images/Lab8bEx2Task2Step10.png)
+3.  Enter the Queue name in the code
 
-11.Enter the Queue name in the code
-
-12.**Save** and **Build** the C\# code
+4.  **Save** and **Build** the C\# code
 
 Task 3: Create a Logic App
 --------------------------
@@ -214,8 +271,6 @@ Task 3: Create a Logic App
 2.  Start with a common trigger. Select “**When a message is received in a
     Service Bus queue**”
 
-    ![Start with a common trigger](Images/Lab8bEx2Task3Step2.png)
-
 3.  By default, your Service bus trigger should associate the service bus you
     have created in the same resource group.
 
@@ -226,54 +281,90 @@ Task 3: Create a Logic App
 
     2.  If you have a Continue button, select that.
 
-4.  Add the connection string and queue name below. For queue name, type or
-    select **customer**.
-
-    ![When a message is received in a queue (auto-complete)](Images/Lab8bEx2Task3Step4.png)
+4.  Add the connection string and queue name. For queue name, type or select
+    **customer**.
 
     Note:
-<ul>
-<li>If you want to change the Service Bus, select **Change Connection**</li>
-<li>If you want to change the frequency of data reading from service bus, select
-    **Edit – we recommend every 1 minute**</li>
-</ul>
 
-5.Select **+ New step** button below and select **Add an Action** if available
+-   If you want to change the Service Bus, select **Change Connection**
 
-6.In the search panel select **Parse Json** and select **Data Operations –
+-   If you want to change the frequency of data reading from service bus, select
+    **Edit – we recommend every 1 minute**
+
+1.  Select **+ New step** button below and select **Add an Action** if available
+
+2.  In the search panel select **Parse Json** and select **Data Operations –
     Parse JSON** action
 
-   ![When a message is received in a queue (auto-complete)](Images/Lab8bEx2Task3Step6.png)
+3.  Position the cursor in the Content box, and select Content from the right
+    panel
 
-7.Position the cursor in the Content box, and select Content from the right panel
+4.  Select the link which says **Use sample payload to generate schema**. You
+    will get the option to load a json message (as shown below); which will form
+    the json schema and get pasted in the Schema field of the previous diagram,
+    then select **Done**
 
-   ![When a message is received in a queue (auto-complete)](Images/Lab8bEx2Task3Step7.png)
-
-8.Select the link which says **Use sample payload to generate schema**. You
-   will get the option to load a json message (as shown below); which will form
-   the json schema and get pasted in the Schema field of the previous diagram,
-   then select **Done**
-
-![Code below](Images/Lab8bEx2Task3Step8.png)
-
-<pre><code>{"AddressCountryRegionId":"USA", "CustomerAccount":"Test888", "Name":"Test 888", "SalesCurrencyCode":"USD", "dataAreaId":"USMF", "CustomerGroupId":"10"}
-</code></pre>
+| {"AddressCountryRegionId":"USA", "CustomerAccount":"Test888", "Name":"Test 888", "SalesCurrencyCode":"USD", "dataAreaId":"USMF", "CustomerGroupId":"10"} |
+|----------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 
-   The schema should look like this:
+>   The schema should look like this: 
 
-![code](Images/Lab8bEx2Task3Step8b.png)
+{
 
-9.Select **+ New step** button below and select **Add an Action** if available
+>   "type": "object",
 
-10.Select **Dynamics 365 Operations Create record** or the button may be
+>   "properties": {
+
+>   "AddressCountryRegionId": {
+
+>   "type": "string"
+
+>   },
+
+>   "CustomerAccount": {
+
+>   "type": "string"
+
+>   },
+
+>   "Name": {
+
+>   "type": "string"
+
+>   },
+
+>   "SalesCurrencyCode": {
+
+>   "type": "string"
+
+>   },
+
+>   "dataAreaId": {
+
+>   "type": "string"
+
+>   },
+
+>   "CustomerGroupId": {
+
+>   "type": "string"
+
+>   }
+
+>   }
+
+}
+
+>    
+
+1.  Select **+ New step** button below and select **Add an Action** if available
+
+2.  Select **Dynamics 365 Operations Create record** or the button may be
     **Dynamics 365 for Fin & Ops Create record**, depending on your version.
-   Make sure it is Operations or Ops. You do not want just “Dynamics 365”
+    Make sure it is Operations or Ops. You do not want just “Dynamics 365”
 
-![Dynamics 365 for Operations - Create record](Images/Lab8bEx2Task3Step10.png)
-
-
-11.Populate Create Record Action as:
+3.  Populate Create Record Action as:
 
     1.  Instance: Select your instance from the drop down
 
@@ -290,33 +381,23 @@ Task 3: Create a Logic App
 
     7.  Company: dataAreaId
 
-![Options above](Images/Lab8bEx2Task3Step11.png)
+4.  Optional: Select **New Step,** and select **Add an Action** if available
 
-12.Optional: Select **New Step,** and select **Add an Action** if available
+5.  Optional: You can select [Office365 Outlook/Gmail] and select **send email**
 
-![Add an action](Images/Lab8bEx2Task3Step12.png)
+6.  Optional: Specify To address, subject, body etc.
 
-13.Optional: You can select [Office365 Outlook/Gmail] and select **send email**
+7.  Select the **Code View** button
 
-   ![Gmail - Send email](Images/Lab8bEx2Task3Step13.png)
+8.  Find the following code
 
-14.Optional: Specify To address, subject, body etc.
+    *"content": "\@triggerBody()?['ContentData']"*
 
-![Send email 2](Images/Lab8bEx2Task3Step14.png)
+9.  Replace that line with this:
 
-15.Select **Code View** button
+    *"content": "\@json(decodeBase64(triggerBody()?['ContentData']))"*
 
-![Code view](Images/Lab8bEx2Task3Step15.png)
-
-16.Find the following code
-
-    "content": "\@triggerBody()?['ContentData']"
-
-17.Replace that line with this:
-
-    "content": "\@json(decodeBase64(triggerBody()?['ContentData']))"
-
-18.**Save** the Logic App. Run the VS class and when complete, run the Logic
+10. **Save** the Logic App. Run the VS class and when complete, run the Logic
     App.
 
 Check Output

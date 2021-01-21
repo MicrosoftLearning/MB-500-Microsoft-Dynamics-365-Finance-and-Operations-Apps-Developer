@@ -1,6 +1,20 @@
+---
+lab:
+    title: 'Exercise 03: Data structure development'
+    module: 'Module 03: Solution design'
+---
+
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
 **Lab 3 – Data Structure Development**
+
+Change Record
+=============
+
+| Version | Date        | Change                                                                                        |
+|---------|-------------|-----------------------------------------------------------------------------------------------|
+| 1.0     | 10 Jan 2020 | Initial release                                                                               |
+| 1.01    | 22 Jan 2021 | Added instructions re: saving work, resource files, importing and exporting, changing company |
 
 Lab Environment
 ===============
@@ -36,6 +50,33 @@ Exercise 1: Add new Data Models
 In this exercise, you will add some data objects which will be used in
 subsequent lab exercises.
 
+Prerequisite tasks
+------------------
+
+-   There are resource files available which will be needed at various points in
+    the course. They may already be provided for you on your training VM;
+    otherwise please verify access to <http://aka.ms/mb500labresources>.
+
+-   You will want to save your work. Training VMs typically do not live for the
+    duration of the course and you will need to start with a new machine. The
+    labs build off each other so need to be saved. Please verify access to your
+    [OneDrive](https://onedrive.live.com/) or a cloud-based repository of your
+    choice.
+
+-   If your VM expires prior to the end of the course, you’ll want to note:
+
+    -   **Code**: export your code at the end of each lab and save it to your
+        cloud storage, and then import it when you begin the next one. Make sure
+        to import the DDT solution before the MLA solution (created later),
+        because the latter depends upon the former.
+
+    -   **Data** should also be recreated as needed.
+
+    -   **Settings (options)** are not imported and should be set again if
+        desired.
+
+-   When you log in to your application, the company should be changed to USMF.
+
 Task 1: Base Enum: Customer Tier
 --------------------------------
 
@@ -50,14 +91,14 @@ Task 1: Base Enum: Customer Tier
     following Enum elements (in Designer, right click on it and select New
     Element) with the same label
 
-    a.  None
+    1.  None
 
-    b.  Silver
+    2.  Silver
 
-    c.  Gold
+    3.  Gold
 
-   It's important to do them in this order so that None is the default, which
-   is value 0.
+>   It’s important to do them in this order so that None is the default, which
+>   is value 0.
 
 Task 2: EDT: Airport Code
 -------------------------
@@ -96,27 +137,27 @@ Task 4: Table: Tier Range
 
 6.  Add the following fields in the table
 
-	a.  CustTier
+    1.  CustTier
 
-		i.  Enum Type: DDTCustomerTier
+        1.  Enum Type: DDTCustomerTier
 
-	b.  FromMiles
+    2.  FromMiles
 
-		i.  Extended Data Type: DDTFlyingMiles
+        1.  Extended Data Type: DDTFlyingMiles
 
-		ii.  Label: From miles
+        2.  Label: *From* m*iles*
 
-	c.  ToMiles
+    3.  ToMiles
 
-		i.  Extended Data Type: DDTFlyingMiles
+        1.  Extended Data Type: DDTFlyingMiles
 
-		ii.  Label: To miles
+        2.  Label: *To miles*
 
 7.  Add new index CustTierIdx
 
-    a.  Field: CustTier
+    1.  Field: CustTier
 
-    b.  Allow Duplicates: No
+    2.  Allow Duplicates: No
 
 Task 5: Table: Airport Code
 ---------------------------
@@ -131,55 +172,55 @@ Task 5: Table: Airport Code
 
 5.  Add the following fields in the table
 
-    a.  CityRecId
+    1.  CityRecId
 
-        i.  Extended Data Type: RefRecId (of type Int64)
+        1.  Extended Data Type: RefRecId (of type Int64)
 
-        ii.  Label: City code
+        2.  Label: *City* co*de*
 
-    b.  AirportCode
+    2.  AirportCode
 
-        i.  Extended Data Type: DDTAirportCode
+        1.  Extended Data Type: DDTAirportCode
 
 6.  Add the following field group in the table
 
-    a.  DDTAirportCode
+    1.  DDTAirportCode
 
-        i.  Label: Airport code
+        1.  Label: *Airport* c*ode*
 
-        ii.  Field: AirportCode
+        2.  Field: AirportCode
 
 7.  Add the following Index
 
-    a.  AirportCodeIdx
+    1.  AirportCodeIdx
 
-        i.  Field: AirportCode
+        1.  Field: AirportCode
 
-        ii.  Allow Duplicates (Property): No
+        2.  Allow Duplicates (Property): No
 
-        iii.  Alternate Key (Property): Yes
+        3.  Alternate Key (Property): Yes
 
 8.  **Save**, and set the following table properties
 
-    a.  Primary Index: SurrogateKey
+    1.  Primary Index: SurrogateKey
 
-    b.  Clustered Index: AirportCodeIdx
+    2.  Clustered Index: AirportCodeIdx
 
-    c.  Replacement Key: AirportCodeIdx
+    3.  Replacement Key: AirportCodeIdx
 
 9.  Create a new Relation: LogisticsAddressCity
 
-    a.  Related Table: LogisticsAddressCity
+    1.  Related Table: LogisticsAddressCity
 
-    b.  RelationshipType: Association
+    2.  RelationshipType: Association
 
-    c.  Cardinality: ZeroOne
+    3.  Cardinality: ZeroOne
 
-    d.  Related Table Cardinality: ExactlyOne
+    4.  Related Table Cardinality: ExactlyOne
 
-    e.  On Delete: Cascade
+    5.  On Delete: Cascade
 
-    f.  New Normal Relation: (Right click the relation, select New \> Normal)
+    6.  New Normal Relation: (Right click the relation, select New \> Normal)
         DDTAirport.CityRecId = LogisticsAddressCity.RecId
 
 Task 6: Table: Customer Fly Details
@@ -195,105 +236,104 @@ Task 6: Table: Customer Fly Details
 
 5.  Add the following fields in the table
 
-    a.  CustAccount
+    1.  CustAccount
 
-        i.  EDT: CustAccount 
-(Hint: You can select View > Application Explorer,
-            and navigate to AOT > Data Types > Extended Data Types >
+        1.  EDT: CustAccount (Hint: You can select View \> Application Explorer,
+            and navigate to AOT \> Data Types \> Extended Data Types \>
             CustAccount, then drag CustAccount to the Fields node of our new
             table in the designer pane)
 
-    b.  FlyCount
+    2.  FlyCount
 
-        i.  EDT: Counter
+        1.  EDT: Counter
 
-    c.  FlyingDate
+    3.  FlyingDate
 
-        i.  EDT: TransDate
+        1.  EDT: TransDate
 
-        ii.  Label: Flying Date
+        2.  Label: *Flying Date*
 
-        iii.  Mandatory: Yes
+        3.  Mandatory: Yes
 
-    d.  FlyFrom
+    4.  FlyFrom
 
-        i.  EDT: RefRecId
+        1.  EDT: RefRecId
 
-        ii.  Label: From city
+        2.  Label: *From city*
 
-        iii.  Mandatory: Yes
+        3.  Mandatory: Yes
 
-    e.  FlyTo
+    5.  FlyTo
 
-        i.  EDT: RefRecId
+        1.  EDT: RefRecId
 
-        ii.  Label: To city
+        2.  Label: *To* c*ity*
 
-        iii.  Mandatory: Yes
+        3.  Mandatory: Yes
 
-    f.  FlyingMiles
+    6.  FlyingMiles
 
-        i.  EDT: DDTFlyingMiles
+        1.  EDT: DDTFlyingMiles
 
-        ii.  Mandatory: Yes
+        2.  Mandatory: Yes
 
 6.  Create a new index: CounterIdx
 
-    a.  Fields: CustAccount, FlyCount
+    1.  Fields: CustAccount, FlyCount
 
-    b.  Allow Duplicates (property): No
+    2.  Allow Duplicates (property): No
 
-    c.  Alternate Key: Yes
+    3.  Alternate Key: Yes
 
 7.  Create another index: CustFlyingIdx
 
-    a.  Fields: CustAccount, FlyingDate
+    1.  Fields: CustAccount, FlyingDate
 
-    b.  Allow Duplicates (property): Yes
+    2.  Allow Duplicates (property): Yes
 
 8.  Create a new Relation: CustTable
 
-    a.  Related Table: CustTable
+    1.  Related Table: CustTable
 
-    b.  RelationshipType: Association
+    2.  RelationshipType: Association
 
-    c.  Cardinality: ZeroMore
+    3.  Cardinality: ZeroMore
 
-    d.  Related Table Cardinality: ZeroOne
+    4.  Related Table Cardinality: ZeroOne
 
-    e.  On Delete: Restricted
+    5.  On Delete: Restricted
 
-    f.  New normal relation: DDTCustFlyDetails.CustAccount =
+    6.  New normal relation: DDTCustFlyDetails.CustAccount =
         CustTable.AccountNum
 
 9.  Create a new Relation: AirportFrom
 
-    a.  Related Table: DDTAirport
+    1.  Related Table: DDTAirport
 
-    b.  RelationshipType: Association
+    2.  RelationshipType: Association
 
-    c.  Cardinality: ZeroMore
+    3.  Cardinality: ZeroMore
 
-    d.  Related Table Cardinality: ZeroOne
+    4.  Related Table Cardinality: ZeroOne
 
-    e.  On Delete: Restricted
+    5.  On Delete: Restricted
 
-    f.  New normal relation: DDTCustFlyDetails.FlyFrom = DDTAirport.RecId
+    6.  New normal relation: DDTCustFlyDetails.FlyFrom = DDTAirport.RecId
 
 10. Create a new Relation (or copy the previous and make small changes):
     AirportTo
 
-    a.  Related Table: DDTAirport
+    1.  Related Table: DDTAirport
 
-    b.  RelationshipType: Association
+    2.  RelationshipType: Association
 
-    c.  Cardinality: ZeroMore
+    3.  Cardinality: ZeroMore
 
-    d.  Related Table Cardinality: ZeroOne
+    4.  Related Table Cardinality: ZeroOne
 
-    e.  On Delete: Restricted
+    5.  On Delete: Restricted
 
-    f.  New normal relation: DDTCustFlyDetails.FlyTo = DDTAirport.RecId
+    6.  New normal relation: DDTCustFlyDetails.FlyTo = DDTAirport.RecId
 
 11. Select the **Save All** icon
 
@@ -324,25 +364,13 @@ Task 1: Table Extension: CustTable
 
 7.  Add a new Field group: DDTCustomerTier
 
-    a.  Label: *Tier*
+    1.  Label: *Tier*
 
-    b.  Add field: DDTCustomerTier
+    2.  Add field: DDTCustomerTier
 
 Check Output
 ============
 
-   Save all, then right click on your solution and select Build solution. This
-   takes a minute or two. Verify that there are no errors. (There will be
-   warnings, due to best practices.)
-
-   Your solution should look similar to this:
-
-![Solution DynamicsDevSolution
-DynamicsDevProject
-Base Enums: DDTCustomerTier
-EDT Integers: DDTFlyingMiles
-EDT Strings: DDTAirportCode
-Table Extensions: CustTable.DynamicsDevTraining
-Tables: DDTAirport, DDTCustFlyDetails, DDTTierRange](Images/Lab3CO.png)
-
-
+>   Save all, then right click on your solution and select Build solution. This
+>   takes a minute or two. Verify that there are no errors. (There will be
+>   warnings, due to best practices.)
