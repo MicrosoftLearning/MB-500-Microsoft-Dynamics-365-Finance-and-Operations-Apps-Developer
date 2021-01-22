@@ -149,7 +149,7 @@ public final class MLAFlightDetailsPostedBusinessEventContract extends BusinessE
         flyingTo    = DDTAirport::getAirportCode(_custFlyDetails.FlyTo);
         flyingMiles = _custFlyDetails.FlyingMiles;
     }
-</code></pre>|
+</code></pre>
 
 7.  Create a parm method for all the above variables
 
