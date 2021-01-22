@@ -83,9 +83,29 @@ Task 1: Creating the C\# Wrapper class
 
 10. Its code should be:
 
-| using System; using System.Collections.Generic; using System.Linq; using System.Text; using System.Threading.Tasks; using GoldRateProvider.GoldServiceRef; using System.ServiceModel; namespace GoldRateProvider { public class GoldData { public static ArrayOfString getRate() { var binding = new System.ServiceModel.BasicHttpBinding(); var endpointAddress = new EndpointAddress("http://www.freewebservicesx.com/GetGoldPrice.asmx"); GetGoldPriceSoapClient client = new GetGoldPriceSoapClient(binding, endpointAddress); return client.GetCurrentGoldPrice("domaindynamicstravel\@gmail.com", "pass\@word"); } } } |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+<pre><code>using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using GoldRateProvider.GoldServiceRef;
+using System.ServiceModel;
 
+namespace GoldRateProvider
+{
+    public class GoldData
+    {
+        public static ArrayOfString getRate()
+        {
+            var binding = new System.ServiceModel.BasicHttpBinding();
+            var endpointAddress = new EndpointAddress("http://www.freewebservicesx.com/GetGoldPrice.asmx");
+            GetGoldPriceSoapClient client = new GetGoldPriceSoapClient(binding, endpointAddress);
+
+            return client.GetCurrentGoldPrice("domaindynamicstravel@gmail.com", "pass@word");
+        }
+    }
+}
+</code></pre>
 
 11. **Build** the Project GoldDataProvider
 
@@ -115,9 +135,9 @@ Task 2: Creating the D365 for Fin & Ops class
 
 8.  Within the main method, add the following code:
 
-| System.String[] goldRate = GoldRateProvider.GoldData::getRate().ToArray(); info(goldRate.GetValue(0)); |
-|--------------------------------------------------------------------------------------------------------|
-
+<pre><code>System.String[] goldRate = GoldRateProvider.GoldData::getRate().ToArray();
+info(goldRate.GetValue(0));
+</code></pre>
 
 9.  Right click the project name in Solution Explorer and select **Set as
     Startup Object**
