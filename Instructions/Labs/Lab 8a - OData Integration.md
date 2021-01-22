@@ -61,46 +61,44 @@ Task 1: Register Application and Create Application Key
 
 1.  Navigate to <https://portal.azure.com>    
 
-2.  Select **Azure Active Directory** in the left panel and select **App
-    Registrations** in the middle panel. Then select **New Registration** button
+2.  Select **Azure Active Directory** in the left panel and select **App Registrations** 
+in the middle panel. Then select **New Registration** button
     in the top of the right pane 
 
->    3. Select **New registration** and enter a name for your application such
->   as DDTD365FO\<your name\>. Save this name.
+3. Select **New registration** and enter a name for your application such
+   as DDTD365FO\<your name\>. Save this name.
 
->   4. Select **Accounts in any organizational directory (Any Azure AD directory
->   – Multitenant)** as Supported account type
+4. Select **Accounts in any organizational directory (Any Azure AD directory
+   – Multitenant)** as Supported account type
 
->   5. In the Redirect URI select Application Type of **Web**
+5. In the Redirect URI select Application Type of **Web**
 
->   6. Enter [http://localhost](http://localhost/) in the application redirect
->   URL, this won’t be used for this type of sign in, however the field is still
->   required
+6. Enter [http://localhost](http://localhost/) in the application redirect
+   URL, this won’t be used for this type of sign in, however the field is still
+   required
 
->   7. After verifying your input please select the **Register** button
+7. After verifying your input please select the **Register** button
 
 8. Open your application and select **API Permissions** under Manage
-
- 
 
 9. Select **Add a permission**. Under **Select an API**, in the Microsoft APIs
 tab, select **Dynamics ERP** (you can use Ctrl-F to find)
 
-1.  Select each type of permission, Delegated permissions and Application
+10.  Select each type of permission, Delegated permissions and Application
     permissions, and select all for each.
 
-2.  Select **Add permissions**.
+11.  Select **Add permissions**.
 
-3.  Next we add the key. In the Manage panel, select **Certificates & secrets**.
+12.  Next we add the key. In the Manage panel, select **Certificates & secrets**.
 
-4.  Select **+ New client secret** and add a description or leave it blank
+13.  Select **+ New client secret** and add a description or leave it blank
 
 5.  Select the duration and select **Add**.
 
 6.  Copy the **Key Value** and save it.  You will need this key in future labs. 
     Should you lose it, you can always come back here and create a new one. 
 
-7.  Go back to the App registrations screen and save the **Application (client)
+14.  Go back to the App registrations screen and save the **Application (client)
     ID** for Task 2.
 
 Task 2: Setup AAD Parameter in Dynamics 365 for Finance and Operation
