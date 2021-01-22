@@ -268,11 +268,11 @@ public final class MLAFlightDetailsPostedBusinessEvent extends BusinessEventsBas
 <pre><code>private DDTCustFlyDetails parmCustFlyDetails(DDTCustFlyDetails _custFlyDetails = custFlyDetails)
     {
         custFlyDetails = _custFlyDetails;
-
         return custFlyDetails;
     }
+</code></pre> 
 
-</code></pre> <pre><code>/// < summary>
+<pre><code>/// < summary>
 /// Creates a <c>FlyDetailsPostedBusinessEvent</c> from a <c>DDTCustFlyDetails</c> record.
 /// < /summary>
 /// < param name = "_custFlyDetails"> A <c>DDTCustFlyDetails</c> record.< /param>
@@ -283,10 +283,14 @@ public static MLAFlightDetailsPostedBusinessEvent newFromCustFlyDetails(DDTCustF
     businessEvent.parmCustFlyDetails(_custFlyDetails);
     return businessEvent;
 }
-</code></pre> <pre><code>private void new()
+</code></pre> 
+
+<pre><code>private void new()
 {
 }
-</code></pre> <pre><code>[Wrappable(true), Replaceable(true)]
+</code></pre> 
+
+<pre><code>[Wrappable(true), Replaceable(true)]
 public BusinessEventsContract buildContract()
 {
    return MLAFlightDetailsPostedBusinessEventContract::newFlightDetails(custFlyDetails);
