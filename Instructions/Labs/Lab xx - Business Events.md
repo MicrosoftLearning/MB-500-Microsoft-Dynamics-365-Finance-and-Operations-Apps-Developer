@@ -70,21 +70,44 @@ Task 1: Add a method in table CustTable
 
 4.  Create a new class MLACustTableTable_Extension with the following signature
 
-| [ExtensionOf(tableStr(CustTable))] |
-|------------------------------------|
+<pre><code>[ExtensionOf(tableStr(CustTable))]
+final class MLACustTableTable_Extension
+{
+}
+</code></pre>
 
+5.  Add the following code to fetch the email address of the customer
 
->   final class MLACustTableTable_Extension
+<pre><code>public Email getEmail()
+    {
+        DirPartyLocation dirPartyLocation;
+        LogisticsElectronicAddress logisticsElectronicAddress; 
+        LogisticsElectronicAddressRole logisticsElectronicAddressRole; 
+        LogisticsLocationRole logisticsLocationRole;
+        Email   emailValue;
 
->   {
-
->   }
-
-1.  Add the following code to fetch the email address of the customer
-
-| public Email getEmail() { DirPartyLocation dirPartyLocation; LogisticsElectronicAddress logisticsElectronicAddress; LogisticsElectronicAddressRole logisticsElectronicAddressRole; LogisticsLocationRole logisticsLocationRole; Email emailValue; while select DirPartyLocation where dirPartyLocation.party == this.Party { while select logisticsElectronicAddress where logisticsElectronicAddress.Location == dirPartyLocation.Location && logisticsElectronicAddress.Type == LogisticsElectronicAddressMethodType::Email { while select logisticsElectronicAddressRole where logisticsElectronicAddressRole.ElectronicAddress == logisticsElectronicAddress.RecId join logisticsLocationRole where logisticsLocationRole.RecId == logisticsElectronicAddressRole.LocationRole { if(!emailValue) { emailValue = logisticsElectronicAddress.Locator; } } } } return emailValue; } |
-|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-
+        while select DirPartyLocation
+            where dirPartyLocation.party == this.Party
+        {
+            while select logisticsElectronicAddress
+                where logisticsElectronicAddress.Location == dirPartyLocation.Location
+                    && logisticsElectronicAddress.Type == LogisticsElectronicAddressMethodType::Email
+            {
+                while select logisticsElectronicAddressRole
+                    where logisticsElectronicAddressRole.ElectronicAddress == logisticsElectronicAddress.RecId
+                    join logisticsLocationRole
+                    where logisticsLocationRole.RecId == logisticsElectronicAddressRole.LocationRole
+                {
+                    if(!emailValue)
+                    {
+                        emailValue = logisticsElectronicAddress.Locator;
+                    }
+                }
+            }
+        }
+        return emailValue;
+    }
+</code></pre>
 
 Task 2: Add a Contract class for the Business Event
 ---------------------------------------------------
@@ -98,56 +121,118 @@ Task 2: Add a Contract class for the Business Event
 4.  Create a new class MLAFlightDetailsPostedBusinessEventContract with the
     following signature
 
-| */// \<summary\>* |
-|-------------------|
+<pre><code>[DataContract]
+public final class MLAFlightDetailsPostedBusinessEventContract extends BusinessEventsContract
+{
+}
+</code></pre>
 
+5.  Create all the Member variables of the above class as follows
 
->   */// The data contract for a \<c\>FlyingDetailsPostedBusinessEvent\</c\>.*
+<pre><code>private CustAccount     custAccount;
+    private Email           custEmail;
+    private String10        flyingDate;
+    private DDTAirportCode  flyingFrom;
+    private DDTAirportCode  flyingTo;
+    private DDTFlyingMiles  flyingMiles;
+    private LegalEntityDataAreaId legalEntity;
+</code></pre>
 
->   */// \</summary\>*
+6.  Initialize all the member variables
 
->   [DataContract]
+<pre><code>private void initialize(DDTCustFlyDetails _custFlyDetails)
+    {
+        custAccount = _custFlyDetails.CustAccount;
+        custEmail   = CustTable::find(_custFlyDetails.CustAccount).email(); //earlier versions called it getEmail
+        flyingDate  = date2Str(_custFlyDetails.FlyingDate,213,DateDay::Digits2, DateSeparator::Slash, DateMonth::Digits2, DateSeparator::Slash, DateYear::Digits4);
+        flyingFrom  = DDTAirport::getAirportCode(_custFlyDetails.FlyFrom);
+        flyingTo    = DDTAirport::getAirportCode(_custFlyDetails.FlyTo);
+        flyingMiles = _custFlyDetails.FlyingMiles;
+    }
+</code></pre>|
 
->   public final class MLAFlightDetailsPostedBusinessEventContract extends
->   BusinessEventsContract
+7.  Create a parm method for all the above variables
 
->   {
+<pre><code>[DataMember('CustAccount'), BusinessEventsDataMember("Customer Account")]
+public CustAccount parmCustAccount(CustAccount _custAccount = custAccount)
+    {
+        custAccount = _custAccount;
 
->   }
+        return custAccount;
+    }
+</code></pre>
 
-1.  Create all the Member variables of the above class as follows
+<pre><code>[DataMember('CustEmail'), BusinessEventsDataMember("Customer Email")]
+public Email parmCustEmail(Email _custEmail = custEmail)
+    {
+        custEmail = _custEmail;
 
-| private CustAccount custAccount; private Email custEmail; private String10 flyingDate; private DDTAirportCode flyingFrom; private DDTAirportCode flyingTo; private DDTFlyingMiles flyingMiles; private LegalEntityDataAreaId legalEntity; |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+        return custEmail;
+    }
+</code></pre>
 
+<pre><code>[DataMember('FlyingDate'), BusinessEventsDataMember("Date of Flying")]
+public String10 parmFlyingDate(String10 _flyingDate = flyingDate)
+    {
+        flyingDate = _flyingDate;
 
-2.  Initialize all the member variables
+        return flyingDate;
+    }
+</code></pre>
 
-| private void initialize(DDTCustFlyDetails \_custFlyDetails) { custAccount = \_custFlyDetails.CustAccount; custEmail = CustTable::find(_custFlyDetails.CustAccount).email(); //earlier versions called it getEmail flyingDate = date2Str(_custFlyDetails.FlyingDate,213,DateDay::Digits2, DateSeparator::Slash, DateMonth::Digits2, DateSeparator::Slash, DateYear::Digits4); flyingFrom = DDTAirport::getAirportCode(_custFlyDetails.FlyFrom); flyingTo = DDTAirport::getAirportCode(_custFlyDetails.FlyTo); flyingMiles = \_custFlyDetails.FlyingMiles; } |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+<pre><code>[DataMember('FlyingFrom'), BusinessEventsDataMember("Flying From Airport")]
+public DDTAirportCode parmFlyingFrom(DDTAirportCode _flyingFrom = flyingFrom)
+    {
+        flyingFrom = _flyingFrom;
 
+        return flyingFrom;
+    }
+</code></pre>
 
-3.  Create a parm method for all the above variables
+<pre><code>[DataMember('FlyingTo'), BusinessEventsDataMember("Flying To Airport")]
+public DDTAirportCode parmFlyingTo(DDTAirportCode _flyingTo = flyingTo)
+    {
+        flyingTo = _flyingTo;
 
-| [DataMember('CustAccount'), BusinessEventsDataMember("Customer Account")] public CustAccount parmCustAccount(CustAccount \_custAccount = custAccount) { custAccount = \_custAccount; return custAccount; }                 |
-|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [DataMember('CustEmail'), BusinessEventsDataMember("Customer Email")] public Email parmCustEmail(Email \_custEmail = custEmail) { custEmail = \_custEmail; return custEmail; }                                             |
-| [DataMember('FlyingDate'), BusinessEventsDataMember("Date of Flying")] public String10 parmFlyingDate(String10 \_flyingDate = flyingDate) { flyingDate = \_flyingDate; return flyingDate; }                                |
-| [DataMember('FlyingFrom'), BusinessEventsDataMember("Flying From Airport")] public DDTAirportCode parmFlyingFrom(DDTAirportCode \_flyingFrom = flyingFrom) { flyingFrom = \_flyingFrom; return flyingFrom; }               |
-| [DataMember('FlyingTo'), BusinessEventsDataMember("Flying To Airport")] public DDTAirportCode parmFlyingTo(DDTAirportCode \_flyingTo = flyingTo) { flyingTo = \_flyingTo; return flyingTo; }                               |
-| [DataMember('FlyingMiles'), BusinessEventsDataMember("Flying Miles")] public DDTFlyingMiles parmFlyingMiles(DDTFlyingMiles \_flyingMiles = flyingMiles) { flyingMiles = \_flyingMiles; return flyingMiles; }               |
-| [DataMember('LegalEntity'), BusinessEventsDataMember("Legal Entity")] public LegalEntityDataAreaId parmLegalEntity(LegalEntityDataAreaId \_legalEntity = legalEntity) { legalEntity = \_legalEntity; return legalEntity; } |
+        return flyingTo;
+    }
+</code></pre>
 
-4.  Create a method to call the initialize and return the Data Contract
+<pre><code>[DataMember('FlyingMiles'), BusinessEventsDataMember("Flying Miles")]
+public DDTFlyingMiles parmFlyingMiles(DDTFlyingMiles _flyingMiles = flyingMiles)
+    {
+        flyingMiles = _flyingMiles;
 
-| public static MLAFlightDetailsPostedBusinessEventContract newFlightDetails(DDTCustFlyDetails \_custFlyDetails) { var contract = new MLAFlightDetailsPostedBusinessEventContract(); contract.initialize(_custFlyDetails); return contract; } |
-|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+        return flyingMiles;
+    }
+</code></pre>
 
+<pre><code>[DataMember('LegalEntity'), BusinessEventsDataMember("Legal Entity")]
+public LegalEntityDataAreaId parmLegalEntity(LegalEntityDataAreaId _legalEntity = legalEntity)
+    {
+        legalEntity = _legalEntity;
 
-5.  Finally create a blank new() method
+        return legalEntity;
+    }
+</code></pre>
 
-| private void new() { } |
-|------------------------|
+8.  Create a method to call the initialize and return the Data Contract
+
+<pre><code>public static MLAFlightDetailsPostedBusinessEventContract newFlightDetails(DDTCustFlyDetails _custFlyDetails)
+    {
+        var contract = new MLAFlightDetailsPostedBusinessEventContract();
+        contract.initialize(_custFlyDetails);
+
+        return contract;
+    }
+</code></pre>
+
+9.  Finally create a blank new() method
+
+<pre><code>private void new()
+{
+}
+</code></pre>
 
 
 Task 3: Add the Business Event class
@@ -162,23 +247,52 @@ Task 3: Add the Business Event class
 4.  Create a new class MLAFlightDetailsPostedBusinessEvent with the following
     signature
 
-| */// \<summary\> /// Fly details posted business event. /// \</summary\>* [BusinessEvents(classStr(MLAFlightDetailsPostedBusinessEventContract), 'Customer Fly Details', 'Customer Flight Description', ModuleAxapta::SalesOrder)] public final class MLAFlightDetailsPostedBusinessEvent extends BusinessEventsBase { } |
-|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+<pre><code>/// < summary>
+/// Fly details posted business event.
+/// < summary>
+[BusinessEvents(classStr(MLAFlightDetailsPostedBusinessEventContract), 'Customer Fly Details', 'Customer Flight Description', ModuleAxapta::SalesOrder)]
+public final class MLAFlightDetailsPostedBusinessEvent extends BusinessEventsBase
+{
+}
+</code></pre>
 
 
 5.  Add the following Member variable in the class
 
-| private DDTCustFlyDetails custFlyDetails; |
-|-------------------------------------------|
+<pre><code>private DDTCustFlyDetails custFlyDetails;
+</code></pre>
 
 
 6.  Add the following methods in the class
 
-| private DDTCustFlyDetails parmCustFlyDetails(DDTCustFlyDetails \_custFlyDetails = custFlyDetails) { custFlyDetails = \_custFlyDetails; return custFlyDetails; }                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| */// \<summary\> /// Creates a \<c\>FlyDetailsPostedBusinessEvent\</c\> from a \<c\>DDTCustFlyDetails\</c\> record. /// \</summary\> /// \<param name = "_custFlyDetails"\> A \<c\>DDTCustFlyDetails\</c\> record.\</param\> /// \<returns\>A \<c\>MLAFlightDetailsPostedBusinessEvent\</c\>.\</returns\>* public static MLAFlightDetailsPostedBusinessEvent newFromCustFlyDetails(DDTCustFlyDetails \_custFlyDetails) { MLAFlightDetailsPostedBusinessEvent businessEvent = new MLAFlightDetailsPostedBusinessEvent(); businessEvent.parmCustFlyDetails(_custFlyDetails); return businessEvent; } |
-| private void new() { }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| [Wrappable(true), Replaceable(true)] public BusinessEventsContract buildContract() { return MLAFlightDetailsPostedBusinessEventContract::newFlightDetails(custFlyDetails); }                                                                                                                                                                                                                                                                                                                                                                                                                       |
+<pre><code>private DDTCustFlyDetails parmCustFlyDetails(DDTCustFlyDetails _custFlyDetails = custFlyDetails)
+    {
+        custFlyDetails = _custFlyDetails;
+
+        return custFlyDetails;
+    }
+
+</code></pre> <pre><code>/// < summary>
+/// Creates a <c>FlyDetailsPostedBusinessEvent</c> from a <c>DDTCustFlyDetails</c> record.
+/// < /summary>
+/// < param name = "_custFlyDetails"> A <c>DDTCustFlyDetails</c> record.< /param>
+/// < returns>A <c>MLAFlightDetailsPostedBusinessEvent</c>.< /returns>
+public static MLAFlightDetailsPostedBusinessEvent newFromCustFlyDetails(DDTCustFlyDetails _custFlyDetails)
+{
+    MLAFlightDetailsPostedBusinessEvent businessEvent = new MLAFlightDetailsPostedBusinessEvent();
+    businessEvent.parmCustFlyDetails(_custFlyDetails);
+
+    return businessEvent;
+}
+</code></pre> <pre><code>private void new()
+{
+}
+</code></pre> <pre><code>[Wrappable(true), Replaceable(true)]
+public BusinessEventsContract buildContract()
+{
+   return MLAFlightDetailsPostedBusinessEventContract::newFlightDetails(custFlyDetails);
+}
+</code></pre>
 
 Task 4: Sending the Business Event 
 -----------------------------------
@@ -195,14 +309,23 @@ inserted in the DDTCustFlyDetails table.
 4.  Create a new class MLACustFlyDetailsTable_Extension with the following
     signature
 
-| [ExtensionOf(tableStr(DDTCustFlyDetails))] final class MLACustFlyDetailsTable_Extension { } |
-|---------------------------------------------------------------------------------------------|
+<pre><code>[ExtensionOf(tableStr(DDTCustFlyDetails))]
+final class MLACustFlyDetailsTable_Extension
+{
+}
+</code></pre>
 
+5.Create a Chain of Command for the insert method as follows
 
-5.  Create a Chain of Command for the insert method as follows
-
-| public void insert() { next insert(); if (BusinessEventsConfigurationReader::isBusinessEventEnabled(classStr(MLAFlightDetailsPostedBusinessEvent))) { MLAFlightDetailsPostedBusinessEvent::newFromCustFlyDetails(this).send(); } } |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+<pre><code>public void insert()
+{
+    next insert();
+    if (BusinessEventsConfigurationReader::isBusinessEventEnabled(classStr(MLAFlightDetailsPostedBusinessEvent)))
+    {
+            MLAFlightDetailsPostedBusinessEvent::newFromCustFlyDetails(this).send();
+    }
+}
+</code></pre>
 
 
 Task 5: Refresh list of Business Events
