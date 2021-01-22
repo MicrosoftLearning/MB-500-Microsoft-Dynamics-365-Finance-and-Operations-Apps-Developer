@@ -227,20 +227,29 @@ Task 1: Chain of Command: DDTCustFlyDetailsEntity \> mapEntityToDataSource metho
 5.  Write the following code to create a chain of command for Data Entity
     DDTCustFlyDetailsEntity:
 
-| [ExtensionOf(tableStr(DDTCustFlyDetailsEntity))] |
-|--------------------------------------------------|
+<pre><code>
+[ExtensionOf(tableStr(DDTCustFlyDetailsEntity))]
+final class MLACustFlyDetailsEntity_Extension
+{
+}
+</code></pre>
 
+6.  Write the following code in that class:
 
->   final class MLACustFlyDetailsEntity_Extension
+<pre><code>
+public void mapEntityToDataSource(DataEntityRuntimeContext _entityCtx, DataEntityDataSourceRuntimeContext _dataSourceCtx)
+    {
+        next mapEntityToDataSource(_entityCtx, _dataSourceCtx);
 
->   {
+        if (_dataSourceCtx.name() == DataEntityDataSourceStr(DDTCustFlyDetailsEntity, DDTCustFlyDetails))
+        {
+            DDTCustFlyDetails   dsCustFlyDetails = _dataSourceCtx.getBuffer();
+DDTCustFlyDetailsEntity deCustFlyDetailsEntity = _entityCtx.getEntityRecord();
+            dsCustFlyDetails.flyingMiles = MLAAirportMilesChart::getMiles(deCustFlyDetailsEntity.AirportFrom_AirportCode, deCustFlyDetailsEntity.AirportTo_AirportCode);
 
->   }
-
-1.  Write the following code in that class:
-
-| public void mapEntityToDataSource(DataEntityRuntimeContext \_entityCtx, DataEntityDataSourceRuntimeContext \_dataSourceCtx) { next mapEntityToDataSource(_entityCtx, \_dataSourceCtx); if (_dataSourceCtx.name() == DataEntityDataSourceStr(DDTCustFlyDetailsEntity, DDTCustFlyDetails)) { DDTCustFlyDetails dsCustFlyDetails = \_dataSourceCtx.getBuffer(); DDTCustFlyDetailsEntity deCustFlyDetailsEntity = \_entityCtx.getEntityRecord(); dsCustFlyDetails.flyingMiles = MLAAirportMilesChart::getMiles(deCustFlyDetailsEntity.AirportFrom_AirportCode, deCustFlyDetailsEntity.AirportTo_AirportCode); } } |
-|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+        }
+    }
+</code></pre>
 
 
 Task 2: Data Management Setup
