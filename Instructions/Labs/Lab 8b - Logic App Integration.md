@@ -281,20 +281,19 @@ Task 3: Create a Logic App
 
 11.  Populate Create Record Action as:
 
-    1.  Instance: Select your instance from the drop down
+   1.  Instance: Select your instance from the drop down
 
-    2.  Entity name: Select Customers (wait for the next fields to display)
+   2.  Entity name: Select Customers (wait for the next fields to display)
 
-    3.  Customer account: Position the cursor in the field, then the available
-        fields will display on the right. Select CustomerAccount.
+   3.  Customer account: Position the cursor in the field, then the available fields will display on the right. Select CustomerAccount.
 
-    4.  Name: Position the cursor in the field, then select Name.
+   4.  Name: Position the cursor in the field, then select Name.
 
-    5.  Currency: SalesCurrencyCode.
+   5.  Currency: SalesCurrencyCode.
 
-    6.  Customer group: CustomerGroupId.
+   6.  Customer group: CustomerGroupId.
 
-    7.  Company: dataAreaId
+   7.  Company: dataAreaId
 
 12.  Optional: Select **New Step,** and select **Add an Action** if available
 
