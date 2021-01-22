@@ -420,43 +420,41 @@ Task 1: Create a new package extending DynamicsDevTraining
 1.  From **Dynamics 365 \> Model Management \> Create Model**, create a new
     model MyLabAirlines
 
-2.  Model name:  MyLabAirlines
+    -  Model name:  MyLabAirlines
 
-3.  Model publisher:  D365F&O developer 
+    -  Model publisher:  D365F&O developer 
 
-4.  Layer usr 
+    -  Layer usr 
 
-5.  Version 1.0.0.0 
+    -  Version 1.0.0.0 
 
-6.  Model description:  Dynamics 365 F&O development training - Airlines  
+    -  Model description:  Dynamics 365 F&O development training - Airlines  
 
-7.  Model display name: My Lab Airlines
+    -  Model display name: My Lab Airlines
 
-8.  Create a new package
+2.  Create a new package
 
-9.  Select the following packages as references:
+3.  Select the following packages as references:
 
-    1.  ApplicationFoundation
+    -  ApplicationFoundation
 
-    2.  ApplicationPlatform
+    -  ApplicationPlatform
 
-    3.  ApplicationSuite
+    -  ApplicationSuite
 
-    4.  ContactPerson
+    -  ContactPerson
 
-    5.  Directory
+    -  Directory
 
-    6.  DynamicsDevTraining
+    -  DynamicsDevTraining
 
-10. Create a new project and make this my default model
+4. Create a new project and make this my default model
 
-11. Exit and re-enter Visual Studio to go into the MyLabAirlines solution
+5. Create a new Project MyLabAirlines
 
-12. Create a new Project MyLabAirlines
+    -  Model: MyLabAirlines
 
-    1.  Model: MyLabAirlines
-
-    2.  Company: USMF
+    -  Company: USMF
 
 Task 2: Create a table: MLAAirportMilesChart
 --------------------------------------------
