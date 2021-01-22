@@ -62,8 +62,6 @@ Task 1: Update DDTUpdateTier class
 	1.  Line 1: add int _async=0
 	2.  after the commit: Add the if/else
 
-3.  Build the project
-
 <pre><code>public static int update(int _async=0)
     {
         CustTable           custTable;
@@ -83,6 +81,8 @@ Task 1: Update DDTUpdateTier class
         return custTable.rowCount();
     }
 </code></pre>
+
+3.  Build the project
 
 
 
