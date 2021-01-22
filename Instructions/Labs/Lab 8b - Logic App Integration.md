@@ -143,7 +143,6 @@ namespace PopulateCustomer
         public string dataAreaId { get; set; }
     }
 }
-
 </code></pre>
 
 7.  Add or locate a C\# class named Program that will create the json message
