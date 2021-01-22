@@ -248,10 +248,6 @@ Task 3: Create a Logic App
     the json schema and get pasted in the Schema field of the previous diagram,
     then select **Done**
 
-8.  Select the link which says **Use sample payload to generate schema**. You
-
-
-
    The schema should look like this: 
 <pre><code>
 {
