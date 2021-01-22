@@ -92,31 +92,31 @@ Task 1: Power BI Desktop
 
 10. Name the new column “Sector” with the formula as follows
 
->   [AirportFrom_AirportCode]&"-"&[AirportTo_AirportCode]
+   [AirportFrom_AirportCode]&"-"&[AirportTo_AirportCode]
 
->   Therefore, the formula on the left will look like:
+   Therefore, the formula on the left will look like:
 
->   Sector = [AirportFrom_AirportCode]&"-"&[AirportTo_AirportCode]
+   Sector = [AirportFrom_AirportCode]&"-"&[AirportTo_AirportCode]
 
-1.  From the list of Visualizations, select “Pie Chart”
+11.  From the list of Visualizations, select “Pie Chart”
 
-2.  Assign the new column “Sector” in Details (hint: drag and drop)
+12.  Assign the new column “Sector” in Details (hint: drag and drop)
 
-3.  Assign “Count of CustAccount” in Values (hint: drag and drop CustAccount and
+13.  Assign “Count of CustAccount” in Values (hint: drag and drop CustAccount and
     it will automatically populate Count of)
 
-4.  You should have a pie chart of the different sectors, which shows count and
+14.  You should have a pie chart of the different sectors, which shows count and
     percentage.
 
-5.  **Save** the visual as a pbix file
+15.  **Save** the visual as a pbix file
 
-6.  Select the **Publish** button at the top right end
+16.  Select the **Publish** button at the top right end
 
-7.  Open <https://powerbi.microsoft.com/> and sign in
+17.  Open <https://powerbi.microsoft.com/> and sign in
 
-8.  Under **My Workspace \> Reports**, you should find your new visuals
+18.  Under **My Workspace \> Reports**, you should find your new visuals
 
-9.  Add that in a new dashboard by clicking on the pin (third button from top
+19.  Add that in a new dashboard by clicking on the pin (third button from top
     right of the visuals)
 
 Task 2: Power BI on Dynamics 365 Finance and Operations apps
