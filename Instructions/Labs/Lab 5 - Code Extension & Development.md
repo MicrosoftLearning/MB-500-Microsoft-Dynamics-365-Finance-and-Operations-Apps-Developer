@@ -296,9 +296,9 @@ override initValue method with the following piece of code
 </pre>
 
 
-1.  Open table DDTCustFlyDetails from Solution Explorer
+2.  Open table DDTCustFlyDetails from Solution Explorer
 
-2.  Change the following properties of field FlyCount
+3.  Change the following properties of field FlyCount
 
     1.  Allow Edit: No
 
