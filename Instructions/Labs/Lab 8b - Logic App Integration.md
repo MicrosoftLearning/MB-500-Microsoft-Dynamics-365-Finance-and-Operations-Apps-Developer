@@ -271,7 +271,7 @@ Task 3: Create a Logic App
    "type": "string"
    }
    }
-
+</code></pre>
 
 9.  Select **+ New step** button below and select **Add an Action** if available
 
