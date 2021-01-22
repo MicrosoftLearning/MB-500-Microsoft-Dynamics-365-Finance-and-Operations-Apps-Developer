@@ -281,7 +281,6 @@ public static MLAFlightDetailsPostedBusinessEvent newFromCustFlyDetails(DDTCustF
 {
     MLAFlightDetailsPostedBusinessEvent businessEvent = new MLAFlightDetailsPostedBusinessEvent();
     businessEvent.parmCustFlyDetails(_custFlyDetails);
-
     return businessEvent;
 }
 </code></pre> <pre><code>private void new()
