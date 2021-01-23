@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Exercise 03: Data structure development'
+    title: 'Exercise 01: Data structure development'
     module: 'Module 03: Solution design'
 ---
 
