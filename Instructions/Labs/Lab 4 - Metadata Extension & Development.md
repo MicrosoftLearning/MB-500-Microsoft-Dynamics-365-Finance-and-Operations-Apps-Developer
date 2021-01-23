@@ -1,6 +1,20 @@
+---
+lab:
+    title: 'Exercise 01: Metadata extension and development'
+    module: 'Module 04: AOT elements'
+---
+
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
 **Lab 4 – Metadata Extension & Development**
+
+Change Record
+=============
+
+| Version | Date        | Change                                                           |
+|---------|-------------|------------------------------------------------------------------|
+| 1.0     | 10 Jan 2020 | Initial release                                                  |
+| 1.01    | 22 Jan 2021 | Remove table of contents; update branding; remove LCS references |
 
 Lab Environment
 ===============
@@ -62,9 +76,9 @@ Exercise 1: Add new Forms
 
 5.  Add DDTTierRange in the Form data sources
 
-    a.  Property: Index: CustTierIdx
+    1.  Property: Index: CustTierIdx
 
-    b.  Property: Insert If Empty: No
+    2.  Property: Insert If Empty: No
 
 6.  Right click **Design \| Pattern** \> **Apply pattern** and select **Simple
     List** as form pattern
@@ -72,29 +86,29 @@ Exercise 1: Add new Forms
 7.  Right click **Design \| Pattern** and select **New** and add a new Action
     Pane
 
-    a.  Name: TierRangeActionPane
+    1.  Name: TierRangeActionPane
 
 8.  Right click **Design \| Pattern** and select **New** and add a new Group
 
-    a.  Name: FilterGroup
+    1.  Name: FilterGroup
 
-    b.  Pattern: Custom & Quick Filters
+    2.  Pattern: Custom & Quick Filters
 
-    c.  Right click **FilterGroup (Group) \| Pattern** and add a new QuickFilter
+    3.  Right click **FilterGroup (Group) \| Pattern** and add a new QuickFilter
 
-        i.  Name: CustTierQuickFilter
+        1.  Name: CustTierQuickFilter
 
 9.  Right click **Design \| Pattern** and select **New** and add a new Grid
 
-    a.  Name: CustTierGrid
+    1.  Name: CustTierGrid
 
-    b.  Drag the following fields from the data source and add into the grid:
+    2.  Drag the following fields from the data source and add into the grid:
 
-        i.  CustTier
+        1.  CustTier
 
-        ii.  FromMiles
+        2.  FromMiles
 
-        iii.  ToMiles
+        3.  ToMiles
 
 ### Task 2: Display Menu Item: Mile wise Tier Range
 
@@ -106,11 +120,11 @@ Exercise 1: Add new Forms
 
 4.  Create a new Display menu item DDTCustTierDisplay
 
-    a.  Object Type: Form
+    1.  Object Type: Form
 
-    b.  Object: DDTTierRange
+    2.  Object: DDTTierRange
 
-    c.  Label: *Miles wise Tier Range*
+    3.  Label: *Miles wise Tier Range*
 
 ### Task 3: Form: Customer Fly Details
 
@@ -124,81 +138,81 @@ Exercise 1: Add new Forms
 
 5.  Add DDTCustFlyDetails in the Form data sources
 
-    a.  Property: Index \> CustFlyingIdx
+    1.  Property: Index \> CustFlyingIdx
 
-    b.  Property: Insert If Empty \> No
+    2.  Property: Insert If Empty \> No
 
 6.  Right click **Design \| Pattern** and select **Custom** as form pattern
 
 7.  Right click **Design \| Pattern** and select **New** and add a new Action
     Pane
 
-    a.  Name: FlyDetailsActionPane
+    1.  Name: FlyDetailsActionPane
 
-    b.  Data Source: DDTCustFlyDetails
+    2.  Data Source: DDTCustFlyDetails
 
-    c.  Skip: Yes
+    3.  Skip: Yes
 
-    d.  Style: Strip
+    4.  Style: Strip
 
 8.  Right click **FlyDetailsActionPane** and add a new Action Pane Tab
 
-    a.  Name: FlyDetailsActionPaneTab
+    1.  Name: FlyDetailsActionPaneTab
 
-    b.  Skip: Yes
+    2.  Skip: Yes
 
 9.  Add a new Button Group within **FlyDetailsActionPaneTab**
 
-    a.  Name: FlyDetailsActionButtonGroup
+    1.  Name: FlyDetailsActionButtonGroup
 
-    b.  Arrange Method: Vertical
+    2.  Arrange Method: Vertical
 
 10. Add a new Command Button within FlyDetailsActionButtonGroup
 
-    a.  Name: NewFlyInfo
+    1.  Name: NewFlyInfo
 
-    b.  Command: New
+    2.  Command: New
 
-    c.  Needed Permission: Create
+    3.  Needed Permission: Create
 
-    d.  Text: Add
+    4.  Text: Add
 
-    e.  Normal Image: New
+    5.  Normal Image: New
 
 11. Add a new Command Button within FlyDetailsActionButtonGroup
 
-    a.  Name: DeleteFlyInfo
+    1.  Name: DeleteFlyInfo
 
-    b.  Command: DeleteRecord
+    2.  Command: DeleteRecord
 
-    c.  Needed Permission: Delete
+    3.  Needed Permission: Delete
 
-    d.  Text: Delete
+    4.  Text: Delete
 
-    e.  Normal Image: Remove
+    5.  Normal Image: Remove
 
 12. Add a new Grid under **Design \| Pattern**
 
-    a.  Name: FlyInfoGrid
+    1.  Name: FlyInfoGrid
 
-    b.  Data Source: DDTCustFlyDetails
+    2.  Data Source: DDTCustFlyDetails
 
-    c.  Drag the following fields from the data source and add in the Grid:
+    3.  Drag the following fields from the data source and add in the Grid:
 
-        i.  FlyCount
+        1.  FlyCount
 
-        ii.  FlyingDate
+        2.  FlyingDate
 
-        iii.  FlyFrom
+        3.  FlyFrom
 
-        iv.  FlyTo
+        4.  FlyTo
 
-        v.  FlyingMiles
+        5.  FlyingMiles
 
-    d.  If they are not in this order, use the Alt and arrow keys to rearrange
+    4.  If they are not in this order, use the Alt and arrow keys to rearrange
         them
 
-    e.  For the field DDTCustFlyDetails_FlyingMiles, change the property Skip to
+    5.  For the field DDTCustFlyDetails_FlyingMiles, change the property Skip to
         Yes
 
 ### Task 4: Display Menu Item: Customer Fly Details Form Part
@@ -211,11 +225,11 @@ Exercise 1: Add new Forms
 
 4.  Create a new Display menu item DDTCustFlyDetailsFormPart
 
-    a.  Object Type: Form
+    1.  Object Type: Form
 
-    b.  Object: DDTCustFlyDetails
+    2.  Object: DDTCustFlyDetails
 
-    c.  Label: *Fly Details*
+    3.  Label: *Fly Details*
 
 Save all.
 
@@ -237,9 +251,9 @@ Exercise 2: Extend Standard Form
 
 5.  Add a new Data Source: DDTAirport
 
-    a.  Table: DDTAirport
+    1.  Table: DDTAirport
 
-    b.  Join Source: LogisticsAddressCity
+    2.  Join Source: LogisticsAddressCity
 
 6.  Navigate to **Design \> Tab \> TabPageCity \> GroupCityBody \> GroupCity \>
     CityDetailsBody**
@@ -270,30 +284,30 @@ Exercise 2: Extend Standard Form
 8.  Under the Design node, navigate to **Tab \> TabPageDetails \> TabHeader**
     and add a new tabpage
 
-    a.  Name: DDTTabFlyDetails
+    1.  Name: DDTTabFlyDetails
 
-    b.  Pattern: Custom
+    2.  Pattern: Custom
 
-    c.  Caption: Flying Details
+    3.  Caption: Flying Details
 
 9.  Create a new Form Part under the tab page DDTTabFlyDetails
 
-    a.  Name: FlyingDetailsGridFormPart
+    1.  Name: FlyingDetailsGridFormPart
 
-    b.  MenuItemName: DDTCustFlyDetailsFormPart
+    2.  MenuItemName: DDTCustFlyDetailsFormPart
 
 10. Expand FlyingDetailsGridFormPart and Right click Links to create New Field
     relation link
 
-    a.  Name: FlyingDetailsDataLink
+    1.  Name: FlyingDetailsDataLink
 
-    b.  DataSource: CustTable
+    2.  DataSource: CustTable
 
-    c.  DataField: AccountNum
+    3.  DataField: AccountNum
 
-    d.  TargetDataSource: DDTCustFlyDetails
+    4.  TargetDataSource: DDTCustFlyDetails
 
-    e.  TargetDataField: CustAccount
+    5.  TargetDataField: CustAccount
 
 ### Task 3: Menu Extension: AccountsReceivable
 
@@ -320,12 +334,10 @@ Check Output
 
     1.  Add two records:
 
-| Customer Tier | From Miles | To Miles | 
-| ------------- |:----------:| --------:| 
-| None          |          0 |      100 |
-| Silver        |        101 |   100000 | 
-
-
+| Customer Tier | From Mile | To Mile |
+|---------------|-----------|---------|
+| None          | 0         | 100     |
+| Silver        | 101       | 100000  |
 
 2.  Open **Organization Administration \> Global Address Book \> Addresses \>
     Address setup**
