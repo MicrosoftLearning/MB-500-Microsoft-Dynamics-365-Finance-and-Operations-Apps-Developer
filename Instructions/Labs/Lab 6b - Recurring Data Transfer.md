@@ -248,7 +248,7 @@ Setup the export definition by clicking the **Export**
 
 ![Create recurring data job](Images/Lab6bEx3Task1Step7.png)
 
-    1.  Set up the recurrence as follows: Recurrence pattern: Minutes, repeat
+   1.  Set up the recurrence as follows: Recurrence pattern: Minutes, repeat
         after/count/1
 
 ![Start date: enter one Start time: Enter or default Time Zone: Enter or default No end date Recurrence Pattern: Minutes Repeat after count: 1](Images/Lab6bEx3Task1Step7.png)
