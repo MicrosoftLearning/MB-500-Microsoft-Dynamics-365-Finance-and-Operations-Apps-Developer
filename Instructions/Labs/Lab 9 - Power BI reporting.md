@@ -15,6 +15,7 @@ Change Record
 |---------|-------------|------------------------------------------------------------------|
 | 1.0     | 10 Jan 2020 | Initial release                                                  |
 | 1.01    | 22 Jan 2021 | Remove table of contents; update branding; remove LCS references |
+| 1.02    | 29 Jan 2021 | Restored images |
 
 Lab Environment
 ===============
@@ -90,6 +91,8 @@ Task 1: Power BI Desktop
 
 9.  Click the **…** option to create a **new column** in the entity
 
+    ![CustFlyDetails with CustAccount checked](Images/Lab9ExTask1Step9.png)
+
 10. Name the new column “Sector” with the formula as follows
 
    [AirportFrom_AirportCode]&"-"&[AirportTo_AirportCode]
@@ -97,6 +100,8 @@ Task 1: Power BI Desktop
    Therefore, the formula on the left will look like:
 
    Sector = [AirportFrom_AirportCode]&"-"&[AirportTo_AirportCode]
+
+![Formula above](Images/Lab9ExTask1Step10.png)
 
 11.  From the list of Visualizations, select “Pie Chart”
 
@@ -107,6 +112,8 @@ Task 1: Power BI Desktop
 
 14.  You should have a pie chart of the different sectors, which shows count and
     percentage.
+
+![A pie chart showing the different airport sectors](Images/Lab9ExTask1Step14.png)
 
 15.  **Save** the visual as a pbix file
 
