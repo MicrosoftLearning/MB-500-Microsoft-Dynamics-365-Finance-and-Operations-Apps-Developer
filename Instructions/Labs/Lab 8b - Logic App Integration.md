@@ -296,8 +296,6 @@ Task 3: Create a Logic App
    }
 </code></pre>
 
-   The schema should look like this:
-
 ![code](Images/Lab8bEx2Task3Step8b.png)
 
 9.  Select **+ New step** button below and select **Add an Action** if available
