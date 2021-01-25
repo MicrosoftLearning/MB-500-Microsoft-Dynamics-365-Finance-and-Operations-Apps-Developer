@@ -15,6 +15,7 @@ Change Record
 |---------|-------------|-----------------------------------------------------------------------------------------------|
 | 1.0     | 10 Jan 2020 | Initial release                                                                               |
 | 1.01    | 22 Jan 2021 | Added instructions re: saving work, resource files, importing and exporting, changing company |
+| 1.02    | 29 Jan 2021 | Restored images |
 
 Lab Environment
 ===============
