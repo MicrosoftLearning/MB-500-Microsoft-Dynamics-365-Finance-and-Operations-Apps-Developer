@@ -15,6 +15,7 @@ Change Record
 |---------|-------------|------------------------------------------------------------------|
 | 1.0     | 10 Jan 2020 | Initial release                                                  |
 | 1.01    | 22 Jan 2021 | Remove table of contents; update branding; remove LCS references |
+| 1.02    | 29 Jan 2021 | Restored images |
 
 Lab Environment
 ===============
@@ -77,6 +78,8 @@ Task 1: Register Application and Create Application Key
     Registrations** in the middle panel. Then select the **New Registration**
     button. If you cannot locate it, search All services for App registrations
 
+    ![New registration](Images/Lab6bEx1Task1Step3.png)
+
 4.  Select New registration and input a name for your application such as
     **D365FO\<your name\>**
 
@@ -88,22 +91,35 @@ Task 1: Register Application and Create Application Key
 
 7.  After verifying your input, please select the **Register** button
 
+    ![Register an application Name: D365FO\<your name\> Supported account types: Accounts in any organizational directory (Any Azure AD directory - Multitenant) Redirect URI (optional): Web http://localhost](Images/Lab6bEx1Task1Step7.png)
+
 8.  Wait a moment for the registration
 
 9.  Open your app; click Overview and copy the contents of Application (Client)
     ID. Paste it into a notepad or similar
 
+    ![Under App registration and the app please find an "Application (client) ID"](Images/Lab6bEx1Task1Step9.png)
+
 10. Open your app; select **API permissions** under **Manage** Panel
+
+    ![API Permissions](Images/Lab6bEx1Task1Step10.png)
 
 11. Select **Add a Permission** button and select **Dynamics ERP.** There will
     be two types of permissions (Delegated and Application). Click each and
     select all the permissions. Click **Add permissions**
+
+![Request API permissions](Images/Lab6bEx1Task1Step11.png)
+
+
+![Under "Request API permissions" select types AX, CustomService, and Odata, and select the boxes under each](Images/Lab6bEx1Task1Step11b.png)
 
 12. The next step is to add the key, for which you need to go back to the Manage
     panel and select **Certificates & secrets**. Click the button **New client
     secret**. Enter **Description**, where you can input any name of the key or
     leave it blank. You are just naming this key set, select the **Duratio**n
     and click **Add**
+
+![Add a client secret](Images/Lab6bEx1Task1Step12.png)
 
 13. Your new Key will be created under Client secrets. Copy the **Key Value**
     and save it; you will need this key in future labs. Should you lose it, you
@@ -133,10 +149,15 @@ Task 1: Install Recurring Integration Scheduler
 
 6.  Recurring Integrations Scheduler should be installed in the Start Menu
 
+![Recurring Integrations Scheduler](Images/Lab6bEx2Task1Step6.png)
+
+
 Task 2: Configure Recurring Integration Scheduler
 -------------------------------------------------
 
 1.  Open **Recurring integrations scheduler** and select **Parameters**
+
+![Recurring Integrations Scheduler](Images/Lab6bEx2Task2Step1.png) 
 
 2.  In the Parameters form, add the **instance** details
 
@@ -149,6 +170,9 @@ Task 2: Configure Recurring Integration Scheduler
     4.  Tenant: This is your tenant. One way to find it is to mouseover your
         avatar in the top right of the Azure portal; it is labeled Domain
 
+![Edit instance](Images/Lab6bEx2Task2Step2.png)
+ 
+
 3.  In the Parameters form, add **Azure Active Directory Application** details
 
     1.  Friendly Name: Web/API
@@ -159,13 +183,20 @@ Task 2: Configure Recurring Integration Scheduler
 
     4.  Tenant: Enter your tenant
 
+![Edit Azure AD applications](Images/Lab6bEx2Task2Step3.png)
+
 4.  In the Parameters form, add **User Credentials**
+
+![Edit user](Images/Lab6bEx2Task2Step4.png)
 
 5.  Select the **Validate** button on the Parameter form under the **Dynamics
     365 for Finance and Operation instances** section. The Validate instance
     setting window will pop up. Select **Service Authentication** and select
     **Validate** button. In the white text box **OK** should appear, or that the
     authentication was successful. Warnings about privileges are not an issue.
+
+![For "Validate instance settings," select service authentication and choose the AAD Client app from the drop down. Then select the Validate button.](Images/Lab6bEx2Task2Step5.png)
+
 
 Exercise 3: Configure Dynamics 365 Finance and Operations Apps for recurring integrations
 =========================================================================================
@@ -175,8 +206,14 @@ Task 1: Set up Data Management
 
 1.  Go to **All workspaces \> Data management**.
 
-2.  Select **Export**. Setup the export definition by clicking the **Export**
+2.  Select **Export**. 
+
+![Data management \> Export](Images/Lab6bEx3Task1Step2.png)
+
+Setup the export definition by clicking the **Export**
     button
+
+![Data management \> Export](Images/Lab6bEx3Task1Step2b.png)
 
 3.  Enter **Customer Recurring job** as Group name.
 
@@ -194,6 +231,8 @@ Task 1: Set up Data Management
 
     6.  Select fields: All fields
 
+![Entity name: Customers V3 Target data format: CSV Use sample file: No Skip Staging: Yes Default refresh type: Full push only Select fields: All fields](Images/Lab6bEx3Task1Step4.png)
+
 5.  Click **Add** button and **Save** the export job.
 
 6.  Then click **Create recurring data job**
@@ -207,8 +246,12 @@ Task 1: Set up Data Management
     The application ID entered on this form is the client ID of the Azure AD
     Application.
 
+![Create recurring data job](Images/Lab6bEx3Task1Step7.png)
+
     1.  Set up the recurrence as follows: Recurrence pattern: Minutes, repeat
         after/count/1
+
+![Start date: enter one Start time: Enter or default Time Zone: Enter or default No end date Recurrence Pattern: Minutes Repeat after count: 1](Images/Lab6bEx3Task1Step7.png)
 
 8.  Finally, press **Ok** to create the recurring job.
 
@@ -225,6 +268,8 @@ Task 1: Set up Data Management
 
     3.  Scheduler: RecurringIntegrationsScheduler
 
+![Hostname: localhost Port: 555 Scheduler: RecurringIntegrationsScheduler ](Images/Lab6bEx3Task2Step2.png)
+
 3.  Once connected, select **Parameters**
 
 4.  Add a download job definition as shown:
@@ -235,13 +280,18 @@ Task 1: Set up Data Management
 
     3.  Data job type: Download
 
-        Note: The activity ID is the activity ID of the recurring integration
-        data job that we created in D365fO.
+![Friendly name: Customers import Activity ID: enter Data job type: Download](Images/Lab6bEx3Task2Step4.png)
+
+Note: The activity ID is the activity ID of the recurring integration
+data job that we created in D365fO.
 
 5.  Now in the main form, Select **Add Job** and create a download job
 
     Note: The folder is where you want the downloaded files to be placed. It
     should be a new folder, as files will accumulate.
+
+   ![Download folder: \<enter one\> Errors folder: \<enter one\> Data project: CustRecurring Legal entity: USMF Status check interval (sec): 300 ](Images/Lab6bEx3Task2Step5.png)
+
 
 Task 3: Set up AAD Parameter in Dynamics 365 Finance and Operations Apps
 ------------------------------------------------------------------------
