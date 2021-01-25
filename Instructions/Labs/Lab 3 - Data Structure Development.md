@@ -374,3 +374,11 @@ Check Output
    Save all, then right click on your solution and select Build solution. This
    takes a minute or two. Verify that there are no errors. (There will be
    warnings, due to best practices.)
+
+![Solution DynamicsDevSolution
+DynamicsDevProject
+Base Enums: DDTCustomerTier
+EDT Integers: DDTFlyingMiles
+EDT Strings: DDTAirportCode
+Table Extensions: CustTable.DynamicsDevTraining
+Tables: DDTAirport, DDTCustFlyDetails, DDTTierRange](Images/Lab3CO.png)
