@@ -15,6 +15,7 @@ Change Record
 |---------|-------------|------------------------------------------------------------------|
 | 1.0     | 10 Jan 2020 | Initial release                                                  |
 | 1.01    | 22 Jan 2021 | Remove table of contents; update branding; remove LCS references |
+| 1.02    | 29 Jan 2021 | Restored images |
 
 Lab Environment
 ===============
@@ -77,6 +78,8 @@ Task 1: Sign up for Azure with a Pass Code
 
 2.  Login with your credentials and select **Confirm Microsoft Account**
 
+    ![Microsoft Azure The following Microsoft Account will be used for Azure Pass: ](Images/Lab8bEx1Task1Step2.png)
+
 3.  Enter the Promo code supplied to you
 
 Exercise 2: Creation of Customer data using Logic App
@@ -88,6 +91,8 @@ Task 1: Create a new Service Bus
 1.  Go to your Azure Portal, select **New**, select **Service Bus** and press
     Enter. If you have the new portal, under Azure services, select **More
     services**, and do a find for **Service bus**, which you will select.
+
+    ![Service bus](Images/Lab8bEx2Task1Step1.png)
 
 2.  Select **Service Bus**, select Add if needed, enter service bus name
     ‘**SBXXXX**’, select Basic pricing tier, select **new/existing resource
@@ -107,9 +112,13 @@ Task 2: Create a C\# class to populate message in Service Bus
 3.  Under your project right select **References** node and select **Manage
     NuGet Packages**
 
+![Manage NuGet Packages](Images/Lab8bEx2Task2Step3.png)
+
 4.  Select **Browse** and add these two NuGet Packages in your reference:
     Newtonsoft.Json and select version v11.0.1 and WindowsAzure.ServiceBus
     v4.1.7. It’s important to use these versions.
+
+![Newtonsoft.json](Images/Lab8bEx2Task2Step4.png)
 
 5.  To create a Data Contract for the Customer Entity, add a new C\# class
     JsonBody.cs
@@ -189,8 +198,12 @@ namespace PopulateCustomer
 9.  In the Azure portal, select **Service Bus \> Settings \> Shared access
     policies**
 
+![Shared access policies](Images/Lab8bEx2Task2Step9.png) 
+
 10.  Under Policy, select **RootManageSharedAccessKey**. You will find the
     Primary Connection String. Copy it and paste it in the code within quotes
+
+![Policy: RootManageSharedAccessKey](Images/Lab8bEx2Task2Step10.png)
 
 11.  Enter the Queue name in the code
 
@@ -214,6 +227,8 @@ Task 3: Create a Logic App
 2.  Start with a common trigger. Select “**When a message is received in a
     Service Bus queue**”
 
+    ![Start with a common trigger](Images/Lab8bEx2Task3Step2.png)
+
 3.  By default, your Service bus trigger should associate the service bus you
     have created in the same resource group.
 
@@ -227,6 +242,8 @@ Task 3: Create a Logic App
 4.  Add the connection string and queue name. For queue name, type or select
     **customer**.
 
+    ![When a message is received in a queue (auto-complete)](Images/Lab8bEx2Task3Step4.png)
+
     Note:
 
 -   If you want to change the Service Bus, select **Change Connection**
@@ -239,13 +256,19 @@ Task 3: Create a Logic App
 6.  In the search panel select **Parse Json** and select **Data Operations –
     Parse JSON** action
 
+   ![When a message is received in a queue (auto-complete)](Images/Lab8bEx2Task3Step6.png)
+
 7.  Position the cursor in the Content box, and select Content from the right
     panel
+
+   ![When a message is received in a queue (auto-complete)](Images/Lab8bEx2Task3Step7.png)
 
 8.  Select the link which says **Use sample payload to generate schema**. You
     will get the option to load a json message (as shown below); which will form
     the json schema and get pasted in the Schema field of the previous diagram,
     then select **Done**
+
+![Code below](Images/Lab8bEx2Task3Step8.png)
 
    The schema should look like this: 
 <pre><code>
@@ -273,11 +296,17 @@ Task 3: Create a Logic App
    }
 </code></pre>
 
+   The schema should look like this:
+
+![code](Images/Lab8bEx2Task3Step8b.png)
+
 9.  Select **+ New step** button below and select **Add an Action** if available
 
 10.  Select **Dynamics 365 Operations Create record** or the button may be
     **Dynamics 365 for Fin & Ops Create record**, depending on your version.
     Make sure it is Operations or Ops. You do not want just “Dynamics 365”
+
+![Dynamics 365 for Operations - Create record](Images/Lab8bEx2Task3Step10.png)
 
 11.  Populate Create Record Action as:
 
@@ -295,13 +324,23 @@ Task 3: Create a Logic App
 
   -  Company: dataAreaId
 
+![Options above](Images/Lab8bEx2Task3Step11.png)
+
 12.  Optional: Select **New Step,** and select **Add an Action** if available
+
+![Add an action](Images/Lab8bEx2Task3Step12.png)
 
 13.  Optional: You can select [Office365 Outlook/Gmail] and select **send email**
 
+   ![Gmail - Send email](Images/Lab8bEx2Task3Step13.png)
+
 14.  Optional: Specify To address, subject, body etc.
 
+![Send email 2](Images/Lab8bEx2Task3Step14.png)
+
 15.  Select the **Code View** button
+
+![Code view](Images/Lab8bEx2Task3Step15.png)
 
 16.  Find the following code
 
