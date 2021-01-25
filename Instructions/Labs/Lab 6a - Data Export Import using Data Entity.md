@@ -15,6 +15,7 @@ Change Record
 |---------|-------------|------------------------------------------------------------------|
 | 1.0     | 10 Jan 2020 | Initial release                                                  |
 | 1.01    | 22 Jan 2021 | Remove table of contents; update branding; remove LCS references |
+| 1.02    | 29 Jan 2021 | Restored images |
 
 Lab Environment
 ===============
@@ -280,6 +281,11 @@ Task 2: Data Management Setup
 
 5.  Add the column FlyingMiles in the Staging Table in Mapping details and check
     the Auto default check box
+
+![The new line should have:
+Auto default: checked
+Source Field: Default
+Staging field: FlyingMiles](Images/Lab6aEx2Task1.png)
 
 6.  Select the **Default value** button and enter some temporary number (e.g.
     99) to fill in the staging table
