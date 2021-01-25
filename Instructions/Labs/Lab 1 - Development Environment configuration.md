@@ -81,23 +81,23 @@ Dynamics 365 Finance and Operations programming.
 
 ![Best practices](Images/Lab1Ex2Step3.png)
 
-    Select the **Best Practices** node and make sure the following, under Model:
-    Acceptance Test Library – Application Suite, beginning with
-    Microsoft.Dynamics.AX.Framework, are checked:
+   Select the **Best Practices** node and make sure the following, under Model:
+   Acceptance Test Library – Application Suite, beginning with
+   Microsoft.Dynamics.AX.Framework, are checked:
 
-    1.  BestPracticeFramework.UIRules
+   1.  BestPracticeFramework.UIRules
 
-    2.  CodeStyleRules
+   2.  CodeStyleRules
 
-    3.  DataAccessRules
+   3.  DataAccessRules
 
-    4.  DataEntityRules
+   4.  DataEntityRules
 
-    5.  DeprecatedElementsRules
+   5.  DeprecatedElementsRules
 
-    6.  MaintabilityRules
+   6.  MaintabilityRules
 
-    7.  StaticCodeValidationRules
+   7.  StaticCodeValidationRules
 
 5.  In the menu **Dynamics 365 \> Options**, expand the **Dynamics 365** node
 
