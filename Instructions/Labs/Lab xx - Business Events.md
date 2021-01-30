@@ -13,6 +13,7 @@ Change Record
 |---------|-------------|------------------------------------------------------------------|
 | 1.0     | 10 Jan 2020 | Initial release                                                  |
 | 1.01    | 22 Jan 2021 | Remove table of contents; update branding; remove LCS references |
+| 1.02    | 29 Jan 2021 | Restored images |
 
 Lab Environment
 ===============
@@ -341,14 +342,21 @@ Task 5: Refresh list of Business Events
 2.  Select **Rebuild business event catalog** under **Manage** in the Action
     pane
 
+    ![Manage \> Rebuild business event catalog](Images/LabxxEx1Task5Step2.png)
+
 3.  You may get warnings about other templates. Ignore. When it completes, you
     should be able to see the custom Business event ID
     *MLAFlightDetailsPostedBusinessEvent* in the list
+
+    ![Business events \> Business event catalog \> Sales orders/MLAFlightDetailsPostedBusinessEvent/Customer Fly Details](Images/LabxxEx1Task5Step3.png)
 
 4.  Once you select Business Event *MLAFlightDetailsPostedBusinessEvent,* you
     will find the option to download the [Json] schema. Please download the
     schema. The name of the file will be
     *BusinessEventSchema_MLAFlightDetailsPostedBusinessEvent.txt*
+
+![ Sales orders/MLAFlightDetailsPostedBusinessEvent/Customer Fly Details](Images/LabxxEx1Task5Step4.png)
+
 
 Exercise 2: Develop Custom Business Event
 =========================================
@@ -362,34 +370,57 @@ Task 1: Launch Microsoft Flow
 
 3.  Select **Create**; followed by **Automated flow**
 
+![Create \> Automated flow](Images/LabxxEx2Task1Step3.png)
+
 4.  Type a name for the Flow and search for Dynamics 365 for Fin & Ops for the
     trigger. Select the trigger “**When a Business Event occurs**” and Create
+
+![Choose your flow's trigger: When a business event occurs [Dynamics 365 for Fin & Ops]](Images/LabxxEx2Task1Step4.png)
 
 5.  Select the environment you are working with. Type the first few characters
     into instance and let the drop down suggest. The MSA needs access to the
     environment.
 
+![When a Business Event occurs: Instance](Images/LabxxEx2Task1Step5.png)
+
 6.  Select *Sales orders* as Category; followed by *Customer Fly Details* as the
     Business Event
 
+![When a Business Event occurs: Business event](Images/LabxxEx2Task1Step6.png)
+
 7.  Finally select *USMF* as Legal Entity and select New Step
+
+![When a Business Event occurs: + New step](Images/LabxxEx2Task1Step7.png)
 
 8.  In the Choose an action box, type “**Parse Json**” and select *Data
     Operations – Parse JSON* as the next connector
 
+![When a business event occurs: Choose an action: Parse json](Images/LabxxEx2Task1Step8.png)
+
 9.  Position the cursor in content, for context-sensitive suggestions. From the
     Dynamics content, select Body and place it in the Content input box
+
+![Parse JSON: Content: Body](Images/LabxxEx2Task1Step9.png)
 
 10. Select the highlighted area “**Generate from sample**”; a screen will pop
     up; copy the content of
     *BusinessEventSchema_MLAFlightDetailsPostedBusinessEvent.txt* in the popped
     up screen
 
+![Parse JSON: Use sample payload to generate schema](Images/LabxxEx2Task1Step10a.png)
+
+
+![Enter or paste a sample JSON payload](Images/LabxxEx2Task1Step10b.png)
+
 11. Once you select the button **Done**, the schema will be pasted in the Parse
     JSON connector. After saving, click **New step**
 
+![Parse Json Schema](Images/LabxxEx2Task1Step11.png)
+
 12. In the Choose an action box, type “Outlook.com” and select *Outlook.com –
     Send an email(V2)* as the next connector
+
+![Choose an action: outlook.com](Images/LabxxEx2Task1Step12.png)
 
 13. Flow will ask for the credential of your outlook/Hotmail/live id. From this
     ID the mail will go to the customer
@@ -397,6 +428,8 @@ Task 1: Launch Microsoft Flow
 14. Once your email id is authenticated by Flow, you need to provide further
     details of the mail recipient, subject and body with the help of Dynamics
     content. The connector should look like the following
+
+![Send an email](Images/LabxxEx2Task1Step11.png)
 
 15. Save the Flow
 
@@ -410,9 +443,13 @@ Check Output
 
 -   Add your own email id
 
+    ![Contact information: Email/Email address/\<enter\@mail.com\>](Images/LabxxCOa.png)
+
 -   Navigate to **Flying Details** and add a new record
 
 -   Go to Flow and check the Run history
+
+    ![CustFlyDetail: Run history](Images/LabxxCOb.png)
 
 -   You should receive a mail in your mailbox with the details of the Flying
     information entered

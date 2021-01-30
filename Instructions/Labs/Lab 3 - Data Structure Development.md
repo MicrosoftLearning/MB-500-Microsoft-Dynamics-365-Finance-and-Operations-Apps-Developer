@@ -15,6 +15,7 @@ Change Record
 |---------|-------------|-----------------------------------------------------------------------------------------------|
 | 1.0     | 10 Jan 2020 | Initial release                                                                               |
 | 1.01    | 22 Jan 2021 | Added instructions re: saving work, resource files, importing and exporting, changing company |
+| 1.02    | 29 Jan 2021 | Restored images |
 
 Lab Environment
 ===============
@@ -374,3 +375,11 @@ Check Output
    Save all, then right click on your solution and select Build solution. This
    takes a minute or two. Verify that there are no errors. (There will be
    warnings, due to best practices.)
+
+![Solution DynamicsDevSolution
+DynamicsDevProject
+Base Enums: DDTCustomerTier
+EDT Integers: DDTFlyingMiles
+EDT Strings: DDTAirportCode
+Table Extensions: CustTable.DynamicsDevTraining
+Tables: DDTAirport, DDTCustFlyDetails, DDTTierRange](Images/Lab3CO.png)
