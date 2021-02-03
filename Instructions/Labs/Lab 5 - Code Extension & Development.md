@@ -134,26 +134,26 @@ Task 1: Table DDTCustFlyDetails \> validateField Method
     }
     ```
 
-8.Paste the following piece of code within the method
+8. Paste the following piece of code within the method
 
 
-    ```
-    ValidateFieldEventArgs event = e as ValidateFieldEventArgs ; 
-    DDTCustFlyDetails custFlyDetails = sender as DDTCustFlyDetails;
-    boolean result = event.parmValidateResult();
-    if(result)
-    {
-        switch(event.parmFieldId())
-        {
-            case fieldNum(DDTCustFlyDetails, FlyFrom):
-            case fieldNum(DDTCustFlyDetails, FlyTo):
-                result = result && (custFlyDetails.FlyFrom != custFlyDetails.FlyTo);
-            break;
-        }
-    }
-    event.parmValidateResult(result);
-    
-    ```
+	```
+	ValidateFieldEventArgs event = e as ValidateFieldEventArgs ; 
+	DDTCustFlyDetails custFlyDetails = sender as DDTCustFlyDetails;
+	boolean result = event.parmValidateResult();
+	if(result)
+	{
+		switch(event.parmFieldId())
+		{
+			case fieldNum(DDTCustFlyDetails, FlyFrom):
+			case fieldNum(DDTCustFlyDetails, FlyTo):
+				result = result && (custFlyDetails.FlyFrom != custFlyDetails.FlyTo);
+			break;
+		}
+	}
+	event.parmValidateResult(result);
+
+	```
 
 Task 2: Table DDTTierRange \> find Method
 -----------------------------------------
@@ -165,23 +165,23 @@ Task 2: Table DDTTierRange \> find Method
 
 3.  Right click the Methods node and add a find() method as follows
 
-    ```
-    static DDTTierRange find(DDTCustomerTier \_custTier,  boolean \_forUpdate = false)
-   {
-    DDTTierRange tierRange;
-    if (_custTier)
-    {
-     if (_forUpdate)
-     {
-      tierRange.selectForUpdate(_forUpdate);
-     }
-     select firstonly tierRange
-     index hint CustTierIdx
-     where tierRange.CustTier == \_custTier;
-    }
-    return tierRange;
-   }
-   ```
+	```
+	static DDTTierRange find(DDTCustomerTier \_custTier,  boolean \_forUpdate = false)
+	{
+	DDTTierRange tierRange;
+	if (_custTier)
+	{
+		if (_forUpdate)
+		{
+		tierRange.selectForUpdate(_forUpdate);
+		}
+		select firstonly tierRange
+		index hint CustTierIdx
+		where tierRange.CustTier == \_custTier;
+	}
+	return tierRange;
+	}
+	```
 
 
 Task 3: Table DDTTierRange \> new Method
@@ -192,21 +192,21 @@ Task 3: Table DDTTierRange \> new Method
 
 2.  Right click the method and add a new method getTier() as follows
 
-    ```
-    public static DDTCustomerTier getTier(int \_miles) 
-    {
-   DDTTierRange tierRange;
-   DDTCustomerTier ret;
-   while select tierRange
-   {
-      if(tierRange.FromMiles \<= \_miles && tierRange.ToMiles \>= \_miles)
-      {
-         ret = tierRange.CustTier;
-      }
-   }
-   return ret;
-    }
-    ```
+	```
+	public static DDTCustomerTier getTier(int \_miles) 
+	{
+	DDTTierRange tierRange;
+	DDTCustomerTier ret;
+	while select tierRange
+	{
+		if(tierRange.FromMiles \<= \_miles && tierRange.ToMiles \>= \_miles)
+		{
+			ret = tierRange.CustTier;
+		}
+	}
+	return ret;
+	}
+	```
 
 
 Task 4: Table CustTable \> new Method
@@ -222,12 +222,12 @@ Task 4: Table CustTable \> new Method
 
 5.  This should be the signature of the class to ensure it is a class extension:
 
-    ```
-    [ExtensionOf(tableStr(CustTable))] 
-   final class DDTCustTableTable_Extension
-   {
-   }
-   ```
+	```
+	[ExtensionOf(tableStr(CustTable))] 
+	final class DDTCustTableTable_Extension
+	{
+	}
+	```
 
 6.  Add new method getTotalMiles() in the class
 
@@ -285,18 +285,18 @@ Task 2: Form DDTCustFlyDetails \> Data Source \> initValue method
 1.  Open DynamicsDevProject in Solution Explorer and search for
     **DDTCustFlyDetails** form
 
-In the form **DDTCustFlyDetails,** open data source DDTCustFlyDetails and
-override initValue method with the following piece of code
+	In the form **DDTCustFlyDetails,** open data source DDTCustFlyDetails and
+	override initValue method with the following piece of code
 
-    ```
-       DDTCustFlyDetails   custFlyDetailsMax;
-       super();
-       select FlyCount
-          from custFlyDetailsMax 
-          order by CustAccount, FlyCount desc
-          where custFlyDetailsMax.CustAccount == DDTCustFlyDetails.CustAccount;
-       DDTCustFlyDetails.FlyCount = custFlyDetailsMax.FlyCount + 1;
-    ```
+	```
+	DDTCustFlyDetails   custFlyDetailsMax;
+	super();
+	select FlyCount
+		from custFlyDetailsMax 
+		order by CustAccount, FlyCount desc
+		where custFlyDetailsMax.CustAccount == DDTCustFlyDetails.CustAccount;
+	DDTCustFlyDetails.FlyCount = custFlyDetailsMax.FlyCount + 1;
+	```
 
 
 2.  Open table DDTCustFlyDetails from Solution Explorer
@@ -549,7 +549,7 @@ Task 2: Create a table: MLAAirportMilesChart
     }
     ```
 
-10.Add a new method getMiles() in the table
+10. Add a new method getMiles() in the table
 
     ```
     public static DDTFlyingMiles getMiles(DDTAirportCode _fromAirport, DDTAirportCode _toAirport)
@@ -759,7 +759,7 @@ Task 12: Chain of Command: Datasource of DDTTierRange form
     ```
 
 
-5.Add new validation within that class by creating a chain of command for the
+5. Add new validation within that class by creating a chain of command for the
     validateWrite() method of the datasource, which is already overridden in the
     base class. Following is the code:
 
@@ -816,7 +816,7 @@ Task 13: Table DDTCustFlyDetails \> modifiedField Method
     ```
 
 
-8.Paste the following piece of code within the method:
+8. Paste the following piece of code within the method:
 
     ```
     ModifyFieldEventArgs    event = e as DataEventArgs;
