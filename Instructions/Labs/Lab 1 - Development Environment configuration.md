@@ -175,7 +175,7 @@ Exercise 3: Create new Model and Project
 
     9.  Make this my default model for new projects: checked
 
-6.  **New Project** pop-up will appear with **Dynamics 365 \> Unified
+6.  **New Project** pop-up will appear with **Dynamics 365 \> Finance
     Operations** as the default template selected
 
 7.  Provide Project & Solution name as follows and select **OK** button:
