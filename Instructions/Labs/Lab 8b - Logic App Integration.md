@@ -1,6 +1,21 @@
+---
+lab:
+    title: 'Exercise 02: Logic App integration'
+    module: 'Module 08: Integration'
+---
+
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
 **Lab 8b - Logic App Integration**
+
+Change Record
+=============
+
+| Version | Date        | Change                                                           |
+|---------|-------------|------------------------------------------------------------------|
+| 1.0     | 10 Jan 2020 | Initial release                                                  |
+| 1.01    | 22 Jan 2021 | Remove table of contents; update branding; remove LCS references |
+| 1.02    | 29 Jan 2021 | Restored images |
 
 Lab Environment
 ===============
@@ -26,7 +41,7 @@ Lab Overview
 
 -   Using Azure resources to create Service Bus and Logic App
 
--   Integration with Dynamics 365 for Finance and Operations using Logic App
+-   Integration with Dynamics 365 Finance and Operations apps using Logic App
 
 **Estimated time to complete this lab: 40+ minutes**
 
@@ -61,7 +76,7 @@ Task 1: Sign up for Azure with a Pass Code
     Dynamics 365 trial organization and then navigate to
     [www.microsoftazurepass.com](http://www.microsoftazurepass.com)
 
-2.  Login with your LCS credentials and select **Confirm Microsoft Account**
+2.  Login with your credentials and select **Confirm Microsoft Account**
 
     ![Microsoft Azure The following Microsoft Account will be used for Azure Pass: ](Images/Lab8bEx1Task1Step2.png)
 
@@ -99,17 +114,16 @@ Task 2: Create a C\# class to populate message in Service Bus
 
 ![Manage NuGet Packages](Images/Lab8bEx2Task2Step3.png)
 
-
-4.Select **Browse** and add these two NuGet Packages in your reference:
+4.  Select **Browse** and add these two NuGet Packages in your reference:
     Newtonsoft.Json and select version v11.0.1 and WindowsAzure.ServiceBus
     v4.1.7. It’s important to use these versions.
 
 ![Newtonsoft.json](Images/Lab8bEx2Task2Step4.png)
 
-5.To create a Data Contract for the Customer Entity, add a new C\# class
+5.  To create a Data Contract for the Customer Entity, add a new C\# class
     JsonBody.cs
 
-6.Add the following code in the class
+6.  Add the following code in the class
 
 <pre><code>using System;
 using System.Collections.Generic;
@@ -138,13 +152,12 @@ namespace PopulateCustomer
         public string dataAreaId { get; set; }
     }
 }
-
 </code></pre>
 
-7.Add or locate a C\# class named Program that will create the json
-    message and send the message to the service bus
+7.  Add or locate a C\# class named Program that will create the json message
+    and send the message to the service bus
 
-8.Add the following code in the new runnable class. The connection string will
+8.  Add the following code in the new runnable class. The connection string will
     be derived shortly.
 
 <pre><code>using System;
@@ -182,19 +195,19 @@ namespace PopulateCustomer
 }
 </code></pre>
 
-9.In the Azure portal, select **Service Bus \> Settings \> Shared access
+9.  In the Azure portal, select **Service Bus \> Settings \> Shared access
     policies**
 
 ![Shared access policies](Images/Lab8bEx2Task2Step9.png) 
 
-10.Under Policy, select **RootManageSharedAccessKey**. You will find the
+10.  Under Policy, select **RootManageSharedAccessKey**. You will find the
     Primary Connection String. Copy it and paste it in the code within quotes
 
 ![Policy: RootManageSharedAccessKey](Images/Lab8bEx2Task2Step10.png)
 
-11.Enter the Queue name in the code
+11.  Enter the Queue name in the code
 
-12.**Save** and **Build** the C\# code
+12.  **Save** and **Build** the C\# code
 
 Task 3: Create a Logic App
 --------------------------
@@ -226,97 +239,116 @@ Task 3: Create a Logic App
 
     2.  If you have a Continue button, select that.
 
-4.  Add the connection string and queue name below. For queue name, type or
-    select **customer**.
+4.  Add the connection string and queue name. For queue name, type or select
+    **customer**.
 
     ![When a message is received in a queue (auto-complete)](Images/Lab8bEx2Task3Step4.png)
 
     Note:
-<ul>
-<li>If you want to change the Service Bus, select **Change Connection**</li>
-<li>If you want to change the frequency of data reading from service bus, select
-    **Edit – we recommend every 1 minute**</li>
-</ul>
 
-5.Select **+ New step** button below and select **Add an Action** if available
+-   If you want to change the Service Bus, select **Change Connection**
 
-6.In the search panel select **Parse Json** and select **Data Operations –
+-   If you want to change the frequency of data reading from service bus, select
+    **Edit – we recommend every 1 minute**
+
+5.  Select **+ New step** button below and select **Add an Action** if available
+
+6.  In the search panel select **Parse Json** and select **Data Operations –
     Parse JSON** action
 
    ![When a message is received in a queue (auto-complete)](Images/Lab8bEx2Task3Step6.png)
 
-7.Position the cursor in the Content box, and select Content from the right panel
+7.  Position the cursor in the Content box, and select Content from the right
+    panel
 
    ![When a message is received in a queue (auto-complete)](Images/Lab8bEx2Task3Step7.png)
 
-8.Select the link which says **Use sample payload to generate schema**. You
-   will get the option to load a json message (as shown below); which will form
-   the json schema and get pasted in the Schema field of the previous diagram,
-   then select **Done**
+8.  Select the link which says **Use sample payload to generate schema**. You
+    will get the option to load a json message (as shown below); which will form
+    the json schema and get pasted in the Schema field of the previous diagram,
+    then select **Done**
 
 ![Code below](Images/Lab8bEx2Task3Step8.png)
 
-<pre><code>{"AddressCountryRegionId":"USA", "CustomerAccount":"Test888", "Name":"Test 888", "SalesCurrencyCode":"USD", "dataAreaId":"USMF", "CustomerGroupId":"10"}
+   The schema should look like this: 
+<pre><code>
+{
+   "type": "object",
+   "properties": {
+   "AddressCountryRegionId": {
+   "type": "string"
+   },
+   "CustomerAccount": {
+   "type": "string"
+   },
+   "Name": {
+   "type": "string"
+   },
+   "SalesCurrencyCode": {
+   "type": "string"
+   },
+   "dataAreaId": {
+   "type": "string"
+   },
+   "CustomerGroupId": {
+   "type": "string"
+   }
+   }
 </code></pre>
-
-
-   The schema should look like this:
 
 ![code](Images/Lab8bEx2Task3Step8b.png)
 
-9.Select **+ New step** button below and select **Add an Action** if available
+9.  Select **+ New step** button below and select **Add an Action** if available
 
-10.Select **Dynamics 365 Operations Create record** or the button may be
+10.  Select **Dynamics 365 Operations Create record** or the button may be
     **Dynamics 365 for Fin & Ops Create record**, depending on your version.
-   Make sure it is Operations or Ops. You do not want just “Dynamics 365”
+    Make sure it is Operations or Ops. You do not want just “Dynamics 365”
 
 ![Dynamics 365 for Operations - Create record](Images/Lab8bEx2Task3Step10.png)
 
+11.  Populate Create Record Action as:
 
-11.Populate Create Record Action as:
+  - Instance: Select your instance from the drop down
 
-    1.  Instance: Select your instance from the drop down
+  -  Entity name: Select Customers (wait for the next fields to display)
 
-    2.  Entity name: Select Customers (wait for the next fields to display)
+  -  Customer account: Position the cursor in the field, then the available fields will display on the right. Select CustomerAccount.
 
-    3.  Customer account: Position the cursor in the field, then the available
-        fields will display on the right. Select CustomerAccount.
+   -  Name: Position the cursor in the field, then select Name.
 
-    4.  Name: Position the cursor in the field, then select Name.
+  -  Currency: SalesCurrencyCode.
 
-    5.  Currency: SalesCurrencyCode.
+  -  Customer group: CustomerGroupId.
 
-    6.  Customer group: CustomerGroupId.
-
-    7.  Company: dataAreaId
+  -  Company: dataAreaId
 
 ![Options above](Images/Lab8bEx2Task3Step11.png)
 
-12.Optional: Select **New Step,** and select **Add an Action** if available
+12.  Optional: Select **New Step,** and select **Add an Action** if available
 
 ![Add an action](Images/Lab8bEx2Task3Step12.png)
 
-13.Optional: You can select [Office365 Outlook/Gmail] and select **send email**
+13.  Optional: You can select [Office365 Outlook/Gmail] and select **send email**
 
    ![Gmail - Send email](Images/Lab8bEx2Task3Step13.png)
 
-14.Optional: Specify To address, subject, body etc.
+14.  Optional: Specify To address, subject, body etc.
 
 ![Send email 2](Images/Lab8bEx2Task3Step14.png)
 
-15.Select **Code View** button
+15.  Select the **Code View** button
 
 ![Code view](Images/Lab8bEx2Task3Step15.png)
 
-16.Find the following code
+16.  Find the following code
 
     "content": "\@triggerBody()?['ContentData']"
 
-17.Replace that line with this:
+17.  Replace that line with this:
 
     "content": "\@json(decodeBase64(triggerBody()?['ContentData']))"
 
-18.**Save** the Logic App. Run the VS class and when complete, run the Logic
+18. **Save** the Logic App. Run the VS class and when complete, run the Logic
     App.
 
 Check Output

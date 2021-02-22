@@ -1,6 +1,20 @@
+---
+lab:
+    title: 'Exercise 01: Extension framework'
+    module: 'Module 07: Frameworks'
+---
+
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
 **Lab 7 - Extension Framework**
+
+Change Record
+=============
+
+| Version | Date        | Change                                                           |
+|---------|-------------|------------------------------------------------------------------|
+| 1.0     | 10 Jan 2020 | Initial release                                                  |
+| 1.01    | 22 Jan 2021 | Remove table of contents; update branding; remove LCS references |
 
 Lab Environment
 ---------------
@@ -76,9 +90,9 @@ Task 2: Table Extension: CustParameters
 
 6.  Add a new Field group: MLALoyaltyCalc
 
-   	a.  Label: *Loyalty Calculation Parameter*
+    1.  Label: *Loyalty Calculation Parameter*
 
-   	b.  Add field: MLALoyaltyCalcParameter
+    2.  Add field: MLALoyaltyCalcParameter
 
 Task 3: Form Extension: CustParameters
 --------------------------------------
@@ -125,7 +139,7 @@ abstract class MLALoyaltyCalcPlugIn
 </code></pre>
 
 
-5.Add the following two methods in the class:
+5.  Add the following two methods in the class
 
 <pre><code>
 public static MLALoyaltyCalcPlugIn getLoyaltyCalcParm(DDTCustFlyDetails _custFlyDetails)
@@ -151,7 +165,6 @@ public abstract int calcLoyaltyPoints(DDTCustFlyDetails _custFlyDetails)
 </code></pre>
 
 
-
 Task 5: Create Plug-in Clients
 ------------------------------
 
@@ -175,7 +188,8 @@ class MLALoyaltyCalcPlugIn_Miles extends MLALoyaltyCalcPlugIn
 }
 </code></pre>
 
-5.Business logic of the Loyalty Calculation should be written extending the
+
+5.  Business logic of the Loyalty Calculation should be written extending the
     method calcLoyaltyPoints() in this class, as follows:
 
 <pre><code>
@@ -187,7 +201,7 @@ public int calcLoyaltyPoints(DDTCustFlyDetails _custFlyDetails)
     }
 </code></pre>
 
-6.Similarly, create another Plug-in client considering number of trips as base
+6.  Similarly, create another Plug-in client considering number of trips as base
     for calculating loyalty points. Create a new class
     MLALoyaltyCalcPlugIn_Trips and add the following code:
 
@@ -218,13 +232,12 @@ Task 6: Invoke Plug-in from class MLACustFlyDetailsEventHandler
     points calculation in an earlier lab. You need to comment out the old code
     by wrapping it with /\* and \*/ as follows:
 
-
 <pre><code>
  /* custFlyDetails.MLALoyaltyPoints = custFlyDetails.FlyingMiles * (DDTTierRange::find(CustTable::find(custFlyDetails.CustAccount).DDTCustomerTier).MLALoyaltyPercent/100); */
 </code></pre>
 
 
-3.Add new code to invoke the Plug-In framework, as follows:
+3.  Add new code to invoke the Plug-In framework, as follows:
 
 <pre><code>
 MLALoyaltyCalcPlugIn calc = MLALoyaltyCalcPlugIn::getLoyaltyCalcParm(custFlyDetails);
@@ -244,11 +257,11 @@ Check Output
 
 4.  Navigate to **Accounts Receivable \> Customers \> All Customers**
 
-    a.  Open US-001
+    1.  Open US-001
 
-    b.  In the Flying Details fast tab enter a new record
+    2.  In the Flying Details fast tab enter a new record
 
-    c.  You will find the Loyalty points calculation is based on the Flying
+    3.  You will find the Loyalty points calculation is based on the Flying
         Miles value
 
 5.  Go back to the **General tab \> Loyalty Calculation Parameters amount** and

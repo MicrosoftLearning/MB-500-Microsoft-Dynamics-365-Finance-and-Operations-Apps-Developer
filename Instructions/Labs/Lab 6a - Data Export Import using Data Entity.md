@@ -1,6 +1,21 @@
+---
+lab:
+    title: 'Exercise 01: Data export/import using data entity'
+    module: 'Module 06: Data migration'
+---
+
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
 **Lab 6a - Data Export/Import using Data Entity**
+
+Change Record
+=============
+
+| Version | Date        | Change                                                           |
+|---------|-------------|------------------------------------------------------------------|
+| 1.0     | 10 Jan 2020 | Initial release                                                  |
+| 1.01    | 22 Jan 2021 | Remove table of contents; update branding; remove LCS references |
+| 1.02    | 29 Jan 2021 | Restored images |
 
 Lab Environment
 ===============
@@ -22,8 +37,8 @@ Lab Overview
 
 -   Creation and extension of a Data Entity
 
--   Set up Data Management for importing external data into Dynamics 365 for
-    Finance and Operations
+-   Set up Data Management for importing external data into Dynamics 365 Finance
+    and Operations apps
 
 **Estimated time to complete this lab: 30+ minutes**
 
@@ -63,33 +78,33 @@ Task 1: New Data Entity: DDTCustFlyDetailsEntity
 
 4.  Create a new data entity DDTCustFlyDetailsEntity
 
-    a.  Primary Data source: DDTCustFlyDetails
+    1.  Primary Data source: DDTCustFlyDetails
 
-    b.  Entity Category: Transaction
+    2.  Entity Category: Transaction
 
-    c.  Enable Public API: *checked*
+    3.  Enable Public API: *checked*
 
-    d.  Public Entity Name: CustFlyDetails
+    4.  Public Entity Name: CustFlyDetails
 
-    e.  Public Collection Name: CustFlyDetails
+    5.  Public Collection Name: CustFlyDetails
 
-    f.  Enable Data Management Capabilities: *checked*
+    6.  Enable Data Management Capabilities: *checked*
 
-    g.  Staging Table: DDTCustFlyDetailsStaging
+    7.  Staging Table: DDTCustFlyDetailsStaging
 
-    h.  View Privilege: DDTCustFlyDetailsEntityView
+    8.  View Privilege: DDTCustFlyDetailsEntityView
 
-    i.  Maintain Privilege: DDTCustFlyDetailsEntityMaintain
+    9.  Maintain Privilege: DDTCustFlyDetailsEntityMaintain
 
 5.  Select the following fields in the Data Entity
 
-    a.  CustAccount
+    1.  CustAccount
 
-    b.  FlyCount
+    2.  FlyCount
 
-    c.  FlyingDate
+    3.  FlyingDate
 
-    d.  FlyingMiles
+    4.  FlyingMiles
 
 6.  After creating the Data Entity, open it in the element designer
 
@@ -97,44 +112,44 @@ Task 1: New Data Entity: DDTCustFlyDetailsEntity
 
 8.  Add a new Data Source
 
-    a.  Name: AirportFrom
+    1.  Name: AirportFrom
 
-    b.  Table: DDTAirport
+    2.  Table: DDTAirport
 
-    c.  Is Read Only: Yes
+    3.  Is Read Only: Yes
 
-    d.  Add Relation: DDTCustFlyDetails.FlyFrom = AirportFrom.RecId
+    4.  Add Relation: DDTCustFlyDetails.FlyFrom = AirportFrom.RecId
 
-        i.  Field = FlyFrom
+        1.  Field = FlyFrom
 
-        ii.  Join Data Source = DDTCustFlyDetails
+        2.  Join Data Source = DDTCustFlyDetails
 
-        iii.  Related Field = RecId
+        3.  Related Field = RecId
 
 9.  Add another new Data Source to DDTCustFlyDetails:
 
-    a.  Name: AirportTo
+    1.  Name: AirportTo
 
-    b.  Table: DDTAirport
+    2.  Table: DDTAirport
 
-    c.  Is Read Only: Yes
+    3.  Is Read Only: Yes
 
-    d.  Add Relation: DDTCustFlyDetails.FlyTo = AirportTo.RecId
+    4.  Add Relation: DDTCustFlyDetails.FlyTo = AirportTo.RecId
 
 10. Drag AirportCode from both the data sources AirportFrom and AirportTo and
     drop it under the entity’s Fields node in the following order:
 
-    a.  CustAccount
+    1.  CustAccount
 
-    b.  FlyCount
+    2.  FlyCount
 
-    c.  FlyingDate
+    3.  FlyingDate
 
-    d.  AirportFrom_AirportCode
+    4.  AirportFrom_AirportCode
 
-    e.  AirportTo_AirportCode
+    5.  AirportTo_AirportCode
 
-    f.  FlyingMiles
+    6.  FlyingMiles
 
 11. Save, then Right click DDTCustFlyDetailsEntity in the Designer and execute
     “Regenerate staging table”
@@ -155,11 +170,11 @@ Task 2: Data Management Setup
 3.  Go to **Framework parameters** and change the following field values under
     General to Yes:
 
-    a.  Ignore error
+    1.  Ignore error
 
-    b.  Create error file
+    2.  Create error file
 
-    c.  Remove duplicates
+    3.  Remove duplicates
 
 4.  Save and close the parameters form
 
@@ -167,19 +182,20 @@ Task 2: Data Management Setup
 
 6.  Enter the following values:
 
-    a.  Group Name: Customer Flying Details Import
+    1.  Group Name: Customer Flying Details Import
 
-    b.  Select Add file (visible in the Enhanced view)
+    2.  Select Add file (visible in the Enhanced view)
 
-    c.  Source data format: CSV
+    3.  Source data format: CSV
 
-    d.  Entity name: Customer Fly Details (DDTCustFlyDetailsEntity) – if this is
+    4.  Entity name: Customer Fly Details (DDTCustFlyDetailsEntity) – if this is
         not available, wait for the message saying the entity list has been
         refreshed
 
-    e.  Keep all other default values
+    5.  Keep all other default values
 
-    f.  Upload and add from resource folder: CustFlyDetails.csv
+    6.  Upload and add from resource folder: CustFlyDetails.csv. If not provided
+        on the VM, you may find it at <http://aka.ms/mb500labresources>
 
 7.  Select **View map** icon in the Selected entities grid and make sure the
     source-staging mapping is correct, then close the mapping visualization
@@ -236,6 +252,7 @@ DDTCustFlyDetailsEntity deCustFlyDetailsEntity = _entityCtx.getEntityRecord();
     }
 </code></pre>
 
+
 Task 2: Data Management Setup
 -----------------------------
 
@@ -246,17 +263,18 @@ Task 2: Data Management Setup
 
 3.  Enter the following values
 
-    a.  Group Name: Customer Flying Details Import without Miles
+    1.  Group Name: Customer Flying Details Import without Miles
 
-    b.  Add file; Source Data format: CSV
+    2.  Add file; Source Data format: CSV
 
-    c.  Entity name: Customer Fly Details (DDTCustFlyDetailsEntity)
+    3.  Entity name: Customer Fly Details (DDTCustFlyDetailsEntity)
 
-    d.  Keep all other default values
+    4.  Keep all other default values
 
-    e.  Upload from resource folder: CustFlyDetailsWOMiles.csv
+    5.  Upload from resource folder: CustFlyDetailsWOMiles.csv. If not provided
+        on the VM, you may find it at <http://aka.ms/mb500labresources>
 
-    f.  Close that window
+    6.  Close that window
 
 4.  Select the View map icon in the Selected entities grid and make sure the
     source-staging mapping is correct

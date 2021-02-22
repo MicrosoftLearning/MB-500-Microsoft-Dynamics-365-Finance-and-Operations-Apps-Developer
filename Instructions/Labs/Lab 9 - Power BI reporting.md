@@ -1,6 +1,21 @@
+---
+lab:
+    title: 'Exercise 01: Power BI reporting'
+    module: 'Module 09: Reporting'
+---
+
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
 **Lab 9 - Power BI Reporting**
+
+Change Record
+=============
+
+| Version | Date        | Change                                                           |
+|---------|-------------|------------------------------------------------------------------|
+| 1.0     | 10 Jan 2020 | Initial release                                                  |
+| 1.01    | 22 Jan 2021 | Remove table of contents; update branding; remove LCS references |
+| 1.02    | 29 Jan 2021 | Restored images |
 
 Lab Environment
 ===============
@@ -15,7 +30,8 @@ In order to run this lab, you will need:
 
 -   Power BI Desktop, which is downloadable at
     <https://www.microsoft.com/en-us/download/details.aspx?id=58494> as
-    PBIDesktopSsetup_x64.exe
+    PBIDesktopSsetup_x64.exe. If not provided on the VM, you may find it at
+    <http://aka.ms/mb500labresources>
 
 -   Note that in order to run Task 2, you will need to be admin in your tenant.
     If you are not, you can still create a PowerBI in Task 1, but cannot bring
@@ -27,12 +43,12 @@ Lab Overview
 
 -   Dependency: Lab 5 – Code Extension & Development should be completed
 
--   Develop Power BI report in PB Desktop using an Entity from Dynamics 365 for
-    Finance and Operations
+-   Develop Power BI report in PB Desktop using an Entity from Dynamics 365
+    Finance and Operations apps
 
 -   Publish the report in the Power BI dashboard
 
--   Publish the report in the Dynamics 365 for Finance and Operations workspace
+-   Publish the report in the Dynamics 365 Finance and Operations apps workspace
 
 **Estimated time to complete this lab: 45+ minutes**
 
@@ -55,12 +71,12 @@ Task 1: Power BI Desktop
 2.  Install Power BI Desktop and open the application
 
 3.  In the top right corner, there is an option to sign in. If you are not
-    already signed in, select it and sign in using your LCS credentials or
-    Microsoft Account
+    already signed in, select it and sign in using your Microsoft Account
 
 4.  Select **Get Data \> OData Feed** (found under Other) and **Connect**
 
-5.  Enter your Dynamics 365 for Finance and Operations url with a suffix ‘/data’
+5.  Enter your Dynamics 365 Finance and Operations apps url with a suffix
+    ‘/data’
 
     1.  Ex: https://\<yourVM\>devaos.cloudax.dynamics.com/data
 
@@ -79,44 +95,45 @@ Task 1: Power BI Desktop
 
 10. Name the new column “Sector” with the formula as follows
 
-	[AirportFrom_AirportCode]&"-"&[AirportTo_AirportCode]
+   [AirportFrom_AirportCode]&"-"&[AirportTo_AirportCode]
 
    Therefore, the formula on the left will look like:
 
-	Sector = [AirportFrom_AirportCode]&"-"&[AirportTo_AirportCode]
+   Sector = [AirportFrom_AirportCode]&"-"&[AirportTo_AirportCode]
 
 ![Formula above](Images/Lab9ExTask1Step10.png)
 
-11.From the list of Visualizations, select “Pie Chart”
+11.  From the list of Visualizations, select “Pie Chart”
 
-12.Assign the new column “Sector” in Details (hint: drag and drop)
+12.  Assign the new column “Sector” in Details (hint: drag and drop)
 
-13.Assign “Count of CustAccount” in Values (hint: drag and drop CustAccount and
+13.  Assign “Count of CustAccount” in Values (hint: drag and drop CustAccount and
     it will automatically populate Count of)
 
-14.The pie chart should look similar to this:
+14.  You should have a pie chart of the different sectors, which shows count and
+    percentage.
 
 ![A pie chart showing the different airport sectors](Images/Lab9ExTask1Step14.png)
 
-15.**Save** the visual as a pbix file
+15.  **Save** the visual as a pbix file
 
-16.Select the **Publish** button at the top right end
+16.  Select the **Publish** button at the top right end
 
-17.Open <https://powerbi.microsoft.com/> and sign in
+17.  Open <https://powerbi.microsoft.com/> and sign in
 
-18.Under **My Workspace \> Reports**, you should find your new visuals
+18.  Under **My Workspace \> Reports**, you should find your new visuals
 
-19.Add that in a new dashboard by clicking on the pin (third button from top
+19.  Add that in a new dashboard by clicking on the pin (third button from top
     right of the visuals)
 
-Task 2: Power BI on Dynamics 365 for Finance and Operations
------------------------------------------------------------
+Task 2: Power BI on Dynamics 365 Finance and Operations apps
+------------------------------------------------------------
 
 1.  Open <https://dev.powerbi.com/apps> to register the application
 
     1.  Log in
 
-    2.  Type “**Dynamics 365 for Finance and Operations**” as Application Name
+    2.  Type “**Dynamics 365 Finance and Operations apps**” as Application Name
 
     3.  Select “**Server-side web Application**” in the Application Type field
 
@@ -147,14 +164,14 @@ Task 2: Power BI on Dynamics 365 for Finance and Operations
 3.  Open the **Reservation Management** Workspace
 
 4.  In the Power BI banner, click **Get started**. If this is the first time
-    that you’ve started Power BI from Dynamics 365 for Finance and Operations,
+    that you’ve started Power BI from Dynamics 365 Finance and Operations apps,
     you’re prompted to authorize sign-in to Power BI from the D365 client.
     Click **Click here** to provide authorization to Power BI.
 
-5.  Because you’re already signed in to AAD in Dynamics 365 for Finance and
-    Operations, you don’t have to enter your credentials again. A new tab
+5.  Because you’re already signed in to AAD in Dynamics 365 Finance and
+    Operations apps, you don’t have to enter your credentials again. A new tab
     appears, where you’re prompted to authorize the connection between Dynamics
-    365 for Finance and Operations and Power BI. You can now return to the
+    365 Finance and Operations apps and Power BI. You can now return to the
     original tab.
 
 6.  The Add / remove Power BI tiles slider dialog opens. The tabs on the left

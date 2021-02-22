@@ -1,6 +1,20 @@
+---
+lab:
+    title: 'Exercise 01: Async and sandbox functionality'
+    module: 'Module 10: Security and performance'
+---
+
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
 **Lab 10 - Async & Sandbox Functionality**
+
+Change Record
+=============
+
+| Version | Date        | Change                                                           |
+|---------|-------------|------------------------------------------------------------------|
+| 1.0     | 10 Jan 2020 | Initial release                                                  |
+| 1.01    | 22 Jan 2021 | Remove table of contents; update branding; remove LCS references |
 
 Lab Environment
 ===============
@@ -35,8 +49,8 @@ process to an asynchronous process by invoking the runAsync() method of formRun.
 It will enable us to execute the process in the background without freezing the
 browser.
 
-Exercise: Open Dynamics 365 for Finance and Operations
-======================================================
+Exercise: Open Dynamics 365 Finance and Operations apps
+=======================================================
 
 Task 1: Update DDTUpdateTier class
 ----------------------------------
@@ -47,8 +61,6 @@ Task 1: Update DDTUpdateTier class
 2.  Add this code to the update() method
 	1.  Line 1: add int _async=0
 	2.  after the commit: Add the if/else
-
-3.  Build the project
 
 <pre><code>public static int update(int _async=0)
     {
@@ -69,6 +81,9 @@ Task 1: Update DDTUpdateTier class
         return custTable.rowCount();
     }
 </code></pre>
+
+3.  Build the project
+
 
 
 Task 2: Form Extension: CustTable
@@ -107,7 +122,7 @@ Task 3: Event Handler for clicked event of the form button
 5.  Find CustTable.MyLabAirlines in the MyLabAirlines project under Form
     Extensions and open in the designer
 
-6.  Navigate to **Design | Pattern \> ActionPaneHeader \> aptabGeneral \>
+6.  Navigate to **Design \| Pattern \> ActionPaneHeader \> aptabGeneral \>
     DDTCustTierButtonGroup \> MLACustTierUpdateAsync \> Events**; right-click
     **onClicked** and Copy event handler method
 
@@ -119,12 +134,15 @@ public static void MLACustTierUpdateAsync_OnClicked(FormControl sender, FormCont
 } 
 </code></pre>
 
-8.Add the following two lines within those brackets to execute the
+
+
+8.  Add the following two lines within those brackets to execute the
     asynchronous code
 
 <pre><code>FormRun formRun = sender.formRun() as FormRun;
         formRun.runAsync(classNum(DDTUpdateTier),"update",[1], System.Threading.CancellationToken::None);
 </code></pre>
+
 
 
 Check Output
