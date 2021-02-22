@@ -88,7 +88,7 @@ Task 1: Base Enum: Customer Tier
 
 3.  Select Base Enum under **Dynamics 365 Items \> Data Types**
 
-4.  Create a new Enum DDTCustomerTier (Label: *Customer Tier*) and add the
+4.  Create a new Enum **DDTCustomerTier** (Label: **Customer Tier**) and add the
     following Enum elements (in Designer, right click on it and select New
     Element) with the same label
 
@@ -110,7 +110,7 @@ Task 2: EDT: Airport Code
 
 3.  Select EDT String under **Dynamics 365 Items \> Data Types**
 
-4.  Create a new EDT DDTAirportCode (Label: *Airport* c*ode*)
+4.  Create a new EDT **DDTAirportCode** (Label: **Airport code**)
 
 Task 3: EDT: Flying Miles
 -------------------------
@@ -121,7 +121,7 @@ Task 3: EDT: Flying Miles
 
 3.  Select EDT Integer under **Dynamics 365 Items \> Data Types**
 
-4.  Create a new EDT DDTFlyingMiles (Label: *Flying miles*)
+4.  Create a new EDT **DDTFlyingMiles** (Label: **Flying miles**)
 
 Task 4: Table: Tier Range
 -------------------------
@@ -134,7 +134,7 @@ Task 4: Table: Tier Range
 
 4.  Select Table under **Dynamics 365 Items \> Data Model**
 
-5.  Create a new table DDTTierRange (Label: *Tier wise Mile Range*)
+5.  Create a new table **DDTTierRange** (Label: **Tier wise Mile Range**)
 
 6.  Add the following fields in the table
 
@@ -144,13 +144,13 @@ Task 4: Table: Tier Range
 
     2.  FromMiles
 
-        1.  Extended Data Type: DDTFlyingMiles
+        1.  Extended Data Type: DDTFlyingMiles (of type Int64)
 
-        2.  Label: *From* m*iles*
+        2.  Label: *From miles*
 
     3.  ToMiles
 
-        1.  Extended Data Type: DDTFlyingMiles
+        1.  Extended Data Type: DDTFlyingMiles (of type Int64)
 
         2.  Label: *To miles*
 
@@ -169,7 +169,7 @@ Task 5: Table: Airport Code
 
 3.  Select Table under **Dynamics 365 Items \> Data Model**
 
-4.  Create a new table DDTAirport (Label: *Airport Code*)
+4.  Create a new table **DDTAirport** (Label: **Airport Code**)
 
 5.  Add the following fields in the table
 
@@ -177,7 +177,7 @@ Task 5: Table: Airport Code
 
         1.  Extended Data Type: RefRecId (of type Int64)
 
-        2.  Label: *City* co*de*
+        2.  Label: *City code*
 
     2.  AirportCode
 
@@ -187,7 +187,7 @@ Task 5: Table: Airport Code
 
     1.  DDTAirportCode
 
-        1.  Label: *Airport* c*ode*
+        1.  Label: *Airport code*
 
         2.  Field: AirportCode
 
@@ -233,7 +233,7 @@ Task 6: Table: Customer Fly Details
 
 3.  Select Table under **Dynamics 365 Items \> Data Model**
 
-4.  Create a new table DDTCustFlyDetails (Label: *Customer Fly Details*)
+4.  Create a new table **DDTCustFlyDetails** (Label: **Customer Fly Details**)
 
 5.  Add the following fields in the table
 
@@ -268,7 +268,7 @@ Task 6: Table: Customer Fly Details
 
         1.  EDT: RefRecId
 
-        2.  Label: *To* c*ity*
+        2.  Label: *To city*
 
         3.  Mandatory: Yes
 
