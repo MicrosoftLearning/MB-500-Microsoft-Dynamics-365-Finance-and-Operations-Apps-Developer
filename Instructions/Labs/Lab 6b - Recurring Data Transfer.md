@@ -116,7 +116,7 @@ Task 1: Register Application and Create Application Key
 12. The next step is to add the key, for which you need to go back to the Manage
     panel and select **Certificates & secrets**. Click the button **New client
     secret**. Enter **Description**, where you can input any name of the key or
-    leave it blank. You are just naming this key set, select the **Duratio**n
+    leave it blank. You are just naming this key set, select the **Duration**
     and click **Add**
 
 ![Add a client secret](Images/Lab6bEx1Task1Step12.png)
