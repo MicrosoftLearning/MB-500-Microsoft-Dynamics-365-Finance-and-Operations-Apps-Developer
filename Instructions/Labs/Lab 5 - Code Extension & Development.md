@@ -476,7 +476,7 @@ Task 2: Create a table: MLAAirportMilesChart
 
 5.  Add the following fields
 
-    1.  FromAirport
+    1.  A string called **FromAirport**
 
         1.  EDT: DDTAirportCode
 
@@ -484,7 +484,7 @@ Task 2: Create a table: MLAAirportMilesChart
 
         3.  Mandatory: Yes
 
-    2.  ToAirport
+    2.  A string called **ToAirport**
 
         1.  EDT: DDTAirportCode
 
@@ -492,7 +492,7 @@ Task 2: Create a table: MLAAirportMilesChart
 
         3.  Mandatory: Yes
 
-    3.  FlyingMiles
+    3.  An integer called **FlyingMiles**
 
         1.  EDT: DDTFlyingMiles
 
@@ -796,7 +796,7 @@ Task 13: Table DDTCustFlyDetails \> modifiedField Method
 
 4.  Create a new class MLACustFlyDetailsEventHandler
 
-5.  Open table DDTCustFlyDetails.MyLabAirlines in the designer pane
+5.  Open table DDTCustFlyDetails.MyLabAirlines in the designer pane under **Table Extensions**
 
 6.  Under the Events node, find the onModifiedField event; right-click and
     select Copy event handler method
