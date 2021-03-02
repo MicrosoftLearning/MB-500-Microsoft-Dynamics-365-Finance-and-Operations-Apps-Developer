@@ -107,7 +107,7 @@ namespace GoldRateProvider
 }
 </code></pre>
 
-11. **Build** the Project GoldDataProvider
+11. **Save** and **Build** the Project GoldDataProvider
 
 Task 2: Creating the D365 for Fin & Ops class
 ---------------------------------------------
@@ -145,7 +145,7 @@ info(goldRate.GetValue(0));
 10. Right click the class name in Solution Explorer and select **Set as Startup
     Object**
 
-11. **Build** the solution and click on **Start**
+11. **Save** and **Build** the solution and click on **Start**
 
 Check Output
 ============
