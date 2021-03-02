@@ -324,7 +324,9 @@ Exercise 2: Extend Standard Form
 5.  Open AccountsReceivable.DynamicsDevTraining in the designer to drag the
     display Menu item DDTCustTierDisplay and drop it under **Setup** submenu
 
-Build solution.
+### Task 4: Finalize
+
+1.  Build solution.
 
 Check Output
 ------------
