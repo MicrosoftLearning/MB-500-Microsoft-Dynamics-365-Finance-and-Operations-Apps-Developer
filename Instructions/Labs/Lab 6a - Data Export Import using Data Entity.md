@@ -72,7 +72,7 @@ Task 1: New Data Entity: DDTCustFlyDetailsEntity
 
 1.  Open DynamicsDevSolution in Solution Explorer
 
-2.  Right click the project and select **Add \> New Item**
+2.  Right click the **MyLabAirlines** project and select **Add \> New Item**
 
 3.  Select Data Entity under **Dynamics 365 Items \> Data Model**
 
