@@ -8,6 +8,8 @@ lab:
 
 **Lab 6b - Recurring Data Transfer**
 
+# **Do not use after 31 Mar 2021**
+
 Change Record
 =============
 
@@ -16,6 +18,7 @@ Change Record
 | 1.0     | 10 Jan 2020 | Initial release                                                  |
 | 1.01    | 22 Jan 2021 | Remove table of contents; update branding; remove LCS references |
 | 1.02    | 29 Jan 2021 | Restored images |
+| 1.03    | 04 Mar 2021 | Lab must timebomb, as portal.azure.com does not support Internet Explorer 11 after 31 Mar |
 
 Lab Environment
 ===============
