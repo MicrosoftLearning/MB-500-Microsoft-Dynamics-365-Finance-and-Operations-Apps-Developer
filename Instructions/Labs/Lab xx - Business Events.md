@@ -14,6 +14,7 @@ Change Record
 | 1.0     | 10 Jan 2020 | Initial release                                                  |
 | 1.01    | 22 Jan 2021 | Remove table of contents; update branding; remove LCS references |
 | 1.02    | 29 Jan 2021 | Restored images |
+| 1.03    | 09 Mar 2021 | Changed Automated flow to Automated cloud flow |
 
 Lab Environment
 ===============
