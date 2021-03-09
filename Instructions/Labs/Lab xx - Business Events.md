@@ -368,7 +368,7 @@ Task 1: Launch Microsoft Flow
 
 2.  Login to Microsoft Flow using your Microsoft Account (MSA)
 
-3.  Select **Create**; followed by **Automated flow**
+3.  Select **Create**; followed by **Automated cloud flow**
 
 ![Create \> Automated flow](Images/LabxxEx2Task1Step3.png)
 
