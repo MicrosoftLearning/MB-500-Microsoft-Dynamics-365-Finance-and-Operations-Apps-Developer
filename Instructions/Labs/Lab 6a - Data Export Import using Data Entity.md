@@ -293,7 +293,7 @@ Staging field: FlyingMiles](Images/Lab6aEx2Task1.png)
 7.  Go back to the previous screen, save and select **import**
 
 Check Output
-------------
+============
 
 -   Follow the steps mentioned; you should be able to see the new imported
     records in the Flying Details tab of the Customer form.
