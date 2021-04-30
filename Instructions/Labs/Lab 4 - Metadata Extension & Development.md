@@ -62,7 +62,7 @@ New field “Customer Tier” is added in the Customer form. Customer Flying Det
 is also added as a new tab in the detail sheet of the Customer form.
 
 Exercise 1: Add new Forms
--------------------------
+=========================
 
 ### Task 1: Form: Miles wise Tier Range
 
@@ -234,7 +234,7 @@ Exercise 1: Add new Forms
 Save all.
 
 Exercise 2: Extend Standard Form
---------------------------------
+================================
 
 ### Task 1: Form Extension: LogisticsAddressSetup
 
@@ -329,7 +329,7 @@ Exercise 2: Extend Standard Form
 1.  Build solution.
 
 Check Output
-------------
+============
 
 1.  In a browser, in the USMF entity, open **Modules \> Accounts Receivable \>
     Setup \> Miles wise Tier Range**
