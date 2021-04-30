@@ -49,12 +49,12 @@ with Dynamics 365 Finance and Operations Apps. We will also create a model and a
 project, where we will do most of the development work.
 
 Exercise 1: Open Dynamics 365 Finance and Operations
-----------------------------------------------------
+====================================================
 
 1.  Log into your virtual machine using the credentials provided to you
 
 Exercise 2: Configure Visual Studio 
-====================================
+===================================
 
 In this exercise, you will configure Visual Studio in the development VM for
 Dynamics 365 Finance and Operations programming.
@@ -75,11 +75,11 @@ Dynamics 365 Finance and Operations programming.
 
     2.  Select the Line numbers check box
 
-        ![Options \> Text editor \> All Languages](Images/Lab1Ex2Step3.png)
+    ![Options \> Text editor \> All Languages](Images/Lab1Ex2Step3.png)
 
 4.  In the menu **Dynamics 365 \> Options**, expand the **Dynamics 365** node
 
-![Best practices](Images/Lab1Ex2Step4.png)
+    ![Best practices](Images/Lab1Ex2Step4.png)
 
    Select the **Best Practices** node and make sure the following, under Model:
    Acceptance Test Library – Application Suite, beginning with
@@ -109,7 +109,7 @@ Dynamics 365 Finance and Operations programming.
     2.  Verify that **Synchronize database on build for newly created project**
         check box is selected
 
-![Dynamics 365; Projects. Both boxes should be selected.](Images/Lab1Ex2Step5.png)
+    ![Dynamics 365; Projects. Both boxes should be selected.](Images/Lab1Ex2Step5.png)
 
 6.  Select **OK** to save selections
 
@@ -148,7 +148,7 @@ Exercise 3: Create new Model and Project
 
     5.  Directory
     
-        ![Update model parameters \> Select referenced packages: ApplicationFoundation ApplicationPlatform ApplicationSuite](Images/Lab1Ex3Step4.png)
+    ![Update model parameters \> Select referenced packages: ApplicationFoundation ApplicationPlatform ApplicationSuite](Images/Lab1Ex3Step4.png)
 
 
 5.  Click **Next** and in the **Summary** screen, check the given options, and
