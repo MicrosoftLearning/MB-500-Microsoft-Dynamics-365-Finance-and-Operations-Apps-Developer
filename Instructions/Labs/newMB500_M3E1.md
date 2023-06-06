@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Exercise 01: Requirements discussion'
-    module: 'Module 02: Solution design'
+    module: 'Module 03: Solution design'
 ---
 
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
