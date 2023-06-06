@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Exercise 01: Extend the number sequence framework'
-    module: 'Module 06: Frameworks'
+    module: 'Module 07: Frameworks'
 ---
 
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
@@ -13,6 +13,7 @@ Change Record
 | Version | Date        | Change                                                                                                                                                                                           |
 |---------|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1.0     | 30 Apr 2021 | Initial release                                                                                                                                                                                  |
+| 1.1     | 06 Jun 2023 | Resequence                                                                                                                                                                                  |
 
 Scenario
 ========
