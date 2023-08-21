@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Lab 1: Create a new module'
-    module: 'Learning Path 01: Introdution to developing with finance and operations apps'
+    module: 'Learning Path 01: Introduction to developing with finance and operations apps'
 ---
 
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
