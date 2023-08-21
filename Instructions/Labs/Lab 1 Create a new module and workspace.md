@@ -234,14 +234,12 @@ courses in the workspace.
 7.  Open *MBTrainingCount* class in the **Code editor** pane and replace the existing **main()** method (3 lines) with this code, then **Save**:
 
 	
-public static void main(Args _args)
- {
- HRMCoursetable courseTable; //Define a variable of type HRMCourseTable table, which can hold record set
-
- select count(RecId) from courseTable; //X++ based Select statement, which can read data directly from database and hold the data in the variable courseTable. This particular query can fetch the total count of records in the HRMCourseTable table.
-
- Info(strFmt("@MBLabelFile:MB005", int2Str(courseTable.RecId))); //Info() is a standard function that can display messages in the finance and operations apps page. The input of this function should be a string. strFmt() is a string function, which is used when constant string value is concatenated with variable values to form a complete string-based statement. By using int2Str() function, we convert the integer value to string, as already mentioned, input parameter of the Info() function is string only.
- }
+		public static void main(Args _args)
+		{
+		    HRMCoursetable courseTable; //Define a variable of type HRMCourseTable table, which can hold record set
+		    select count(RecId) from courseTable; //X++ based Select statement, which can read data directly from database and hold the data in the variable courseTable. This particular query can fetch the total count of records in the HRMCourseTable table.
+		    Info(strFmt("@MBLabelFile:MB005", int2Str(courseTable.RecId))); //Info() is a standard function that can display messages in the finance and operations apps page. The input of this function should be a string. strFmt() is a string function, which is used when constant string value is concatenated with variable values to form a complete string-based statement. By using int2Str() function, we convert the integer value to string, as already mentioned, input parameter of the Info() function is string only.
+		}
 
 
 
