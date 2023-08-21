@@ -7,8 +7,7 @@ lab:
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
 
-Change Record
-=============
+# Change Record
 
 <html>
 <table><tr><th>Version</th><th>Date</th><th>Change</th></tr>
@@ -18,7 +17,6 @@ Change Record
 
 
 # Objective
-=========
 
 This lab consists of several exercises.
 
