@@ -1,4 +1,3 @@
-
 ---
 lab:
     title: 'Lab 2: Create a new EDT table and form'
