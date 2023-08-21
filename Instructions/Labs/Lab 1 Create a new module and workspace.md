@@ -1,4 +1,3 @@
-
 ---
 lab:
     title: 'Lab 1: Create a new module'
