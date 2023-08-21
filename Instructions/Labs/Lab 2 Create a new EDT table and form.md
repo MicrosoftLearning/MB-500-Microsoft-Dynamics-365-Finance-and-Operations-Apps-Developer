@@ -30,7 +30,7 @@ to enter exam details. To create this interface, you need to create a few data
 types, data model and user interfaces, which are covered in exercise 2, 3 and 4
 respectively.
 
-#Exercise 1: Create model and project 
+# Exercise 1: Create model and project 
 
 1.  Select Visual Studio 2019 from the desktop.
 
@@ -89,9 +89,9 @@ respectively.
 
 10. The new solution and project will appear in **Solution Explorer**.
 
-#Exercise 2: Create new data types
+# Exercise 2: Create new data types
 
-##Task 1: Create a new extended data type - MBExamID
+## Task 1: Create a new extended data type - MBExamID
 
 1.  In the **Solution Explorer** right click on the project *PrjMB500Lab-2.*
 
@@ -116,7 +116,7 @@ respectively.
 **Note:** *Ideally, the labels should be added in the label file for best practice, as practiced in Lab 1.*
 
 
-##Task 2: Create a new extended data type - MBExamName
+## Task 2: Create a new extended data type - MBExamName
 
 1.  In the **Solution Explorer** right click on the project *PrjMB500Lab-2.*
 
@@ -138,7 +138,7 @@ respectively.
 **Note:** *Ideally, the labels should be added in the label file for best practice, as practiced in Lab 1.*
 
 
-##Task 3: Create a new extended data type - MBExamDate
+## Task 3: Create a new extended data type - MBExamDate
 
 1.  In the **Solution Explorer** right click on the project *PrjMB500Lab-2.*
 
@@ -161,7 +161,7 @@ respectively.
 
 **Note:** *Ideally, the labels should be added in the label file for best practice, as practiced in Lab 1.*
 
-##Task 4: Create a new base enum - MBExamOrganizer
+## Task 4: Create a new base enum - MBExamOrganizer
 
 1.  In the **Solution Explorer** right click on the project *PrjMB500Lab-2.*
 
@@ -190,9 +190,9 @@ respectively.
 
 11. Use the same **Labels** in the **Enum Element** properties.
 
-#Exercise 3: Create new Data models
+# Exercise 3: Create new Data models
 
-##Task 1: Create a new Table - MBExamTable
+## Task 1: Create a new Table - MBExamTable
 
 1.  In the **Solution Explorer** right click on the project *PrjMB500Lab-2.*
 
@@ -234,9 +234,9 @@ respectively.
 15. Add the *ExamID* field in the newly created index by dragging the field from
     the **Fields** node and dropping on the *ExamIdx* index.
 
-#Exercise 4: Create new User interfaces
+# Exercise 4: Create new User interfaces
 
-##Task 1: Create a new Form – MBExamTable
+## Task 1: Create a new Form – MBExamTable
 
 1.  **Save all**, and right click the project and select **Build**. This will
     also perform a sync.
@@ -305,7 +305,7 @@ respectively.
 22. Navigate to the **Default Column** property of the *QuickFilter* and type
     *MBExam_ExamID*.
 
-##Task 2: Create a new Display menu item – MBExamTable
+## Task 2: Create a new Display menu item – MBExamTable
 
 1.  In the **Solution Explorer** right click on the project *PrjMB500Lab-2.*
 
@@ -331,7 +331,7 @@ respectively.
 
 10. For **Label**, type *Exam*.
 
-##Task 3: Extend the HRM menu
+## Task 3: Extend the HRM menu
 
 1.  In the (View \> ) **Application Explorer**, select *HRM* menu under **User
     Interface**.
@@ -349,7 +349,7 @@ respectively.
 6.  Drag the *MBExamTable* display menu item from the **Solution Explorer** and
     drop it under the *Setup* sub-menu under *HRM.MB500Model*.
 
-##Task 4: Test
+## Task 4: Test
 
 1.  In the **Solution Explorer** right click on the project *PrjMB500Lab-2.*
 

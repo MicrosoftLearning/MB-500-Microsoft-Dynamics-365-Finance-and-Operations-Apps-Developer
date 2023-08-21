@@ -38,7 +38,7 @@ three sections: tile, list and link. In the fourth exercise, we will insert a
 fifth exercise, we will **insert a grid** in the workspace to display the
 courses in the workspace.
 
-#Exercise 1: Create model and project 
+# Exercise 1: Create model and project 
 
 
 1.  Select Visual Studio 2019 from the desktop.
@@ -83,10 +83,10 @@ courses in the workspace.
 
 8.  The new solution and project will appear in Solution **Explorer**.
 
-#Exercise 2: Create a new module
+# Exercise 2: Create a new module
 
 
-##Task 1: Create a new label file
+## Task 1: Create a new label file
 
 
 **Note:** *It is a good practice to create a label file in case you need multilingual support for your implementation.*
@@ -131,7 +131,7 @@ courses in the workspace.
 | MB007        | Analytics                     | Training workspace tab page   |
 | MB008        | Open trainings                | Tile description in workspace |
 
-##Task 2: Extend existing display menu items
+## Task 2: Extend existing display menu items
 
 **Note:** *In this task, we will not create new tables and forms to be displayed in the new module. We will use some forms related to the Course tables and display them in the Training management module. We will change the label of some of the menu items from Course to Training, those will be displayed from the Training management module*
 
@@ -250,7 +250,7 @@ public static void main(Args _args)
 
 8.  Save all.
 
-##Task 4: Create an action menu item
+## Task 4: Create an action menu item
 
 
 **Note:** *An action menu item is required to call a runnable class from a menu. This action item will call the runnable class we created above.*
@@ -291,7 +291,7 @@ public static void main(Args _args)
 
 14. **Save all.**
 
-##Task 5: Create a new menu
+## Task 5: Create a new menu
 
 **Note:** *In this task, we will create the menus and submenus of the new module. We will also connect the menu items with the submenus in this section*
 
@@ -363,7 +363,7 @@ public static void main(Args _args)
 
 13. Save all.
 
-##Task 6: Extend an existing menu 
+## Task 6: Extend an existing menu 
 
 **Note:** *This section helps to connect the new module with the existing list of modules available in the finance and operations apps.*
 
@@ -390,7 +390,7 @@ public static void main(Args _args)
 
 8.  **Save all.**
 
-##Task 7: Test
+## Task 7: Test
 
 
 1.  In the **Solution Explorer** right click on the project *PrjMB500Lab-1.*
@@ -413,9 +413,9 @@ public static void main(Args _args)
 7.  Select **Training count** under the **Periodic tasks** submenu. You should
     get an info message “*Total number of trainings: 9*”.
 
-#Optional exercise 3: Create and set up a new workspace
+# Optional exercise 3: Create and set up a new workspace
 
-##Task 1: Create a new workspace
+## Task 1: Create a new workspace
 
 **Note:** *We will create a workspace to display focused training data, where we will create three sections: tile, list and link. In this section we will add few links in the workspace that will take you to the respective course related setup page.*
 
@@ -512,7 +512,7 @@ public static void main(Args _args)
         2.  Name: **CourseLocation** (Menu Item Name (property):
             **HRMCourseLocation**)
 
-##Task 2: Create a new Resource
+## Task 2: Create a new Resource
 
 **Note:** *In this section, we will create a resource containing an image that will be designed for the workspace.*
 
@@ -535,7 +535,7 @@ public static void main(Args _args)
 7.  In the **Resources** folder, a new resource *MBTraining* will also be
     created.
 
-##Task 3: Create a new Display menu item
+## Task 3: Create a new Display menu item
 
 1.  In the **Solution Explorer** right click on the project *PrjMB500Lab-1.*
 
@@ -562,7 +562,7 @@ public static void main(Args _args)
 
     3.  Subscriber access level: Unset
 
-##Task 4: Create a new Tile
+## Task 4: Create a new Tile
 
 1.  In the **Solution Explorer** right click on the project *PrjMB500Lab-1.*
 
@@ -592,7 +592,7 @@ public static void main(Args _args)
 
     5.  Tile display: BackgroundImage
 
-##Task 5: Modify the existing training menu
+## Task 5: Modify the existing training menu
 
 **Note:** *In the existing menu created for the Training management module, we will create a new submenu to display the workspace. The menu items and tiles created in the earlier sections, are required for that only.*
 
@@ -612,7 +612,7 @@ public static void main(Args _args)
 5.  Select **MBTrainingWorkspace** in the **Tile** property of the Menu Element
     Tile.
 
-##Task 6: Extend an existing menu 
+## Task 6: Extend an existing menu 
 
 **Note:** *In this section, we will extend the standard menu named navpanemenu. This is required to include the newly created workspace in the landing page of finance and operations apps.*
 
@@ -634,7 +634,7 @@ public static void main(Args _args)
 6.  Select *MBTrainingWorkspace* in both **Name** and **Tile** property of the
     newly created **Menu Element Tile.**
 
-##Task 7: Test
+## Task 7: Test
 
 1.  In the **Solution Explorer** right click on the project *PrjMB500Lab-1.*
 
@@ -662,12 +662,12 @@ public static void main(Args _args)
 10. In the Link section, under the SETUP group, there should be links to two
     forms: Training type and Training location.
 
-#Optional exercise 4: Add a tile in the Summary Tile Section
+# Optional exercise 4: Add a tile in the Summary Tile Section
 
 **Note:** *This is an optional exercise. In this exercise you will add a tile to the summary tile section. The tile will contain the count of open courses. On selecting the tile, you will navigate to the course page that will display only the open courses.*
 
 
-##Task 1: Create a new Query
+## Task 1: Create a new Query
 
 1.  In the **Solution Explorer** right click on the project *PrjMB500Lab-1.*
 
@@ -696,7 +696,7 @@ public static void main(Args _args)
 11. Change the Value property of the status field included in the Ranges node to
     **Open.**
 
-##Task 2: Create a new Display Menu Item
+## Task 2: Create a new Display Menu Item
 
 1.  In the **Solution Explorer** right click on the project *PrjMB500Lab-1.*
 
@@ -723,7 +723,7 @@ public static void main(Args _args)
 
     5.  Subscriber access level: Unset
 
-##Task 3: Create a new Tile
+## Task 3: Create a new Tile
 
 1.  In the **Solution Explorer** right click on the project *PrjMB500Lab-1.*
 
@@ -747,7 +747,7 @@ public static void main(Args _args)
     3.  Type: Count [This will show the number of open trainings on the tile
         itself]
 
-##Task 4: Modify the form MBTrainingWorkspace
+## Task 4: Modify the form MBTrainingWorkspace
 
 1.  In the **Solution Explorer**, select MBTrainingWorkspace under the Forms
     folder.
@@ -762,7 +762,7 @@ public static void main(Args _args)
 
     2.  Tile: MBOpenTrainingTile
 
-##Task 5: Test
+## Task 5: Test
 
 1.  In the **Solution Explorer** right click on the project *PrjMB500Lab-1.*
 
@@ -780,12 +780,12 @@ public static void main(Args _args)
 
 7.  The tile will take you to the Course page displaying only the Open courses.
 
-#Optional exercise 5: Add a list in the Tabbed List Section
+# Optional exercise 5: Add a list in the Tabbed List Section
 
 **Note:** *This is an optional lab. In this lab, you will display the list of courses in the tabbed list section of the workspace.*
 
 
-##Task 1: Create a new Form
+## Task 1: Create a new Form
 
 1.  In the **Solution Explorer** right click on the project *PrjMB500Lab-1.*
 
@@ -826,7 +826,7 @@ public static void main(Args _args)
 
     5.  EndDateTime
 
-##Task 2: Create a new Display Menu Item
+## Task 2: Create a new Display Menu Item
 
 1.  In the **Solution Explorer** right click on the project *PrjMB500Lab-1.*
 
@@ -846,7 +846,7 @@ public static void main(Args _args)
 
     1.  Object: MBTrainingFormPart
 
-##Task 3: Modify the form MBTrainingWorkspace
+## Task 3: Modify the form MBTrainingWorkspace
 
 1.  In the **Solution Explorer**, select MBTrainingWorkspace under the Forms
     folder.
@@ -868,7 +868,7 @@ public static void main(Args _args)
 
     3.  Run Mode: Local
 
-##Task 4: Test
+## Task 4: Test
 
 1.  In the **Solution Explorer** right click on the project *PrjMB500Lab-1.*
 
