@@ -215,7 +215,7 @@ courses in the workspace.
 
    **4. Save all.**
 
-##Task 3: Create a class
+## Task 3: Create a class
 
 **Note:** *In this task, we will write a simple method to count the total number of records in the Course table*
 
