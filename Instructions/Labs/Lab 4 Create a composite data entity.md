@@ -12,7 +12,7 @@ lab:
 </table>
 </html>
 
-#Objective
+# Objective
 
 If you need to export or import records from a table, you can create a data
 entity and use the Data management framework to transfer the data. There are
@@ -24,7 +24,7 @@ In this lab, we will create a composite data entity using two entities which
 have header-line relationships like color group and color. After the creation of
 the composite entity, we will use this entity to export data in the XML format.
 
-#Exercise 1: Create model and project 
+# Exercise 1: Create model and project 
 
 1.  Select Visual Studio 2019 from the desktop.
 
@@ -40,7 +40,8 @@ the composite entity, we will use this entity to export data in the XML format.
 
 5.  Select the **Next** button.
 
-6.  In the **Select referenced packages** dialog, select the following packages:<ul><li>ApplicationFoundation</li>
+6.  In the **Select referenced packages** dialog, select the following packages:
+<ul><li>ApplicationFoundation</li>
 <li>ApplicationPlatform</li>
 <li>ApplicationSuite</li>
 <li>Retail</li></ul>
@@ -60,31 +61,31 @@ the composite entity, we will use this entity to export data in the XML format.
     and enter the following information to create a new model, then select
     **Next**:
 
-    -   **Model name**: MB500Model
+- **Model name**: MB500Model
+    
+- **Model publisher**: Microsoft training
+    
+- **Layer**: usr
+    
+- **Version**: 1.0.0.0
+    
+- **Model display name**: MB-500 lab exercise
 
-    -   **Model publisher**: Microsoft training
+![Add parameters](images/L4P2.png)
 
-    -   **Layer**: usr
+15.  Select **Create new package** followed by the **Next** button.
 
-    -   **Version**: 1.0.0.0
-
-    -   **Model display name**: MB-500 lab exercise
-
-        ![Add parameters](images/L4P2.png)
-
-14.  Select **Create new package** followed by the **Next** button.
-
-    ![Select package](images/L4P3.png)
+![Select package](images/L4P3.png)
 
 15.  Select the following referenced packages followed by the **Next** button:
 
-    -   ApplicationFoundation
+- ApplicationFoundation
 
-    -   ApplicationPlatform
+- ApplicationPlatform
 
-    -   ApplicationSuite
+- ApplicationSuite
 
-    -   Retail
+- Retail
 
 10. In the **Summary** step, check **Create new project** and select the
     **Next** button.
@@ -95,9 +96,9 @@ the composite entity, we will use this entity to export data in the XML format.
 
 18. The new solution and project will appear in Solution **Explorer**.
 
-#Exercise 2: Working with Data models
+# Exercise 2: Working with Data models
 
-##Task 1: Create a new data entity from table RetailColorGroupTable
+## Task 1: Create a new data entity from table RetailColorGroupTable
 
 
 **Note:** *In this task, we will create a data entity for the Color group header table.*
@@ -137,7 +138,7 @@ the composite entity, we will use this entity to export data in the XML format.
     *RetailColorGroupTableEntityMaintain* and *RetailColorGroupTableEntityView*
     will also be created.
 
-##Task 2: Create a new data entity from table RetailColorGroupTrans
+## Task 2: Create a new data entity from table RetailColorGroupTrans
 
 **Note:** *In this task, we will create a data entity for the Color group line table. Also, we add a relation with the data entity created for the Color group header table.*
 
@@ -197,7 +198,7 @@ the composite entity, we will use this entity to export data in the XML format.
 	RetailColorGroupTransEntity.colorGroup == RetailColorGroupTableEntity.colorGroup
 
 
-##Task 3: Working with staging table RetailColorGroupTableStaging
+## Task 3: Working with staging table RetailColorGroupTableStaging
 
 **Note:** *In this task, we will create two columns in the staging table, which will be used to define runtime relationships during the target data movement.*
 
@@ -212,7 +213,7 @@ the composite entity, we will use this entity to export data in the XML format.
 
 4.  No need to change the other default properties of the newly created fields.
 
-##Task 4: Working with staging table RetailColorGroupTransStaging
+## Task 4: Working with staging table RetailColorGroupTransStaging
 
 **Note:** *In this task, we will create two columns in the staging table, which will be used to define runtime relationships during the target data movement. We will also create a relation with the Color group staging table.*
 
@@ -277,7 +278,7 @@ the composite entity, we will use this entity to export data in the XML format.
 
 
 
-##Task 5: Create a new Composite Entity – MBColorGroupCompositeEntity
+## Task 5: Create a new Composite Entity – MBColorGroupCompositeEntity
 
 
 **Note**: *In this task, we will create the composite entity, that will combine both the above created entities in a single element.*
@@ -328,7 +329,7 @@ the composite entity, we will use this entity to export data in the XML format.
 
     3.  **Relation:** *RetailColorGroupTableEntity*
 
-#Testing
+# Testing
 
 
 1.  In the **Solution Explorer** right click on the project *PrjMB500Lab-4.*
