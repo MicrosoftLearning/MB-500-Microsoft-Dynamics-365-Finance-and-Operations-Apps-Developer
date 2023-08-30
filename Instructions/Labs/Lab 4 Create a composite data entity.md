@@ -33,7 +33,7 @@ the composite entity, we will use this entity to export data in the XML format.
 ![Visual Studio 2019 dialog](images/L4P1.png)
 **Note:** *You can check if there is already a model created named MB500Model. If not, please continue from step 13 to step 18. If the model is already present, execute step 3 to step 11.*
 
-3. .  Navigate to **Extensions** \> **Dynamics 365** \> **Model Management** \>
+3.  Navigate to **Extensions** \> **Dynamics 365** \> **Model Management** \>
     **Update model parameters**.
 
 4.  Select **Model name** *MB-500 lab exercise*.
@@ -73,7 +73,7 @@ the composite entity, we will use this entity to export data in the XML format.
 
 ![Add parameters](images/L4P2.png)
 
-15.  Select **Create new package** followed by the **Next** button.
+14.  Select **Create new package** followed by the **Next** button.
 
 ![Select package](images/L4P3.png)
 
@@ -87,10 +87,10 @@ the composite entity, we will use this entity to export data in the XML format.
 
 - Retail
 
-10. In the **Summary** step, check **Create new project** and select the
+16. In the **Summary** step, check **Create new project** and select the
     **Next** button.
 
-11. In the **Configure your new project** dialog, type *PrjMb500Lab-4* and
+17. In the **Configure your new project** dialog, type *PrjMb500Lab-4* and
     *SlnMb500Lab* in the **Project name** and **Solution name** fields
     respectively, then select **Create**.
 
