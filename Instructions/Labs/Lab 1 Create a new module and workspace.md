@@ -327,7 +327,7 @@ courses in the workspace.
 
         **Label:** Common (\@SYS26806)
 
-        Add Display menu item**:**
+        Add Display menu item:
 
         -   HRMCourseListPage
 
