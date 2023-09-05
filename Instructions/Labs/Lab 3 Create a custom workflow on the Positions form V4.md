@@ -428,7 +428,7 @@ different components required to enable workflow for the position entity.
 7.  Extend the standard table method canSubmitToWorkflow() by adding a chain of
     command. Add the following method in the class:
 
-		public boolean canSubmitToWorkflow(str \_workflowType)
+		public boolean canSubmitToWorkflow(str _workflowType)
 		{
 				boolean ret; 
 				ret = next canSubmitToWorkflow(_workflowType); //This statement calls the parent method 
@@ -472,19 +472,19 @@ different components required to enable workflow for the position entity.
 2.  There are three blank methods which are already created in this class.
     Replace the methods with the following:
 
-		public void started(WorkflowEventArgs \_workflowEventArgs) 
+		public void started(WorkflowEventArgs _workflowEventArgs) 
 		{ 
 			// This code updates the Workflow status to Submitted once the workflow is started. 
 			HcmPosition::updateWorkflowStatus(_workflowEventArgs.parmWorkflowContext().parmRecId(),MBPositionWFStatus::Submitted); 
 		} 
 		
-		public void canceled(WorkflowEventArgs \_workflowEventArgs) 
+		public void canceled(WorkflowEventArgs _workflowEventArgs) 
 		{ 
 			// This code updates the workflow status to Cancelled once the workflow is canceled. 
 			HcmPosition::updateWorkflowStatus(_workflowEventArgs.parmWorkflowContext().parmRecId(),MBPositionWFStatus::Cancelled); 
 		}
 		
-		public void completed(WorkflowEventArgs \_workflowEventArgs) 
+		public void completed(WorkflowEventArgs _workflowEventArgs) 
 		{ 
 			//This code updates the workflow status to Completed once the workflow is completed. 
 			HcmPosition::updateWorkflowStatus(_workflowEventArgs.parmWorkflowContext().parmRecId(), MBPositionWFStatus::Completed); 
@@ -505,7 +505,7 @@ different components required to enable workflow for the position entity.
 		{ 
 			//This code will be executed once a work item is submitted. 
 			HcmPosition position; 
-			WorkflowCorrelationId \_workflowCorrelationId; WorkflowTypeName \_workflowTypeName = workFlowTypeStr("MBPositionWFType"); WorkflowComment note = ""; 
+			WorkflowCorrelationId _workflowCorrelationId; WorkflowTypeName _workflowTypeName = workFlowTypeStr("MBPositionWFType"); WorkflowComment note = ""; 
 			WorkflowSubmitDialog workflowSubmitDialog; //Opens the submit to workflow dialog. 
 			workflowSubmitDialog = WorkflowSubmitDialog::construct(args.caller().getActiveWorkflowConfiguration()); 
 			workflowSubmitDialog.run(); 
@@ -517,7 +517,7 @@ different components required to enable workflow for the position entity.
 				try 
 				{ 
 					ttsbegin; 
-					// Activate the workflow. \_workflowCorrelationId = Workflow::activateFromWorkflowType(_workflowTypeName, position.RecId, note, NoYes::No); 
+					// Activate the workflow. _workflowCorrelationId = Workflow::activateFromWorkflowType(_workflowTypeName, position.RecId, note, NoYes::No); 
 					position.MBPositionWFStatus = MBPositionWFStatus::Submitted; 
 					position.update(); 
 					ttscommit; 
@@ -545,42 +545,42 @@ different components required to enable workflow for the position entity.
 2.  There are seven blank methods which are already created in this class.
     Replace the methods with the following ones:
 
-		public void started(WorkflowElementEventArgs \_workflowElementEventArgs) 
+		public void started(WorkflowElementEventArgs _workflowElementEventArgs) 
 		{ 
 			// This code is executed when the workflow is started. 
 			HcmPosition::updateWorkflowStatus(_workflowElementEventArgs.parmWorkflowContext().parmRecId(), MBPositionWFStatus::Submitted); 
 		} 
 		
-		public void canceled(WorkflowElementEventArgs \_workflowElementEventArgs) 
+		public void canceled(WorkflowElementEventArgs _workflowElementEventArgs) 
 		{ 
 			// This code is executed when the workflow is canceled. 
 			HcmPosition::updateWorkflowStatus(_workflowElementEventArgs.parmWorkflowContext().parmRecId(), MBPositionWFStatus::Cancelled); 
 		} 
 		
-		public void completed(WorkflowElementEventArgs \_workflowElementEventArgs) 
+		public void completed(WorkflowElementEventArgs _workflowElementEventArgs) 
 		{ 
 			// This code is executed when the workflow is approved. 
 			HcmPosition::updateWorkflowStatus(_workflowElementEventArgs.parmWorkflowContext().parmRecId(), MBPositionWFStatus::Approved); 
 		} 
 		
-		public void denied(WorkflowElementEventArgs \_workflowElementEventArgs) 
+		public void denied(WorkflowElementEventArgs _workflowElementEventArgs) 
 		{ 
 			// This code is executed when the workflow is rejected. 
 			HcmPosition::updateWorkflowStatus(_workflowElementEventArgs.parmWorkflowContext().parmRecId(), MBPositionWFStatus::Rejected); 
 		} 
 		
-		public void changeRequested(WorkflowElementEventArgs \_workflowElementEventArgs) 
+		public void changeRequested(WorkflowElementEventArgs _workflowElementEventArgs) 
 		{ 
 			// This code is executed once change is requested for the workflow. 
 			HcmPosition::updateWorkflowStatus(_workflowElementEventArgs.parmWorkflowContext().parmRecId(), MBPositionWFStatus::Requested); 
 		} 
 		
-		public void returned(WorkflowElementEventArgs \_workflowElementEventArgs) 
+		public void returned(WorkflowElementEventArgs _workflowElementEventArgs) 
 		{ 
 			// This code is executed when the workflow is returned. We can leave this blank for this lab. 
 		} 
 		
-		public void created(WorkflowWorkItemsEventArgs \_workflowWorkItemsEventArgs) 
+		public void created(WorkflowWorkItemsEventArgs _workflowWorkItemsEventArgs) 
 		{ 
 			// This code is executed once work items are created. We can leave this blank for this lab. 
 		} 
