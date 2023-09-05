@@ -352,7 +352,7 @@ courses in the workspace.
         -   HRMCourseInstructor
 
         -   HRMCourseRoom
-        -   
+
 **Note:** *The MBTraining menu should consist of a Common submenu with one form, a PeriodicTasks submenu with one form, and a Setup submenu with four forms.*
 ![Project folders and elements](images/efadc18fb60b954ef6aedc913242b839.png)
 
