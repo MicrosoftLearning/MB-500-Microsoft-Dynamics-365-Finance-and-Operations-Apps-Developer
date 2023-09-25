@@ -78,7 +78,7 @@ courses in the workspace.
     *SlnMb500Lab* in the **Project name** and **Solution name** fields
     respectively, then select **Create**.
 
-8.  The new solution and project will appear in Solution **Explorer**.
+8.  The new solution and project will appear in **Solution Explorer**.
 
 # Exercise 2: Create a new module
 
@@ -111,7 +111,7 @@ courses in the workspace.
     under the project *PrjMB500Lab-1*.
 
 9.  In the **Label Files** folder, a new label file *MBLabelFile_en-US* will
-    also be created with single language option *MBLabelFile.en-US.label.txt*.<br>
+    also be created with the single language option *MBLabelFile.en-US.label.txt*.<br>
 **Note:** *You can right click on *MBLabelFile_en-US* and select **Add new Languages** to add additional language in the label file.* 
 
 10. Open *MBLabelFile_en-US* in the **Element designer** pane and add the
@@ -135,7 +135,7 @@ courses in the workspace.
 
 1.  Extend display menu item *HRMCourseListPage:*
 
-    1.  In the (View \> ) **Application Explorer**, select *HRMCourseListPage*
+    1.  In the (View \> ) **Application Explorer**, select the *HRMCourseListPage*
         display menu item under **User Interface**.
 
     2.  Right-click on *HRMCourseListPage* and select **Create extension**.
@@ -165,7 +165,7 @@ courses in the workspace.
 2.  Extend display menu item *HcmCourseType:*
 
     1.  In the **Application Explorer**, select the *HcmCourseType* display menu
-        item.
+        item. *Hint: This is HCM, not HRM.*
 
     2.  Right-click on *HcmCourseType* and select **Create extension**.
 
@@ -188,8 +188,8 @@ courses in the workspace.
 
 3.  Extend display menu item *HRMCourseLocation:*
 
-    1.  In the **Application Explorer**, select *HRMCourseLocation* display menu
-        item.
+    1.  In the **Application Explorer**, select the *HRMCourseLocation* display menu
+        item. 
 
     2.  Right-click on *HRMCourseLocation* and select **Create extension**.
 
