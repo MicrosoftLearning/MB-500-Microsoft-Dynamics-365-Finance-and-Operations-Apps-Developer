@@ -441,7 +441,7 @@ courses in the workspace.
 
 11. Rename the tab to **TrainingWorkspace**.
 
-12. Insert two tab pages on the tab TrainingWorkspace: Summary and Analytics
+12. Insert two **New tab page**s on the tab TrainingWorkspace: **Summary** and **Analytics**
     with the same captions in the properties (Label IDs: \@SYS15560 and
     \@MBLabelFile:MB007 consecutively).
 
@@ -500,7 +500,7 @@ courses in the workspace.
 
         1.  Caption: Setup (Label ID: \@SYS12687)
 
-    3.  Under the TrainingSetupLinks group, insert two Menu Item Buttons
+    3.  Under the TrainingSetupLinks group, insert two **New** Menu Item Buttons
 
         1.  Name: **CourseType** (Menu Item Name (property): **HcmCourseType**)
 
@@ -592,10 +592,10 @@ courses in the workspace.
 **Note:** *In the existing menu created for the Training management module, we will create a new submenu to display the workspace. The menu items and tiles created in the earlier sections, are required for that only.*
 
 
-1.  In the **Solution Explorer**, select MBTraining under the Menus folder.
+1.  In the **Solution Explorer**, select MBTraining under the Menus folder. Edit it in the **Designer** pane by double-clicking it.
 
 2.  Right-click on MBTraining and create a new Submenu **Workspace** by
-    selecting New \> Submenu with the same label as Workspace (Label ID:
+    selecting New \> Submenu with the same label Workspace (Label ID:
     \@SYS121871).
 
 3.  Position Workspace as the first submenu before Common (Hint: Use Alt-arrow
@@ -688,7 +688,7 @@ courses in the workspace.
 10. Add the field **status** under the **Ranges** node of the HRMCourseTable
     data source.
 
-11. Change the Value property of the status field included in the Ranges node to
+11. Change the **Value** property of the status field included in the Ranges node to
     **Open.**
 
 ## Task 2: Create a new Display Menu Item
@@ -750,7 +750,7 @@ courses in the workspace.
 2.  Navigate to Design \> TrainingWorkspace (tab) \> Summary (tab page) \>
     PanoramaBody (tab) \> SummaryTileSection (tab page).
 
-3.  Insert a new Tile Button under SummaryTileSection tab page with the
+3.  Insert a new Tile Button under the SummaryTileSection tab page with the
     following properties:
 
     1.  Name: OpenTrainingTile
@@ -794,7 +794,7 @@ courses in the workspace.
 5.  In the **Forms** folder, a new form *MBTrainingFormPart* will also be
     created.
 
-6.  Open *MBTrainingxFormPart* form in the **Element designer** pane.
+6.  Open *MBTrainingFormPart* form in the **Element designer** pane.
 
 7.  From the Application explorer, select the table HRMCourseTable in the Data
     Model and drag it onto the Data Sources node of the MBTrainingFormPart form.
@@ -815,7 +815,7 @@ courses in the workspace.
 
     2.  CourseType
 
-    3.  Description
+    3.  description
 
     4.  StartDateTime
 
@@ -836,7 +836,7 @@ courses in the workspace.
 5.  In the **Display Menu Items** folder, a new display menu item
     *MBTrainingFormPart* will also be created.
 
-6.  Open *MBTrainingxFormPart* display menu item in the **Element designer**
+6.  Open *MBTrainingFormPart* display menu item in the **Element designer**
     pane and navigate to the properties pane and update the following:
 
     1.  Object: MBTrainingFormPart
