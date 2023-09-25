@@ -31,7 +31,7 @@ respectively.
 
 # Exercise 1: Create model and project 
 
-1.  Select Visual Studio 2019 from the desktop.
+1.  Run Visual Studio 2019 from the desktop.
 
 2.  Select **Continue without code** in the popped-up dialog **Visual Studio
     2019.**
