@@ -222,7 +222,7 @@ respectively.
     new Field group *MBExam*. In the **Label** property of the field group type
     *Exam details*.
 
-12. Add all the four fields into the newly created **Field group** by dragging
+12. Add all four fields (other than the **Sys** field) into the newly created **Field group** by dragging
     them from the **Fields** node and dropping on the *MBExam* field group.
 
 13. In the **Indexes** node, create a new index *ExamIdx*.
@@ -262,7 +262,7 @@ respectively.
 10. Right click on the **Design** node and select **Simple List** as the
     **Pattern**.
 
-11. Type the following properties of the **Design** node:
+11. Enter the following properties of the **Design** node:
 
     1.  **Caption**: *Exam Details*
 
@@ -318,10 +318,10 @@ respectively.
 5.  A new folder **Display Menu Items** will be created in the **Solution
     Explorer** under the project *PrjMB500Lab-2*.
 
-6.  In the **Display Menu Items** folder, a new menu *MBExamTable* will also be
+6.  In the **Display Menu Items** folder, a new menu item *MBExamTable* will also be
     created.
 
-7.  Open *MBExamTable* menu item in the **Element designer** pane and right
+7.  Open the *MBExamTable* menu item in the **Element designer** pane and right
     click on it to select the **Properties** option.
 
 8.  For **Object Type**, select **Form**.
