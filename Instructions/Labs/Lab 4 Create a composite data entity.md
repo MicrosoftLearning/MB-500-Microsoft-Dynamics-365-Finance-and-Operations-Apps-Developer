@@ -104,13 +104,13 @@ the composite entity, we will use this entity to export data in the XML format.
 **Note:** *In this task, we will create a data entity for the Color group header table.*
 
 
-1.  In the (View \> ) **Application Explorer**, select *RetailColorGroupTable*
+1.  In the (View \> ) **Application Explorer**, select  the *RetailColorGroupTable*
     table under **Data Model**.
 
-2.  Right click on *RetailColorGroupTable* table and select **View Designer** to
-    open in in the **Element designer** pane.
+2.  Right click on the *RetailColorGroupTable* table and select **View Designer** to
+    open in the **Element designer** pane.
 
-3.  Right click on the root node of *RetailColorGroupTable* table in the
+3.  Right click on the root node of the *RetailColorGroupTable* table in the
     **Element designer** pane.
 
 4.  Select **Addins** \> **Create data entity**.
@@ -119,24 +119,24 @@ the composite entity, we will use this entity to export data in the XML format.
     entity, staging table and security artifacts are already created and added
     to the project, so go ahead and select the **OK** button.
 
-6.  A new folder **Data Entities** will be created in the **Solution Explorer**
+	i.  A new folder **Data Entities** will be created in the **Solution Explorer**
     under the project *PrjMB500Lab-4*.
 
-7.  In the **Data Entities** folder, a new element *RetailColorGroupTableEntity*
-    will also be created.
-
-8.  A new folder **Tables** will be created in the **Solution Explorer** under
-    the project *PrjMB500Lab-4*.
-
-9.  In the **Tables** folder, a new element *RetailColorGroupTableStaging* will
-    also be created.
-
-10. A new folder **Security Privileges** will be created in the **Solution
-    Explorer** under the project *PrjMB500Lab-4*.
-
-11. In the **Security Privileges** folder, two new elements
-    *RetailColorGroupTableEntityMaintain* and *RetailColorGroupTableEntityView*
-    will also be created.
+	ii.  In the **Data Entities** folder, a new element *RetailColorGroupTableEntity*
+	    will also be created.
+	
+	iii.  A new folder **Tables** will be created in the **Solution Explorer** under
+	    the project *PrjMB500Lab-4*.
+	
+   	iv.   In the **Tables** folder, a new element *RetailColorGroupTableStaging* will
+	    also be created.
+	
+	v. A new folder **Security Privileges** will be created in the **Solution
+	    Explorer** under the project *PrjMB500Lab-4*.
+	
+	vi. In the **Security Privileges** folder, two new elements
+	    *RetailColorGroupTableEntityMaintain* and *RetailColorGroupTableEntityView*
+	    will also be created.
 
 ## Task 2: Create a new data entity from table RetailColorGroupTrans
 
@@ -158,14 +158,14 @@ the composite entity, we will use this entity to export data in the XML format.
     entity, staging table and security artifacts are already created and added
     to the project, so select the **OK** button.
 
-6.  In the **Data Entities** folder, a new element *RetailColorGroupTransEntity*
-    will be created.
-
-7.  In the **Tables** folder, a new element *RetailColorGroupTransStaging* will
-    be created.
-
-8.  In the **Security Privileges** folder, two new elements will be created.
-    *RetailColorGroupTransEntityMaintain* and *RetailColorGroupTransEntityView*
+	i.  In the **Data Entities** folder, a new element *RetailColorGroupTransEntity*
+	    will be created.
+	
+	ii.  In the **Tables** folder, a new element *RetailColorGroupTransStaging* will
+	    be created.
+	
+	iii.  In the **Security Privileges** folder, two new elements will be created.
+	    *RetailColorGroupTransEntityMaintain* and *RetailColorGroupTransEntityView*
     
 9.  Right click on the **Relations** node of the data entity *RetailColorGroupTransEntity* and create a new
     relation.
@@ -367,7 +367,7 @@ the composite entity, we will use this entity to export data in the XML format.
 14. In the **Target data format** field, select *XML-Element* and select the
     **Add** button.
 
-15. Close the **Add entity** dialog by selecting the **Close** button.
+15. *Once it's added,* close the **Add entity** dialog by selecting the **Close** button.
 
 16. In the action pane, select the **Save** button.
 
@@ -377,7 +377,7 @@ the composite entity, we will use this entity to export data in the XML format.
 18. The **Execution summary** page will appear with a “Checked” image in the
     **Execution summary::Export** fastTab.
 
-19. Select the Download file button under the Entity processing status fastTab.
+19. Select the **Download file** button under the Entity processing status fastTab.
 
 20. Download the *Color group export-Color Group Composite Entity.xml* file and
     open it.
