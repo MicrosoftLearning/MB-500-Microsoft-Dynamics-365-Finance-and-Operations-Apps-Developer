@@ -180,9 +180,9 @@ different components required to enable workflow for the position entity.
     under **Data Model** and drop it on the **Data Sources** node of the
     *MBPositionQuery.*
 
-10. Navigate to the property pane of the **HcmPosition Data Sources** and change
+10. Navigate to the property pane of the **HcmPosition Data Source** and change
     the **Dynamic Fields** property to *Yes*. This will include all the fields
-    under the **Fields** node of the **HcmPosition** Data Sources. Verify that
+    under the **Fields** node of the **HcmPosition** Data Source. Verify that
     you see the MBPositionWFStatus, and change the **Dynamic Fields** property
     to *No*.
 
@@ -245,7 +245,7 @@ different components required to enable workflow for the position entity.
     3.  **Document menu item**: *HcmPositionList*
 
 6.  The following screen will provide you with the list of elements to be
-    created. You need to select the **Next** button in this screen. If you get
+    created. *(Hint: if you're not seeing them, you may not have hit **Save all** in Step 1.)* You need to select the **Next** button in this screen. If you get
     an **Add New Item** dialog, **Cancel** it.
 
 7.  A new folder **Workflow Types** will be created in the **Solution Explorer**
@@ -282,7 +282,7 @@ different components required to enable workflow for the position entity.
 
 
 1.  **Save all.** In the **Solution Explorer** right click on the project
-    *PrjMB500Lab-3* and **Build**
+    *PrjMB500Lab-3* and **Build.** *Note: an error is to be expected at this point.*
 
 2.  Right click again and select **Add** \> **New Item.**
 
@@ -438,7 +438,7 @@ different components required to enable workflow for the position entity.
 
 
 
-8.  Add updateWorkflowStatus() method to the class that will be responsible for
+8.  Add updateWorkflowStatus() method to the class; it will be responsible for
     updating the workflow status of the *HcmPosition* table.
 
 		public static void updateWorkflowStatus(RefRecId recId , MBPositionWFStatus status) 
@@ -453,7 +453,7 @@ different components required to enable workflow for the position entity.
 		} 
 
 9.  Create a chain of command of the initValue() method to initialize the
-    *MBPositionWFStatus* field while new position is entered in the system.
+    *MBPositionWFStatus* field while a new position is entered in the system.
 
 		void initValue() 
 		{ 
@@ -610,7 +610,7 @@ different components required to enable workflow for the position entity.
     workflow*.
 
 9.  A dialog will pop up asking **Open this file**, where you can select the
-    **Open** button, and Run.
+    **Open** button, and **Run**.
 
 10. The system will attempt to launch the workflow application. It will ask for
     the username and password. You need to provide the username and password of
@@ -657,7 +657,7 @@ different components required to enable workflow for the position entity.
     **OK** button, and Activate the new version for the workflow you just
     created. **Save and close** if necessary.
 
-26. Close **My view and Refresh** the Workflows screen. A new workflow called
+26. Close **My view** and **Refresh** the Workflows screen. A new workflow called
     Position workflow will be added to the existing list.
 
 27. Navigate to **Modules \> Human resources \> Positions \> All positions.**
