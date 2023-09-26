@@ -118,6 +118,8 @@ operations apps will be pushed to the external database BYOD.
 
     1.  The *DB server name* is the root node of **Object Explorer** in the
         **SQL Server Management Studio**.
+    2.  Remove all brackets.
+    3.  You may **Validate** if you like.
 
 6.  Save the record by selecting the **Save** button in the action pane.
 
@@ -126,7 +128,7 @@ operations apps will be pushed to the external database BYOD.
 8.  Select the entity *Customers V3* and select the **Publish** button again in
     the action pane.
 
-9.  In a few minutes the entity *Customers V3* will be published. You can check
+9.  In a short time the entity *Customers V3* will be published. You can check
     the **Show published only** check box and find the value of the
     **Published** column is *Yes* for the record *Customer V3* entity.
 
@@ -169,7 +171,7 @@ operations apps will be pushed to the external database BYOD.
 13. You will find all the customer records are exported to this table in the
     *BYOD* database.
 
-14. Navigate to **Module** \> **Accounts receivables** \> **Customers** \> **All
+14. Navigate to **Module** \> **Accounts receivable** \> **Customers** \> **All
     customers**.
 
 15. Enter a new Customer by entering data into following fields and save the
@@ -193,7 +195,7 @@ operations apps will be pushed to the external database BYOD.
 19. **Execution summary** page will appear again with a “Checked” image in the
     **Execution summary::Export** fastTab.
 
-20. Navigate back to the **SQL Server Management Studio** and expand the *BYOD*
+20. Navigate back to **SQL Server Management Studio** and expand the *BYOD*
     database under the **Databases** node. Right click on
     *dbo.CustCustomerV3Staging* under the **Tables** node and select the option
     **Select Top 1000 Rows**.
