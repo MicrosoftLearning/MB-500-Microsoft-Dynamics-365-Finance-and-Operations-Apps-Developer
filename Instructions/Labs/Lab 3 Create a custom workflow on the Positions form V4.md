@@ -35,7 +35,7 @@ different components required to enable workflow for the position entity.
 
 2.  Select **Continue without code** in the popped-up dialog **Visual Studio
     2019.** Navigate to Tools \> Options \> Dynamics 365 \> Projects and make
-    sure Synchronize database on build is checked.
+    sure **Synchronize database on build...** is checked.
 ![Visual Studio 2019](images/L3E1S2.png)
 **Note:** *You can check if there is already a model created named *MB500Model*. If not, please continue from step 7 to step 12. If the model is already present, execute step 3 to step 6.*
 
