@@ -113,7 +113,7 @@ different components required to enable workflow for the position entity.
     click on it to select the **Properties** option.
 
 8.  Type *Workflow status* in the **Label** property.
-**Note:** *Ideally, the labels should be added in the label file for best practice, as practiced in Lab – 1.*
+**Note:** *Ideally, the labels should be added in the label file for best practice, as practiced in Lab 1.*
 
 9.  Right click on *MBPositionWFStatus* in the designer and select **New
     Element**
@@ -665,7 +665,7 @@ different components required to enable workflow for the position entity.
 28. In the action pane, select the **New** button.
 
 29. Enter *Accountant* and *Finance* in the **Job** and **Department** fields
-    respectively.
+    respectively, and select **Create position**.
 
 30. A new position record will be created with **Workflow status** as *Created*.
 
@@ -677,7 +677,7 @@ different components required to enable workflow for the position entity.
 33. The **Workflow status** in the **All Positions** page will change to
     *Submitted*.
 
-34. Wait a minute or two and refresh the page.
+34. Wait a minute or two and refresh the page. **NOTE**: *This did not test out in our updated VM; please be patient while we debug.*
 
 35. Select the **Workflow** button again in the action pane.
 
