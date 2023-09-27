@@ -39,7 +39,23 @@ different components required to enable workflow for the position entity.
 ![Visual Studio 2019](images/L3E1S2.png)
 **Note:** *You can check if there is already a model created named *MB500Model*. If not, please continue from step 7 to step 12. If the model is already present, execute step 3 to step 6.*
 
-3.  Open **Solution Explorer**.
+3.  Navigate to Extensions > Dynamics 365 > Model Management > Update model parameters.
+
+	Select Model name MB-500 lab exercise.
+	
+	Select the **Next** button.
+	
+	In the Select referenced packages dialog, select the following packages, if they are not already there:
+	
+	-   ApplicationFoundation
+	
+	-   ApplicationPlatform
+	
+	-   PersonnelCore
+	
+	-   PersonnelManagement
+	
+	Select the Next button until the dialog is closed. Open **Solution Explorer**.
 
 4.  Right click on the solution *SlnMb500Lab*.
 
