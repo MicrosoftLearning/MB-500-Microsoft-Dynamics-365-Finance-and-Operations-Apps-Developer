@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Lab 3: Create a custom workflow on the Positions form'
-    module: 'Learning Path 03: Connect to finance and operations apps'
+    module: 'Learning Path 03: Extend finance and operations apps'
 ---
 
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
