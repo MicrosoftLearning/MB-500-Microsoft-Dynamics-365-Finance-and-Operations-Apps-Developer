@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Exercise 01: Lab: Create a composite data  entity'
+    title: 'Lab 4: Create a composite data  entity'
     module: 'Learning Path 04: Connect to finance and operations apps'
 ---
 
