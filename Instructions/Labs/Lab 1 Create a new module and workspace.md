@@ -443,8 +443,8 @@ courses in the workspace.
 11. Rename the tab to **TrainingWorkspace**.
 
 12. Insert two **New tab page**s on the tab TrainingWorkspace: **Summary** and **Analytics**
-    with the same captions in the properties (Label IDs: \@SYS15560 and
-    \@MBLabelFile:MB007 consecutively).
+    with the same captions in the properties (Label IDs: @SYS15560 and
+    @MBLabelFile:MB007 consecutively).
 
 13. Navigate to the properties of the Analytics tab page and change the Hide if Empty property to No.
 <br><br>**Note:** *In this task, we will not add any content in the Analytics tab page. The No value in the Hide if Empty property will ensure the Analytics tab page will be displayed even if it is empty.*
@@ -468,7 +468,7 @@ courses in the workspace.
 
             **Apply pattern Section Tiles**
 
-            Caption (property): Summary (Label ID: \@SYS15560)
+            Caption (property): Summary (Label ID: @SYS15560)
 
             Fast Tab Expanded (property): Yes
 
@@ -478,7 +478,7 @@ courses in the workspace.
 
             **Apply pattern Section Tabbed List**
 
-            Caption (property): Training (Label ID: \@MBLabelFile:MB002)
+            Caption (property): Training (Label ID: @MBLabelFile:MB002)
 
             Extended Style: workspace_tileLayout
 
@@ -490,7 +490,7 @@ courses in the workspace.
 
             **Apply pattern Section Related Links**
 
-            Caption (property): Link (Label ID: \@SYS57785)
+            Caption (property): Link (Label ID: @SYS57785)
 
             Extended Style: workspace_tileLayout
 
@@ -499,7 +499,7 @@ courses in the workspace.
     2.  Under the LinkSection tab page, insert a **Group** named
         **TrainingSetupLinks** with the following property:
 
-        1.  Caption: Setup (Label ID: \@SYS12687)
+        1.  Caption: Setup (Label ID: @SYS12687)
 
     3.  Under the TrainingSetupLinks group, insert two **New** Menu Item Buttons
 
@@ -597,7 +597,7 @@ courses in the workspace.
 
 2.  Right-click on MBTraining and create a new Submenu **Workspace** by
     selecting New \> Submenu with the same label Workspace (Label ID:
-    \@SYS121871).
+    @SYS121871).
 
 3.  Position Workspace as the first submenu before Common (Hint: Use Alt-arrow
     to move elements).
@@ -736,7 +736,7 @@ courses in the workspace.
 6.  Open *MBOpenTrainingTile* tile in the **Element designer** pane and navigate
     to the properties pane and update following:
 
-    1.  Label: Open trainings (Label ID: \@MBLabelFile: MB008)
+    1.  Label: Open trainings (Label ID: @MBLabelFile: MB008)
 
     2.  Menu Item Name: MBTraining_Open
 
