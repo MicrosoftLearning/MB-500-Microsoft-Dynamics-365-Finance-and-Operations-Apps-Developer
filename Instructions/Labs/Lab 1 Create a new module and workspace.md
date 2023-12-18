@@ -129,7 +129,7 @@ courses in the workspace.
 | MB007        | Analytics                     | Training workspace tab page   |
 | MB008        | Open trainings                | Tile description in workspace |
 
-## Task 2: Extend existing display menu items
+### Task 2: Extend existing display menu items
 
 **Note:** *In this task, we will not create new tables and forms to be displayed in the new module. We will use some forms related to the Course tables and display them in the Training management module. We will change the label of some of the menu items from Course to Training, those will be displayed from the Training management module*
 
