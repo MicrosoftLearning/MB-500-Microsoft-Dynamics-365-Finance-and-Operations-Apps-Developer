@@ -11,6 +11,7 @@ lab:
 
 <html>
 <table><tr><th>Version</th><th>Date</th><th>Change</th></tr>
+<tr><td>1.1</td><td>18 Dec 2023</td><td>Tested against 10.0.37</td></tr>
 <tr><td>1.0</td><td>29 Sep 2023</td><td>Initial release</td></tr>
 </table>
 </html>
@@ -35,7 +36,7 @@ three sections: tile, list and link. In the fourth exercise, we will insert a
 fifth exercise, we will **insert a grid** in the workspace to display the
 courses in the workspace.
 
-# Exercise 1: Create model and project 
+## Exercise 1: Create model and project 
 
 
 1.  Run Visual Studio 2019 from the desktop.
@@ -80,10 +81,10 @@ courses in the workspace.
 
 8.  The new solution and project will appear in **Solution Explorer**.
 
-# Exercise 2: Create a new module
+## Exercise 2: Create a new module
 
 
-## Task 1: Create a new label file
+### Task 1: Create a new label file
 
 
 **Note:** *It is a good practice to create a label file in case you need multilingual support for your implementation.*
@@ -108,11 +109,11 @@ courses in the workspace.
 7.  In the **Summary** step, select the **Next** button.
 
 8.  A new folder **Label Files** will be created in the **Solution Explorer**
-    under the project *PrjMB500Lab-1*.
+    under the project *PrjMB500Lab-1*. (Close any add an item popup that may occur.)
 
 9.  In the **Label Files** folder, a new label file *MBLabelFile_en-US* will
     also be created with the single language option *MBLabelFile.en-US.label.txt*.<br>
-**Note:** *You can right click on *MBLabelFile_en-US* and select **Add new Languages** to add additional language in the label file.* 
+**Note:** *You can right click on* MBLabelFile_en-US *and select **Add new Languages** to add additional languages in the label file.* 
 
 10. Open *MBLabelFile_en-US* in the **Element designer** pane and add the
     following labels by selecting the **New** button, then **Save All**:
@@ -160,7 +161,7 @@ courses in the workspace.
     8.  Select **Label ID** *MB002* in the results and select the **Paste
         label** button at the bottom.
 
-    9.  The **Label** property should be updated with *\@MBLabelFile:MB002*.
+    9.  The **Label** property should be updated with *@MBLabelFile:MB002*.
 
 2.  Extend display menu item *HcmCourseType:*
 
@@ -184,7 +185,7 @@ courses in the workspace.
     7.  Highlight **Label ID** *MB003* and select **Paste label** button at the
         bottom.
 
-    8.  The **Label** property should be updated with *\@MBLabelFile:MB003.*
+    8.  The **Label** property should be updated with *@MBLabelFile:MB003.*
 
 3.  Extend display menu item *HRMCourseLocation:*
 
@@ -208,11 +209,11 @@ courses in the workspace.
     7.  Locate **Label ID** *MB004* and select **Paste label** button at the
         bottom.
 
-    8.  The **Label** property should be updated with *\@MBLabelFile:MB004.*
+    8.  The **Label** property should be updated with *@MBLabelFile:MB004.*
 
    **4. Save all.**
 
-## Task 3: Create a class
+### Task 3: Create a class
 
 **Note:** *In this task, we will write a simple method to count the total number of records in the Course table*
 
@@ -245,7 +246,7 @@ courses in the workspace.
 
 8.  Save all.
 
-## Task 4: Create an action menu item
+### Task 4: Create an action menu item
 
 
 **Note:** *An action menu item is required to call a runnable class from a menu. This action item will call the runnable class we created above.*
@@ -282,11 +283,11 @@ courses in the workspace.
 12. Locate **Label ID** *MB006*, highlight it, and select **Paste label** button
     at the bottom.
 
-13. The **Label** property should be updated with *\@MBLabelFile:MB006.*
+13. The **Label** property should be updated with *@MBLabelFile:MB006.*
 
 14. **Save all.**
 
-## Task 5: Create a new menu
+### Task 5: Create a new menu
 
 **Note:** *In this task, we will create the menus and submenus of the new module. We will also connect the menu items with the submenus in this section*
 
@@ -315,7 +316,7 @@ courses in the workspace.
 
 10. Select **Label ID** *MB001* and select **Paste label** button at the bottom.
 
-11. The **Label** property should be updated with *\@MBLabelFile:MB001.*
+11. The **Label** property should be updated with *@MBLabelFile:MB001.*
 
 12. Right-click the *MBTraining* menu in the Element designer and select the
     **New \> Submenu** option to create the following **Submenus**. Each
@@ -325,7 +326,7 @@ courses in the workspace.
 
     1.  Submenu **Name:** Common
 
-        **Label:** Common (\@SYS26806)
+        **Label:** Common (@SYS26806)
 
         Add Display menu item:
 
@@ -333,7 +334,7 @@ courses in the workspace.
 
     2.  Submenu **Name:** PeriodicTasks
 
-        **Label:** Periodic tasks (\@SYS76406)
+        **Label:** Periodic tasks (@SYS76406)
 
         Add Action menu item:
 
@@ -341,7 +342,7 @@ courses in the workspace.
 
     3.  Submenu **Name:** Setup
 
-        **Label:** Setup (\@SYS12687)
+        **Label:** Setup (@SYS12687)
 
         Add Display menu items:
 
@@ -358,7 +359,7 @@ courses in the workspace.
 
 13. Save all.
 
-## Task 6: Extend an existing menu 
+### Task 6: Extend an existing menu 
 
 **Note:** *This section helps to connect the new module with the existing list of modules available in the finance and operations apps.*
 
@@ -385,7 +386,7 @@ courses in the workspace.
 
 8.  **Save all.**
 
-## Task 7: Test
+### Task 7: Test
 
 
 1.  In the **Solution Explorer** right click on the project *PrjMB500Lab-1.*
@@ -408,9 +409,9 @@ courses in the workspace.
 7.  Select **Training count** under the **Periodic tasks** submenu. You should
     get an info message “*Total number of trainings: 9*”.
 
-# Optional exercise 3: Create and set up a new workspace
+## Optional exercise 3: Create and set up a new workspace
 
-## Task 1: Create a new workspace
+### Task 1: Create a new workspace
 
 **Note:** *We will create a workspace to display focused training data, where we will create three sections: tile, list and link. In this section we will add few links in the workspace that will take you to the respective course related setup page.*
 
@@ -507,7 +508,7 @@ courses in the workspace.
         2.  Name: **CourseLocation** (Menu Item Name (property):
             **HRMCourseLocation**)
 
-## Task 2: Create a new Resource
+### Task 2: Create a new Resource
 
 **Note:** *In this section, we will create a resource containing an image that will be designed for the workspace.*
 
@@ -530,7 +531,7 @@ courses in the workspace.
 7.  In the **Resources** folder, a new resource *MBTraining* will also be
     created.
 
-## Task 3: Create a new Display menu item
+### Task 3: Create a new Display menu item
 
 1.  In the **Solution Explorer** right click on the project *PrjMB500Lab-1.*
 
@@ -557,7 +558,7 @@ courses in the workspace.
 
     3.  Subscriber access level: Unset
 
-## Task 4: Create a new Tile
+### Task 4: Create a new Tile
 
 1.  In the **Solution Explorer** right click on the project *PrjMB500Lab-1.*
 
@@ -587,7 +588,7 @@ courses in the workspace.
 
     5.  Tile display: BackgroundImage
 
-## Task 5: Modify the existing training menu
+### Task 5: Modify the existing training menu
 
 **Note:** *In the existing menu created for the Training management module, we will create a new submenu to display the workspace. The menu items and tiles created in the earlier sections, are required for that only.*
 
@@ -607,7 +608,7 @@ courses in the workspace.
 5.  Select **MBTrainingWorkspace** in the **Tile** property of the Menu Element
     Tile.
 
-## Task 6: Extend an existing menu 
+### Task 6: Extend an existing menu 
 
 **Note:** *In this section, we will extend the standard menu named navpanemenu. This is required to include the newly created workspace in the landing page of finance and operations apps.*
 
@@ -629,7 +630,7 @@ courses in the workspace.
 6.  Select *MBTrainingWorkspace* in both **Name** and **Tile** property of the
     newly created **Menu Element Tile.**
 
-## Task 7: Test
+### Task 7: Test
 
 1.  In the **Solution Explorer** right click on the project *PrjMB500Lab-1.*
 
@@ -657,12 +658,12 @@ courses in the workspace.
 10. In the Link section, under the SETUP group, there should be links to two
     forms: Training type and Training location.
 
-# Optional exercise 4: Add a tile in the Summary Tile Section
+## Optional exercise 4: Add a tile in the Summary Tile Section
 
 **Note:** *This is an optional exercise. In this exercise you will add a tile to the summary tile section. The tile will contain the count of open courses. On selecting the tile, you will navigate to the course page that will display only the open courses.*
 
 
-## Task 1: Create a new Query
+### Task 1: Create a new Query
 
 1.  In the **Solution Explorer** right click on the project *PrjMB500Lab-1.*
 
@@ -691,7 +692,7 @@ courses in the workspace.
 11. Change the **Value** property of the status field included in the Ranges node to
     **Open.**
 
-## Task 2: Create a new Display Menu Item
+### Task 2: Create a new Display Menu Item
 
 1.  In the **Solution Explorer** right click on the project *PrjMB500Lab-1.*
 
@@ -718,7 +719,7 @@ courses in the workspace.
 
     5.  Subscriber access level: Unset
 
-## Task 3: Create a new Tile
+### Task 3: Create a new Tile
 
 1.  In the **Solution Explorer** right click on the project *PrjMB500Lab-1.*
 
@@ -742,7 +743,7 @@ courses in the workspace.
     3.  Type: Count [This will show the number of open trainings on the tile
         itself]
 
-## Task 4: Modify the form MBTrainingWorkspace
+### Task 4: Modify the form MBTrainingWorkspace
 
 1.  In the **Solution Explorer**, select MBTrainingWorkspace under the Forms
     folder.
@@ -757,7 +758,7 @@ courses in the workspace.
 
     2.  Tile: MBOpenTrainingTile
 
-## Task 5: Test
+### Task 5: Test
 
 1.  In the **Solution Explorer** right click on the project *PrjMB500Lab-1.*
 
@@ -775,12 +776,12 @@ courses in the workspace.
 
 7.  The tile will take you to the Course page displaying only the Open courses.
 
-# Optional exercise 5: Add a list in the Tabbed List Section
+## Optional exercise 5: Add a list in the Tabbed List Section
 
 **Note:** *This is an optional lab. In this lab, you will display the list of courses in the tabbed list section of the workspace.*
 
 
-## Task 1: Create a new Form
+### Task 1: Create a new Form
 
 1.  In the **Solution Explorer** right click on the project *PrjMB500Lab-1.*
 
@@ -821,7 +822,7 @@ courses in the workspace.
 
     5.  EndDateTime
 
-## Task 2: Create a new Display Menu Item
+### Task 2: Create a new Display Menu Item
 
 1.  In the **Solution Explorer** right click on the project *PrjMB500Lab-1.*
 
@@ -841,7 +842,7 @@ courses in the workspace.
 
     1.  Object: MBTrainingFormPart
 
-## Task 3: Modify the form MBTrainingWorkspace
+### Task 3: Modify the form MBTrainingWorkspace
 
 1.  In the **Solution Explorer**, select MBTrainingWorkspace under the Forms
     folder.
@@ -863,7 +864,7 @@ courses in the workspace.
 
     3.  Run Mode: Local
 
-## Task 4: Test
+### Task 4: Test
 
 1.  In the **Solution Explorer** right click on the project *PrjMB500Lab-1.*
 
