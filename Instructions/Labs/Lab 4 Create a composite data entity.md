@@ -8,6 +8,7 @@ lab:
 
 <html>
 <table><tr><th>Version</th><th>Date</th><th>Change</th></tr>
+<tr><td>1.1</td><td>19 Dec 2023</td><td>Tested against 10.0.37</td></tr>
 <tr><td>1.0</td><td>29 Sep 2023</td><td>Initial release</td></tr>
 </table>
 </html>
@@ -351,7 +352,7 @@ the composite entity, we will use this entity to export data in the XML format.
 8.  Navigate back to the **Data Management** workspace and select the **Data
     entities** tile.
 
-9.  Check the **Entity** column if the *Color Group Composite Entity* is updated
+9.  Check the **Entity** column to see if the *Color Group Composite Entity* is updated
     in the list of entities.
 
 10. Once updated, navigate back to the **Data Management** workspace, and select
