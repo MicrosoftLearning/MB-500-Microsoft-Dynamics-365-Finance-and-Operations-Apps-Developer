@@ -12,6 +12,7 @@ lab:
 
 <html>
 <table><tr><th>Version</th><th>Date</th><th>Change</th></tr>
+<tr><td>1.1</td><td>19 Dec 2023</td><td>Tested against 10.0.37</td></tr>
 <tr><td>1.0</td><td>29 Sep 2023</td><td>Initial release</td></tr>
 </table>
 </html>
@@ -58,7 +59,8 @@ not, please continue from step 7 to step 12.*
 
 5.  Select **Add \> New project**.
 
-6.  Enter **PrjMb500Lab-3** as the name of the new project.<hr> 
+6.  Enter **PrjMb500Lab-3** as the name of the new project. 
+
 7.  Select **Extensions \> Dynamics 365 \> Model management \> Create model**
     and enter the following information to create a new model, then select
     **Next**:
@@ -197,7 +199,7 @@ associated query will access the table fields for the workflow document.*
     the **Dynamic Fields** property to *Yes*. This will include all the fields
     under the **Fields** node of the **HcmPosition** Data Source. Verify that
     you see the MBPositionWFStatus, and change the **Dynamic Fields** property
-    to *No*.
+    to *No*. (If not, synchronize the project with database and delete and re-add the data source.)
 
 # Exercise 4: Working with Business Process and Workflow
 
