@@ -11,7 +11,8 @@ lab:
 
 <html>
 <table><tr><th>Version</th><th>Date</th><th>Change</th></tr>
-<tr><td>1.0</td><td>29 Sep 2023</td><td>Initial release</td></tr>
+<tr><td>1.1</td><td>19 Dec 2023</td><td>Initial release</td></tr>
+<tr><td>1.0</td><td>29 Sep 2023</td><td>Tested against 10.0.37</td></tr>
 </table>
 </html>
 
@@ -83,10 +84,10 @@ operations apps will be pushed to the external database BYOD.
 2.  Select the **Framework parameters** tile under the **Import/Export** fastTab
     in the **Data management** workspace.
 
-3.  In the **Entity settings** tab page, select **Refresh entity** list.
+3.  In the **Entity settings** tab page, select **Refresh entity** list. You will see a blue bar stating that The Refresh entity list job is added to the batch queue. 
 **Note:** *It may take a few minutes to refresh all data entities*
 
-4.  Select the **Data entities** tile under the **Import/Export** fastTab.
+4.  In the Data management workspace, select the **Data entities** tile under the **Import/Export** fastTab.
 
 5.  In the Quick Filter box type *Customers V3*.
 
@@ -174,7 +175,7 @@ operations apps will be pushed to the external database BYOD.
 14. Navigate to **Module** \> **Accounts receivable** \> **Customers** \> **All
     customers**.
 
-15. Enter a new Customer by entering data into following fields and save the
+15. Enter a new Customer by entering data into the following fields and save the
     record
 
     1.  **Account**: *Demo01*
