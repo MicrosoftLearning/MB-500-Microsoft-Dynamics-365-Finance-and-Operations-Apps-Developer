@@ -11,6 +11,7 @@ lab:
 
 <html>
 <table><tr><th>Version</th><th>Date</th><th>Change</th></tr>
+<tr><td>1.2</td><td>02 Jul 2024</td><td>Clarified several steps</td></tr>
 <tr><td>1.1</td><td>18 Dec 2023</td><td>Tested against 10.0.37</td></tr>
 <tr><td>1.0</td><td>29 Sep 2023</td><td>Initial release</td></tr>
 </table>
@@ -100,8 +101,8 @@ courses in the workspace.
 
 4.  In the **Name** field type *MBLabelFile* and select the **Add** button.
 
-5.  Select the **Next** button in the popped up **Label file Wizard (**this
-    might take a moment)**.**
+5.  Select the **Next** button in the popped up **Label file Wizard** (this
+    might take a moment).
 
 6.  Among the list of languages, highlight *en-US* in the **Selected languages**
     list and select the **Next** button.
@@ -155,7 +156,7 @@ courses in the workspace.
 
     7.  The label search option will open, where you select **Match exactly** in
         the **Find option** and search for *Training*. (You can also type
-        Training in the label field and then hit the ellilpsis, and select
+        Training in the label field and then hit the ellipsis, and select
         MB002.)
 
     8.  Select **Label ID** *MB002* in the results and select the **Paste
@@ -267,7 +268,7 @@ courses in the workspace.
 6.  In the **Action Menu Items** folder, a new menu *MBTrainingCount* will also
     be created.
 
-7.  Open *MBTrainingCount* menu in the **Element designer** pane and right click
+7.  Open *MBTrainingCount* menu item in the **Element designer** pane and right click
     on it to select the **Properties** option.
 
 8.  For **Object Type**, select **Class**.
@@ -442,7 +443,7 @@ courses in the workspace.
 
 11. Rename the tab to **TrainingWorkspace**.
 
-12. Insert two **New tab page**s on the tab TrainingWorkspace: **Summary** and **Analytics**
+12. Insert **New tab page** twice on the tab TrainingWorkspace: **Summary** and **Analytics**
     with the same captions in the properties (Label IDs: @SYS15560 and
     @MBLabelFile:MB007 consecutively).
 
@@ -503,10 +504,9 @@ courses in the workspace.
 
     3.  Under the TrainingSetupLinks group, insert two **New** Menu Item Buttons
 
-        1.  Name: **CourseType** (Menu Item Name (property): **HcmCourseType**)
+        1.  Name: **CourseType** Menu Item Name: **HcmCourseType**
 
-        2.  Name: **CourseLocation** (Menu Item Name (property):
-            **HRMCourseLocation**)
+        2.  Name: **CourseLocation** Menu Item Name: **HRMCourseLocation**
 
 ### Task 2: Create a new Resource
 
@@ -734,7 +734,7 @@ courses in the workspace.
     created.
 
 6.  Open *MBOpenTrainingTile* tile in the **Element designer** pane and navigate
-    to the properties pane and update following:
+    to the properties pane and update the following:
 
     1.  Label: Open trainings (Label ID: @MBLabelFile: MB008)
 
