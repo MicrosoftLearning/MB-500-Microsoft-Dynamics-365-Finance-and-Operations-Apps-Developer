@@ -12,6 +12,7 @@ lab:
 
 <html>
 <table><tr><th>Version</th><th>Date</th><th>Change</th></tr>
+<tr><td>1.2</td><td>02 Jul 2024</td><td>Reviewed for freshness and accuracy</td></tr>
 <tr><td>1.1</td><td>19 Dec 2023</td><td>Tested against 10.0.37</td></tr>
 <tr><td>1.0</td><td>29 Sep 2023</td><td>Initial release</td></tr>
 </table>
