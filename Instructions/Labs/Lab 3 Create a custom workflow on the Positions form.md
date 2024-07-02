@@ -12,6 +12,7 @@ lab:
 
 <html>
 <table><tr><th>Version</th><th>Date</th><th>Change</th></tr>
+<tr><td>1.2</td><td>02 Jul 2024</td><td>Reviewed for freshness and accuracy</td></tr>
 <tr><td>1.1</td><td>19 Dec 2023</td><td>Tested against 10.0.37</td></tr>
 <tr><td>1.0</td><td>29 Sep 2023</td><td>Initial release</td></tr>
 </table>
@@ -59,7 +60,7 @@ not, please continue from step 7 to step 12.*
 
 5.  Select **Add \> New project**.
 
-6.  Enter **PrjMb500Lab-3** as the name of the new project. 
+6.  Enter **PrjMb500Lab-3** as the name of the new project. Now go on to Exercise 2.
 
 7.  Select **Extensions \> Dynamics 365 \> Model management \> Create model**
     and enter the following information to create a new model, then select
@@ -702,7 +703,7 @@ Testing
 31. Select **Workflow \> Submit**. A dialog box will appear; select the
     **Submit** button.
 
-32. The **Workflow status** in the **All Positions** page will change to
+32. The **Workflow status** in the **All Positions** page may change to
     *Submitted*.
 
 33. Wait a minute or two and refresh the page.
@@ -714,5 +715,5 @@ Testing
 
 36. Select the **Approve** button, **Approve**, and wait for a minute or two.
 
-37. The **Workflow status** in the **All positions** page will change to
+37. The **Workflow status** in the **All positions** page may change to
     **Completed** and the position will be ready for further use.
