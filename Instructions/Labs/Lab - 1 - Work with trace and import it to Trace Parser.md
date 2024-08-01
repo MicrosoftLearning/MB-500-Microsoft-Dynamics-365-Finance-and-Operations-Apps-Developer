@@ -84,18 +84,18 @@ To prepare for the exercises:
 16. Open Windows PowerShell as Admin, and then enter each of the following,
     selecting **Enter** after each entry:
 
-	17. **wevtutil um
-	    "C:\\AOSService\\webroot\\Monitoring\\DynamicsAXExecutionTraces.man"**
+	<ul><li> <b>wevtutil um
+	    "C:\\AOSService\\webroot\\Monitoring\\DynamicsAXExecutionTraces.man"</b>
 	
-	18. **wevtutil um
-	    "C:\\AOSService\\webroot\\Monitoring\\DynamicsAXXppExecutionTraces.man"**
+	</li><li></li> <b>wevtutil um
+	    "C:\\AOSService\\webroot\\Monitoring\\DynamicsAXXppExecutionTraces.man"</b>
 	
-	19. **wevtutil im
-	    "C:\\AOSService\\webroot\\Monitoring\\DynamicsAXExecutionTraces.man"**
+	</li><li> <b>wevtutil im
+	    "C:\\AOSService\\webroot\\Monitoring\\DynamicsAXExecutionTraces.man"</b>
 	
-	20. **wevtutil im
-	    "C:\\AOSService\\webroot\\Monitoring\\DynamicsAXXppExecutionTraces.man"**
-
+	</li><li> <b>wevtutil im
+	    "C:\\AOSService\\webroot\\Monitoring\\DynamicsAXXppExecutionTraces.man"</b>
+	</li></ul>
 17. Close **Trace Parser**.
 
 18. Select **Windows**, and search for and open **Trace Parser**.
