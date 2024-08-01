@@ -251,9 +251,9 @@ To test your new data entity in SQL Server Management Studio and as OData:
 
 4.  Right-click the **dbo.MYDATAENTITYCOMPUTEDCOLUMN** view to open the context
     menu, and then select **Script View as** \> **CREATE To** \> **New Query
-    Editor Window**:
+    Editor Window**
 
-    ![Depicts the query editor window with code for creating a data entity view.](media/L2P03.png)
+    ![The query editor window with code for creating a data entity view.](media/L2P03.png)
 
 5.  Review the code for creating a data entity view.
 
@@ -267,6 +267,6 @@ To test your new data entity in SQL Server Management Studio and as OData:
 8.  Enter the following URL in the browser address field:
     <https://usnconeboxax1aos.cloud.onebox.dynamics.com/Data/MyDataEntity> in
     the browser address field. The **MyDataEntity** data entity will display in
-    OData format in the browser:
+    OData format in the browser
 
     ![A screenshot of the OData view of the data entity.](media/L2P04.png)

@@ -62,7 +62,7 @@ To prepare for the exercises:
 
 9.  Enter **C:\\AOSService\\webroot** in **Replace with**:
 
-    ![Depicts the Replace with option in which you enter C:\\AOSService\\webroot.](media/L1P01.png)
+    ![The Replace with option in which you enter C:\\AOSService\\webroot.](media/L1P01.png)
 
 10. Select **Replace All**, select **Cancel**, close **Notepad**, and then
     select **Save**.
@@ -103,8 +103,7 @@ To prepare for the exercises:
 19. Select **Capture Events**, and then verify
     **Microsoft-Dynamics-AX-XppExecutionTraces** and
     **Microsoft-Dynamics-AX-ExecutionTraces** events exist in the top three
-    rows:
-
+    rows
 ![Dialog box with the XppExecutionTraces, FormServer, and ExecutionTraces checked](media/L1P02.png)
 
    
@@ -120,7 +119,7 @@ To create a trace using the Task recorder tool:
     (dynamics.com)](https://usnconeboxax1aos.cloud.onebox.dynamics.com/?cmp=USMF&mi=DefaultDashboard)
     and sign in to the finance and operations apps with your account.
 
-3.  Select the question mark on the upper-right of the Edge window, and then select **Trace**:
+3.  Select the question mark on the upper-right of the Edge window, and then select **Trace**
 ![A screenshot of how to open trace.](media/L1P03.png)
 
 1.  Enter the following when the **Tracing** dialog opens, and then select
@@ -131,7 +130,7 @@ To create a trace using the Task recorder tool:
     -   **Include SQL parameter values**: Yes
         ![A screenshot of starting trace capturing.](media/L1P04.png)
 
-2.  Notice that the trace is running, and leave the window open:
+2.  Notice that the trace is running, and leave the window open
 ![A screenshot of trace is being captured.](media/L1P05.png)
 Users have reported that sales orders are working slowly, so you’ll need to review the sales order lines and check reservations against on-hand supply.
 
@@ -139,28 +138,28 @@ Users have reported that sales orders are working slowly, so you’ll need to re
     receivable**.
 
 7.  In the menu for **Accounts receivable**, select the **Orders** menu, and
-    then select **All sales orders**:
-![Screen capture that depicts the All sales orders option in Accounts receivable.](media/L1P06.png)
+    then select **All sales orders**
+![Screen capture that shows the All sales orders option in Accounts receivable.](media/L1P06.png)
 
-1.  Select the last sales order in the list and the lines will open:
-![Depicts the My view list in Sales order details, which enables you to review the various orders associated with your account.](media/L1P07.png)
+1.  Select the last sales order in the list and the lines will open
+![The My view list in Sales order details, which enables you to review the various orders associated with your account.](media/L1P07.png)
 
 
 1.  In **Sales order details**, select **Inventory** in the (lower) **Action**
     pane for sales order lines.
 
-    ![Depicts the Sales order lines window, in which you can select an action to take on inventory.](media/L1P08.png)
+    ![The Sales order lines window, in which you can select an action to take on inventory.](media/L1P08.png)
 
 2.  Select **Reservation** to check the reservation against on-hand supply.
 
 3.  Stop the trace by selecting **Stop trace**.
-    ![Depicts the Tracing window, in which you can select Stop trace to halt the tracing process.](media/L1P09.png)
+    ![The Tracing window, in which you can select Stop trace to halt the tracing process.](media/L1P09.png)
 
 4.  Download or upload the trace after it stops. Uploading a trace saves it in
     finance and operations apps, from which you then can download it repeatedly.  
     **Important:** If you download a trace without uploading it first, the trace
     is deleted.
-    ![Screen capture that depicts the Tracing window with an arrow pointing at the Download trace button.](media/L1P10.png)
+    ![Screen capture that shows the Tracing window with an arrow pointing at the Download trace button.](media/L1P10.png)
 
 5.  Select **Download trace**, and the trace is stored in the **Downloads**
     folder on the VM.
@@ -169,7 +168,7 @@ Users have reported that sales orders are working slowly, so you’ll need to re
 
 To import a trace you’ve downloaded into the Trace Parser tool:
 
-1.  Select Start in your VM and then enter **Trace** in the search field:
+1.  Select Start in your VM and then enter **Trace** in the search field
     ![A screenshot of finding Trace Parser in Start menu.](media/L1P11.png)
 
 2.  Select the **Microsoft Dynamics 365 Unified Operations – Trace Parser**.
@@ -182,7 +181,7 @@ To import a trace you’ve downloaded into the Trace Parser tool:
 	    -   **Server name**: . (type in a dot for local server)
 	
 	    -   **Select or enter a database name**: D365Trace
-	![Screen capture that depicts the Register database window with the Server name, Select or enter a database name, and Register options highlighted with arrows.](media/L1P12.png)
+	![Screen capture that shows the Register database window with the Server name, Select or enter a database name, and Register options highlighted with arrows.](media/L1P12.png)
 	
 	
 	
@@ -215,7 +214,7 @@ To analyze X++ and SQL for users in the Trace Parser tool:
 
 3.  Expand the tree node for the reddest color (the largest number of ms) and
     continue until all nodes are expanded, and make sure you’re watching the
-    **Context field** to see the X++ code:
+    **Context field** to see the X++ code
     ![A screenshot of Call Tree and most expensive code (in ms)](media/L1P14.png)
 
 4.  Select **X++** next to **Call tree**, and then select the **Total Inclusive
@@ -228,9 +227,9 @@ To analyze X++ and SQL for users in the Trace Parser tool:
     Only SQL statements visible on **SalesTable** should be listed.
 
 7.  Enter **InventTrans** in **Name Filter** and **Show Tables**. Only SQL
-    statement in **InventTrans** should now be listed in the view:
+    statement in **InventTrans** should now be listed in the view
 
-    ![Screen capture that depicts how InventTrans for your file should display.](media/L1P15.png)
+    ![Screen capture that shows how InventTrans for your file should display.](media/L1P15.png)
 
 8.  Select **Jump to Call Tree** (lower right between the Call Stack and Code)
     and wait. **Trace Parser** goes to **Call Tree**, and you can see the call

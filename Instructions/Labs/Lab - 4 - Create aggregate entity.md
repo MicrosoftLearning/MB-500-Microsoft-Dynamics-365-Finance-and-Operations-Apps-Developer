@@ -142,7 +142,7 @@ To create an aggregated data entity:
 23. Select the View **InventOnHandByWarehouseStatus**, and then drag it to the
     root node of **InventOnhandAggregateDimension**.
 
-24. Remove **@InventOnhandAggregateDimension** from the **@Attributes** node:
+24. Remove **@InventOnhandAggregateDimension** from the **@Attributes** node
 
     ![A screenshot of Aggregate Dimension with attribute nodes.](media/L4P01.png)
 
