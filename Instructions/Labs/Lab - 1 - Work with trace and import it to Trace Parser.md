@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Lab 1: Lab 1: Work with trace and import it into the Trace Parser tool'
+    title: 'Lab 1: Work with trace and import it into the Trace Parser tool'
     module: 'Learning Path 01: Introduction to developing with finance and operations apps'
 ---
 
