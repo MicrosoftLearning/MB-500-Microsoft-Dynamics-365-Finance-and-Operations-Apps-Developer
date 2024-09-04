@@ -82,9 +82,9 @@ fields for the **CustTable** table:
 
             6.  **PersonnelCore**
 
-        4.  Select **Next** until you select **Create**
+        4.  Select **Next** until **Configure your new project**
 
-    -   On Configure your new project, enter these values, then select
+    -   On **Configure your new project**, enter these values, then select
         **Create**:
 
         1.  Project name: **SysExtensionSerializerFramework**
