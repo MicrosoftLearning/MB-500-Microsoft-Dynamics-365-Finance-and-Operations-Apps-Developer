@@ -6,6 +6,7 @@ lab:
 
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
+# Lab 2: Create a data entity with a computed column
 
 # Change Record
 
