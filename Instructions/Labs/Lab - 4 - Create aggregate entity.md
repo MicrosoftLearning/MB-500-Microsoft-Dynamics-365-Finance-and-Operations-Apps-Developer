@@ -61,7 +61,7 @@ To create an aggregated data entity:
 
         4.  Select **Next** and **Next**
 
-    -   On Configure your new project, enter these values, and then select
+    -   On **Configure your new project**, enter these values, and then select
         **Create**:
 
         1.  Project name: **AggregatedDataEntity**
