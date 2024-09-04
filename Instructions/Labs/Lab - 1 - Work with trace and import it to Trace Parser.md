@@ -6,6 +6,7 @@ lab:
 
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
+# Lab 1: Work with trace and import it into the Trace Parser tool
 
 # Change Record
 
