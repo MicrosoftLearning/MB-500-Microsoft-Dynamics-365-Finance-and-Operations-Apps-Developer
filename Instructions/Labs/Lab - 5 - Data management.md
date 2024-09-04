@@ -6,6 +6,7 @@ lab:
 
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
+# Lab 5: Import data using Data Management
 
 # Change Record
 
