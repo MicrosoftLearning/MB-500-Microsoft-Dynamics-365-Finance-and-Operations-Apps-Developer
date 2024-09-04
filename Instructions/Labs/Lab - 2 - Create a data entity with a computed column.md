@@ -78,9 +78,9 @@ To create a data entity:
 
             5.  **Directory**
 
-        4.  Select **Next** until you select **Create**
+        4.  Select **Next** until **Configure your new project**
 
-    -   On Configure your new project, enter these values, then select Create:
+    -   On **Configure your new project**, enter these values, then select Create:
 
         1.  Project name: **DataEntityComputedColumn**
 
