@@ -52,7 +52,7 @@ To prepare for the exercises:
 5.  Open **File Explorer** and navigate to
     **C:\\AOSService\\webroot\\Monitoring**.
 
-6.  Right-click **DynamicsAxExecutionTraces.man** to open the context menu, and
+6.  Right-click **DynamicsAXExecutionTraces.man** to open the context menu, and
     then select **Open with**.
 
 7.  Select **Try an app on this PC**, and then select **Notepad** and select
@@ -68,10 +68,10 @@ To prepare for the exercises:
 10. Select **Replace All**, select **Cancel**, close **Notepad**, and then
     select **Save**.
 
-11. Right-click **DynamicsAxXppExecutionTraces.man** to open the context menu,
+11. Right-click **DynamicsAXXppExecutionTraces.man** to open the context menu,
     and then select **Open with**.
 
-12. Select **Try an app on this PC**, select **Notepad**, clear **Always use
+12. Select **Notepad**, clear **Always use
     this app to open .man files**, and then select **OK**.
 
 13. Select **Edit** and **Replace**, and then enter **%APPROOT%** in **Find
@@ -88,7 +88,7 @@ To prepare for the exercises:
 	<ul><li> <b>wevtutil um
 	    "C:\\AOSService\\webroot\\Monitoring\\DynamicsAXExecutionTraces.man"</b>
 	
-	</li><li></li> <b>wevtutil um
+	</li><li> <b>wevtutil um
 	    "C:\\AOSService\\webroot\\Monitoring\\DynamicsAXXppExecutionTraces.man"</b>
 	
 	</li><li> <b>wevtutil im
@@ -126,9 +126,9 @@ To create a trace using the Task recorder tool:
 1.  Enter the following when the **Tracing** dialog opens, and then select
     **Start trace**:
 
-    -   **Trace name**: MB500Trace
+    -   Trace name: **MB500Trace**
 
-    -   **Include SQL parameter values**: Yes
+    -   Include SQL parameter values: **Yes**
         ![A screenshot of starting trace capturing.](media/L1P04.png)
 
 2.  Notice that the trace is running, and leave the window open
@@ -179,9 +179,9 @@ To import a trace you’ve downloaded into the Trace Parser tool:
 	
 	1.  Enter the following to create a database on the local VM:
 	
-	    -   **Server name**: . (type in a dot for local server)
+	    -   Server name: **. (type in a dot for local server)**
 	
-	    -   **Select or enter a database name**: D365Trace
+	    -   Select or enter a database name: **D365Trace**
 	![Screen capture that shows the Register database window with the Server name, Select or enter a database name, and Register options highlighted with arrows.](media/L1P12.png)
 	
 	

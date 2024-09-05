@@ -50,8 +50,7 @@ To prepare for configuration of Data Management parameters:
     **https://usnconeboxax1aos.cloud.onebox.dynamics.com/?cmp=USMF** in the
     address field.
 
-2.  Select the **Data Management** workspace, and then select the Framework
-    **parameters**.
+2.  Select the **Data management** workspace, and then select the **Framework parameters**.
 
 3.  Select the **Entity settings** tab, and then select **Refresh entity list**
     to refresh data entities in the system. Notice that data entities are now
@@ -60,7 +59,7 @@ To prepare for configuration of Data Management parameters:
     ![A screenshot of Data import/export framework parameters where we find the Refresh entity list bottom.](media/L5P01.png)
 
 4.  In the **Framework parameters**, navigate to the **General** tab, and then
-    in the Shared **working directory** group, enter **c:\\temp\\dixf** for the
+    in the **Shared working directory** group, enter **c:\\temp\\dixf** for the
     path.
 
 5.  Select **Validate** to confirm that the service account has access to the
@@ -78,7 +77,7 @@ To prepare for configuration of Data Management parameters:
 To prepare your templates to use Data Management:
 
 1.  In the **Navigation pane**, select **Workspaces**, select **Data
-    Management**, and then select the Templates tile.
+    management**, and then select the **Templates** tile.
 
 2.  Select the **Load default templates** action pane item.
 

@@ -55,7 +55,7 @@ To create a data entity:
 
     -   Select **Extensions \> Dynamics 365 \> Model Management \> Create
         Model**
-
+    >   If 'Feedback on Finance and Operations(Dynamics 365)' screen pops up, click on 'Not Now'.
     -   On Create model:
 
         1.  For Add parameters, enter these values and then select **Next**:
@@ -84,7 +84,7 @@ To create a data entity:
 
         1.  Project name: **DataEntityComputedColumn**
 
-        2.  SolutionName: **MB500Lab2Sln**
+        2.  Solution name: **MB500Lab2Sln**
 
 2.  Right-click the **DataEntityComputedColumn** project to open the context
     menu and select **Add** \> **New Item**.
@@ -124,8 +124,6 @@ The Data Entity Wizard opens.
 	-   **Name** in **Label Id**.
 	
 	-   **Customer name** in **Help Text Id**.
-	
-	-   **Customer name** in **Help text**.
 
 1.  Select **Add virtual field**, and then find the empty virtual field at
     the bottom of the field list.
@@ -139,9 +137,9 @@ The Data Entity Wizard opens.
 4.  Select **Next**, and the data entity **MyDataEntityComputedColumn** is
     added to the **DataEntityComputedColumn** project.
 
-5.  Select the **MyDataEntityComputedColumn** data entity in your project,
+5.  In Solution Explorer, select the **MyDataEntityComputedColumn** data entity in your project,
     right-click the **Methods** node to open the context menu, select **New
-    Method**, and then paste in this code, which retrieves a customer’s
+    Method**, and then add this code under existing methods in public class, which retrieves a customer’s
     name, in the public class:
 
 <pre>
@@ -207,20 +205,20 @@ private static server str balanceMST()
     select the **Name** virtual field, and then configure the following
     properties:
 
--   **Is Computed Field:** Yes
+-   Is Computed Field: **Yes**
 
--   **DataEntityView Method:** custName
+-   DataEntityView Method: **custName**
 
--   **Extended Data Type:** CustName
+-   Extended Data Type: **CustName**
 
 21.Select the **Balance** virtual field, and then configure the following
     properties:
 
--   **Is Computed Field:** Yes
+-   Is Computed Field: **Yes**
 
--   **DataEntityView Method:** balanceMST
+-   DataEntityView Method: **balanceMST**
 
--   **Extended Data Type:** AmountMST
+-   Extended Data Type: **AmountMST**
 
 22.Select **Save All**, and then go to the **DataEntityComputedColumn** project
     in **Solution Explorer**.
@@ -230,7 +228,7 @@ private static server str balanceMST()
 
 24.Configure the following field:
 
--   **Synchronize Database:** True
+-   Synchronize Database: **True**
 
 25.Select **OK**, and then right-click the project to open the context menu and
     select **Build**.
