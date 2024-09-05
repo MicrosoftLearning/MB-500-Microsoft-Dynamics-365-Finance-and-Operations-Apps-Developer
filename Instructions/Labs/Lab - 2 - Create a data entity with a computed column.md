@@ -55,7 +55,7 @@ To create a data entity:
 
     -   Select **Extensions \> Dynamics 365 \> Model Management \> Create
         Model**
-
+    >   If 'Feedback on Finance and Operations(Dynamics 365)' screen pops up, click on 'Not Now'.
     -   On Create model:
 
         1.  For Add parameters, enter these values and then select **Next**:
@@ -205,20 +205,20 @@ private static server str balanceMST()
     select the **Name** virtual field, and then configure the following
     properties:
 
--   **Is Computed Field:** Yes
+-   Is Computed Field: **Yes**
 
--   **DataEntityView Method:** custName
+-   DataEntityView Method: **custName**
 
--   **Extended Data Type:** CustName
+-   Extended Data Type: **CustName**
 
 21.Select the **Balance** virtual field, and then configure the following
     properties:
 
--   **Is Computed Field:** Yes
+-   Is Computed Field: **Yes**
 
--   **DataEntityView Method:** balanceMST
+-   DataEntityView Method: **balanceMST**
 
--   **Extended Data Type:** AmountMST
+-   Extended Data Type: **AmountMST**
 
 22.Select **Save All**, and then go to the **DataEntityComputedColumn** project
     in **Solution Explorer**.
@@ -228,7 +228,7 @@ private static server str balanceMST()
 
 24.Configure the following field:
 
--   **Synchronize Database:** True
+-   Synchronize Database: **True**
 
 25.Select **OK**, and then right-click the project to open the context menu and
     select **Build**.

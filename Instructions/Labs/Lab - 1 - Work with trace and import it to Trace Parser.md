@@ -126,9 +126,9 @@ To create a trace using the Task recorder tool:
 1.  Enter the following when the **Tracing** dialog opens, and then select
     **Start trace**:
 
-    -   **Trace name**: MB500Trace
+    -   Trace name: **MB500Trace**
 
-    -   **Include SQL parameter values**: Yes
+    -   Include SQL parameter values: **Yes**
         ![A screenshot of starting trace capturing.](media/L1P04.png)
 
 2.  Notice that the trace is running, and leave the window open
@@ -179,9 +179,9 @@ To import a trace you’ve downloaded into the Trace Parser tool:
 	
 	1.  Enter the following to create a database on the local VM:
 	
-	    -   **Server name**: . (type in a dot for local server)
+	    -   Server name: **. (type in a dot for local server)**
 	
-	    -   **Select or enter a database name**: D365Trace
+	    -   Select or enter a database name: **D365Trace**
 	![Screen capture that shows the Register database window with the Server name, Select or enter a database name, and Register options highlighted with arrows.](media/L1P12.png)
 	
 	

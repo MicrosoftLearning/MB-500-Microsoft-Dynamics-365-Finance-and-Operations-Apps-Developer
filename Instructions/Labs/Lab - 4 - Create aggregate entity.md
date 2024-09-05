@@ -38,7 +38,7 @@ To create an aggregated data entity:
 
     -   Select **Extensions \> Dynamics 365 \> Model Management \> Create
         Model**.
-
+    >   If 'Feedback on Finance and Operations(Dynamics 365)' screen pops up, click on 'Not Now'.
     -   In **Create model**:
 
         1.  For **Add parameters**, enter the following values, and then select

@@ -57,7 +57,7 @@ fields for the **CustTable** table:
 
     -   Select **Extensions \> Dynamics 365 \> Model Management \> Create
         Model**
-
+    >   If 'Feedback on Finance and Operations(Dynamics 365)' screen pops up, click on 'Not Now'.
     -   On Create model:
 
         1.  For Add parameters, enter these values and then select **Next**:
@@ -89,7 +89,7 @@ fields for the **CustTable** table:
 
         1.  Project name: **SysExtensionSerializerFramework**
 
-        2.  SolutionName: **MB500Lab3Sln**
+        2.  Solution name: **MB500Lab3Sln**
 
 3.  Right-click your project to open the context menu and select **Properties**.
 
