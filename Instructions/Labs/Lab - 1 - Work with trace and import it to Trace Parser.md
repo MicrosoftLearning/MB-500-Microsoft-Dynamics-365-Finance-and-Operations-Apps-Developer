@@ -52,7 +52,7 @@ To prepare for the exercises:
 5.  Open **File Explorer** and navigate to
     **C:\\AOSService\\webroot\\Monitoring**.
 
-6.  Right-click **DynamicsAxExecutionTraces.man** to open the context menu, and
+6.  Right-click **DynamicsAXExecutionTraces.man** to open the context menu, and
     then select **Open with**.
 
 7.  Select **Try an app on this PC**, and then select **Notepad** and select
@@ -68,10 +68,10 @@ To prepare for the exercises:
 10. Select **Replace All**, select **Cancel**, close **Notepad**, and then
     select **Save**.
 
-11. Right-click **DynamicsAxXppExecutionTraces.man** to open the context menu,
+11. Right-click **DynamicsAXXppExecutionTraces.man** to open the context menu,
     and then select **Open with**.
 
-12. Select **Try an app on this PC**, select **Notepad**, clear **Always use
+12. Select **Notepad**, clear **Always use
     this app to open .man files**, and then select **OK**.
 
 13. Select **Edit** and **Replace**, and then enter **%APPROOT%** in **Find
@@ -88,7 +88,7 @@ To prepare for the exercises:
 	<ul><li> <b>wevtutil um
 	    "C:\\AOSService\\webroot\\Monitoring\\DynamicsAXExecutionTraces.man"</b>
 	
-	</li><li></li> <b>wevtutil um
+	</li><li> <b>wevtutil um
 	    "C:\\AOSService\\webroot\\Monitoring\\DynamicsAXXppExecutionTraces.man"</b>
 	
 	</li><li> <b>wevtutil im

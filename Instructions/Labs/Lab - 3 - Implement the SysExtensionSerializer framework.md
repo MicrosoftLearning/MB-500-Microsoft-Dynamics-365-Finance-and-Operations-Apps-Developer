@@ -101,7 +101,7 @@ fields for the **CustTable** table:
 
 6.  Enter **MB500CustTable** as the name, and then select **Add**.
 
-7.  In (**View** \> ) **Application Explorer**, go to the search field, and then
+7.  In **View** \> **Application Explorer**, go to the search field, and then
     enter **RefRecId** in the **Search** field, and select **Enter**.
 
 8.  Navigate to the **RefRecId** Extended Data Type, and then drag it into the
@@ -131,8 +131,7 @@ fields for the **CustTable** table:
 
 17. Navigate to the **Indexes** node at **MB500CustTable** in the **Designer**.
 
-18. Right-click **Indexes** to open the context menu, and then select **New
-    index**.
+18. Right-click **Indexes** to open the context menu, and then select **New Index**.
 
 19. In **Properties**, enter the following:
 
@@ -183,14 +182,14 @@ fields for the **CustTable** table:
 29. Right-click **CustTable** Relation to open the context menu, and then select
     **New**, and select **Normal**.
 
-30. Set the following properties for the **Relation** constraint:
+30. Set the following properties for the **RelationConstraintField1** :
 
     -   Field: **CustTable**
 
     -   Related Field: **RecId**
 
 31. Navigate to **Properties** for the **MB500CustTable** table, and then enter
-    CustTableIdx for **Replacement Key**.
+    **CustTableIdx** for **Replacement Key**.
 
 32. Navigate to the **Methods** node for **MB500CustTable**.
 
@@ -206,7 +205,7 @@ fields for the **CustTable** table:
     }
 </pre>
 
-35. Navigate to the **Methods** node on **MB500CustTable**, and then right-click **Methods** to open the context menu and select **Overridte** and **update**.
+35. Navigate to the **Methods** node on **MB500CustTable**, and then right-click **Methods** to open the context menu and select **Override** and **update**.
 
 2.  Change the logic in the **update** method to the following:<pre>public void update()
     {
@@ -238,7 +237,7 @@ To implement the **SysExtensionSerializer** framework for a form:
 4.  Right-click the **CustTable** form to open the context menu, and then select
     **Create Extension**. The extension for the **CustTable** form is created.
 
-5.  Right-click the form extension for the **CustTable** form to open the
+5.  In **SolutionExplorer**, Right-click the form extension for the **CustTable** form to open the
     context menu, and then select **Open**.
 
 6.  In **Designer**, navigate to **Data Sources**, and then right-click **Data
@@ -284,7 +283,7 @@ To implement the **SysExtensionSerializer** framework for a form:
     context menu and select **Create Code Extension**.
 
 15. Right-click the code extension class, such as
-    CustTable_MB500CustTable_MB500Lab3_Extension, in the
+    **CustTable_MB500CustTable_MB500Lab3_Extension**, in the
     **SysExtensionSerializerFramework** project in **Solution Explorer** to open
     the context menu, and then select **Open**.
 
@@ -374,7 +373,7 @@ framework:
     **SysExtensionSerializerFramework** project in **Solution Explorer** to open
     the context menu, and then select **Open**.
 
-6.  In **Designer**, navigate to the **Data Source** node, and then expand the
+6.  In **Designer**, navigate to the **Data Sources** node, and then expand the
     **CustTable** data source.
 
 7.  Select **Data Sources** for the child data sources, and then right-click
@@ -446,7 +445,7 @@ framework:
 27. Select the **Description** field, and then in **Properties**, enter
     **Description2** in the **Name** field.
 
-28. Drag the Extended Data Type **Description** into the Field node for the
+28. Drag the Extended Data Type **Description** into the **Fields** node for the
     **CustCustomerV3Staging.MB500Lab3** table extension, and then select the
     **Description** field.
 

@@ -84,7 +84,7 @@ To create a data entity:
 
         1.  Project name: **DataEntityComputedColumn**
 
-        2.  SolutionName: **MB500Lab2Sln**
+        2.  Solution name: **MB500Lab2Sln**
 
 2.  Right-click the **DataEntityComputedColumn** project to open the context
     menu and select **Add** \> **New Item**.
@@ -124,8 +124,6 @@ The Data Entity Wizard opens.
 	-   **Name** in **Label Id**.
 	
 	-   **Customer name** in **Help Text Id**.
-	
-	-   **Customer name** in **Help text**.
 
 1.  Select **Add virtual field**, and then find the empty virtual field at
     the bottom of the field list.
@@ -139,9 +137,9 @@ The Data Entity Wizard opens.
 4.  Select **Next**, and the data entity **MyDataEntityComputedColumn** is
     added to the **DataEntityComputedColumn** project.
 
-5.  Select the **MyDataEntityComputedColumn** data entity in your project,
+5.  In Solution Explorer, select the **MyDataEntityComputedColumn** data entity in your project,
     right-click the **Methods** node to open the context menu, select **New
-    Method**, and then paste in this code, which retrieves a customer’s
+    Method**, and then add this code under existing methods in public class, which retrieves a customer’s
     name, in the public class:
 
 <pre>
