@@ -57,7 +57,7 @@ fields for the **CustTable** table:
 
     -   Select **Extensions \> Dynamics 365 \> Model Management \> Create
         Model**
-    >   If 'Feedback on Finance and Operations(Dynamics 365)' screen pops up, click on 'Not Now'.
+    >   If 'Feedback on Finance and Operations(Dynamics 365)' screen pops up, select 'Not Now'.
     -   On Create model:
 
         1.  For Add parameters, enter these values and then select **Next**:
