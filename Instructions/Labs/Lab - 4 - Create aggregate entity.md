@@ -38,7 +38,7 @@ To create an aggregated data entity:
 
     -   Select **Extensions \> Dynamics 365 \> Model Management \> Create
         Model**.
-
+    >   If 'Feedback on Finance and Operations(Dynamics 365)' screen pops up, click on 'Not Now'.
     -   In **Create model**:
 
         1.  For **Add parameters**, enter the following values, and then select
@@ -167,7 +167,7 @@ To create an aggregated data entity:
     -   Name: **ItemIdRelation**
 
 30. In the **Properties** for **ItemIdRelation** \>
-    **InventOnhandWarehouseStatus.ItemId == InventOnhandByWarehouseStatus**,
+    **InventOnHandWarehouseStatus.ItemId == InventOnHandByWarehouseStatus**,
     select **ItemId** for the **Related** field.
 
 31. Select **Save all**
@@ -199,7 +199,7 @@ Add a data entity
 3.  Enter **InventOnhandAggregateDataEntity** as the name, and then select
     **Add**.
 
-4.  In **Solution Explorerer**, find **InventOnhandAggregateMeasurement** and
+4.  In **Solution Explorer**, find **InventOnhandAggregateMeasurement** and
     drag it into the **DataSource** node on **InventOnhandAggregateDataEntity**.
 
 5.  Go to the **DataSource** node, and then select
@@ -207,7 +207,7 @@ Add a data entity
     **Measures** and drag **AvailOrdered** and **AvailPhysical** into the
     **Fields** node on **InventOnhandAggregateDataEntity**.
 
-6.  Go to the **DataSource** node \> **InventOnhandAggregateMeasurement** \>
+6.  Go to the **DataSource** node \> **InventOnhandAggregateMeasurement** \>**InventOnHandByWarehouseStatus** \>
     **Dimensions** and drag **InventOnhandAggregateDimension** into the
     **Fields** node.
 
