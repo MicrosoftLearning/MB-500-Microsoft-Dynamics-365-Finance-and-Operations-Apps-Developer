@@ -13,6 +13,7 @@ lab:
 <html>
 <table><tr><th>Version</th><th>Date</th><th>Change</th></tr>
 <tr><td>1.0</td><td>23 Aug 2024</td><td>Initial release</td></tr>
+<tr><td>1.1</td><td>10 Dec 2024</td><td>Workaround for expired certificate</td></tr>
 </table>
 </html>
 
@@ -43,6 +44,8 @@ framework, and then in the third exercise, you’ll import an Excel sheet with
 data, which requires an Excel sheet with correct column names.
 
 # Exercise 1: Prepare Data Management parameters
+
+*Note:* If you get a "Your connection isn't private" error on browser opening, then select the **Advanced** link, select to **Continue**, then wait 2-3 minutes.
 
 To prepare for configuration of Data Management parameters:
 
