@@ -13,6 +13,7 @@ lab:
 <html>
 <table><tr><th>Version</th><th>Date</th><th>Change</th></tr>
 <tr><td>1.0</td><td>23 Aug 2024</td><td>Initial release</td></tr>
+<tr><td>1.1</td><td>10 Dec 2024</td><td>Workaround for expired certificate</td></tr>
 </table>
 </html>
 
@@ -45,6 +46,8 @@ In the second exercise, you’ll test the data entity in SQL Server Management
 Studio and as OData in an internet browser.
 
 # Exercise 1: Create a data entity 
+
+*Note:* If you get a "Your connection isn't private" error on browser opening, then select the **Advanced** link, select to **Continue**, then wait 2-3 minutes.
 
 To create a data entity:
 
