@@ -13,6 +13,7 @@ lab:
 <html>
 <table><tr><th>Version</th><th>Date</th><th>Change</th></tr>
 <tr><td>1.0</td><td>23 Aug 2024</td><td>Initial release</td></tr>
+<tr><td>1.1</td><td>10 Dec 2024</td><td>Workaround for expired certificate</td></tr>
 </table>
 </html>
 
@@ -45,6 +46,8 @@ In the fourth and final exercise, you’ll test the modifications you’ve made 
 both the customer form and the **CustomersV3 data** entity.
 
 # Exercise 1: Implement the **SysExtensionSerializer** framework for a table 
+
+*Note:* If you get a "Your connection isn't private" error on browser opening, then select the **Advanced** link, select to **Continue**, then wait 2-3 minutes.
 
 To implement the **SysExtensionSerializer** framework and create three new text
 fields for the **CustTable** table:
