@@ -14,8 +14,17 @@ lab:
 <table><tr><th>Version</th><th>Date</th><th>Change</th></tr>
 <tr><td>1.0</td><td>23 Aug 2024</td><td>Initial release</td></tr>
 <tr><td>1.1</td><td>10 Dec 2024</td><td>Workaround for expired certificate</td></tr>
+<tr><td>1.2</td><td>15 Jan 2025</td><td>Added business scenario</td></tr>
 </table>
 </html>
+
+# Business scenario
+
+**Business Scenario**: Imagine you're a developer working on customizations for Microsoft Dynamics 365 Finance and Operations Apps (D365FO). You need to add new fields to a standard table, but adding too many fields directly to the table can cause performance issues and make it difficult to apply future updates from Microsoft.
+
+**How can the Hands-on Exercise Help?** The hands-on exercise you linked provides a step-by-step guide on how to implement the SysExtensionSerializer framework in D365FO. This framework offers a way to add new fields to existing tables without directly modifying them. By following the exercise, you'll learn how to extend the functionality of standard tables in D365FO without compromising performance or hindering future updates.
+
+
 
 # Objective
 
