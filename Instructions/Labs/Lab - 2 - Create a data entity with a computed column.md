@@ -14,8 +14,16 @@ lab:
 <table><tr><th>Version</th><th>Date</th><th>Change</th></tr>
 <tr><td>1.0</td><td>23 Aug 2024</td><td>Initial release</td></tr>
 <tr><td>1.1</td><td>10 Dec 2024</td><td>Workaround for expired certificate</td></tr>
+<tr><td>1.2</td><td>15 Jan 2025</td><td>Added business scenario</td></tr>
 </table>
 </html>
+
+# Business scenario
+
+**Business Scenario**: Imagine you're a developer working on Microsoft Dynamics 365 Finance and Operations Apps. You're tasked with creating a data entity to store customer information, including a calculated field for the customer's balance. This data entity will be used to provide customer data to other applications or reports.
+
+**How can the Hands-on Exercise Help**? The hands-on exercise you linked provides a step-by-step guide on how to create a data entity with a computed column in Dynamics 365 Finance and Operations Apps. By following the exercise, you'll learn how to create a custom data entity that meets your specific business needs and provides valuable customer data to other applications or reports.
+
 
 
 # Objective
