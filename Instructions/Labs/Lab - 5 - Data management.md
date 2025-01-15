@@ -20,7 +20,7 @@ lab:
 
 # Business scenario
 
-**Business Scenario**: Imagine you're a Dynamics 365 Finance and Operations Apps (D365FO) administrator for a manufacturing company. You're facing challenges in managing your ever-growing data volume, including limited storage capacity, data inconsistency, and compliance risks.
+**Business Scenario**: Imagine you're a Dynamics 365 Finance and Operations Apps administrator for a manufacturing company. You're facing challenges in managing your ever-growing data volume, including limited storage capacity, data inconsistency, and compliance risks.
 
 **How can the Hands-on Exercise Help?** The hands-on exercise you linked provides a step-by-step guide on how to use D365FO's data management tools to address these challenges. By following the exercise, you'll learn how to effectively manage your D365FO data, optimizing storage usage, improving data quality, and mitigating compliance risks. This will ensure the continued smooth operation of your D365FO system and provide a reliable foundation for data-driven decision-making within your manufacturing company.
 
