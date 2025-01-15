@@ -20,9 +20,9 @@ lab:
 
 # Business scenario
 
-**Business Scenario**: Imagine you're a developer working on customizations for Microsoft Dynamics 365 Finance and Operations Apps (D365FO). You need to add new fields to a standard table, but adding too many fields directly to the table can cause performance issues and make it difficult to apply future updates from Microsoft.
+**Business Scenario**: Imagine you're a developer working on customizations for Microsoft Dynamics 365 finance and operations apps. You need to add new fields to a standard table, but adding too many fields directly to the table can cause performance issues and make it difficult to apply future updates from Microsoft.
 
-**How can the Hands-on Exercise Help?** The hands-on exercise you linked provides a step-by-step guide on how to implement the SysExtensionSerializer framework in D365FO. This framework offers a way to add new fields to existing tables without directly modifying them. By following the exercise, you'll learn how to extend the functionality of standard tables in D365FO without compromising performance or hindering future updates.
+**How can the Hands-on Exercise Help?** The hands-on exercise you linked provides a step-by-step guide on how to implement the SysExtensionSerializer framework in the software. This framework offers a way to add new fields to existing tables without directly modifying them. By following the exercise, you'll learn how to extend the functionality of standard tables in the system without compromising performance or hindering future updates.
 
 
 
