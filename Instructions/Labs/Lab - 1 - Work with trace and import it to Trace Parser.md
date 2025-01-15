@@ -14,8 +14,15 @@ lab:
 <table><tr><th>Version</th><th>Date</th><th>Change</th></tr>
 <tr><td>1.0</td><td>23 Aug 2024</td><td>Initial release</td></tr>
 <tr><td>1.1</td><td>10 Dec 2024</td><td>Workaround for expired certificate</td></tr>
+<tr><td>1.2</td><td>15 Jan 2025</td><td>Added business scenario</td></tr>
 </table>
 </html>
+
+# Business scenario
+
+**Business Scenario**: Imagine you're a developer working on Microsoft Dynamics 365 Finance and Operations Apps. You're tasked with investigating a performance issue reported by a user. The user is experiencing slow loading times when opening specific screens in the application.
+
+**How can the Hands-on Exercise Help**? The hands-on exercise you linked provides a step-by-step guide on how to use the Trace Parser tool to analyze performance issues in Dynamics 365 Finance and Operations Apps. By following the exercise, you'll learn how to diagnose the performance issue and implement a solution to improve the application's responsiveness.
 
 
 # Objective
