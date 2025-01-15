@@ -20,9 +20,9 @@ lab:
 
 # Business scenario
 
-**Business Scenario**: Imagine you're a developer working on Microsoft Dynamics 365 Finance and Operations Apps. You're tasked with creating a report that analyzes sales data across different product categories and sales regions. However, the existing data model doesn't provide a centralized view of this information.
+**Business Scenario**: Imagine you're a developer working on Microsoft Dynamics 365 finance and operations apps. You're tasked with creating a report that analyzes sales data across different product categories and sales regions. However, the existing data model doesn't provide a centralized view of this information.
 
-**How can the Hands-on Exercise Help**? The hands-on exercise you linked provides a step-by-step guide on how to create an aggregate data entity in D365FO. Aggregate data entities offer a way to combine data from multiple tables into a single view, making it easier to analyze and report on. By following the exercise, you'll learn how to  create a custom data entity that provides a consolidated view of your sales data. This will make it easier to generate reports that analyze sales performance across product categories and regions, ultimately helping you gain valuable insights into your business.
+**How can the Hands-on Exercise Help**? The hands-on exercise you linked provides a step-by-step guide on how to create an aggregate data entity. Aggregate data entities offer a way to combine data from multiple tables into a single view, making it easier to analyze and report on. By following the exercise, you'll learn how to  create a custom data entity that provides a consolidated view of your sales data. This will make it easier to generate reports that analyze sales performance across product categories and regions, ultimately helping you gain valuable insights into your business.
 
 # Objective
 
