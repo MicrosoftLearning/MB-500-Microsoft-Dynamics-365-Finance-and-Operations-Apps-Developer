@@ -20,9 +20,9 @@ lab:
 
 # Business scenario
 
-**Business Scenario**: Imagine you're a developer working on Microsoft Dynamics 365 Finance and Operations Apps. You're tasked with creating a data entity to store customer information, including a calculated field for the customer's balance. This data entity will be used to provide customer data to other applications or reports.
+**Business Scenario**: Imagine you're a developer working on Microsoft Dynamics 365 finance and operations apps. You're tasked with creating a data entity to store customer information, including a calculated field for the customer's balance. This data entity will be used to provide customer data to other applications or reports.
 
-**How can the Hands-on Exercise Help**? The hands-on exercise you linked provides a step-by-step guide on how to create a data entity with a computed column in Dynamics 365 Finance and Operations Apps. By following the exercise, you'll learn how to create a custom data entity that meets your specific business needs and provides valuable customer data to other applications or reports.
+**How can the Hands-on Exercise Help**? The hands-on exercise you linked provides a step-by-step guide on how to create a data entity with a computed column. By following the exercise, you'll learn how to create a custom data entity that meets your specific business needs and provides valuable customer data to other applications or reports.
 
 
 
