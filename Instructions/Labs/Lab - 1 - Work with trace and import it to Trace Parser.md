@@ -15,8 +15,14 @@ lab:
 <tr><td>1.0</td><td>23 Aug 2024</td><td>Initial release</td></tr>
 <tr><td>1.1</td><td>10 Dec 2024</td><td>Workaround for expired certificate</td></tr>
 <tr><td>1.2</td><td>15 Jan 2025</td><td>Added business scenario</td></tr>
+<tr><td>1.3</td><td>19 Feb 2025</td><td>Added The Why</td></tr>
 </table>
 </html>
+
+# The Why
+
+In the world of software development and system optimization, understanding how to work with trace files and import them into Trace Parser is a vital skill. This hands-on lab will equip you with the ability to analyze performance issues, debug complex problems, and optimize the efficiency of Microsoft Dynamics 365 Finance and Operations applications. By mastering these techniques, you'll be able to identify bottlenecks, enhance system performance, and ensure a smoother user experience. This lab is not just an academic exercise; it's a practical tool that will empower you to tackle real-world technical challenges with confidence and precision, ultimately contributing to the success of your development projects.
+
 
 # Business scenario
 
