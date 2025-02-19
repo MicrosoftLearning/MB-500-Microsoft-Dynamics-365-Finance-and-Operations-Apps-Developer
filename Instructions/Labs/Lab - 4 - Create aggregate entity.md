@@ -15,8 +15,15 @@ lab:
 <tr><td>1.0</td><td>23 Aug 2024</td><td>Initial release</td></tr>
 <tr><td>1.1</td><td>10 Dec 2024</td><td>Workaround for expired certificate</td></tr>
 <tr><td>1.2</td><td>15 Jan 2025</td><td>Added business scenario</td></tr>
+<tr><td>1.3</td><td>19 Feb 2025</td><td>Added The Why</td></tr>
 </table>
 </html>
+
+# The Why
+
+Creating aggregate entities is a crucial skill for developers working with Microsoft Dynamics 365 Finance and Operations. This hands-on lab will teach you how to design and implement aggregate entities, enabling more efficient data retrieval and improved performance for complex queries. By mastering this technique, you'll be able to optimize data processing, enhance reporting capabilities, and support better decision-making within your organization. This practical knowledge will empower you to build robust and scalable solutions that meet the demanding data needs of modern businesses, ultimately contributing to the success and efficiency of your projects.
+
+
 
 # Business scenario
 
