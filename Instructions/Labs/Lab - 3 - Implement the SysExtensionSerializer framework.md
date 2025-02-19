@@ -15,8 +15,15 @@ lab:
 <tr><td>1.0</td><td>23 Aug 2024</td><td>Initial release</td></tr>
 <tr><td>1.1</td><td>10 Dec 2024</td><td>Workaround for expired certificate</td></tr>
 <tr><td>1.2</td><td>15 Jan 2025</td><td>Added business scenario</td></tr>
+<tr><td>1.3</td><td>19 Feb 2025</td><td>Added The Why</td></tr>
 </table>
 </html>
+
+# The Why
+
+Implementing the SysExtensionSerializer framework is a vital skill for developers working with Microsoft Dynamics 365 Finance and Operations. This hands-on lab will teach you how to leverage this framework to enhance the flexibility and scalability of your applications. By mastering this technique, you'll be able to create more modular and maintainable code, streamline development processes, and improve overall system performance. This practical knowledge will empower you to build robust solutions that can adapt to evolving business needs, ultimately contributing to the success and efficiency of your development projects.
+
+
 
 # Business scenario
 
