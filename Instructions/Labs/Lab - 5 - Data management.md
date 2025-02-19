@@ -15,8 +15,14 @@ lab:
 <tr><td>1.0</td><td>23 Aug 2024</td><td>Initial release</td></tr>
 <tr><td>1.1</td><td>10 Dec 2024</td><td>Workaround for expired certificate</td></tr>
 <tr><td>1.2</td><td>15 Jan 2025</td><td>Added business scenario</td></tr>
+<tr><td>1.3</td><td>19 Feb 2025</td><td>Added The Why</td></tr>
 </table>
 </html>
+
+# The Why
+
+Effective data management is the backbone of any successful business operation, ensuring that data is accurate, accessible, and actionable. This hands-on lab will teach you how to manage data within Microsoft Dynamics 365 Finance and Operations, a critical skill for maintaining data integrity and supporting business intelligence efforts. By mastering these techniques, you'll be able to streamline data processes, enhance data quality, and provide valuable insights that drive informed decision-making. This practical knowledge will empower you to handle complex data management tasks with confidence, ultimately contributing to the efficiency and success of your organization.
+
 
 # Business scenario
 
