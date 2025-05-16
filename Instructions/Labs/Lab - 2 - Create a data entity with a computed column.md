@@ -29,7 +29,7 @@ Creating data entities with computed columns is a crucial skill for any develope
 
 **Business Scenario**: Imagine you're a developer working on Microsoft Dynamics 365 finance and operations apps. You're tasked with creating a data entity to store customer information, including a calculated field for the customer's balance. This data entity will be used to provide customer data to other applications or reports.
 
-**How can the Hands-on Exercise Help**? The hands-on exercise you linked provides a step-by-step guide on how to create a data entity with a computed column. By following the exercise, you'll learn how to create a custom data entity that meets your specific business needs and provides valuable customer data to other applications or reports.
+**How can the Hands-on Exercise Help**? The hands-on exercise provides a step-by-step guide on how to create a data entity with a computed column. By following the exercise, you'll learn how to create a custom data entity that meets your specific business needs and provides valuable customer data to other applications or reports.
 
 
 
@@ -69,7 +69,7 @@ To create a data entity:
 1.  Open **Visual Studio** on your VM, and then create the solution you want to
     work with:
 
-    -   On Visual Studio 2019, select **Continue without code**
+    -   On Visual Studio 2022, select **Continue without code**
 
     -   Select **Extensions \> Dynamics 365 \> Model Management \> Create
         Model**
@@ -98,7 +98,7 @@ To create a data entity:
 
         4.  Select **Next** until **Configure your new project**
 
-    -   On **Configure your new project**, enter these values, then select Create:
+    -   On **Configure your new project**, enter these values, then select **Create**:
 
         1.  Project name: **DataEntityComputedColumn**
 
@@ -112,7 +112,10 @@ To create a data entity:
 
 4.  Select **Data Entity**, and then enter **MyDataEntityComputedColumn** in **Name** and select **Add**.    
 The Data Entity Wizard opens.
-![A screenshot of Data Entity Wizard](media/L2P01.png)
+
+    ![A screenshot of Data Entity Wizard](media/L2P01.png)
+
+    > If you want to change from Dark mode to improve readability, navigate to **Tools > Options > Environment > General**, and select your preferred Color Theme.
 
 5.  Select **CustTable** in **Primary datasource**, and then select **Master**
     in **Entity category**.
@@ -126,14 +129,15 @@ The Data Entity Wizard opens.
 
 4.  Keep **Security privileges** as defaulted, and then select **Next**.
 
+    > Please wait while the Add Fields page loads.This process may take a short while.
+
 5.  The **Add fields** page appears in the **Data Entity Wizard**, and you
     should clear the **Select all** checkbox
 
 6.  Find and select the **AccountNum** field, the **CreditMax** field, the
     **CustGroup** field, and select **Add virtual field**.
 
-7.  Find the empty virtual field at the bottom of the **field list** node, and
-    then enter **Name** in **Data entity field name**.
+7.  Find the empty virtual field, and then enter **Name** in **Data entity field name**.
 
 8.  Keep **String** in **Data type**, and then enter:
 
