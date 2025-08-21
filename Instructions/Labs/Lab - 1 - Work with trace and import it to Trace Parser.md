@@ -4,28 +4,6 @@ lab:
     module: 'Learning Path 01: Introduction to developing with finance and operations apps'
 ---
 
-Current Issue with Virtual Machines
-===================================
-
-We are aware that compiler is not working in the 10.0.41 virtual
-machine.
-
-Reporting and Support
-=====================
-
-This issue has been reported to Microsoft.
-
-Temporary Solution
-=====================
-
-The labs are being rewritten to not require code compiles.
-
-Alternative Practice Options
-============================
-
-If you have another environment where you can practice with demo data, the labs
-are available at https://aka.ms/MB500Labs.
-
 
 
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
@@ -279,6 +257,7 @@ To analyze X++ and SQL for users in the Trace Parser tool:
 10.  Select **Jump to Call Tree** (lower right between the Call Stack and Code)
     and wait. **Trace Parser** goes to **Call Tree**, and you can see the call
     stack. This will provide valuable information for identifying the expensive query.
+
 
 
 
