@@ -90,7 +90,7 @@ To prepare for the exercises:
 4.  Verify **Microsoft-Dynamics-AX-XppExecutionTraces** and
     **Microsoft-Dynamics-AX-ExecutionTraces** events exist in the top three
     rows. If they *do not* exist, you must activate them. If they do, close
-    Trace Parser and proceed to Exercise 1.
+    Trace Parser and **proceed to Exercise 1**.
 
 5.  Open **File Explorer** and navigate to
     **C:\\AOSService\\webroot\\Monitoring**.
@@ -125,7 +125,7 @@ To prepare for the exercises:
 15. Select **Replace All**, select **Cancel**, close **Notepad**, and then
     select **Save**.
 
-16. Open Windows PowerShell as Admin, and then enter each of the following,
+16. Open Windows PowerShell, selecting **Run as administrator**, and then enter each of the following,
     selecting **Enter** after each entry:
 
 	<ul><li> <b>wevtutil um
@@ -140,7 +140,7 @@ To prepare for the exercises:
 	</li><li> <b>wevtutil im
 	    "C:\\AOSService\\webroot\\Monitoring\\DynamicsAXXppExecutionTraces.man"</b>
 	</li></ul>
-17. Close **Trace Parser**.
+17. Close **PowerShell**.
 
 18. Select **Windows**, and search for and open **Trace Parser**.
 
@@ -176,7 +176,7 @@ To create a trace using the Task recorder tool:
 
 2.  Notice that the trace is running, and leave the window open
 ![A screenshot of trace is being captured.](media/L1P05.png)
-Users have reported that sales orders are working slowly, so you’ll need to review the sales order lines and check reservations against on-hand supply.
+In this scenario, users have reported that sales orders are working slowly, so you’ll need to review the sales order lines and check reservations against on-hand supply.
 
 6.  In the **Navigation** pane, select **Modules**, and then select **Accounts
     receivable**.
@@ -189,8 +189,8 @@ Users have reported that sales orders are working slowly, so you’ll need to re
 ![The My view list in Sales order details, which enables you to review the various orders associated with your account.](media/L1P07.png)
 
 
-1.  In **Sales order details**, select **Inventory** in the (lower) **Action**
-    pane for sales order lines.
+1.  In **Sales order details > Sales order lines**, select **Inventory** in the group's Action
+    pane.
 
     ![The Sales order lines window, in which you can select an action to take on inventory.](media/L1P08.png)
 
@@ -278,4 +278,5 @@ To analyze X++ and SQL for users in the Trace Parser tool:
 8.  Select **Jump to Call Tree** (lower right between the Call Stack and Code)
     and wait. **Trace Parser** goes to **Call Tree**, and you can see the call
     stack.
+
 
