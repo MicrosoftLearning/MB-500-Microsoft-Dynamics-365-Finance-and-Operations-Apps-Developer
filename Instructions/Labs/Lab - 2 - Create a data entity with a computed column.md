@@ -13,7 +13,7 @@ machine.
 
 ## Reporting and Support
 
-This issue has been reported to Microsoft.
+This issue has been reported to the Microsoft lab environments team.
 
 ## Temporary Solution
 
@@ -324,5 +324,6 @@ To test your new data entity in SQL Server Management Studio and as OData:
     OData format in the browser
 
     ![A screenshot of the OData view of the data entity.](media/L2P04.png)
+
 
 
