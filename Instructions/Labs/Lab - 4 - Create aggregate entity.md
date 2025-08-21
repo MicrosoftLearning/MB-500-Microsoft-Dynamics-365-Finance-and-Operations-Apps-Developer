@@ -8,23 +8,27 @@ lab:
 title: Dynamics 365 Apps Access Notice
 ---
 
+
 Current Issue with Virtual Machines
 ===================================
 
-We are aware that the Dynamics 365 apps are not working in the 10.0.39 virtual
-machine offered by some hosters, including Skillable, but perhaps others as
-well.
+We are aware that the compiler is not working in the 10.0.41 virtual
+machine.
 
-Reporting and Support
-=====================
+## Reporting and Support
 
-This issue has been reported to Skillable and to Microsoft.
+This issue has been reported to the Microsoft lab environments team.
 
-Alternative Practice Options
-============================
+## Temporary Solution
+
+The labs are being rewritten to not require code compiles.
+
+## Alternative Practice Options
 
 If you have another environment where you can practice with demo data, the labs
 are available at https://aka.ms/MB500Labs.
+
+
 
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
@@ -297,3 +301,4 @@ To test an aggregate data entity:
     grouped by **ItemId**
 
 ![A screenshot of output from aggregated data entity.](media/L4P05.png)
+
