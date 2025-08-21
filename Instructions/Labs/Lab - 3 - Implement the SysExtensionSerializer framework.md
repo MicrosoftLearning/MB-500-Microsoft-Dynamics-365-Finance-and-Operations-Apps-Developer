@@ -13,7 +13,7 @@ machine.
 
 ## Reporting and Support
 
-This issue has been reported to Microsoft.
+This issue has been reported to the Microsoft lab environments team.
 
 ## Temporary Solution
 
@@ -566,3 +566,4 @@ To test modifications:
 ![A screenshot of result of CustomerV3 data entity.](media/L3P03.png)
 
 > Note: This will not apply, of course, without a successful build.
+
