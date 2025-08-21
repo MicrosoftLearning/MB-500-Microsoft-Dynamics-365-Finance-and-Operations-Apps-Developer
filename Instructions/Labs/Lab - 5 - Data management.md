@@ -8,23 +8,7 @@ lab:
 title: Dynamics 365 Apps Access Notice
 ---
 
-Current Issue with Virtual Machines
-===================================
 
-We are aware that the Dynamics 365 apps are not working in the 10.0.39 virtual
-machine offered by some hosters, including Skillable, but perhaps others as
-well.
-
-Reporting and Support
-=====================
-
-This issue has been reported to Skillable and to Microsoft.
-
-Alternative Practice Options
-============================
-
-If you have another environment where you can practice with demo data, the labs
-are available at https://aka.ms/MB500Labs.
 
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
@@ -246,3 +230,4 @@ To create an import project:
 11. The **Execution Status** should change to **Succeeded**.
 
 12. Select **View execution log**, and then verify that there are no errors.
+
