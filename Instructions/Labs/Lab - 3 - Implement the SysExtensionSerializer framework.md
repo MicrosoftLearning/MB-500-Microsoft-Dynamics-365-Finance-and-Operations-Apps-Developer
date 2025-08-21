@@ -4,27 +4,27 @@ lab:
     module: 'Learning Path 03: Extend finance and operations apps'
 ---
 
----
-title: Dynamics 365 Apps Access Notice
----
 
 Current Issue with Virtual Machines
 ===================================
 
-We are aware that the Dynamics 365 apps are not working in the 10.0.39 virtual
-machine offered by some hosters, including Skillable, but perhaps others as
-well.
+We are aware that the compiler is not working in the 10.0.41 virtual
+machine.
 
-Reporting and Support
-=====================
+## Reporting and Support
 
-This issue has been reported to Skillable and to Microsoft.
+This issue has been reported to Microsoft.
 
-Alternative Practice Options
-============================
+## Temporary Solution
+
+The labs are being rewritten to not require code compiles.
+
+## Alternative Practice Options
 
 If you have another environment where you can practice with demo data, the labs
 are available at https://aka.ms/MB500Labs.
+
+
 
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
@@ -246,6 +246,8 @@ fields for the **CustTable** table:
     }
 </pre>
 
+> This will only perform the insert if there is a CustTable record
+
 35. Navigate to the **Methods** node on **MB500CustTable**, and then right-click **Methods** to open the context menu and select **Override** and **update**.
 
 2.  Change the logic in the **update** method to the following:<pre>public void update()
@@ -257,11 +259,14 @@ fields for the **CustTable** table:
     }
 </pre>
 
+> Similarly, this will only perform the update if there is a CustTable record
+
 1.  Select **Save All**, and then right-click the
     **SysExtensionSerializerFramework** project to open the context menu and
     select **Build.** 
 ![A screenshot of table MB500CustTable.](media/L3P01.png)
-  
+
+> Note: The build is currently failing.
 
 # Exercise 2: Implement the **SysExtensionSerializer** framework for a form 
 
@@ -312,7 +317,7 @@ To implement the **SysExtensionSerializer** framework for a form:
 10. Select **Save All**, and then in the **Application Explorer**, navigate to
     the **Search** field.
 
-11. Clear the **Search** field, and then select **Enter**.
+11. Clear the **Search** field.
 
 12. Enter **CustTable** in the **Search** field, and then select **Enter**.
 
@@ -346,6 +351,8 @@ final class CustTable_MB500CustTable_MB500Lab3_Extension
     }
 }
 </pre>
+
+> This method extends the MB500CustTable data source on the CustTable form using a Chain of Command approach. It links the extension table (MB500CustTable) to the base table (CustTable) by pairing their cursors, enabling the form to treat them as a unified data source.
 
 1.  Navigate to **User Interface** \> **Forms** in **Application Explorer**, and
     then find the **CustTable** form.
@@ -388,9 +395,14 @@ final class CustTable_CustTable_MB500Lab3_Extension
 
 }</pre>
 
+> This method extends the write() method of the CustTable data source on the CustTable form using Chain of Command (CoC). After the base logic runs, it checks whether the MB500CustTable extension table is enabled and, if so, inserts its data after the base table’s data using insertAfterBaseTable.
+
+
 22.Select **Save All**, and then find the **SysExtensionSerializerFramework**
     project in **Solution Explorer**, right-click it to open the context menu,
     and then select **Build**.
+
+> Note: The build is currently failing.
 
 # Exercise 3: Update data entities when using the **SysExtensionSerializer** framework
 
@@ -497,6 +509,8 @@ framework:
     Explorer**, and then right-click it to open the context menu and select
     **Build**.
 
+> Note: The build is currently failing.
+
 31. Right-click the project again to open the context menu, and then select
     **Synchronize SysExtensionSerializerFrameform (USR) with Database**.
 
@@ -531,6 +545,8 @@ To test modifications:
     -   Description: **Test3**
 ![A screenshot of 3 new description fields on customers.](media/L3P02.png)
 
+> Note: These will not be visible without a successful build.
+
 1.  Select **Save** and navigate to the **Accounts receivable** module, expand
     **Customers**, and then select **All customers**.
 
@@ -548,3 +564,5 @@ To test modifications:
     slightly), and verify the values in the new fields for the data entity:
 
 ![A screenshot of result of CustomerV3 data entity.](media/L3P03.png)
+
+> Note: This will not apply, of course, without a successful build.
