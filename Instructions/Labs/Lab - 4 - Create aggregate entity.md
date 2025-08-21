@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Lab 4: Create an aggregated data entity'
+    title: 'Lab 4: Create an aggregate data entity'
     module: 'Learning Path 04: Connect to finance and operations'
 ---
 
@@ -32,7 +32,7 @@ are available at https://aka.ms/MB500Labs.
 
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
-# Lab 4: Create an aggregated data entity
+# Lab 4: Create an aggregate data entity
 
 # Change Record
 
@@ -75,7 +75,7 @@ and Microsoft Visual Studio. In the:
 
 To create an aggregated data entity:
 
-1.  Open **Visual Studio** 2019 on your VM and select **Continue without code**.
+1.  Open **Visual Studio** on your VM and select **Continue without code**.
 
 2.  Create the solution you want to work with:
 
@@ -250,7 +250,7 @@ Add a data entity
     **Measures** and drag **AvailOrdered** and **AvailPhysical** into the
     **Fields** node on **InventOnhandAggregateDataEntity**.
 
-6.  Go to the **DataSource** node \> **InventOnhandAggregateMeasurement** \>**InventOnHandByWarehouseStatus** \>
+6.  Go to the **DataSource** node \> **InventOnhandAggregateMeasurement** \> **InventOnHandByWarehouseStatus** \>
     **Dimensions** and drag **InventOnhandAggregateDimension** into the
     **Fields** node.
 
@@ -287,6 +287,8 @@ Add a data entity
 14. Select **Save All**, and then right-click your project to open the context
     menu and select **Build**.
 
+> Note: The build is currently failing.
+
 # Exercise 2: Test an aggregated data entity
 
 To test an aggregate data entity:
@@ -298,9 +300,12 @@ To test an aggregate data entity:
 2.  enter the following URL in the address field, and then select **Enter**:
     <https://usnconeboxax1aos.cloud.onebox.dynamics.com/data/MyAggregateDataEntities>.
 
+> Note: Without a successful build, this step will not succeed either.
+
 3.  A list of items with **AvailOrdered** and **AvailPhysical** will display,
     grouped by **ItemId**
 
 ![A screenshot of output from aggregated data entity.](media/L4P05.png)
+
 
 
