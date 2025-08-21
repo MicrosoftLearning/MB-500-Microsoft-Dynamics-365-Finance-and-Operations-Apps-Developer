@@ -22,6 +22,7 @@ title: Dynamics 365 Apps Access Notice
 <tr><td>1.1</td><td>10 Dec 2024</td><td>Workaround for expired certificate</td></tr>
 <tr><td>1.2</td><td>15 Jan 2025</td><td>Added business scenario</td></tr>
 <tr><td>1.3</td><td>19 Feb 2025</td><td>Added The Why</td></tr>
+<tr><td>1.4</td><td>21 Aug 2025</td><td>App version has been updated to 10.0.41</td></tr>
 </table>
 </html>
 
@@ -230,4 +231,5 @@ To create an import project:
 11. The **Execution Status** should change to **Succeeded**.
 
 12. Select **View execution log**, and then verify that there are no errors.
+
 
