@@ -4,9 +4,6 @@ lab:
     module: 'Learning Path 02: Build finance and operations apps'
 ---
 
----
-title: Dynamics 365 Apps Access Notice
----
 
 Current Issue with Virtual Machines
 ===================================
@@ -327,4 +324,5 @@ To test your new data entity in SQL Server Management Studio and as OData:
     OData format in the browser
 
     ![A screenshot of the OData view of the data entity.](media/L2P04.png)
+
 
