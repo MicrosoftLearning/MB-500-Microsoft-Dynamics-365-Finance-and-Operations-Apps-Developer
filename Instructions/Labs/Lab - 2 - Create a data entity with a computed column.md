@@ -11,20 +11,22 @@ title: Dynamics 365 Apps Access Notice
 Current Issue with Virtual Machines
 ===================================
 
-We are aware that the Dynamics 365 apps are not working in the 10.0.39 virtual
-machine offered by some hosters, including Skillable, but perhaps others as
-well.
+We are aware that the compiler is not working in the 10.0.41 virtual
+machine.
 
-Reporting and Support
-=====================
+## Reporting and Support
 
-This issue has been reported to Skillable and to Microsoft.
+This issue has been reported to Microsoft.
 
-Alternative Practice Options
-============================
+## Temporary Solution
+
+The labs are being rewritten to not require code compiles.
+
+## Alternative Practice Options
 
 If you have another environment where you can practice with demo data, the labs
 are available at https://aka.ms/MB500Labs.
+
 
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
@@ -38,6 +40,7 @@ are available at https://aka.ms/MB500Labs.
 <tr><td>1.1</td><td>10 Dec 2024</td><td>Workaround for expired certificate</td></tr>
 <tr><td>1.2</td><td>15 Jan 2025</td><td>Added business scenario</td></tr>
 <tr><td>1.3</td><td>19 Feb 2025</td><td>Added The Why</td></tr>
+<tr><td>1.4</td><td>21 Aug 2025</td><td>App version has been updated to 10.0.41</td></tr>
 </table>
 </html>
 
@@ -126,6 +129,8 @@ To create a data entity:
 
         2.  Solution name: **MB500Lab2Sln**
 
+> We suggest you change from Dark mode to improve readability. Navigate to **Tools > Options > Environment > General**, and select your preferred Color Theme.
+
 2.  Right-click the **DataEntityComputedColumn** project to open the context
     menu and select **Add** \> **New Item**.
 
@@ -136,8 +141,6 @@ To create a data entity:
 The Data Entity Wizard opens.
 
     ![A screenshot of Data Entity Wizard](media/L2P01.png)
-
-    > If you want to change from Dark mode to improve readability, navigate to **Tools > Options > Environment > General**, and select your preferred Color Theme.
 
 5.  Select **CustTable** in **Primary datasource**, and then select **Master**
     in **Entity category**.
@@ -159,7 +162,7 @@ The Data Entity Wizard opens.
 6.  Find and select the **AccountNum** field, the **CreditMax** field, the
     **CustGroup** field, and select **Add virtual field**.
 
-7.  Find the empty virtual field, and then enter **Name** in **Data entity field name**.
+7.  Find the empty virtual field, usually at the bottom, and then enter **Name** in **Data entity field name**.
 
 8.  Keep **String** in **Data type**, and then enter:
 
@@ -207,6 +210,10 @@ private static server str custName()
     }
 
 </pre>
+
+> The method custName() dynamically builds a SQL SELECT statement to retrieve the Name field from the DirPartyTable based on specific filtering conditions. This method generates a SQL query string that retrieves the Name field from the DirPartyTable based on matching RecId and Partition values from the CustTable data source in your data entity.
+
+
 18.Now paste in this code, which calculates a customer’s balance, after that
     method and still within the public class:
 
@@ -243,6 +250,9 @@ private static server str balanceMST()
 
 </pre>
 
+> The balanceMST() method dynamically builds a SQL SELECT statement that calculates the sum of the AmountMST field from the CustTrans table. It filters the results based on several conditions: matching AccountNum, TransDate within a range, and matching DataAreaId and Partition values—all sourced from the CustTable data source in your data entity.
+
+
 19.Select **Save All**, and then close the code editor.
 
 20.Navigate to, and expand, the **Fields** node at the data entity, and then
@@ -277,6 +287,8 @@ private static server str balanceMST()
 25.Select **OK**, and then right-click the project to open the context menu and
     select **Build**.
 
+> Currently the provided lab environment errors out here.
+
 # Exercise 2: Test a data entity in SQL Server Management Studio and as OData
 
 To test your new data entity in SQL Server Management Studio and as OData:
@@ -291,6 +303,8 @@ To test your new data entity in SQL Server Management Studio and as OData:
     to open the context menu, and select the **Select Top 1000 Rows** item:
 
     ![A screenshot of data from data entity view, where we can see our two computed columns.](media/L2P02.png)
+
+> You will not see this view without a successful build in Exercise 2
 
 4.  Right-click the **dbo.MYDATAENTITYCOMPUTEDCOLUMN** view to open the context
     menu, and then select **Script View as** \> **CREATE To** \> **New Query
@@ -313,3 +327,4 @@ To test your new data entity in SQL Server Management Studio and as OData:
     OData format in the browser
 
     ![A screenshot of the OData view of the data entity.](media/L2P04.png)
+
