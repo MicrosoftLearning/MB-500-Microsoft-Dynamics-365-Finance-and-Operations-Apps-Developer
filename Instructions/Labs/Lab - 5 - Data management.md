@@ -111,10 +111,11 @@ To prepare your templates to use Data Management:
     ![A screenshot of 140 - Account receivable template loaded.](media/L5P02.png)
 
 4.  In the **Entities** list, select all, and then navigate to **Customer
-    groups**, and clear the **Customer groups** entity.
+    groups**, and clear the **Customer groups** entity selection.
 
-5.  Navigate to **Sales order pools**, clear the **Sales order pools** entity,
-    and then select **Remove entity** at the entity list action bar.
+5.  Navigate to **Sales order pools**, clear the **Sales order pools** entity selection,
+    and then select **Remove entity** at the entity list action bar. This will remove all entities
+    _except for_ **Customer groups** and **Sales order pools**.
 
 6.  Select **Yes** for the **Are you sure you want to delete all marked
     records** option, and then verify that only **Customer groups** and **Sales
@@ -143,7 +144,8 @@ To create an import project:
     **OK**.
 
 6.  In the upper action pane, select **Export now** and wait to see the
-    Execution summary.
+    Execution summary. (Make sure you select Export now to run it in
+    interactive mode.)
 ![A screenshot of a successful data export.](media/L5P04.png)
 
 1.  Under **Entity processing status**, select **Download file** for **Sales
@@ -231,5 +233,6 @@ To create an import project:
 11. The **Execution Status** should change to **Succeeded**.
 
 12. Select **View execution log**, and then verify that there are no errors.
+
 
 
