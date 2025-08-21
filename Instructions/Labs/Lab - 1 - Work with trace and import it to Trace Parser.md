@@ -251,32 +251,35 @@ To import a trace you’ve downloaded into the Trace Parser tool:
 To analyze X++ and SQL for users in the Trace Parser tool:
 
 1.  Select the **Select Grouping** option, and then select your applicable user
-    account. The trace parser will filter for your specific user.
+    account. It will be similar to the username you used, for example, cloudslice, and not OneBox.
+    The trace parser will filter for your specific user.
 
-2.  Select **Call Tree** to see the call stack, and then move down to find the
+3.  Select the **Call Tree** tab to see the call stack, and then move down to find the
     reddest color.
 
-3.  Expand the tree node for the reddest color (the largest number of ms) and
-    continue until all nodes are expanded, and make sure you’re watching the
-    **Context field** to see the X++ code
+4.  Expand the tree node for the reddest color (the largest number of ms) and
+    continue until all nodes for that one path are expanded, and make sure you’re watching the
+    **Context field** to see the X++ code. For the purposes of this exercise, it's not necessary
+    to dive fully down, but several levels are advised.
     ![A screenshot of Call Tree and most expensive code (in ms)](media/L1P14.png)
 
-4.  Select **X++** next to **Call tree**, and then select the **Total Inclusive
+6.  Seitch from the **Call tree** tab to the **X++** one, and then select the **Total Inclusive
     (ms)** column to sort the most expensive in descending order.
 
-5.  Find the first row with **Code** to see the most expensive code, and then
-    select **SQL** next to X++.
+7.  Find the first row with **Code** to see the most expensive code, and then
+    switch to the **SQL** tab.
 
-6.  Select **Show Tables**, and then enter **SalesTable** in **Name Filter**.
+8.  Select **Show Tables**, and then enter **SalesTable** in **Name Filter**.
     Only SQL statements visible on **SalesTable** should be listed.
 
-7.  Enter **InventTrans** in **Name Filter** and **Show Tables**. Only SQL
-    statement in **InventTrans** should now be listed in the view
+9.  Enter **InventTrans** in **Name Filter** and **Show Tables**. Only SQL
+    statements with **InventTrans** should now be listed in the view
 
     ![Screen capture that shows how InventTrans for your file should display.](media/L1P15.png)
 
-8.  Select **Jump to Call Tree** (lower right between the Call Stack and Code)
+10.  Select **Jump to Call Tree** (lower right between the Call Stack and Code)
     and wait. **Trace Parser** goes to **Call Tree**, and you can see the call
-    stack.
+    stack. This will provide valuable information for identifying the expensive query.
+
 
 
