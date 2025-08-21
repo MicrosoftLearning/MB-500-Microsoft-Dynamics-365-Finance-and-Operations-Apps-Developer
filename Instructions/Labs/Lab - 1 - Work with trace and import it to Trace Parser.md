@@ -4,9 +4,11 @@ lab:
     module: 'Learning Path 01: Introduction to developing with finance and operations apps'
 ---
 
+<!--
 ---
 title: Dynamics 365 Apps Access Notice
 ---
+
 
 Current Issue with Virtual Machines
 ===================================
@@ -25,6 +27,7 @@ Alternative Practice Options
 
 If you have another environment where you can practice with demo data, the labs
 are available at https://aka.ms/MB500Labs.
+-->
 
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
@@ -38,6 +41,8 @@ are available at https://aka.ms/MB500Labs.
 <tr><td>1.1</td><td>10 Dec 2024</td><td>Workaround for expired certificate</td></tr>
 <tr><td>1.2</td><td>15 Jan 2025</td><td>Added business scenario</td></tr>
 <tr><td>1.3</td><td>19 Feb 2025</td><td>Added The Why</td></tr>
+<tr><td>1.4</td><td>21 Aug 2025</td><td>Version has been updated to 10.0.41</td></tr>
+
 </table>
 </html>
 
@@ -273,3 +278,4 @@ To analyze X++ and SQL for users in the Trace Parser tool:
 8.  Select **Jump to Call Tree** (lower right between the Call Stack and Code)
     and wait. **Trace Parser** goes to **Call Tree**, and you can see the call
     stack.
+
