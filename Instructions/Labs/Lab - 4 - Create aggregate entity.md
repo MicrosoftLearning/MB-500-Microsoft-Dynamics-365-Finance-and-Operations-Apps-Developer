@@ -34,7 +34,7 @@ are available at https://aka.ms/MB500Labs.
 
 # Lab 4: Create an aggregate data entity
 
-# Change Record
+## Change Record
 
 <html>
 <table><tr><th>Version</th><th>Date</th><th>Change</th></tr>
@@ -43,22 +43,23 @@ are available at https://aka.ms/MB500Labs.
 <tr><td>1.2</td><td>15 Jan 2025</td><td>Added business scenario</td></tr>
 <tr><td>1.3</td><td>19 Feb 2025</td><td>Added The Why</td></tr>
 <tr><td>1.4</td><td>21 Aug 2025</td><td>App version has been updated to 10.0.41</td></tr>
+<tr><td>1.5</td><td>14 Oct 2025</td><td>Instruction cleanup</td></tr>
 </table>
 </html>
 
-# The Why
+## The Why
 
 Creating aggregate entities is a crucial skill for developers working with Microsoft Dynamics 365 Finance and Operations. This hands-on lab will teach you how to design and implement aggregate entities, enabling more efficient data retrieval and improved performance for complex queries. By mastering this technique, you'll be able to optimize data processing, enhance reporting capabilities, and support better decision-making within your organization. This practical knowledge will empower you to build robust and scalable solutions that meet the demanding data needs of modern businesses, ultimately contributing to the success and efficiency of your projects.
 
 
 
-# Business scenario
+## Business scenario
 
 **Business Scenario**: Imagine you're a developer working on Microsoft Dynamics 365 finance and operations apps. You're tasked with creating a report that analyzes sales data across different product categories and sales regions. However, the existing data model doesn't provide a centralized view of this information.
 
 **How can the Hands-on Exercise Help**? The hands-on exercise you linked provides a step-by-step guide on how to create an aggregate data entity. Aggregate data entities offer a way to combine data from multiple tables into a single view, making it easier to analyze and report on. By following the exercise, you'll learn how to  create a custom data entity that provides a consolidated view of your sales data. This will make it easier to generate reports that analyze sales performance across product categories and regions, ultimately helping you gain valuable insights into your business.
 
-# Objective
+## Objective
 
 This lab consists of several exercises. Requirements include a working
 development virtual machine (VM) with access to the finance and operations apps
@@ -69,7 +70,7 @@ and Microsoft Visual Studio. In the:
 
 -   Second exercise, you’ll test the outcome of the aggregated data entity.
 
-# Exercise 1: Create an aggregated data entity
+## Exercise 1: Create an aggregated data entity
 
 *Note:* If you get a "Your connection isn't private" error on browser opening, then select the **Advanced** link, select to **Continue**, then wait 2-3 minutes.
 
@@ -211,7 +212,7 @@ To create an aggregated data entity:
 
 30. In the **Properties** for **ItemIdRelation** \>
     **InventOnHandWarehouseStatus.ItemId == InventOnHandByWarehouseStatus**,
-    select **ItemId** for the **Related** field.
+    select **ItemId** for the **Related field**.
 
 31. Select **Save all**
 
@@ -230,7 +231,7 @@ To create an aggregated data entity:
 
     ![A screenshot of the aggregated data entity with nodes.](media/L4P03.png)
 
-Add a data entity
+## Add a data entity
 -----------------
 
 1.  Right-click your project to open the context menu, and then select **Add**
@@ -275,7 +276,7 @@ Add a data entity
     aggregate data entity, and then right-click it to open the context menu and
     select **New Key**.
 
-11. In the **Properties** for **AggregateDataEntityKey1**, select **ItemKey**
+11. In the **Properties** for **AggregateDataEntityKey1**, enter **ItemKey**
     for **Name**.
 
 12. Right-click the **ItemKey** key to open the context menu, and then select
@@ -289,7 +290,7 @@ Add a data entity
 
 > Note: The build is currently failing.
 
-# Exercise 2: Test an aggregated data entity
+## Exercise 2: Test an aggregated data entity
 
 To test an aggregate data entity:
 
@@ -306,6 +307,7 @@ To test an aggregate data entity:
     grouped by **ItemId**
 
 ![A screenshot of output from aggregated data entity.](media/L4P05.png)
+
 
 
 
