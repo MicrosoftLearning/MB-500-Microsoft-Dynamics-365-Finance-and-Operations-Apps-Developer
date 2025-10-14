@@ -30,7 +30,7 @@ are available at https://aka.ms/MB500Labs.
 
 # Lab 3: Implement the SysExtensionSerializer framework
 
-# Change Record
+## Change Record
 
 <html>
 <table><tr><th>Version</th><th>Date</th><th>Change</th></tr>
@@ -39,16 +39,17 @@ are available at https://aka.ms/MB500Labs.
 <tr><td>1.2</td><td>15 Jan 2025</td><td>Added business scenario</td></tr>
 <tr><td>1.3</td><td>19 Feb 2025</td><td>Added The Why</td></tr>
 <tr><td>1.4</td><td>21 Aug 2025</td><td>App version has been updated to 10.0.41</td></tr>
+<tr><td>1.5</td><td>14 Oct 2025</td><td>Instruction cleanup</td></tr>
 </table>
 </html>
 
-# The Why
+## The Why
 
 Implementing the SysExtensionSerializer framework is a vital skill for developers working with Microsoft Dynamics 365 Finance and Operations. This hands-on lab will teach you how to leverage this framework to enhance the flexibility and scalability of your applications. By mastering this technique, you'll be able to create more modular and maintainable code, streamline development processes, and improve overall system performance. This practical knowledge will empower you to build robust solutions that can adapt to evolving business needs, ultimately contributing to the success and efficiency of your development projects.
 
 
 
-# Business scenario
+## Business scenario
 
 **Business Scenario**: Imagine you're a developer working on customizations for Microsoft Dynamics 365 finance and operations apps. You need to add new fields to a standard table, but adding too many fields directly to the table can cause performance issues and make it difficult to apply future updates from Microsoft.
 
@@ -56,7 +57,7 @@ Implementing the SysExtensionSerializer framework is a vital skill for developer
 
 
 
-# Objective
+## Objective
 
 This lab consists of several exercises.
 
@@ -84,7 +85,21 @@ include the linked table into the **CustCustomerV3Entity** entity.
 In the fourth and final exercise, you’ll test the modifications you’ve made for
 both the customer form and the **CustomersV3 data** entity.
 
-# Exercise 1: Implement the **SysExtensionSerializer** framework for a table 
+## Prerequisite
+
+> This is not required at this point, but if you do it now, you will save time in Exercise 4. The entity refresh takes several minutes.
+
+1.  Open Microsoft Edge on your VM, and then go to the [Dashboard -- Finance and
+    Operations
+    (dynamics.com)](https://usnconeboxax1aos.cloud.onebox.dynamics.com/?cmp=USMF&mi=DefaultDashboard)
+    URL, and sign in to finance and operations apps.
+
+2.  In the Navigation Pane, expand **Workspaces**, and then select **Data
+    Management** and select **Framework Parameters**.
+
+3.  Navigate to **Entity Settings**, and then select **Refresh entity list**.
+
+## Exercise 1: Implement the **SysExtensionSerializer** framework for a table 
 
 *Note:* If you get a "Your connection isn't private" error on browser opening, then select the **Advanced** link, select to **Continue**, then wait 2-3 minutes.
 
@@ -149,7 +164,7 @@ fields for the **CustTable** table:
 8.  Navigate to the **RefRecId** Extended Data Type, and then drag it into the
     **Fields** node for the **MB500CustTable** table.
 
-9.  Select the **RefRecId** field, and then in **Properties**, select
+9.  Select the **RefRecId** field, and then in **Properties**, enter
     **CustTable** for the **Name**.
 
 10. In **Application Explorer**, navigate to the **Search** field, enter
@@ -238,7 +253,9 @@ fields for the **CustTable** table:
 33. Right-click **Methods** to open the context menu, and then select
     **Override**, and select **insert**.
 
-34. Change the logic in the **insert** method to the following:<pre>public void insert()
+34. Change the logic in the **insert** method to the following:
+<pre>
+    public void insert()
     {
         if (this.CustTable)
         {
@@ -251,7 +268,9 @@ fields for the **CustTable** table:
 
 35. Navigate to the **Methods** node on **MB500CustTable**, and then right-click **Methods** to open the context menu and select **Override** and **update**.
 
-2.  Change the logic in the **update** method to the following:<pre>public void update()
+36.  Change the logic in the **update** method to the following:
+<pre>
+    public void update()
     {
         if (this.CustTable)
         {
@@ -262,18 +281,18 @@ fields for the **CustTable** table:
 
 > Similarly, this will only perform the update if there is a CustTable record
 
-1.  Select **Save All**, and then right-click the
+37.  Select **Save All**, and then right-click the
     **SysExtensionSerializerFramework** project to open the context menu and
     select **Build.** 
 ![A screenshot of table MB500CustTable.](media/L3P01.png)
 
-> Note: The build is currently failing.
+> Note: The build is currently failing if you are using v41.
 
-# Exercise 2: Implement the **SysExtensionSerializer** framework for a form 
+## Exercise 2: Implement the **SysExtensionSerializer** framework for a form 
 
 To implement the **SysExtensionSerializer** framework for a form:
 
-1.  In **Solution Explorer**, select the **SysExtensionSerializerFramework**
+1.  In **Solution Explorer** (typically on the right), select the **SysExtensionSerializerFramework**
     project.
 
 2.  In **Application Explorer**, navigate to the **Search** field, enter
@@ -334,67 +353,71 @@ To implement the **SysExtensionSerializer** framework for a form:
     **SysExtensionSerializerFramework** project in **Solution Explorer** to open
     the context menu, and then select **Open**.
 
-16. Create a chain of command for the **init** method:<pre>[ExtensionOf(formDataSourceStr(CustTable, MB500CustTable))]
-final class CustTable_MB500CustTable_MB500Lab3_Extension
-{
-    /// <summary>
-    /// Chain of command method which making extensionTablePair in standard CustTable form
-    /// </summary>
-    public void init()
+16. Create a chain of command for the **init** method:
+<pre>
+    [ExtensionOf(formDataSourceStr(CustTable, MB500CustTable))]
+    final class CustTable_MB500CustTable_MB500Lab3_Extension
     {
-        next init();
-
-        FormDataSource  MB500CustTable_DS   = this;
-        FormRun         formRun             = MB500CustTable_DS.formRun();
-        FormDataSource  custTable_DS        = formRun.dataSource(formDataSourceStr(CustTable, CustTable));
-
-           SysExtensionSerializerFormRunHelper::construct().addExtensionTablePair(CustTable_DS.cursor(), MB500CustTable_DS.cursor());
+        /// &lt;summary&gt;
+        /// Chain of command extending the data source
+        /// &lt;/summary&gt;
+        public void init()
+        {
+            next init();
+    
+            FormDataSource  MB500CustTable_DS   = this;
+            FormRun         formRun             = MB500CustTable_DS.formRun();
+            FormDataSource  custTable_DS        = formRun.dataSource(formDataSourceStr(CustTable, CustTable));
+    
+               SysExtensionSerializerFormRunHelper::construct().addExtensionTablePair(CustTable_DS.cursor(), MB500CustTable_DS.cursor());
+        }
     }
-}
 </pre>
 
 > This method extends the MB500CustTable data source on the CustTable form using a Chain of Command approach. It links the extension table (MB500CustTable) to the base table (CustTable) by pairing their cursors, enabling the form to treat them as a unified data source.
 
-1.  Navigate to **User Interface** \> **Forms** in **Application Explorer**, and
+17.  Navigate to **User Interface** \> **Forms** in **Application Explorer**, and
     then find the **CustTable** form.
 
-2.  Navigate to the **DataSources** node, and then find the **CustTable** data
+18.  Navigate to the **DataSources** node, and then find the **CustTable** data
     source.
 
-3.  Right-click **CustTable** to open the context menu, and then select **Create
+19.  Right-click **CustTable** to open the context menu, and then select **Create
     Code Extension**.
 
-4.  Right-click the code extension class, such as
+20.  Right-click the code extension class, such as
     **CustTable_CustTable_MB500Lab3_Extension**, in the
     **SysExtensionSerializerFramework** in **Solution Explorer** to open the
     context menu, and then select **Open**.
 
-5.  Create a chain of command for the **write** method:<pre>[ExtensionOf(formDataSourceStr(CustTable, CustTable))]
-final class CustTable_CustTable_MB500Lab3_Extension
-{
-    /// <summary>
-    /// CoC of CustTable_DS write method
-    /// </summary>
-    void write()
+21.  Create a chain of command for the **write** method:
+<pre>
+    [ExtensionOf(formDataSourceStr(CustTable, CustTable))]
+    final class CustTable_CustTable_MB500Lab3_Extension
     {
-        next write();
-
-        FormDataSource MB500CustTable_DS = this.formRun().dataSource(formDataSourceStr(CustTable, MB500CustTable));
-
-
-        if (MB500CustTable_DS)
+        /// &lt;summary&gt;
+        /// CoC of CustTable_DS write method
+        /// &lt;/summary&gt;
+        void write()
         {
-            CustTable       custTable      = this.cursor();
-            MB500CustTable  MB500CustTable = MB500CustTable_DS.cursor();
-
-            if (SysExtensionSerializerExtensionMap::isExtensionEnabled(tableNum(MB500CustTable)))
+            next write();
+    
+            FormDataSource MB500CustTable_DS = this.formRun().dataSource(formDataSourceStr(CustTable, MB500CustTable));    
+    
+            if (MB500CustTable_DS)
             {
-                MB500CustTable.SysExtensionSerializerExtensionMap::insertAfterBaseTable(CustTable);
+                CustTable       custTable      = this.cursor();
+                MB500CustTable  MB500CustTable = MB500CustTable_DS.cursor();
+    
+                if (SysExtensionSerializerExtensionMap::isExtensionEnabled(tableNum(MB500CustTable)))
+                {
+                    MB500CustTable.SysExtensionSerializerExtensionMap::insertAfterBaseTable(CustTable);
+                }
             }
         }
+    
     }
-
-}</pre>
+</pre>
 
 > This method extends the write() method of the CustTable data source on the CustTable form using Chain of Command (CoC). After the base logic runs, it checks whether the MB500CustTable extension table is enabled and, if so, inserts its data after the base table’s data using insertAfterBaseTable.
 
@@ -405,7 +428,7 @@ final class CustTable_CustTable_MB500Lab3_Extension
 
 > Note: The build is currently failing.
 
-# Exercise 3: Update data entities when using the **SysExtensionSerializer** framework
+## Exercise 3: Update data entities when using the **SysExtensionSerializer** framework
 
 To update data entities when you’re using the **SysExtensionSerializer**
 framework:
@@ -416,7 +439,7 @@ framework:
 
 2.  Enter **CustCustomer** in the **Search** field, and then select **Enter**.
 
-3.  Navigate to the **Data Model** \> **Date Entities** node, and then find the
+3.  Navigate to the **Data Model** \> **Data Entities** node, and then find the
     **CustCustomerV3Entity** data entity.
 
 4.  Right-click the **CustCustomerV3Entity** data entity to open the context
@@ -509,17 +532,16 @@ framework:
 30. Find the **SysExtensionSerializerFramework** project in **Solution
     Explorer**, and then right-click it to open the context menu and select
     **Build**.
-
 > Note: The build is currently failing.
 
 31. Right-click the project again to open the context menu, and then select
     **Synchronize SysExtensionSerializerFrameform (USR) with Database**.
 
-# Exercise 4: Test modifications from the **SysExtensionSerializer** framework 
+## Exercise 4: Test modifications from the **SysExtensionSerializer** framework 
 
 To test modifications:
 
-1.  Open Microsoft Edge on your VM, and then go to the [Dashboard -- Finance and
+1.  If you did not refresh the entity list in the prerequisites, do steps 1-3. If you did, skip to step 4. Open Microsoft Edge on your VM, and then go to the [Dashboard -- Finance and
     Operations
     (dynamics.com)](https://usnconeboxax1aos.cloud.onebox.dynamics.com/?cmp=USMF&mi=DefaultDashboard)
     URL, and sign in to finance and operations apps.
@@ -545,27 +567,28 @@ To test modifications:
 
     -   Description: **Test3**
 ![A screenshot of 3 new description fields on customers.](media/L3P02.png)
-
 > Note: These will not be visible without a successful build.
 
-1.  Select **Save** and navigate to the **Accounts receivable** module, expand
+7.  Select **Save** and navigate to the **Accounts receivable** module, expand
     **Customers**, and then select **All customers**.
 
-2.  Select the first customer, and then verify the values in the three
+8.  Select the first customer, and then verify the values in the three
     description fields.
 
-3.  Navigate to **Settings** (the gear on the top right), select **User
+9.  Navigate to **Settings** (the gear on the top right), select **User
     options**, go to the **Preferences** tab, and change the **Startup Company**
-    to **USMF**.
+    to **USMF Contoso Entertainment System USA**, then **Save**.
 
-4.  Open a new tab in Microsoft Edge on your VM, and enter the following URL:
+10.  Open a new tab in Microsoft Edge on your VM, and enter the following URL:
     [usnconeboxax1aos.cloud.onebox.dynamics.com/data/CustomersV3?cmp=USMF](https://usnconeboxax1aos.cloud.onebox.dynamics.com/data/CustomersV3?cmp=USMF).
 
-5.  Select **Enter**, and then find rows **311** through **313** (this may vary
-    slightly), and verify the values in the new fields for the data entity:
+11.  Select **Enter**, and then find rows **311** through **313** (this may vary
+    slightly), and verify the values in the new fields for the data entity. Select **Pretty-print** if available.
 
 ![A screenshot of result of CustomerV3 data entity.](media/L3P03.png)
-
 > Note: This will not apply, of course, without a successful build.
+
+12. You have now successfully added fields via code, updated them via the user interface, and examined them using the browser.
+
 
 
