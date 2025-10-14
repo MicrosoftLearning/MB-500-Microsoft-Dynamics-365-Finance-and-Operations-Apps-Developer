@@ -126,7 +126,6 @@ To create a data entity:
         1.  Project name: **DataEntityComputedColumn**
 
         2.  Solution name: **MB500Lab2Sln**
-
 > If your environment is in Dark mode, we suggest you change it to improve readability. Navigate to **Tools > Options > Environment > General**, and select your preferred Color Theme.
 
 2.  Right-click the **DataEntityComputedColumn** project to open the context
@@ -322,6 +321,7 @@ To test your new data entity in SQL Server Management Studio and as OData:
     
 
     ![A screenshot of the OData view of the data entity.](media/L2P04.png)
+
 
 
 
