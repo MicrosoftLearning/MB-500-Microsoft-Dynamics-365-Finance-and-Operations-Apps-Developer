@@ -4,11 +4,6 @@ lab:
     module: 'Learning Path 04: Connect to finance and operations'
 ---
 
----
-title: Dynamics 365 Apps Access Notice
----
-
-
 Current Issue with Virtual Machines
 ===================================
 
@@ -307,6 +302,7 @@ To test an aggregate data entity:
     grouped by **ItemId**
 
 ![A screenshot of output from aggregated data entity.](media/L4P05.png)
+
 
 
 
