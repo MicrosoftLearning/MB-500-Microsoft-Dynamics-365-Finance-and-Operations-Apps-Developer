@@ -29,7 +29,7 @@ are available at https://aka.ms/MB500Labs.
 
 # Lab 2: Create a data entity with a computed column
 
-# Change Record
+## Change Record
 
 <html>
 <table><tr><th>Version</th><th>Date</th><th>Change</th></tr>
@@ -38,16 +38,17 @@ are available at https://aka.ms/MB500Labs.
 <tr><td>1.2</td><td>15 Jan 2025</td><td>Added business scenario</td></tr>
 <tr><td>1.3</td><td>19 Feb 2025</td><td>Added The Why</td></tr>
 <tr><td>1.4</td><td>21 Aug 2025</td><td>App version has been updated to 10.0.41</td></tr>
+<tr><td>1.5</td><td>14 Oct 2025</td><td>Instruction cleanup</td></tr>
 </table>
 </html>
 
-# The Why
+## The Why
 
 Creating data entities with computed columns is a crucial skill for any developer working with Microsoft Dynamics 365 Finance and Operations. This hands-on lab will teach you how to enhance data models by adding computed columns, enabling more efficient data processing and reporting. By mastering this technique, you'll be able to streamline data operations, improve system performance, and provide more insightful analytics. This practical knowledge will empower you to develop robust solutions that meet the complex data needs of modern businesses, ultimately contributing to more effective and efficient operations.
 
 
 
-# Business scenario
+## Business scenario
 
 **Business Scenario**: Imagine you're a developer working on Microsoft Dynamics 365 finance and operations apps. You're tasked with creating a data entity to store customer information, including a calculated field for the customer's balance. This data entity will be used to provide customer data to other applications or reports.
 
@@ -55,7 +56,7 @@ Creating data entities with computed columns is a crucial skill for any develope
 
 
 
-# Objective
+## Objective
 
 This lab consists of several exercises.
 
@@ -82,7 +83,7 @@ following fields:
 In the second exercise, you’ll test the data entity in SQL Server Management
 Studio and as OData in an internet browser.
 
-# Exercise 1: Create a data entity 
+## Exercise 1: Create a data entity 
 
 *Note:* If you get a "Your connection isn't private" error on browser opening, then select the **Advanced** link, select to **Continue**, then wait 2-3 minutes.
 
@@ -126,7 +127,7 @@ To create a data entity:
 
         2.  Solution name: **MB500Lab2Sln**
 
-> We suggest you change from Dark mode to improve readability. Navigate to **Tools > Options > Environment > General**, and select your preferred Color Theme.
+> If your environment is in Dark mode, we suggest you change it to improve readability. Navigate to **Tools > Options > Environment > General**, and select your preferred Color Theme.
 
 2.  Right-click the **DataEntityComputedColumn** project to open the context
     menu and select **Add** \> **New Item**.
@@ -181,9 +182,9 @@ The Data Entity Wizard opens.
 4.  Select **Next**, and the data entity **MyDataEntityComputedColumn** is
     added to the **DataEntityComputedColumn** project.
 
-5.  In Solution Explorer, select the **MyDataEntityComputedColumn** data entity in your project,
+5.  In Solution Explorer (typically on the right), double click the **MyDataEntityComputedColumn** data entity in your project to open it in the designer,
     right-click the **Methods** node to open the context menu, select **New
-    Method**, and then add this code under existing methods in public class, which retrieves a customer’s
+    Method**, and then add this code under existing methods in the **public** class, which retrieves a customer’s
     name, in the public class:
 
 <pre>
@@ -284,9 +285,8 @@ private static server str balanceMST()
 25.Select **OK**, and then right-click the project to open the context menu and
     select **Build**.
 
-> Currently the provided lab environment errors out here.
 
-# Exercise 2: Test a data entity in SQL Server Management Studio and as OData
+## Exercise 2: Test a data entity in SQL Server Management Studio and as OData
 
 To test your new data entity in SQL Server Management Studio and as OData:
 
@@ -298,10 +298,7 @@ To test your new data entity in SQL Server Management Studio and as OData:
 
 3.  Navigate to view **dbo.MYDATAENTITYCOMPUTEDCOLUMN**, and then right-click it
     to open the context menu, and select the **Select Top 1000 Rows** item:
-
     ![A screenshot of data from data entity view, where we can see our two computed columns.](media/L2P02.png)
-
-> You will not see this view without a successful build in Exercise 2
 
 4.  Right-click the **dbo.MYDATAENTITYCOMPUTEDCOLUMN** view to open the context
     menu, and then select **Script View as** \> **CREATE To** \> **New Query
@@ -316,14 +313,16 @@ To test your new data entity in SQL Server Management Studio and as OData:
 7.  Open Microsoft Edge in your VM and set your default legal entity: navigate
     to your Dynamics 365 home page, select the gear and **User Options**,
     navigate to the **Preferences** tab, and set the **Startup Company** to
-    **USMF**.
+    **USMF Contoso Entertainment System USA**.
 
 8.  Enter the following URL in the browser address field:
     <https://usnconeboxax1aos.cloud.onebox.dynamics.com/Data/MyDataEntity> in
     the browser address field. The **MyDataEntity** data entity will display in
-    OData format in the browser
+    OData format in the browser. If you get an error then change MyDataEntity to MyDataEntityData and select Pretty-print if desired.
+    
 
     ![A screenshot of the OData view of the data entity.](media/L2P04.png)
+
 
 
 
