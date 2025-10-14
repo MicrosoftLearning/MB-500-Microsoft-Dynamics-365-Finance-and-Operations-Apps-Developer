@@ -14,7 +14,7 @@ title: Dynamics 365 Apps Access Notice
 
 # Lab 5: Import data using Data Management
 
-# Change Record
+## Change Record
 
 <html>
 <table><tr><th>Version</th><th>Date</th><th>Change</th></tr>
@@ -23,22 +23,23 @@ title: Dynamics 365 Apps Access Notice
 <tr><td>1.2</td><td>15 Jan 2025</td><td>Added business scenario</td></tr>
 <tr><td>1.3</td><td>19 Feb 2025</td><td>Added The Why</td></tr>
 <tr><td>1.4</td><td>21 Aug 2025</td><td>App version has been updated to 10.0.41</td></tr>
+<tr><td>1.5</td><td>14 Oct 2025</td><td>Instruction cleanup</td></tr>
 </table>
 </html>
 
-# The Why
+## The Why
 
 Effective data management is the backbone of any successful business operation, ensuring that data is accurate, accessible, and actionable. This hands-on lab will teach you how to manage data within Microsoft Dynamics 365 Finance and Operations, a critical skill for maintaining data integrity and supporting business intelligence efforts. By mastering these techniques, you'll be able to streamline data processes, enhance data quality, and provide valuable insights that drive informed decision-making. This practical knowledge will empower you to handle complex data management tasks with confidence, ultimately contributing to the efficiency and success of your organization.
 
 
-# Business scenario
+## Business scenario
 
 **Business Scenario**: Imagine you're a Dynamics 365 finance and operations apps administrator for a manufacturing company. You're facing challenges in managing your ever-growing data volume, including limited storage capacity, data inconsistency, and compliance risks.
 
 **How can the Hands-on Exercise Help?** The hands-on exercise you linked provides a step-by-step guide on how to use the data management tools to address these challenges. By following the exercise, you'll learn how to effectively manage your data, optimizing storage usage, improving data quality, and mitigating compliance risks. This will ensure the continued smooth operation of your system and provide a reliable foundation for data-driven decision-making within your manufacturing company.
 
 
-# Objective
+## Objective
 
 This lab consists of several exercises.
 
@@ -63,7 +64,7 @@ In the second exercise, you’ll prepare templates for the Data Management
 framework, and then in the third exercise, you’ll import an Excel sheet with
 data, which requires an Excel sheet with correct column names.
 
-# Exercise 1: Prepare Data Management parameters
+## Exercise 1: Prepare Data Management parameters
 
 *Note:* If you get a "Your connection isn't private" error on browser opening, then select the **Advanced** link, select to **Continue**, then wait 2-3 minutes.
 
@@ -77,7 +78,7 @@ To prepare for configuration of Data Management parameters:
 
 3.  Select the **Entity settings** tab, and then select **Refresh entity list**
     to refresh data entities in the system. Notice that data entities are now
-    updated in the background as an asynchronous job.
+    updated in the background as an asynchronous job. Get this started, as it takes several minutes.
 
     ![A screenshot of Data import/export framework parameters where we find the Refresh entity list bottom.](media/L5P01.png)
 
@@ -91,11 +92,11 @@ To prepare for configuration of Data Management parameters:
 
     -   Ignore error: **Yes**
 
-    -   Create error file: **Yes**
+    -   Create error file (if available): **Yes**
 
     -   Remove duplicates: **Yes**
 
-# Exercise 2: Prepare templates for Data Management
+## Exercise 2: Prepare templates for Data Management
 
 To prepare your templates to use Data Management:
 
@@ -106,24 +107,25 @@ To prepare your templates to use Data Management:
 
 3.  Find and select **140 – Accounts receivable**, select **Load selected**, and
     then wait for the **140 – Accounts receivable** template to load. When it
-    completes you will see entities in the Entities list.
+    completes you will see entities in the Entities list. (If you don't, then the entity
+    list has probably not refreshed yet.)
 
     ![A screenshot of 140 - Account receivable template loaded.](media/L5P02.png)
 
-4.  In the **Entities** list, select all, and then navigate to **Customer
+5.  In the **Entities** list, **Select all**, and then navigate to **Customer
     groups**, and clear the **Customer groups** entity selection.
 
-5.  Navigate to **Sales order pools**, clear the **Sales order pools** entity selection,
+6.  Navigate to **Sales order pools**, clear the **Sales order pools** entity selection,
     and then select **Remove entity** at the entity list action bar. This will remove all entities
     _except for_ **Customer groups** and **Sales order pools**.
 
-6.  Select **Yes** for the **Are you sure you want to delete all marked
+7.  Select **Yes** for the **Are you sure you want to delete all marked
     records** option, and then verify that only **Customer groups** and **Sales
     order pools** entities remain:
 
     ![A screenshot of Customer groups and Sales order pools in our template.](media/L5P03.png)
 
-# Exercise 3: Create an import project
+## Exercise 3: Create an import project
 
 To create an import project:
 
@@ -148,91 +150,90 @@ To create an import project:
     interactive mode.)
 ![A screenshot of a successful data export.](media/L5P04.png)
 
-1.  Under **Entity processing status**, select **Download file** for **Sales
-    order pools**.
+7.  Under **Entity processing status**, select **Download file** for **Sales
+    order pools**. Feel free to rename the file to Sales order pools or similar,
+    leaving the extension. This will make it easier for you in future steps.
 
-2.  For **Entity procession status**, select **Download file** for **Customer
-    groups**.
+9.  For **Entity procession status**, select **Download file** for **Customer
+    groups**. Feel free to rename the file to Customer groups or similar,
+    leaving the extension.
 
-3.  Open **File Explorer** on your VM, and then open the Excel file for **Sales
-    order pools**. You can **Close** the Microsoft Office Activation Wizard and
+10.  Open **File Explorer** on your VM, and then open the Excel file for **Sales
+    order pools**. You can **Close** the Microsoft Office Activation Wizard if it appears and
     **Enable Editing**.
 ![A screenshot of exported Sales order pools.](media/L5P05.png)
 
-1.  Right-click column **A** to open the context menu, select **Format Cells**,
+11.  Right-click column **A** to open the context menu, select **Format Cells**,
     and select OK.
 
-2.  For row **6**, enter ‘**02** for the **POOLID** column.
+12.  For row **6**, enter ‘**02** for the **POOLID** column.
 
-3.  For row **6**, enter **My order pool** in the **POOLNAME** column.
+13.  For row **6**, enter **My order pool** in the **POOLNAME** column.
 
-4.  For row **7**, enter ‘**05** in the **POOLID** column.
+14.  For row **7**, enter ‘**05** in the **POOLID** column.
 
-5.  For row **7**, enter **My other order pool** in the **POOLNAME** column
+15.  For row **7**, enter **My other order pool** in the **POOLNAME** column
     ![A screenshot of Excel file for Sales order pools with two new rows.](media/L5P06.png)
 
-6.  Close **Excel** and select **Save** when prompted.
+16.  Close **Excel** and select **Save** when prompted.
 
-7.  Go back to Microsoft Edge and the finance and operations apps, and in the
+17.  Go back to Microsoft Edge and the finance and operations apps, and in the
     **Navigation pane**, select Workspaces and **Data management**.
 
-8.  Select the **Import** tile, and then enter **Import Group and Pool** in the
+18.  Select the **Import** tile, and then enter **Import Group and Pool** in the
     **Group name** field.
 
-9.  Enter **Import Customer group and order pools** in the **Description**
+19.  Enter **Import Customer group and order pools** in the **Description**
     field.
 
-10. In **Selected entities**, select **Add file**, and then in **Source data
+20. In **Selected entities**, select **Add file**, and then in **Source data
     format**, select **EXCEL**.
 
-11. In **Entity name**, select **Sales order pools**, and then select **Upload
+21. In **Entity name**, select **Sales order pools**, and then select **Upload
     and add**.
 
-12. Navigate to the **Downloads** folder, and then select the Excel file for
+22. Navigate to the **Downloads** folder, and then select the Excel file for
     **Sales order pools**.
 
-13. Select **Customer groups** in **Entity name**, and then select **Upload and
+23. When the screen refreshes, select **Customer groups** in **Entity name**, and then select **Upload and
     add**.
 
-14. Navigate to the **Downloads** folder, and then select the **Excel** file for
+24. Navigate to the **Downloads** folder, and then select the **Excel** file for
     **Customer groups**.
 
-15. Select **Close**, and then select **Import now** from the action pane, and wait for the import to finish.
+25. Select **Close**, and then select **Import now** from the action pane, and wait for the import to finish.
 ![A screenshot of import with partially succeeded.](media/L5P07.png)   
 
-1.  Select **View execution log** in the action pane, and then verify in the log
+26.  Select **View execution log** in the action pane, and then verify in the log
     text that two records didn’t add. This is because of a duplicate.
 ![A screenshot of the log for Sales order pools import.](media/L5P08.png)
 
-1.  Open **File Explorer** on your VM, navigate to the **Downloads** folder, and
+27.  Open **File Explorer** on your VM, navigate to the **Downloads** folder, and
     then open the Excel file for **Sales order pools**.
 
-2.  On row **6**, enter ‘**06** for the **POOLID**.
+28.  On row **6**, enter ‘**06** for the **POOLID**.
 
-3.  Close **Excel**, and then select **Save** when prompted.
+29.  Close **Excel**, and then select **Save** when prompted.
 
-4.  Go back to Microsoft Edge and the finance and operations apps, and in the
+30.  Go back to Microsoft Edge and the finance and operations apps, and in the
     navigation pane, select **Workspaces**, and then select **Data management**.
 
-5.  Select the **Import Group and Pool** Data project, select **Remove Entity**
+31.  Select the **Import Group and Pool** Data project, select **Remove Entity**
     for removing Sales order pools data entity from the list, and then select
     **Add file**.
 
-6.  The source data format is EXCEL.
+32.  The source data format is EXCEL.
 
-7.  In **Entity name**, select **Sales order pools**, and then select **Upload
+33.  In **Entity name**, select **Sales order pools**, and then select **Upload
     and add**.
 
-8.  Navigate to the **Downloads** folder, and then select the Excel file for
+34.  Navigate to the **Downloads** folder, and then select the Excel file for
     **Sales order pools**.
 
-9.  Select **Close**, and the updated Excel file will be ready to import.
+35.  Select **Close**, and the updated Excel file will be ready to import.
 
-10. Select **Import now**, and then wait for the import to finish.
+36. Select **Import now**, and then wait for the import to finish.
 
-11. The **Execution Status** should change to **Succeeded**.
+37. The **Execution Status** should change to **Succeeded**.
 
-12. Select **View execution log**, and then verify that there are no errors.
-
-
-
+38. Select **View execution log**, and then verify that there are no errors.
