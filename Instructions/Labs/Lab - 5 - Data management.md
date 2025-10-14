@@ -4,11 +4,6 @@ lab:
     module: 'Learning Path 05: Migrate data and go live with finance and operations apps'
 ---
 
----
-title: Dynamics 365 Apps Access Notice
----
-
-
 
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
@@ -237,3 +232,4 @@ To create an import project:
 37. The **Execution Status** should change to **Succeeded**.
 
 38. Select **View execution log**, and then verify that there are no errors.
+
