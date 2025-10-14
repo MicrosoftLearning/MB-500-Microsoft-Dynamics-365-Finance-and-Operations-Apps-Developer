@@ -211,7 +211,7 @@ private static server str custName()
 > The method custName() dynamically builds a SQL SELECT statement to retrieve the Name field from the DirPartyTable based on specific filtering conditions. This method generates a SQL query string that retrieves the Name field from the DirPartyTable based on matching RecId and Partition values from the CustTable data source in your data entity.
 
 
-18.Now paste in this code, which calculates a customer’s balance, after that
+17.Now paste in this code, which calculates a customer’s balance, after that
     method and still within the public class:
 
 <pre>
@@ -249,10 +249,9 @@ private static server str balanceMST()
 
 > The balanceMST() method dynamically builds a SQL SELECT statement that calculates the sum of the AmountMST field from the CustTrans table. It filters the results based on several conditions: matching AccountNum, TransDate within a range, and matching DataAreaId and Partition values—all sourced from the CustTable data source in your data entity.
 
+18.Select **Save All**, and then close the code editor.
 
-19.Select **Save All**, and then close the code editor.
-
-20.Navigate to, and expand, the **Fields** node at the data entity, and then
+19.Navigate to, and expand, the **Fields** node at the data entity, and then
     select the **Name** virtual field, and then configure the following
     properties:
 
@@ -262,7 +261,7 @@ private static server str balanceMST()
 
 -   Extended Data Type: **CustName**
 
-21.Select the **Balance** virtual field, and then configure the following
+20.Select the **Balance** virtual field, and then configure the following
     properties:
 
 -   Is Computed Field: **Yes**
@@ -271,17 +270,17 @@ private static server str balanceMST()
 
 -   Extended Data Type: **AmountMST**
 
-22.Select **Save All**, and then go to the **DataEntityComputedColumn** project
+21.Select **Save All**, and then go to the **DataEntityComputedColumn** project
     in **Solution Explorer**.
 
-23.Right-click the project to open the context menu, and then select
+22.Right-click the project to open the context menu, and then select
     **Properties**.
 
-24.Configure the following field:
+23.Configure the following field:
 
 -   Synchronize Database: **True**
 
-25.Select **OK**, and then right-click the project to open the context menu and
+24.Select **OK**, and then right-click the project to open the context menu and
     select **Build**.
 
 
@@ -321,6 +320,7 @@ To test your new data entity in SQL Server Management Studio and as OData:
     
 
     ![A screenshot of the OData view of the data entity.](media/L2P04.png)
+
 
 
 
