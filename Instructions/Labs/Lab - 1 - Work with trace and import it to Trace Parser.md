@@ -10,7 +10,7 @@ lab:
 
 # Lab 1: Work with trace and import it into the Trace Parser tool
 
-# Change Record
+## Change Record
 
 <html>
 <table><tr><th>Version</th><th>Date</th><th>Change</th></tr>
@@ -19,23 +19,23 @@ lab:
 <tr><td>1.2</td><td>15 Jan 2025</td><td>Added business scenario</td></tr>
 <tr><td>1.3</td><td>19 Feb 2025</td><td>Added The Why</td></tr>
 <tr><td>1.4</td><td>21 Aug 2025</td><td>Version has been updated to 10.0.41</td></tr>
-
+<tr><td>1.5</td><td>14 Oct 2025</td><td>Instruction cleanup</td></tr>
 </table>
 </html>
 
-# The Why
+## The Why
 
 In the world of software development and system optimization, understanding how to work with trace files and import them into Trace Parser is a vital skill. This hands-on lab will equip you with the ability to analyze performance issues, debug complex problems, and optimize the efficiency of Microsoft Dynamics 365 Finance and Operations applications. By mastering these techniques, you'll be able to identify bottlenecks, enhance system performance, and ensure a smoother user experience. This lab is not just an academic exercise; it's a practical tool that will empower you to tackle real-world technical challenges with confidence and precision, ultimately contributing to the success of your development projects.
 
 
-# Business scenario
+## Business scenario
 
 **Business Scenario**: Imagine you're a developer working on Microsoft Dynamics 365 finance and operations apps. You're tasked with investigating a performance issue reported by a user. The user is experiencing slow loading times when opening specific screens in the application.
 
 **How can the Hands-on Exercise Help**? The hands-on exercise offers a step-by-step guide for using the Trace Parser tool to analyze system performance issues. By following the exercise, you'll learn how to diagnose the performance issue and implement a solution to improve the application's responsiveness.
 
 
-# Objective
+## Objective
 
 
 This lab consists of three exercises. Requirements include a working development
@@ -50,7 +50,7 @@ Parser tool, and SQL Server Management Studio (SSMS). For the lab:
 
 3.  In the last exercise, you’ll analyze records in Trace Parser.
 
-# Prerequisites
+## Prerequisites
 
 *Note:* If you get a "Your connection isn't private" error on browser opening, then select the **Advanced** link, select to **Continue**, then wait 2-3 minutes.
 
@@ -62,7 +62,7 @@ To prepare for the exercises:
     or enter a database name**.
 
 3.  Select **Register** and **Yes** to create the database, and then select
-    **Capture Events**.
+    **Capture Events**. You may need to wait a bit for the providers to show.
 
 4.  Verify **Microsoft-Dynamics-AX-XppExecutionTraces** and
     **Microsoft-Dynamics-AX-ExecutionTraces** events exist in the top three
@@ -130,7 +130,7 @@ To prepare for the exercises:
    
 >   If the events exist, the Trace is working. Close Trace Parser.
 
-# Exercise 1: Create a trace using Task recorder 
+## Exercise 1: Create a trace using Task recorder 
 
 To create a trace using the Task recorder tool:
 
@@ -140,7 +140,7 @@ To create a trace using the Task recorder tool:
     (dynamics.com)](https://usnconeboxax1aos.cloud.onebox.dynamics.com/?cmp=USMF&mi=DefaultDashboard)
     and sign in to the finance and operations apps with your account.
 
-3.  Select the question mark on the upper-right of the Edge window, and then select **Trace**
+3.  Select the question mark on the upper-right of the Edge window, and then select **Trace**.
 ![A screenshot of how to open trace.](media/L1P03.png)
 
 1.  Enter the following when the **Tracing** dialog opens, and then select
@@ -176,7 +176,7 @@ In this scenario, users have reported that sales orders are working slowly, so y
 3.  Stop the trace by selecting **Stop trace**.
     ![The Tracing window, in which you can select Stop trace to halt the tracing process.](media/L1P09.png)
 
-4.  Download or upload the trace after it stops. Uploading a trace saves it in
+4.  Note: You may download or upload the trace after it stops. Uploading a trace saves it in
     finance and operations apps, from which you then can download it repeatedly.  
     **Important:** If you download a trace without uploading it first, the trace
     is deleted.
@@ -185,7 +185,7 @@ In this scenario, users have reported that sales orders are working slowly, so y
 5.  Select **Download trace**, and the trace is stored in the **Downloads**
     folder on the VM.
 
-# Exercise 2: Import the downloaded trace into Trace Parser
+## Exercise 2: Import the downloaded trace into Trace Parser
 
 To import a trace you’ve downloaded into the Trace Parser tool:
 
@@ -223,7 +223,7 @@ To import a trace you’ve downloaded into the Trace Parser tool:
 
 >   The import process will take a few minutes.
 
-# Exercise 3: Analyze in Trace Parser
+## Exercise 3: Analyze in Trace Parser
 
 To analyze X++ and SQL for users in the Trace Parser tool:
 
@@ -232,7 +232,7 @@ To analyze X++ and SQL for users in the Trace Parser tool:
     The trace parser will filter for your specific user.
 
 3.  Select the **Call Tree** tab to see the call stack, and then move down to find the
-    reddest color.
+    reddest color. 
 
 4.  Expand the tree node for the reddest color (the largest number of ms) and
     continue until all nodes for that one path are expanded, and make sure you’re watching the
@@ -240,10 +240,10 @@ To analyze X++ and SQL for users in the Trace Parser tool:
     to dive fully down, but several levels are advised.
     ![A screenshot of Call Tree and most expensive code (in ms)](media/L1P14.png)
 
-6.  Seitch from the **Call tree** tab to the **X++** one, and then select the **Total Inclusive
+6.  Switch from the **Call tree** tab to the **X++** one, and then select the **Total Inclusive
     (ms)** column to sort the most expensive in descending order.
 
-7.  Find the first row with **Code** to see the most expensive code, and then
+7.  Find the first row with code to see the most expensive code, and then
     switch to the **SQL** tab.
 
 8.  Select **Show Tables**, and then enter **SalesTable** in **Name Filter**.
@@ -258,7 +258,6 @@ To analyze X++ and SQL for users in the Trace Parser tool:
     and wait. **Trace Parser** goes to **Call Tree**, and you can see the call
     stack. This will provide valuable information for identifying the expensive query.
 
+11. You now can evaluate options such as rewriting the query or the code which calls it, creating indexes, or other.
 
-
-
-
+    
