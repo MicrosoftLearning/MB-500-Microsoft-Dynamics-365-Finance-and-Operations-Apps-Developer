@@ -63,6 +63,7 @@ To prepare for the exercises:
 
 3.  Select **Register** and **Yes** to create the database, and then select
     **Capture Events**. You may need to wait a bit for the providers to show.
+    If they don't show after a minute or two, **Refresh Providers**.
 
 4.  Verify **Microsoft-Dynamics-AX-XppExecutionTraces** and
     **Microsoft-Dynamics-AX-ExecutionTraces** events exist in the top three
@@ -88,21 +89,21 @@ To prepare for the exercises:
 10. Select **Replace All**, select **Cancel**, close **Notepad**, and then
     select **Save**.
 
-11. Right-click **DynamicsAXXppExecutionTraces.man** to open the context menu,
+10. Right-click **DynamicsAXXppExecutionTraces.man** to open the context menu,
     and then select **Open with**.
 
-12. Select **Notepad**, clear **Always use
+11. Select **Notepad**, clear **Always use
     this app to open .man files**, and then select **OK**.
 
-13. Select **Edit** and **Replace**, and then enter **%APPROOT%** in **Find
+12. Select **Edit** and **Replace**, and then enter **%APPROOT%** in **Find
     what**.
 
-14. Enter **C:\\AOSService\\webroot** in **Replace with**.
+13. Enter **C:\\AOSService\\webroot** in **Replace with**.
 
-15. Select **Replace All**, select **Cancel**, close **Notepad**, and then
+14. Select **Replace All**, select **Cancel**, close **Notepad**, and then
     select **Save**.
 
-16. Open Windows PowerShell, selecting **Run as administrator**, and then enter each of the following,
+15. Open Windows PowerShell, selecting **Run as administrator**, and then enter each of the following,
     selecting **Enter** after each entry:
 
 	<ul><li> <b>wevtutil um
@@ -117,11 +118,11 @@ To prepare for the exercises:
 	</li><li> <b>wevtutil im
 	    "C:\\AOSService\\webroot\\Monitoring\\DynamicsAXXppExecutionTraces.man"</b>
 	</li></ul>
-17. Close **PowerShell**.
+16. Close **PowerShell**.
 
-18. Select **Windows**, and search for and open **Trace Parser**.
+17. Select **Windows**, and search for and open **Trace Parser**.
 
-19. Select **Capture Events**, and then verify
+18. Select **Capture Events**, and then verify
     **Microsoft-Dynamics-AX-XppExecutionTraces** and
     **Microsoft-Dynamics-AX-ExecutionTraces** events exist in the top three
     rows
@@ -261,3 +262,4 @@ To analyze X++ and SQL for users in the Trace Parser tool:
 11. You now can evaluate options such as rewriting the query or the code which calls it, creating indexes, or other.
 
     
+
