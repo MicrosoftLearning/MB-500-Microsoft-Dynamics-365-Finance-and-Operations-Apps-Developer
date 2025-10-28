@@ -142,26 +142,26 @@ The Data Entity Wizard opens.
 5.  Select **CustTable** in **Primary datasource**, and then select **Master**
     in **Entity category**.
 
-2.  Select the checkbox next to **Enable public API**, and then enter
+6.  Select the checkbox next to **Enable public API**, and then enter
     **MyDataEntityComputedColumn** in **Public entity name**.
 
-3.  Enter **MyDataEntity** in **Public collection name**, and then clear the
+7.  Enter **MyDataEntity** in **Public collection name**, and then clear the
     **Enable data management capabilities** checkbox, as you don’t want to
     create a staging table.
 
-4.  Keep **Security privileges** as defaulted, and then select **Next**.
+8.  Keep **Security privileges** as defaulted, and then select **Next**.
 
     > Please wait while the Add Fields page loads.This process may take a short while.
 
-5.  The **Add fields** page appears in the **Data Entity Wizard**, and you
+9.  The **Add fields** page appears in the **Data Entity Wizard**, and you
     should clear the **Select all** checkbox
 
-6.  Find and select the **AccountNum** field, the **CreditMax** field, the
+10.  Find and select the **AccountNum** field, the **CreditMax** field, the
     **CustGroup** field, and select **Add virtual field**.
 
-7.  Find the empty virtual field, usually at the bottom, and then enter **Name** in **Data entity field name**.
+11.  Find the empty virtual field, usually at the bottom, and then enter **Name** in **Data entity field name**.
 
-8.  Keep **String** in **Data type**, and then enter:
+12.  Keep **String** in **Data type**, and then enter:
 
 	-   **CustName** in **EDT type name**.
 	
@@ -169,19 +169,19 @@ The Data Entity Wizard opens.
 	
 	-   **Customer name** in **Help Text Id**.
 
-1.  Select **Add virtual field**, and then find the empty virtual field at
+13.  Select **Add virtual field**, and then find the empty virtual field at
     the bottom of the field list.
 
-2.  Enter **Balance** in **Data entity field name**, and then **Real** in
+14.  Enter **Balance** in **Data entity field name**, and then **Real** in
     **Data type** and leave the **EDT type name** blank.
 
-3.  Enter **Balance** in **Label Id**, and then enter **Customer balance**
+15.  Enter **Balance** in **Label Id**, and then enter **Customer balance**
     in **Help Text Id**.
 
-4.  Select **Next**, and the data entity **MyDataEntityComputedColumn** is
+16.  Select **Next**, and the data entity **MyDataEntityComputedColumn** is
     added to the **DataEntityComputedColumn** project.
 
-5.  In Solution Explorer (typically on the right), double click the **MyDataEntityComputedColumn** data entity in your project to open it in the designer,
+17.  In Solution Explorer (typically on the right), double click the **MyDataEntityComputedColumn** data entity in your project to open it in the designer,
     right-click the **Methods** node to open the context menu, select **New
     Method**, and then add this code under existing methods in the **public** class, which retrieves a customer’s
     name, in the public class:
@@ -211,7 +211,7 @@ private static server str custName()
 > The method custName() dynamically builds a SQL SELECT statement to retrieve the Name field from the DirPartyTable based on specific filtering conditions. This method generates a SQL query string that retrieves the Name field from the DirPartyTable based on matching RecId and Partition values from the CustTable data source in your data entity.
 
 
-17.Now paste in this code, which calculates a customer’s balance, after that
+18.Now paste in this code, which calculates a customer’s balance, after that
     method and still within the public class:
 
 <pre>
@@ -249,9 +249,9 @@ private static server str balanceMST()
 
 > The balanceMST() method dynamically builds a SQL SELECT statement that calculates the sum of the AmountMST field from the CustTrans table. It filters the results based on several conditions: matching AccountNum, TransDate within a range, and matching DataAreaId and Partition values—all sourced from the CustTable data source in your data entity.
 
-18.Select **Save All**, and then close the code editor.
+19.Select **Save All**, and then close the code editor.
 
-19.Navigate to, and expand, the **Fields** node at the data entity, and then
+20.Navigate to, and expand, the **Fields** node at the data entity, and then
     select the **Name** virtual field, and then configure the following
     properties:
 
@@ -261,7 +261,7 @@ private static server str balanceMST()
 
 -   Extended Data Type: **CustName**
 
-20.Select the **Balance** virtual field, and then configure the following
+21. Select the **Balance** virtual field, and then configure the following
     properties:
 
 -   Is Computed Field: **Yes**
@@ -270,18 +270,18 @@ private static server str balanceMST()
 
 -   Extended Data Type: **AmountMST**
 
-21.Select **Save All**, and then go to the **DataEntityComputedColumn** project
+22. Select **Save All**, and then go to the **DataEntityComputedColumn** project
     in **Solution Explorer**.
 
-22.Right-click the project to open the context menu, and then select
+23. Right-click the project to open the context menu, and then select
     **Properties**.
 
-23.Configure the following field:
+24. Configure the following field:
 
 -   Synchronize Database: **True**
 
-24.Select **OK**, and then right-click the project to open the context menu and
-    select **Build**.
+25. Select **OK**, and then right-click the project to open the context menu and
+    select **Build**. If the build fails on a "The 'BuildTask' task returned false but did not log an error." then retry the build.
 
 
 ## Exercise 2: Test a data entity in SQL Server Management Studio and as OData
@@ -314,12 +314,17 @@ To test your new data entity in SQL Server Management Studio and as OData:
     **USMF Contoso Entertainment System USA**.
 
 8.  Enter the following URL in the browser address field:
-    <https://usnconeboxax1aos.cloud.onebox.dynamics.com/Data/MyDataEntity> in
-    the browser address field. The **MyDataEntity** data entity will display in
-    OData format in the browser. If you get an error then change MyDataEntity to MyDataEntityData and select Pretty-print if desired.
+
+- For version .43 enter:  <https://usnconeboxax1aos.cloud.onebox.dynamics.com/Data/MyDataEntity>
+
+- For version .41 enter:  <https://usnconeboxax1aos.cloud.onebox.dynamics.com/Data/MyDataEntityData>
+
+
+    The data entity will display in OData format in the browser. Select Pretty-print if desired.
     
 
     ![A screenshot of the OData view of the data entity.](media/L2P04.png)
+
 
 
 
