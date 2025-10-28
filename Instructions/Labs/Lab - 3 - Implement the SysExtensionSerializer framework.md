@@ -136,49 +136,44 @@ fields for the **CustTable** table:
 
         2.  Solution name: **MB500Lab3Sln**
 
-3.  Right-click your project to open the context menu and select **Properties**.
-
-4.  Make sure the **Synchronize Database** property is set to **True**, and then
-    select **OK**.
-
-5.  Right-click your project to open the context menu, and then select **Add**,
+3.  Right-click your project to open the context menu, and then select **Add**,
     and select **Table**.
 
-6.  Enter **MB500CustTable** as the name, and then select **Add**.
+4.  Enter **MB500CustTable** as the name, and then select **Add**.
 
-7.  In **View** \> **Application Explorer**, go to the search field, and then
+5.  In **View** \> **Application Explorer**, go to the search field, and then
     enter **RefRecId** in the **Search** field, and select **Enter**.
 
-8.  Navigate to the **RefRecId** Extended Data Type, and then drag it into the
+6.  Navigate to the **RefRecId** Extended Data Type, and then drag it into the
     **Fields** node for the **MB500CustTable** table.
 
-9.  Select the **RefRecId** field, and then in **Properties**, enter
+7.  Select the **RefRecId** field, and then in **Properties**, enter
     **CustTable** for the **Name**.
 
-10. In **Application Explorer**, navigate to the **Search** field, enter
+8. In **Application Explorer**, navigate to the **Search** field, enter
     **Description**, and then select **Enter**.
 
-11. Navigate to the Extended Data Type **Description**, and then drag it into
+9. Navigate to the Extended Data Type **Description**, and then drag it into
     the **Fields** node for the **MB500CustTable** table.
 
-12. Select the **Description** field, and in **Properties** enter the name
+10. Select the **Description** field, and in **Properties** enter the name
     **Description1**.
+
+11. Drag the Extended Data Type **Description** into the **Fields** node for the
+    **MB500CustTable** table, and then select the **Description** field.
+
+12. In **Properties**, enter **Description2** in the **Name** field.
 
 13. Drag the Extended Data Type **Description** into the **Fields** node for the
     **MB500CustTable** table, and then select the **Description** field.
 
-14. In **Properties**, enter **Description2** in the **Name** field.
+14. In Properties, enter **Description3** in the **Name** field.
 
-15. Drag the Extended Data Type **Description** into the **Fields** node for the
-    **MB500CustTable** table, and then select the **Description** field.
+15. Navigate to the **Indexes** node at **MB500CustTable** in the **Designer**.
 
-16. In Properties, enter **Description3** in the **Name** field.
+16. Right-click **Indexes** to open the context menu, and then select **New Index**.
 
-17. Navigate to the **Indexes** node at **MB500CustTable** in the **Designer**.
-
-18. Right-click **Indexes** to open the context menu, and then select **New Index**.
-
-19. In **Properties**, enter the following:
+17. In **Properties**, enter the following:
 
     -   Name: **CustTableIdx**
 
@@ -186,31 +181,31 @@ fields for the **CustTable** table:
 
     -   Alternate Key: **Yes**
 
-20. Drag the **CustTable** field from the **Fields** node to the
+18. Drag the **CustTable** field from the **Fields** node to the
     **CustTableIdx** node.
 
-21. Navigate to the **Mappings** node for the **MB500CustTable**, right-click it
+19. Navigate to the **Mappings** node for the **MB500CustTable**, right-click it
     to open the context menu, and select **New Mapping**.
 
-22. In **Properties**, navigate to the **Map** property, and then select the
+20. In **Properties**, navigate to the **Map** property, and then select the
     **drop-down** arrow.
 
-23. In the **Search** field, enter **SysExt**, and then select
+21. In the **Search** field, enter **SysExt**, and then select
     **SysExtensionSerializerExtensionMap**.
 
-24. Navigate to **SysExtensionSerializerExtensionMap** in the **Mappings** node,
+22. Navigate to **SysExtensionSerializerExtensionMap** in the **Mappings** node,
     and then expand **SysExtensionSerializerExtensionMap**.
 
-25. Navigate to **BaseRecId**, and then in Properties, select the **drop-down**
+23. Navigate to **BaseRecId**, and then in Properties, select the **drop-down**
     arrow by **Map Field To**.
 
-26. Select the **CustTable** field, and then navigate to the **Relations** node
+24. Select the **CustTable** field, and then navigate to the **Relations** node
     for the **MB500CustTable**.
 
-27. Right-click **Relations** to open the context menu, and then select **New**,
+25. Right-click **Relations** to open the context menu, and then select **New**,
     and select **Relation**.
 
-28. Set the following properties for **Relation1**:
+26. Set the following properties for **Relation1**:
 
     -   Cardinality: **ZeroOne**
 
@@ -224,24 +219,24 @@ fields for the **CustTable** table:
 
     -   Relationship type: **Composition**
 
-29. Right-click the **CustTable** Relation to open the context menu, and then select
+27. Right-click the **CustTable** Relation to open the context menu, and then select
     **New**, and select **Normal**.
 
-30. Set the following properties for the **RelationConstraintField1** :
+28. Set the following properties for the **RelationConstraintField1** :
 
     -   Field: **CustTable**
 
     -   Related Field: **RecId**
 
-31. Navigate to **Properties** for the **MB500CustTable** table, and then enter
+29. Navigate to **Properties** for the **MB500CustTable** table, and then enter
     **CustTableIdx** for **Replacement Key**.
 
-32. Navigate to the **Methods** node for **MB500CustTable**.
+30. Navigate to the **Methods** node for **MB500CustTable**.
 
-33. Right-click **Methods** to open the context menu, and then select
+31. Right-click **Methods** to open the context menu, and then select
     **Override**, and select **insert**.
 
-34. Change the logic in the **insert** method to the following:
+32. Change the logic in the **insert** method to the following:
 <pre>
     public void insert()
     {
@@ -253,9 +248,9 @@ fields for the **CustTable** table:
 </pre>
 > This will only perform the insert if there is a CustTable record
 
-35. Navigate to the **Methods** node on **MB500CustTable**, and then right-click **Methods** to open the context menu and select **Override** and **update**.
+33. Navigate to the **Methods** node on **MB500CustTable**, and then right-click **Methods** to open the context menu and select **Override** and **update**.
 
-36.  Change the logic in the **update** method to the following:
+34.  Change the logic in the **update** method to the following:
 <pre>
     public void update()
     {
@@ -268,12 +263,14 @@ fields for the **CustTable** table:
 
 > Similarly, this will only perform the update if there is a CustTable record
 
-37.  Select **Save All**, and then right-click the
+35.  Select **Save All**, and then right-click the
     **SysExtensionSerializerFramework** project to open the context menu and
     select **Build.** 
 ![A screenshot of table MB500CustTable.](media/L3P01.png)
 
-> Note: The build is currently failing if you are using v41.
+> Note: The build is currently failing if you are using v41. If you are using v43 and the build fails on a "The 'BuildTask' task returned false but did not log an error." then retry the build.
+
+
 
 ## Exercise 2: Implement the **SysExtensionSerializer** framework for a form 
 
@@ -574,6 +571,7 @@ To test modifications:
 > Note: This will not apply, of course, without a successful build.
 
 12. You have now successfully added fields via code, updated them via the user interface, and examined them using the browser.
+
 
 
 
