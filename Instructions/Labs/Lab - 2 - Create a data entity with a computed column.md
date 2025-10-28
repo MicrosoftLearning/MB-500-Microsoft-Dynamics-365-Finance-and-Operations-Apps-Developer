@@ -265,11 +265,7 @@ private static server str balanceMST()
 23. Right-click the project to open the context menu, and then select
     **Properties**.
 
-24. Configure the following field:
-
--   Synchronize Database: **True**
-
-25. Select **OK**, and then right-click the project to open the context menu and
+24. Select **OK**, and then right-click the project to open the context menu and
     select **Build**. If the build fails on a "The 'BuildTask' task returned false but did not log an error." then retry the build.
 
 
@@ -316,6 +312,7 @@ To test your new data entity in SQL Server Management Studio and as OData:
 
 You have now created a data entity which can be used to integrate with external systems, 
 and you have made it more useful by adding computed columns.
+
 
 
 
