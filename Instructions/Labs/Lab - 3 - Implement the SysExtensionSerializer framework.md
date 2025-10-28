@@ -8,22 +8,10 @@ lab:
 Current Issue with Virtual Machines
 ===================================
 
-We are aware that the compiler is not working in the 10.0.41 virtual
-machine.
-
-## Reporting and Support
-
+We are aware that the compiler is not working in the 10.0.41 virtual machine.
 This issue has been reported to the Microsoft lab environments team.
-
-## Temporary Solution
-
-The labs are being rewritten to not require code compiles.
-
-## Alternative Practice Options
-
-If you have another environment where you can practice with demo data, the labs
-are available at https://aka.ms/MB500Labs.
-
+We are rolling out an updated VM (v.43) which has been successfully tested.
+The environment is estimated to be offered to learners November 7, 2025.
 
 
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
@@ -236,7 +224,7 @@ fields for the **CustTable** table:
 
     -   Relationship type: **Composition**
 
-29. Right-click **CustTable** Relation to open the context menu, and then select
+29. Right-click the **CustTable** Relation to open the context menu, and then select
     **New**, and select **Normal**.
 
 30. Set the following properties for the **RelationConstraintField1** :
@@ -263,7 +251,6 @@ fields for the **CustTable** table:
         }
     }
 </pre>
-
 > This will only perform the insert if there is a CustTable record
 
 35. Navigate to the **Methods** node on **MB500CustTable**, and then right-click **Methods** to open the context menu and select **Override** and **update**.
@@ -373,7 +360,6 @@ To implement the **SysExtensionSerializer** framework for a form:
         }
     }
 </pre>
-
 > This method extends the MB500CustTable data source on the CustTable form using a Chain of Command approach. It links the extension table (MB500CustTable) to the base table (CustTable) by pairing their cursors, enabling the form to treat them as a unified data source.
 
 17.  Navigate to **User Interface** \> **Forms** in **Application Explorer**, and
@@ -422,11 +408,11 @@ To implement the **SysExtensionSerializer** framework for a form:
 > This method extends the write() method of the CustTable data source on the CustTable form using Chain of Command (CoC). After the base logic runs, it checks whether the MB500CustTable extension table is enabled and, if so, inserts its data after the base table’s data using insertAfterBaseTable.
 
 
-22.Select **Save All**, and then find the **SysExtensionSerializerFramework**
+22. Select **Save All**, and then find the **SysExtensionSerializerFramework**
     project in **Solution Explorer**, right-click it to open the context menu,
     and then select **Build**.
 
-> Note: The build is currently failing.
+> Note: The build is currently failing in v41.
 
 ## Exercise 3: Update data entities when using the **SysExtensionSerializer** framework
 
@@ -453,7 +439,7 @@ framework:
 6.  In **Designer**, navigate to the **Data Sources** node, and then expand the
     **CustTable** data source.
 
-7.  Select **Data Sources** for the child data sources, and then right-click
+7.  Select **Data Sources** for the child data source, and then right-click
     **Data Sources** to open the context menu and select **New Data Source**.
 
 8.  Enter the following on the new **QueryEmbeddedDataSource1** data source
@@ -532,7 +518,7 @@ framework:
 30. Find the **SysExtensionSerializerFramework** project in **Solution
     Explorer**, and then right-click it to open the context menu and select
     **Build**.
-> Note: The build is currently failing.
+> Note: The build is currently failing in v41.
 
 31. Right-click the project again to open the context menu, and then select
     **Synchronize SysExtensionSerializerFrameform (USR) with Database**.
@@ -550,7 +536,7 @@ To test modifications:
     Management** and select **Framework Parameters**.
 
 3.  Navigate to **Entity Settings**, and then select **Refresh entity list**.
-    The entity list should now be updated with your modifications.
+    The entity list should now be updated with your modifications after several minutes.
 
 4.  In Navigation Pane, expand **Modules**, and then select **Accounts
     receivable**.
@@ -583,12 +569,12 @@ To test modifications:
     [usnconeboxax1aos.cloud.onebox.dynamics.com/data/CustomersV3?cmp=USMF](https://usnconeboxax1aos.cloud.onebox.dynamics.com/data/CustomersV3?cmp=USMF).
 
 11.  Select **Enter**, and then find rows **311** through **313** (this may vary
-    slightly), and verify the values in the new fields for the data entity. Select **Pretty-print** if available.
-
+    slightly), or do a find on Test3, and verify the values in the new fields for the data entity. Select **Pretty-print** if available.
 ![A screenshot of result of CustomerV3 data entity.](media/L3P03.png)
 > Note: This will not apply, of course, without a successful build.
 
 12. You have now successfully added fields via code, updated them via the user interface, and examined them using the browser.
+
 
 
 
