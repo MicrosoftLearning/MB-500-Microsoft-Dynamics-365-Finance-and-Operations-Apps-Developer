@@ -163,11 +163,12 @@ The Data Entity Wizard opens.
 
 12.  Keep **String** in **Data type**, and then enter:
 
-	-   **CustName** in **EDT type name**.
-	
-	-   **Name** in **Label Id**.
-	
-	-   **Customer name** in **Help Text Id**.
+-   **CustName** in **EDT type name**
+
+-   **Name** in **Label Id**
+
+-   **Customer name** in **Help Text Id**
+
 
 13.  Select **Add virtual field**, and then find the empty virtual field at
     the bottom of the field list.
@@ -211,7 +212,7 @@ private static server str custName()
 > The method custName() dynamically builds a SQL SELECT statement to retrieve the Name field from the DirPartyTable based on specific filtering conditions. This method generates a SQL query string that retrieves the Name field from the DirPartyTable based on matching RecId and Partition values from the CustTable data source in your data entity.
 
 
-18.Now paste in this code, which calculates a customer’s balance, after that
+18. Now paste in this code, which calculates a customer’s balance, after that
     method and still within the public class:
 
 <pre>
@@ -249,9 +250,9 @@ private static server str balanceMST()
 
 > The balanceMST() method dynamically builds a SQL SELECT statement that calculates the sum of the AmountMST field from the CustTrans table. It filters the results based on several conditions: matching AccountNum, TransDate within a range, and matching DataAreaId and Partition values—all sourced from the CustTable data source in your data entity.
 
-19.Select **Save All**, and then close the code editor.
+19. Select **Save All**, and then close the code editor.
 
-20.Navigate to, and expand, the **Fields** node at the data entity, and then
+20. Navigate to, and expand, the **Fields** node at the data entity, and then
     select the **Name** virtual field, and then configure the following
     properties:
 
@@ -325,6 +326,8 @@ To test your new data entity in SQL Server Management Studio and as OData:
 
     ![A screenshot of the OData view of the data entity.](media/L2P04.png)
 
+You have now created a data entity which can be used to integrate with external systems, 
+and you have made it more useful by adding computed columns.
 
 
 
