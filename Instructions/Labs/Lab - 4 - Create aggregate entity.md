@@ -7,23 +7,10 @@ lab:
 Current Issue with Virtual Machines
 ===================================
 
-We are aware that the compiler is not working in the 10.0.41 virtual
-machine.
-
-## Reporting and Support
-
+We are aware that the compiler is not working in the 10.0.41 virtual machine.
 This issue has been reported to the Microsoft lab environments team.
-
-## Temporary Solution
-
-The labs are being rewritten to not require code compiles.
-
-## Alternative Practice Options
-
-If you have another environment where you can practice with demo data, the labs
-are available at https://aka.ms/MB500Labs.
-
-
+We are rolling out an updated VM (v.43) which has been successfully tested.
+The environment is estimated to be offered to learners November 7, 2025.
 
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
@@ -182,7 +169,7 @@ To create an aggregated data entity:
 23. Select the View **InventOnHandByWarehouseStatus**, and then drag it to the
     root node of **InventOnhandAggregateDimension**.
 
-24. Remove **@InventOnhandAggregateDimension** from the **@Attributes** node
+24. Remove **@ InventOnhandAggregateDimension** from the **@ Attributes** node
 
     ![A screenshot of Aggregate Dimension with attribute nodes.](media/L4P01.png)
 
@@ -213,8 +200,7 @@ To create an aggregated data entity:
 
     ![A screenshot of aggregated measurements.](media/L4P02.png)
 
-32. Select the top node for **InventOnhandAggregateMeasurement** under
-    **Aggregate Measurements**.
+32. Select the top node for **InventOnhandAggregateMeasurement**.
 
 33. In the **Properties**, select **InMemoryRealTime** for **Usage**.
 
@@ -283,7 +269,7 @@ To create an aggregated data entity:
 14. Select **Save All**, and then right-click your project to open the context
     menu and select **Build**.
 
-> Note: The build is currently failing.
+> Note: The build is currently failing in v41.
 
 ## Exercise 2: Test an aggregated data entity
 
@@ -295,13 +281,13 @@ To test an aggregate data entity:
 
 2.  enter the following URL in the address field, and then select **Enter**:
     <https://usnconeboxax1aos.cloud.onebox.dynamics.com/data/MyAggregateDataEntities>.
-
 > Note: Without a successful build, this step will not succeed either.
 
 3.  A list of items with **AvailOrdered** and **AvailPhysical** will display,
     grouped by **ItemId**
 
 ![A screenshot of output from aggregated data entity.](media/L4P05.png)
+
 
 
 
