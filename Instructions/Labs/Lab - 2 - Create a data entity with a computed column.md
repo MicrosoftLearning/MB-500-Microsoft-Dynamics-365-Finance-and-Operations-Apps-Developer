@@ -8,22 +8,10 @@ lab:
 Current Issue with Virtual Machines
 ===================================
 
-We are aware that the compiler is not working in the 10.0.41 virtual
-machine.
-
-## Reporting and Support
-
+We are aware that the compiler is not working in the 10.0.41 virtual machine.
 This issue has been reported to the Microsoft lab environments team.
-
-## Temporary Solution
-
-The labs are being rewritten to not require code compiles.
-
-## Alternative Practice Options
-
-If you have another environment where you can practice with demo data, the labs
-are available at https://aka.ms/MB500Labs.
-
+We are rolling out an updated VM (v.43) which has been successfully tested.
+The environment is estimated to be offered to learners November 7, 2025.
 
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
@@ -328,6 +316,7 @@ To test your new data entity in SQL Server Management Studio and as OData:
 
 You have now created a data entity which can be used to integrate with external systems, 
 and you have made it more useful by adding computed columns.
+
 
 
 
