@@ -65,23 +65,19 @@ data, which requires an Excel sheet with correct column names.
 
 To prepare for configuration of Data Management parameters:
 
-1.  Open Microsoft **Edge** on your VM and then enter
-    **https://usnconeboxax1aos.cloud.onebox.dynamics.com/?cmp=USMF** in the
-    address field.
+1.  In the user interface, select the **Data management** workspace, and then select the **Framework parameters**.
 
-2.  Select the **Data management** workspace, and then select the **Framework parameters**.
-
-3.  Select the **Entity settings** tab, and then select **Refresh entity list**
+2.  Select the **Entity settings** tab, and then select **Refresh entity list**
     to refresh data entities in the system. Notice that data entities are now
     updated in the background as an asynchronous job. Get this started, as it takes several minutes.
 
     ![A screenshot of Data import/export framework parameters where we find the Refresh entity list bottom.](media/L5P01.png)
 
-4.  In the **Framework parameters**, navigate to the **General** tab, and then
+3.  In the **Framework parameters**, navigate to the **General** tab, and then
     in the **Shared working directory** group, enter **c:\\temp\\dixf** for the
     path.
 
-5.  Select **Validate** to confirm that the service account has access to the
+4.  Select **Validate** to confirm that the service account has access to the
     folder, and then configure the following parameters on the **General** tab,
     then **Save**:
 
@@ -232,4 +228,5 @@ To create an import project:
 37. The **Execution Status** should change to **Succeeded**.
 
 38. Select **View execution log**, and then verify that there are no errors.
+
 
