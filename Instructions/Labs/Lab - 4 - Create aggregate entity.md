@@ -94,35 +94,29 @@ To create an aggregated data entity:
 
         2.  SolutionName: **AggregatedDataEntity**
 
-3.  In Solution Explorer, right-click your project to open the context menu, and
-    then select **Properties**.
-
-4.  Verify the **Synchronize Database** property is set to **True**, and then
-    select **OK**.
-
-5.  Right-click your project to open the context menu, and then select **Add**
+3.  In Solution Explorer, right-click your project to open the context menu, and then select **Add**
     \> **New Item**.
 
-6.  Navigate to **FinanceOperations** \> **Dynamics 365 Items** \> **Analytics**
+4.  Navigate to **FinanceOperations** \> **Dynamics 365 Items** \> **Analytics**
     \> **Aggregate Measurement**.
 
-7.  Enter **InventOnhandAggregateMeasurement** as the name, and then select
+5.  Enter **InventOnhandAggregateMeasurement** as the name, and then select
     **Add**.
 
-8.  Select **View** \> **Application Explorer** to view the **AOT**.
+6.  Select **View** \> **Application Explorer** to view the **AOT**.
 
-9.  Enter **InventOnHandByWarehouseStatus** in the **Search** field, and then
+7.  Enter **InventOnHandByWarehouseStatus** in the **Search** field, and then
     select **Enter**.
 
-10. Select **InventOnHandByWarehouseStatus** from **Views**, and then drag it to
+8. Select **InventOnHandByWarehouseStatus** from **Views**, and then drag it to
     **MeasureGroup1**.
 
-11. Expand the **Dimensions** node and remove the **Date\_** field.
+9. Expand the **Dimensions** node and remove the **Date\_** field.
 
-12. Go to the **Measures** node, and then right-click it to open the context
+10. Go to the **Measures** node, and then right-click it to open the context
     menu and select **New Measure**.
 
-13. In **Properties** for **Measure1**, select the following values:
+11. In **Properties** for **Measure1**, select the following values:
 
     -   Field: **AvailOrdered**
 
@@ -130,10 +124,10 @@ To create an aggregated data entity:
 
     -   Name: **AvailOrdered**
 
-14. Go to the **Measures** node, and then right-click it to open the context
+12. Go to the **Measures** node, and then right-click it to open the context
     menu and select **New Measure**.
 
-15. In the **Properties** for **Measure1**, select the following values:
+13. In the **Properties** for **Measure1**, select the following values:
 
     -   Field: **AvailPhysical**
 
@@ -141,74 +135,74 @@ To create an aggregated data entity:
 
     -   Name: **AvailPhysical**
 
-16. Go to the **Attributes** node, and then right-click it to open the context
+14. Go to the **Attributes** node, and then right-click it to open the context
     menu and select **New Dimension Attibute**.
 
-17. In the **Properties** for **DimensionAttribute1**, select the following
+15. In the **Properties** for **DimensionAttribute1**, select the following
     values
 
     -   Name: **ItemId**
 
     -   Usage: **Key**
 
-18. Go to the blank node under ItemId and in the **Properties**, select
+16. Go to the blank node under ItemId and in the **Properties**, select
     **ItemId** for the **Dimension Field**.
 
-19. Select **Save all**, and then right-click your project to open the context
+17. Select **Save all**, and then right-click your project to open the context
     menu and select **Add** \> **New Item**.
 
-20. Navigate to **FinanceOperations** \> **Dynamics 365 Items** \> **Analytics**
+18. Navigate to **FinanceOperations** \> **Dynamics 365 Items** \> **Analytics**
     \> **Aggregate Dimension**.
 
-21. Enter **InventOnhandAggregateDimension** as the name, and then select
+19. Enter **InventOnhandAggregateDimension** as the name, and then select
     **Add**.
 
-22. Enter **InventOnHandByWarehouseStatus** in the **Search** field in the
+20. Enter **InventOnHandByWarehouseStatus** in the **Search** field in the
     Application Explorer, and then select **Enter**.
 
-23. Select the View **InventOnHandByWarehouseStatus**, and then drag it to the
+21. Select the View **InventOnHandByWarehouseStatus**, and then drag it to the
     root node of **InventOnhandAggregateDimension**.
 
-24. Remove **@ InventOnhandAggregateDimension** from the **@ Attributes** node
+22. Remove **@ InventOnhandAggregateDimension** from the **@ Attributes** node
 
     ![A screenshot of Aggregate Dimension with attribute nodes.](media/L4P01.png)
 
-25. In the **ItemId** Attribute, select **Key** for **Usage**.
+23. In the **ItemId** Attribute, select **Key** for **Usage**.
 
-26. Select **Save all**, and then select **InventOnhandAggregateMeasurement** in
+24. Select **Save all**, and then select **InventOnhandAggregateMeasurement** in
     the **Designer view**.
 
-27. In **Solution Explorerer**, find the Aggregate Dimension
+25. In **Solution Explorerer**, find the Aggregate Dimension
     **InventOnhandAggregateDimension** and drag it into the **Dimensions** node
     on **InventOnhandAggregateMeasurement**.
 
-28. Right-click the **InventOnhandAggregateDimension** node under **Dimensions**
+26. Right-click the **InventOnhandAggregateDimension** node under **Dimensions**
     to open the context menu, and then select **New Relation**.
 
-29. In the **Properties** for **DimensionRelation1**, select the following
+27. In the **Properties** for **DimensionRelation1**, select the following
     values:
 
     -   Dimension Attribute: **ItemId**
 
     -   Name: **ItemIdRelation**
 
-30. In the **Properties** for **ItemIdRelation** \>
+28. In the **Properties** for **ItemIdRelation** \>
     **InventOnHandWarehouseStatus.ItemId == InventOnHandByWarehouseStatus**,
     select **ItemId** for the **Related field**.
 
-31. Select **Save all**
+29. Select **Save all**
 
     ![A screenshot of aggregated measurements.](media/L4P02.png)
 
-32. Select the top node for **InventOnhandAggregateMeasurement**.
+30. Select the top node for **InventOnhandAggregateMeasurement**.
 
-33. In the **Properties**, select **InMemoryRealTime** for **Usage**.
+31. In the **Properties**, select **InMemoryRealTime** for **Usage**.
 
-34. In the **Solution Explorer**, right-click
+32. In the **Solution Explorer**, right-click
     **InventOnhandAggregateMeasurement** under **Aggregate Measurements** to
     open the context menu, and then select **Add Column Store Indices**.
 
-35. Select **Save all**.
+33. Select **Save all**.
 
     ![A screenshot of the aggregated data entity with nodes.](media/L4P03.png)
 
@@ -269,7 +263,9 @@ To create an aggregated data entity:
 14. Select **Save All**, and then right-click your project to open the context
     menu and select **Build**.
 
-> Note: The build is currently failing in v41.
+> Note: The build is currently failing in v41. If you are in v43 and the build fails on a "The 'BuildTask' task returned false but did not log an error." then retry the build.
+
+
 
 ## Exercise 2: Test an aggregated data entity
 
@@ -287,6 +283,7 @@ To test an aggregate data entity:
     grouped by **ItemId**
 
 ![A screenshot of output from aggregated data entity.](media/L4P05.png)
+
 
 
 
