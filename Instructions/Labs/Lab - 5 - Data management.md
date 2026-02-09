@@ -19,6 +19,7 @@ lab:
 <tr><td>1.3</td><td>19 Feb 2025</td><td>Added The Why</td></tr>
 <tr><td>1.4</td><td>21 Aug 2025</td><td>App version has been updated to 10.0.41</td></tr>
 <tr><td>1.5</td><td>14 Oct 2025</td><td>Instruction cleanup</td></tr>
+<tr><td>1.6</td><td>09 Feb 2026</td><td>Clarifying instruction cleanup</td></tr>
 </table>
 </html>
 
@@ -226,6 +227,7 @@ To create an import project:
 37. The **Execution Status** should change to **Succeeded**.
 
 38. Select **View execution log**, and then verify that there are no errors.
+
 
 
 
