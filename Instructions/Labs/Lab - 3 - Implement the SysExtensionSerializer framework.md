@@ -19,6 +19,7 @@ lab:
 <tr><td>1.3</td><td>19 Feb 2025</td><td>Added The Why</td></tr>
 <tr><td>1.4</td><td>21 Aug 2025</td><td>App version has been updated to 10.0.41</td></tr>
 <tr><td>1.5</td><td>14 Oct 2025</td><td>Instruction cleanup</td></tr>
+<tr><td>1.6</td><td>09 Feb 2026</td><td>Clarifying instruction cleanup</td></tr>
 </table>
 </html>
 
@@ -557,6 +558,7 @@ To test modifications:
 > Note: This will not apply, of course, without a successful build.
 
 12. You have now successfully added fields via code, updated them via the user interface, and examined them using the browser.
+
 
 
 
