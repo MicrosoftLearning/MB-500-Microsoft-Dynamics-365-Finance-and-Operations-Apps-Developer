@@ -4,14 +4,6 @@ lab:
     module: 'Learning Path 04: Connect to finance and operations'
 ---
 
-Current Issue with Virtual Machines
-===================================
-
-We are aware that the compiler is not working in the 10.0.41 virtual machine.
-This issue has been reported to the Microsoft lab environments team.
-We are rolling out an updated VM (v.43) which has been successfully tested.
-The environment is estimated to be offered to learners November 7, 2025.
-
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
 # Lab 4: Create an aggregate data entity
@@ -263,10 +255,6 @@ To create an aggregated data entity:
 14. Select **Save All**, and then right-click your project to open the context
     menu and select **Build**.
 
-> Note: The build is currently failing in v41. If you are in v43 and the build fails on a "The 'BuildTask' task returned false but did not log an error." then retry the build.
-
-
-
 ## Exercise 2: Test an aggregated data entity
 
 To test an aggregate data entity:
@@ -275,18 +263,10 @@ To test an aggregate data entity:
     screen, select the gear (Settings) \> User options \> Preferences, and
     change the Startup Company to **USMF.**
 
-2.  enter the following URL in the address field, and then select **Enter**:
+2.  Enter the following URL in the address field, and then select **Enter**:
     <https://usnconeboxax1aos.cloud.onebox.dynamics.com/data/MyAggregateDataEntities>.
-> Note: Without a successful build, this step will not succeed either.
 
-3.  A list of items with **AvailOrdered** and **AvailPhysical** will display,
+3.  Select pretty-print and a list of items with **AvailOrdered** and **AvailPhysical** will display,
     grouped by **ItemId**
 
 ![A screenshot of output from aggregated data entity.](media/L4P05.png)
-
-
-
-
-
-
-
