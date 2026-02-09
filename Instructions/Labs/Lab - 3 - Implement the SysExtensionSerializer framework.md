@@ -5,15 +5,6 @@ lab:
 ---
 
 
-Current Issue with Virtual Machines
-===================================
-
-We are aware that the compiler is not working in the 10.0.41 virtual machine.
-This issue has been reported to the Microsoft lab environments team.
-We are rolling out an updated VM (v.43) which has been successfully tested.
-The environment is estimated to be offered to learners November 7, 2025.
-
-
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
 # Lab 3: Implement the SysExtensionSerializer framework
@@ -247,7 +238,6 @@ fields for the **CustTable** table:
     }
 </pre>
 > This will only perform the insert if there is a CustTable record
-
 33. Navigate to the **Methods** node on **MB500CustTable**, and then right-click **Methods** to open the context menu and select **Override** and **update**.
 
 34.  Change the logic in the **update** method to the following:
@@ -268,7 +258,7 @@ fields for the **CustTable** table:
     select **Build.** 
 ![A screenshot of table MB500CustTable.](media/L3P01.png)
 
-> Note: The build is currently failing if you are using v41. If you are using v43 and the build fails on a "The 'BuildTask' task returned false but did not log an error." then retry the build.
+> Note: If the build fails then retry the build.
 
 
 
@@ -358,7 +348,6 @@ To implement the **SysExtensionSerializer** framework for a form:
     }
 </pre>
 > This method extends the MB500CustTable data source on the CustTable form using a Chain of Command approach. It links the extension table (MB500CustTable) to the base table (CustTable) by pairing their cursors, enabling the form to treat them as a unified data source.
-
 17.  Navigate to **User Interface** \> **Forms** in **Application Explorer**, and
     then find the **CustTable** form.
 
@@ -408,8 +397,6 @@ To implement the **SysExtensionSerializer** framework for a form:
 22. Select **Save All**, and then find the **SysExtensionSerializerFramework**
     project in **Solution Explorer**, right-click it to open the context menu,
     and then select **Build**.
-
-> Note: The build is currently failing in v41.
 
 ## Exercise 3: Update data entities when using the **SysExtensionSerializer** framework
 
@@ -515,7 +502,6 @@ framework:
 30. Find the **SysExtensionSerializerFramework** project in **Solution
     Explorer**, and then right-click it to open the context menu and select
     **Build**.
-> Note: The build is currently failing in v41.
 
 31. Right-click the project again to open the context menu, and then select
     **Synchronize SysExtensionSerializerFrameform (USR) with Database**.
@@ -571,6 +557,7 @@ To test modifications:
 > Note: This will not apply, of course, without a successful build.
 
 12. You have now successfully added fields via code, updated them via the user interface, and examined them using the browser.
+
 
 
 
