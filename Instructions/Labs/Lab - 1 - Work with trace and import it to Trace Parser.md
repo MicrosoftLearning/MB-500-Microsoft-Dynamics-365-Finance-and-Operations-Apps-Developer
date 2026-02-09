@@ -232,34 +232,35 @@ To analyze X++ and SQL for users in the Trace Parser tool:
     account. It will be similar to the username you used, for example, cloudslice, and not OneBox.
     The trace parser will filter for your specific user.
 
-3.  Select the **Call Tree** tab to see the call stack, and then move down to find the
+2.  Select the **Call Tree** tab to see the call stack, and then move down to find the
     reddest color. 
 
-4.  Expand the tree node for the reddest color (the largest number of ms) and
+3.  Expand the tree node for the reddest color (the largest number of ms) and
     continue until all nodes for that one path are expanded, and make sure you’re watching the
     **Context field** to see the X++ code. For the purposes of this exercise, it's not necessary
     to dive fully down, but several levels are advised.
     ![A screenshot of Call Tree and most expensive code (in ms)](media/L1P14.png)
 
-6.  Switch from the **Call tree** tab to the **X++** one, and then select the **Total Inclusive
+4.  Switch from the **Call tree** tab to the **X++** one, and then select the **Total Inclusive
     (ms)** column to sort the most expensive in descending order.
 
-7.  Find the first row with code to see the most expensive code, and then
+5.  Find the first row with code to see the most expensive code, and then
     switch to the **SQL** tab.
 
-8.  Select **Show Tables**, and then enter **SalesTable** in **Name Filter**.
+6.  Select **Show Tables**, and then enter **SalesTable** in **Name Filter**.
     Only SQL statements visible on **SalesTable** should be listed.
 
-9.  Enter **InventTrans** in **Name Filter** and **Show Tables**. Only SQL
+7.  Enter **InventTrans** in **Name Filter**. Only SQL
     statements with **InventTrans** should now be listed in the view
 
     ![Screen capture that shows how InventTrans for your file should display.](media/L1P15.png)
 
-10.  Select **Jump to Call Tree** (lower right between the Call Stack and Code)
+8.  Select **Jump to Call Tree** (lower right between the Call Stack and Code)
     and wait. **Trace Parser** goes to **Call Tree**, and you can see the call
     stack. This will provide valuable information for identifying the expensive query.
 
-11. You now can evaluate options such as rewriting the query or the code which calls it, creating indexes, or other.
+9. You now can evaluate options such as rewriting the query or the code which calls it, creating indexes, or other.
 
     
+
 
