@@ -4,15 +4,6 @@ lab:
     module: 'Learning Path 02: Build finance and operations apps'
 ---
 
-
-Current Issue with Virtual Machines
-===================================
-
-We are aware that the compiler is not working in the 10.0.41 virtual machine.
-This issue has been reported to the Microsoft lab environments team.
-We are rolling out an updated VM (v.43) which has been successfully tested.
-The environment is estimated to be offered to learners November 7, 2025.
-
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
 # Lab 2: Create a data entity with a computed column
@@ -157,7 +148,6 @@ The Data Entity Wizard opens.
 
 -   **Customer name** in **Help Text Id**
 
-
 13.  Select **Add virtual field**, and then find the empty virtual field at
     the bottom of the field list.
 
@@ -262,16 +252,13 @@ private static server str balanceMST()
 22. Select **Save All**, and then go to the **DataEntityComputedColumn** project
     in **Solution Explorer**.
 
-23. Right-click the project to open the context menu, and then select
-    **Properties**.
-
-24. Select **OK**, and then right-click the project to open the context menu and
+23. Right-click the project to open the context menu and
     select **Build**. If the build fails on a "The 'BuildTask' task returned false but did not log an error." then retry the build.
 
 
-## Exercise 2: Test a data entity in SQL Server Management Studio and as OData
+## Exercise 2: Test a data entity in SQL Server Management Studio
 
-To test your new data entity in SQL Server Management Studio and as OData:
+To test your new data entity in SQL Server Management Studio:
 
 1.  Open Microsoft SQL Server Management Studio in your VM and connect to the
     Database Engine with Windows Authentication.
@@ -283,7 +270,7 @@ To test your new data entity in SQL Server Management Studio and as OData:
     to open the context menu, and select the **Select Top 1000 Rows** item:
     ![A screenshot of data from data entity view, where we can see our two computed columns.](media/L2P02.png)
 
-4.  Right-click the **dbo.MYDATAENTITYCOMPUTEDCOLUMN** view to open the context
+4.  Right-click the **dbo.MYDATAENTITYCOMPUTEDCOLUMN** view in the Object Explorer to open the context
     menu, and then select **Script View as** \> **CREATE To** \> **New Query
     Editor Window**
 
@@ -294,15 +281,13 @@ To test your new data entity in SQL Server Management Studio and as OData:
 6.  Note the computed columns.
 
 7.  Open Microsoft Edge in your VM and set your default legal entity: navigate
-    to your Dynamics 365 home page, select the gear and **User Options**,
+    to your Dynamics 365 home page. If you've built code since you've opened the user interface, you will have lost your connection and need to refresh. Select the gear and **User Options**,
     navigate to the **Preferences** tab, and set the **Startup Company** to
     **USMF Contoso Entertainment System USA**.
 
-8.  Enter the following URL in the browser address field:
+8.  Enter the following URL in the browser address field: <https://usnconeboxax1aos.cloud.onebox.dynamics.com/Data/MyDataEntity>
 
-- For version .43 enter:  <https://usnconeboxax1aos.cloud.onebox.dynamics.com/Data/MyDataEntity>
-
-- For version .41 enter:  <https://usnconeboxax1aos.cloud.onebox.dynamics.com/Data/MyDataEntityData>
+- On some older versions, you may need to enter:  <https://usnconeboxax1aos.cloud.onebox.dynamics.com/Data/MyDataEntityData>
 
 
     The data entity will display in OData format in the browser. Select Pretty-print if desired.
@@ -312,6 +297,7 @@ To test your new data entity in SQL Server Management Studio and as OData:
 
 You have now created a data entity which can be used to integrate with external systems, 
 and you have made it more useful by adding computed columns.
+
 
 
 
