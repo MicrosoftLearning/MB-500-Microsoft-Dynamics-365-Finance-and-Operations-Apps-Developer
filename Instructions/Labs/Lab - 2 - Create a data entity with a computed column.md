@@ -18,6 +18,7 @@ lab:
 <tr><td>1.3</td><td>19 Feb 2025</td><td>Added The Why</td></tr>
 <tr><td>1.4</td><td>21 Aug 2025</td><td>App version has been updated to 10.0.41</td></tr>
 <tr><td>1.5</td><td>14 Oct 2025</td><td>Instruction cleanup</td></tr>
+<tr><td>1.6</td><td>09 Feb 2026</td><td>Clarifying instruction cleanup</td></tr>
 </table>
 </html>
 
@@ -297,6 +298,7 @@ To test your new data entity in SQL Server Management Studio:
 
 You have now created a data entity which can be used to integrate with external systems, 
 and you have made it more useful by adding computed columns.
+
 
 
 
