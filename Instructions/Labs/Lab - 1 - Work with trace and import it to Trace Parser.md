@@ -20,6 +20,7 @@ lab:
 <tr><td>1.3</td><td>19 Feb 2025</td><td>Added The Why</td></tr>
 <tr><td>1.4</td><td>21 Aug 2025</td><td>Version has been updated to 10.0.41</td></tr>
 <tr><td>1.5</td><td>14 Oct 2025</td><td>Instruction cleanup</td></tr>
+<tr><td>1.6</td><td>09 Feb 2026</td><td>Clarifying instruction cleanup</td></tr>
 </table>
 </html>
 
@@ -262,5 +263,6 @@ To analyze X++ and SQL for users in the Trace Parser tool:
 9. You now can evaluate options such as rewriting the query or the code which calls it, creating indexes, or other.
 
     
+
 
 
