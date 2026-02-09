@@ -136,18 +136,16 @@ To create an import project:
 5.  In the **Target data format** field, select **EXCEL**, and then select
     **OK**.
 
-6.  In the upper action pane, select **Export now** and wait to see the
+6.  In the upper action pane, select **Export now** (rather than **Export**) and wait to see the
     Execution summary. (Make sure you select Export now to run it in
     interactive mode.)
 ![A screenshot of a successful data export.](media/L5P04.png)
 
 7.  Under **Entity processing status**, select **Download file** for **Sales
-    order pools**. Feel free to rename the file to Sales order pools or similar,
-    leaving the extension. This will make it easier for you in future steps.
+    order pools**. 
 
 9.  For **Entity procession status**, select **Download file** for **Customer
-    groups**. Feel free to rename the file to Customer groups or similar,
-    leaving the extension.
+    groups**. 
 
 10.  Open **File Explorer** on your VM, and then open the Excel file for **Sales
     order pools**. You can **Close** the Microsoft Office Activation Wizard if it appears and
@@ -228,5 +226,6 @@ To create an import project:
 37. The **Execution Status** should change to **Succeeded**.
 
 38. Select **View execution log**, and then verify that there are no errors.
+
 
 
