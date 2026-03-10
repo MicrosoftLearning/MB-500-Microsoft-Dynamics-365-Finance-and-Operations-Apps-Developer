@@ -1,9 +1,14 @@
 ---
 lab:
-    title: 'Lab 3: Implement the SysExtensionSerializer framework'
-    module: 'Learning Path 03: Extend finance and operations apps'
+  title: 'Lab 3: Implement the SysExtensionSerializer framework'
+  module: 'Learning Path 03: Extend finance and operations apps'
+  description: '**MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**'
+  duration: 5 minutes
+  level: 100
+  islab: true
+  primarytopics:
+  - Dynamics 365
 ---
-
 
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
