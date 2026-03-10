@@ -1,9 +1,15 @@
 ---
 lab:
-    title: 'Lab 5: Import data using Data Management'
-    module: 'Learning Path 05: Migrate data and go live with finance and operations apps'
+  title: 'Lab 5: Import data using Data Management'
+  module: 'Learning Path 05: Migrate data and go live with finance and operations
+    apps'
+  description: '**MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**'
+  duration: 5 minutes
+  level: 100
+  islab: true
+  primarytopics:
+  - Dynamics 365
 ---
-
 
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
