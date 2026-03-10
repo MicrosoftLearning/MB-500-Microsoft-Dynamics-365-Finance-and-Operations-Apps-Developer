@@ -1,7 +1,13 @@
 ---
 lab:
-    title: 'Lab 4: Create an aggregate data entity'
-    module: 'Learning Path 04: Connect to finance and operations'
+  title: 'Lab 4: Create an aggregate data entity'
+  module: 'Learning Path 04: Connect to finance and operations'
+  description: '**MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**'
+  duration: 5 minutes
+  level: 100
+  islab: true
+  primarytopics:
+  - Dynamics 365
 ---
 
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
