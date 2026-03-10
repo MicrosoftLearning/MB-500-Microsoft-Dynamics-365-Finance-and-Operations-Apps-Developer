@@ -1,10 +1,15 @@
 ---
 lab:
-    title: 'Lab 1: Work with trace and import it into the Trace Parser tool'
-    module: 'Learning Path 01: Introduction to developing with finance and operations apps'
+  title: 'Lab 1: Work with trace and import it into the Trace Parser tool'
+  module: 'Learning Path 01: Introduction to developing with finance and operations
+    apps'
+  description: '**MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**'
+  duration: 5 minutes
+  level: 100
+  islab: true
+  primarytopics:
+  - Dynamics 365
 ---
-
-
 
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
