@@ -1,10 +1,12 @@
 ---
 lab:
-    title: 'Lab 1: Work with trace and import it into the Trace Parser tool'
-    module: 'Learning Path 01: Introduction to developing with finance and operations apps'
+  title: 'Lab 1: Work with trace and import it into the Trace Parser tool'
+  module: 'Learning Path 01: Introduction to developing with finance and operations apps'
+  description: In this scenario, users have reported that sales orders are working slowly, so you’ll need to review the sales order lines and check reservations against on-hand supply.
+  duration: 5 minutes
+  level: 100
+  islab: true
 ---
-
-
 
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
