@@ -1,9 +1,12 @@
 ---
 lab:
-    title: 'Lab 3: Implement the SysExtensionSerializer framework'
-    module: 'Learning Path 03: Extend finance and operations apps'
+  title: 'Lab 3: Implement the SysExtensionSerializer framework'
+  module: 'Learning Path 03: Extend finance and operations apps'
+  description: <html <table<tr<thVersion</th<thDate</th<thChange</th</tr <tr<td1.0</td<td23 Aug 2024</td<tdInitial release</td</tr <tr<td1.1</td<td10 Dec 2024</td<tdWorkaround for expired certificate</td</tr <tr<td1.2</td<td15 Jan 2025</td<tdAdded business scenario</td</tr <tr<td1.3</td<td19 Feb 2025</td<tdAdded The Why</td</tr <tr<td1.4</td<td21 Aug 2025</td<tdApp version has been updated to 10.0.41</td</tr <tr<td1.5</td<td14 Oct 2025</td<tdInstruction cleanup</td</tr <tr<td1.6</td<td09 Feb 2026</td<tdClarifying instruction cleanup</td</tr </table </html
+  duration: 5 minutes
+  level: 100
+  islab: true
 ---
-
 
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
