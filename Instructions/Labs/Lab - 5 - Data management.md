@@ -1,9 +1,12 @@
 ---
 lab:
-    title: 'Lab 5: Import data using Data Management'
-    module: 'Learning Path 05: Migrate data and go live with finance and operations apps'
+  title: 'Lab 5: Import data using Data Management'
+  module: 'Learning Path 05: Migrate data and go live with finance and operations apps'
+  description: then wait for the 140 – Accounts receivable template to load. When it completes you will see entities in the Entities list. (If you don't, then the entity list has probably not refreshed yet.)
+  duration: 5 minutes
+  level: 100
+  islab: true
 ---
-
 
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
