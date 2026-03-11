@@ -1,9 +1,12 @@
 ---
 lab:
-    title: 'Lab 3: Implement the SysExtensionSerializer framework'
-    module: 'Learning Path 03: Extend finance and operations apps'
+  title: 'Lab 3: Implement the SysExtensionSerializer framework'
+  module: 'Learning Path 03: Extend finance and operations apps'
+  description: 'We will create an aggregated data entity, and then test it.'
+  duration: 55 minutes
+  level: 300
+  islab: true
 ---
-
 
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
 
@@ -558,6 +561,8 @@ To test modifications:
 > Note: This will not apply, of course, without a successful build.
 
 12. You have now successfully added fields via code, updated them via the user interface, and examined them using the browser.
+
+
 
 
 

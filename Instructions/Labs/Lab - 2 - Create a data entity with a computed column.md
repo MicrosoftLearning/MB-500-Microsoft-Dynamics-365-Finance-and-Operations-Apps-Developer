@@ -1,7 +1,11 @@
 ---
 lab:
-    title: 'Lab 2: Create a data entity with a computed column'
-    module: 'Learning Path 02: Build finance and operations apps'
+  title: 'Lab 2: Create a data entity with a computed column'
+  module: 'Learning Path 02: Build finance and operations apps'
+  description: 'We’ll create a data entity with a computed column, and view its data using different methods'
+  duration: 60 minutes
+  level: 300
+  islab: true
 ---
 
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
@@ -298,6 +302,8 @@ To test your new data entity in SQL Server Management Studio:
 
 You have now created a data entity which can be used to integrate with external systems, 
 and you have made it more useful by adding computed columns.
+
+
 
 
 

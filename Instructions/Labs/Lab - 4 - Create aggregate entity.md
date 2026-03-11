@@ -1,7 +1,11 @@
 ---
 lab:
-    title: 'Lab 4: Create an aggregate data entity'
-    module: 'Learning Path 04: Connect to finance and operations'
+  title: 'Lab 4: Create an aggregate data entity'
+  module: 'Learning Path 04: Connect to finance and operations'
+  description: In this lab, we will create an aggregated data entity, and then test it.
+  duration: 25 minutes
+  level: 300
+  islab: true
 ---
 
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
@@ -271,4 +275,5 @@ To test an aggregate data entity:
     grouped by **ItemId**
 
 ![A screenshot of output from aggregated data entity.](media/L4P05.png)
+
 
