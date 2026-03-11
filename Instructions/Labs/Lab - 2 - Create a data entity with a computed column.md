@@ -1,7 +1,11 @@
 ---
 lab:
-    title: 'Lab 2: Create a data entity with a computed column'
-    module: 'Learning Path 02: Build finance and operations apps'
+  title: 'Lab 2: Create a data entity with a computed column'
+  module: 'Learning Path 02: Build finance and operations apps'
+  description: 'In the first exercise, you’ll create a data entity for a customer with the following fields:'
+  duration: 5 minutes
+  level: 200
+  islab: true
 ---
 
 **MB-500: Microsoft Dynamics 365: Finance and Operations Apps Developer**
